@@ -37,10 +37,14 @@ class App extends React.Component {
   render(){
   return (
     <div className="App">
+      <span>My Github</span>
+      <div className="flex">
+      <div className="git-card"><h2>{this.state.user.login}</h2><img className="git-img" src={this.state.user.avatar_url}/></div>
     {this.state.github.map(follower => {
-          return <h1>{follower.login}</h1>
+          return <div className="git-card"><h2>{follower.login}</h2><img className="git-img" src={follower.avatar_url}/></div>
         })}
-        <h1>{this.state.user.login}</h1>
+        {console.log(this.state)}
+    </div>
     </div>
   );
 }
