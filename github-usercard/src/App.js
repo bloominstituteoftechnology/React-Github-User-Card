@@ -53,6 +53,7 @@ class App extends Component {
           return <FollowersCard
           name={follower.login}
           photo={follower.avatar_url}
+          link={follower.html_url}
           key={follower.id}/>
         })}
       </div>
