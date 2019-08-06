@@ -45,11 +45,16 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.userFollowers);
+    console.log('this.state.userFollowers', this.state.userFollowers);
     return (
       <div>
         <UserCard user={this.state.userInfo} />
-        
+        {this.state.userFollowers.map(follower => {
+          return <FollowersCard
+          name={follower.login}
+          photo={follower.avatar_url}
+          key={follower.id}/>
+        })}
       </div>
     );
   }

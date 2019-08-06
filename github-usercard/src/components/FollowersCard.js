@@ -3,22 +3,18 @@ import { Card, Icon, Image } from 'semantic-ui-react'
 
 const FollowersCard = (props) => {
 
-  console.log('follow props', props.user);
+  console.log('follow props', props);
 
 
 
   return(
     <Card>
-      <Image src={props.user.avatar_url} />
+      <Image src={props.photo} />
       <Card.Content>
-        <Card.Header>{props.user.name}</Card.Header>
-        <Card.Meta>{props.user.location}</Card.Meta>
-        <Card.Description>{props.user.bio}</Card.Description>
+        <Card.Header>{props.name}</Card.Header>
+
+
       </Card.Content>
-      <Card.Content extra>
-        <Icon name='user' />
-        {props.user.followers} Followers
-    </Card.Content>
     </Card>
     )
   }
