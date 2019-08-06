@@ -5,9 +5,22 @@ const UserCard = (props) => {
 
   console.log('usercard props', props.user);
 
+
+
   return(
     <Card>
-      <Card.Header>{props.user.name}</Card.Header>
+      <Image src={props.user.avatar_url} />
+      <Card.Content>
+        <Card.Header>{props.user.name}</Card.Header>
+        <Card.Meta>{props.user.location}</Card.Meta>
+        <Card.Description>{props.user.bio}</Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+      <a>
+        <Icon name='user' />
+        {props.user.followers} Followers
+      </a>
+    </Card.Content>
     </Card>
     )
   }
