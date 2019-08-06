@@ -1,8 +1,9 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
 
-const UserCard = (props) => {
+const FollowersCard = (props) => {
 
+  console.log('follow props', props.user);
 
 
 
@@ -22,4 +23,4 @@ const UserCard = (props) => {
     )
   }
 
-export default UserCard
+export default FollowersCard
