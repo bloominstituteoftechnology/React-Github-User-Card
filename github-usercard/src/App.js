@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import UserCard from './components/UserCard';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -13,6 +15,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Users</h1>
+        <UserCard/>
       </div>
     );
   }
