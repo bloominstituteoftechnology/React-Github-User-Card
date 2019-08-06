@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import UserCard from './Components/UserCard';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      user: {}
+    }
+  }
+
+  fetchUsers = () => {
+    fetch('https://api.github.com/users/tommykindle')
+      .then(res => {
+        return res.json();
+      })
+      .then(userInfo => this.setState({ user: userInfo }))
+
+      .catch(err => {
+        console.log('Server Not Responding', err);
+      })
+  }
+
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  render() {
+    return (
+      <div>
+        <UserCard />
+      </div>
+    );
+  }
 }
+
+
+
+
 
 export default App;
