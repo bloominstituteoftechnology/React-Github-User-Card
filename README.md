@@ -1,4 +1,4 @@
-# Module Project: Comppnent Lifecycle Method - React Github User Card
+# Module Project: Component Lifecycle Methods - React Github User Card
 
 This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by recreating the Github User Card project, but as a React application this time.
 
@@ -9,10 +9,6 @@ This project allows you to practice the concepts and techniques learned in this 
 ### Commits
 
 Commit your code regularly and meaningfully. This helps both you and your team lead in case you ever need to return to old code for any number of reasons.
-
-### Description
-
-In this project you'll take this crypto currency tracker app and build two custom hooks that, when composed together, will allow users to set and persist a dark mode preference.
 
 ## Project Set Up
 
@@ -41,6 +37,8 @@ Follow these steps for completing your project.
 
 This is an important step for any project you will be working on. You will want to plan out what data you will need, which component will manage that data via state, what functions you may need to update that state, and where you need to pass the data to render it to the DOM. I love to use pen and paper or a whiteboard for this. The visuals can help a lot when you're deep into your code. After I finish that, I will write out a list of steps that I think it will take to build the app. This gives me a starting point, and direction as I proceed. This list always changes a bit as you are building, but it should give you a good flow and some good anchor points.
 
+Also, since you have used the Github API before, you know some of the gotchas. Make sure to plan and watch for those.
+
 When you have those completed, you're ready to start coding!
 
 ## STEP 1 - Fetch the User Data
@@ -49,7 +47,7 @@ When you have those completed, you're ready to start coding!
   - https://api.github.com/users/<your name>
 - After you fetch your data, set it to state
 
-## STEP 2 - Display the user data
+## STEP 2 - Display the User Data
 
 - Pass the data to the component that will be displaying it
 - Build out a user card using the data that the Github API returns to you
