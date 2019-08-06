@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import axios from 'axios';
+import UserCard from "./components/UserCard"
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      userInfo: []
+    }
+  }
+
+  componentDidMount() {
+    this.fetchUser();
+
+  }
+
+  fetchUser = () => {
+    axios.get('https://api.github.com/users/gcj2')
+      .then (response => {
+        console.log('response.data:', response.data);
+        const userInfo = response.data;
+        this.setState({userInfo})
+        })
+        .catch(err => {
+          console.log(err);
+        })
+  }
+
+  render() {
+    console.log('userInfo', this.state.userInfo);
+    return (
+      <div>
+        <UserCard user={this.state.userInfo} />
+      </div>
+    );
+  }
+
 }
 
 export default App;
