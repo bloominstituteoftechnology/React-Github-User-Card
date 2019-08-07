@@ -17,7 +17,7 @@ class FollowersCard extends React.Component {
     //https://api.github.com/users/jadeli1720/followers
     fetchFollowers = () => {
         axios
-            .get(`https://api.github.com/users/jadeli1720/followers`)
+            .get(`s`)
             .then(res => {
                 this.setState({ followers: res.data })
             })

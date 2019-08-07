@@ -39,7 +39,7 @@ class App extends React.Component {
   //https://api.github.com/users/jadeli1720
   fetchUsers = () => {
     axios
-    .get(`https://api.github.com/users/jadeli1720`)
+    .get(``)
     .then(res => {
       this.setState({users: res.data})
     })
