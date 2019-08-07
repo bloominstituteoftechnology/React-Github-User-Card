@@ -30,17 +30,10 @@ class FollowersCard extends React.Component {
                 {this.state.followers.map(follower => {
                     return (
                         <div className="card">
-                            <img key={follower.id} src={follower.avatar_url} alt={follower.name} />
+                            <img key={follower.id} src={follower.avatar_url} alt={follower.login} />
                             <div className='cardInfo'>
-                                <h3>{follower.name}</h3>
-                                <h4>{follower.login}</h4>
-                                <p>Location: {follower.location}</p>
-                                <p>Profile: {follower.html_url}</p>
-                                <p> Bio: {follower.bio}</p>
-                            </div>
-                            <div className="user-cardFooter">
-                                <p>Followers: {follower.followers}</p>
-                                <p>Following: {follower.following}</p>
+                                <h3>{follower.login}</h3>
+                                <a href={follower.html_url}>{follower.html_url}</a>
                             </div>
                         </div>
                     )
