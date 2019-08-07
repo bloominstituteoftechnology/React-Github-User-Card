@@ -16,7 +16,6 @@ const UserCard = props => {
                 <p>Followers: {props.user.followers}</p>
                 <p>Following: {props.user.following}</p>
             </div>
-
             <FollowersCard />
         </div>
     )

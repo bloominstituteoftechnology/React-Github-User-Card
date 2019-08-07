@@ -1,11 +1,22 @@
 import React from 'react';
 
-const FollowersCard = props => {
-    return (
-        <div>
-            This is from the Followers Card
-        </div>
-    )
+class FollowersCard extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            followers: []
+        }
+    }
+
+    //https://api.github.com/users/jadeli1720/followers
+
+    render() {
+        return(
+            <div>
+                This is from the FollowersCard.js
+            </div>
+        )
+    }
 }
 
 export default FollowersCard;
