@@ -4,14 +4,14 @@ import Follower from './Follower'
 class FollowerList extends Component {
   render() {
     return (
-      <>
-        <h4>{`${this.props.userName}'s Followers`}</h4>
-        <div className='follower-list'>
+      <div className='followers'>
+        <h4>{`${this.props.userInfo.login}'s Followers`}</h4>
+        <div className='followers-list'>
           {this.props.followers.map((follower) => (
             <Follower key={follower.id} follower={follower} />
           ))}
         </div>
-      </>
+      </div>
     )
   }
 }

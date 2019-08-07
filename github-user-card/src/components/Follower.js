@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+// click on a link to go to that persons github card
 class Follower extends Component {
   render() {
     const { login, avatar_url, html_url } = this.props.follower
