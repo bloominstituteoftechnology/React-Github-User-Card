@@ -13,6 +13,7 @@ import {
 import "./App.css";
 import FollowCard from "./components/FollowCards";
 import RepoCard from "./components/RepoCards";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   constructor() {
@@ -110,6 +111,11 @@ class App extends React.Component {
                 <RepoCard repos={repos} />
               ))}
             </div>
+          </Container>
+        </div>
+        <div className="footerWrapper">
+          <Container className="footer-container">
+            <Footer />
           </Container>
         </div>
       </div>
