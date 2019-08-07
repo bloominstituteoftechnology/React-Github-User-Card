@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+import { Icon } from 'semantic-ui-react';
+
 class FollowersCard extends React.Component {
     constructor(props) {
         super(props);
@@ -29,11 +31,16 @@ class FollowersCard extends React.Component {
             <div className="card-container">
                 {this.state.followers.map(follower => {
                     return (
-                        <div className="card">
-                            <img key={follower.id} src={follower.avatar_url} alt={follower.login} />
+                        <div className="followers-card">
+                            <div className="followerImg-container">
+                                <img key={follower.id} src={follower.avatar_url} alt={follower.login} className="followerImg" />
+                            </div>
                             <div className='cardInfo'>
                                 <h3>{follower.login}</h3>
-                                <a href={follower.html_url}>{follower.html_url}</a>
+                                <p className="followerLogin">
+                                <Icon name='chain' size='small' color='violet' />: 
+                                    <a href={follower.html_url}>{follower.html_url}</a>
+                                </p>
                             </div>
                         </div>
                     )
