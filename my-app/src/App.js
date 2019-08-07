@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import './App.css';
+import UserCard from "./components/UserCard";
 
 class App extends React.Component {
   constructor(){
@@ -41,7 +42,10 @@ class App extends React.Component {
 
   render(){
     return (
+      <>
       <div>My App</div>
+      <UserCard />
+      </>
     )
   }
 
