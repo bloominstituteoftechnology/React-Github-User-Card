@@ -8,20 +8,33 @@ class App extends React.Component {
     this.state = {
       userName: 'kristinbarr',
       userInfo: {},
-      followers: []
+      followers: [],
+      // value: ''
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   componentDidMount() {
     this.fetchFollowers(this.state.userName)
   }
 
-  handleNameChange = (e) => {
+  // componentDidUpdate(prevProps) {
+  //   if (this.state.userName !== prevProps.userName) {
+  //     this.fetchFollowers(this.state.userName)
+  //   }
+  // }
+
+  handleChange = (e) => {
+    console.log('change', e.target.value)
     this.setState({ userName: e.target.value })
   }
 
   handleSubmit = (e) => {
-    this.fetchFollowers(e.target.value)
+    e.preventDefault()
+    console.log('submit', e.target)
+    // this.setState({ userName: e.target })
+    // this.fetchFollowers(e.target.value)
   }
 
   fetchFollowers = (user) => {
@@ -46,21 +59,27 @@ class App extends React.Component {
   }
 
   render() {
+    console.log('state', this.state)
+    console.log('props', this.props)
     const { userName, followers, userInfo } = this.state
     return (
       <div className='App'>
         <header className='App-header'>
           <h3>GITHUB USER CARD</h3>
-          {/* <div className='searchbar'>
-            <form type='submit'>
-              <h5>FIND A USER:&nbsp;</h5>
-              <input
-                onChange={this.handleNameChange}
-                placeholder='Github Username'
-              />
-              <button onSubmit={this.handleSubmit}>SEARCH</button>
+          <div className='searchbar'>
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                <h5>FIND A USER:&nbsp;</h5>
+                <input
+                  type='text'
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                  placeholder='Github Username'
+                />
+              </label>
+              <button type='submit'>SEARCH</button>
             </form>
-          </div> */}
+          </div>
         </header>
         <div className='profile'>
           <img src={userInfo.avatar_url} />
