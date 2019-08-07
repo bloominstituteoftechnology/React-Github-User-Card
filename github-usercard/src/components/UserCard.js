@@ -4,8 +4,8 @@ import FollowersCard from './FollowersCard';
 const UserCard = props => {
     return(
         <div>
-            This is from the UserCard
-            <FollowersCard/>
+            
+            {/* <FollowersCard/> */}
         </div>
     )
 };
