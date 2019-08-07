@@ -1,6 +1,6 @@
 import React from 'react'
 import FollowerList from './components/FollowerList'
-import './App.css'
+import './App.scss'
 
 class App extends React.Component {
   constructor() {
@@ -8,8 +8,7 @@ class App extends React.Component {
     this.state = {
       userName: 'kristinbarr',
       userInfo: {},
-      followers: [],
-      // value: ''
+      followers: []
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -72,7 +71,7 @@ class App extends React.Component {
                 <h5>FIND A USER:&nbsp;</h5>
                 <input
                   type='text'
-                  value={this.state.value}
+                  value={this.state.userName}
                   onChange={this.handleChange}
                   placeholder='Github Username'
                 />
@@ -82,30 +81,34 @@ class App extends React.Component {
           </div>
         </header>
         <div className='profile'>
-          <img src={userInfo.avatar_url} />
+          <img src={userInfo.avatar_url} alt='avatar' />
           <div className='profile-name'>
             <h3>{userInfo.name}</h3>
-            <h4>
+            <h5>
               Location:&nbsp;<span>{userInfo.location}</span>
-            </h4>
+            </h5>
             <h5>{userInfo.bio}</h5>
           </div>
           <div className='stats'>
-            <div>
-              <h5>{userInfo.public_repos}</h5>
+            <div className='stat-item'>
+              <h3>{userInfo.public_repos}</h3>
               <h5>Public Repos</h5>
             </div>
-            <div>
-              <h5>{userInfo.followers}</h5>
+            <div className='stat-item'>
+              <h3>{userInfo.followers}</h3>
               <h5>Followers</h5>
             </div>
-            <div>
-              <h5>{userInfo.following}</h5>
+            <div className='stat-item'>
+              <h3>{userInfo.following}</h3>
               <h5> Following</h5>
             </div>
           </div>
         </div>
-        <FollowerList userName={userName} followers={followers} />
+        <FollowerList
+          userName={userName}
+          followers={followers}
+          userInfo={userInfo}
+        />
       </div>
     )
   }

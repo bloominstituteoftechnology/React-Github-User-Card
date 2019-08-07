@@ -3,6 +3,12 @@ body {
   animation: bgcolor 10s infinite;
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h1,
@@ -40,35 +46,51 @@ input {
   border-radius: 4px;
   border: 2px solid grey;
 }
+
 .profile {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   background-image: linear-gradient(#ffffff00, #ffffff15);
-}
+  .profile-name {
+    h3 {
+      padding: .5rem 0;
+    }
+    h5 {
+      padding: .2rem 0;
+    }
+  }
+  img {
+    width: 200px;
+    border-radius: 100px;
+    margin: 2rem;
+  }
 
-.profile img {
-  width: 200px;
-  border-radius: 100px;
-  margin: 2rem;
 }
 
 .stats {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50%;
-}
-.stats h5 {
-  display: flex;
-  margin: 1rem;
+  width: 60%;
+  .stat-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 1rem;
+  }
 }
 
-.follower-list {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
+.followers {
+  text-align: center;
+  padding: 1rem;
+  .followers-list {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
 }
 
 .rainbow-wrapper {
