@@ -29,11 +29,9 @@ class App extends React.Component {
     axios.get(`https://api.github.com/users/allenben746/followers`)
       .then(response =>{
         const gitHubFollowers = response.data;
-        console.log(response.data)
         this.setState({
           gitHubFollowers : gitHubFollowers
         })
-        console.log("Testing ->", gitHubFollowers)
       })
     .catch(err => {
       console.log(`Error in fetching data: ${err}`);
@@ -42,18 +40,19 @@ class App extends React.Component {
 
   render(){
     return (
-      <>
-      <h1>GitHub Information using React.JS</h1>
+      <div className="App">
+        <h1>GitHub Information using React.JS</h1>
 
-      <UserCard data= {this.state} />
-
-      {this.state.gitHubFollowers.map(follower => {
-        console.log(follower)
-        return(
-          <FollowerCard follower={follower} />
-        )
-      })}
-      </>
+        <UserCard data= {this.state} />
+        <h2>Followers:</h2>
+        <section className="followerContainer">
+          {this.state.gitHubFollowers.map(follower => {
+            return(
+              <FollowerCard follower={follower} />
+            )
+          })}
+        </section>
+      </div>
     )
   }
 

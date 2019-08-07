@@ -23,6 +23,10 @@
   color: #61dafb;
 }
 
+.App h2 {
+  border-top: grey dashed;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -30,4 +34,21 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.followerContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  
+}
+
+.followerContainer .item {
+  display: flex;
+  flex-direction: column;
+  border: solid grey;
+}
+
+.followerContainer .item img {
+  border-radius: 20%;
 }
