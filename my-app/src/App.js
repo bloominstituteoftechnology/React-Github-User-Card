@@ -43,8 +43,8 @@ class App extends React.Component {
   render(){
     return (
       <>
-      <div>My App</div>
-      <UserCard />
+      <h1>GitHub Information using React.JS</h1>
+      <UserCard data={this.state}/>
       </>
     )
   }
