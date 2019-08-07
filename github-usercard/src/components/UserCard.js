@@ -1,5 +1,6 @@
 import React from 'react';
 import FollowersCard from './FollowersCard';
+import { Icon } from 'semantic-ui-react';
 
 const UserCard = props => {
     return (
@@ -12,18 +13,20 @@ const UserCard = props => {
                     <h3>{props.user.name}</h3>
                     <p className="user-login">{props.user.login}</p>
                     <div className="user-description">
-                        <p>Location: {props.user.location}</p>
                         <p>
-                            Profile: <a href={props.user.html_url}> {props.user.html_url}</a>
+                            <Icon name='map marker alternate' size='large' color='violet' />: {props.user.location}
+                        </p>
+                        <p>
+                            <Icon name='user' size='large' color='violet' />: <a href={props.user.html_url}> {props.user.html_url}</a>
+                        </p>
+                        <p>
+                            <Icon name='address card outline' size='large' color='violet' />: {props.user.bio}
                         </p>
                     </div>
-
-
-                    <p> Bio: {props.user.bio}</p>
                 </div>
                 <div className="userFooter">
-                    <p>Followers: {props.user.followers}</p>
-                    <p>Following: {props.user.following}</p>
+                    <p>Followers: <span className="numbers">{props.user.followers}</span> </p>
+                    <p>Following: <span className="numbers">{props.user.following}</span></p>
                 </div>
             </div>
             <h2>{props.user.name}'s followers:</h2>

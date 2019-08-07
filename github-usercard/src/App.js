@@ -39,7 +39,7 @@ class App extends React.Component {
   //https://api.github.com/users/jadeli1720
   fetchUsers = () => {
     axios
-    .get(``)
+    .get(`https://api.github.com/users/jadeli1720`)
     .then(res => {
       this.setState({users: res.data})
     })
@@ -49,7 +49,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1 className="header">User</h1>
+        <h1 className="header">GitHub User</h1>
         <UserCard user={this.state.users}/>
       </div>
     );
