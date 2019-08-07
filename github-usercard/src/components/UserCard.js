@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Icon, Image } from 'semantic-ui-react'
+import FollowersCard from "./FollowersCard"
 
 const UserCard = (props) => {
 

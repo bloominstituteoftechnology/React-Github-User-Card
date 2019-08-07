@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import UserCard from "./components/UserCard"
+import UserGrid from "./components/UserGrid"
 import FollowersCard from "./components/FollowersCard"
 
 import './App.css';
@@ -48,14 +49,19 @@ class App extends Component {
     console.log('this.state.userFollowers', this.state.userFollowers);
     return (
       <div>
-        <UserCard user={this.state.userInfo} />
+
+        <UserGrid
+          user={this.state.userInfo}
+          followers={this.state.userFollowers}
+         />
+        {/* <UserCard user={this.state.userInfo} />
         {this.state.userFollowers.map(follower => {
           return <FollowersCard
           name={follower.login}
           photo={follower.avatar_url}
           link={follower.html_url}
           key={follower.id}/>
-        })}
+        })} */}
       </div>
     );
   }
