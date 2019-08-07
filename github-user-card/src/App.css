@@ -1,29 +1,103 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(#ffffff75, #ffffff00);
 }
 
-@keyframes App-logo-spin {
+.App-header h3 {
+  padding: 1rem 0 2rem 1rem;
+}
+
+.searchbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1rem;
+}
+
+input {
+  padding: 0.4rem;
+  border-radius: 4px;
+  border: 2px solid grey;
+}
+.profile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: linear-gradient(#ffffff00,#ffffff15 );
+}
+
+.profile img {
+  width: 200px;
+  border-radius: 100px;
+  margin: 2rem;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+.stats h5 {
+  display: flex;
+
+  margin: 1rem;
+}
+
+.follower-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.follower {
+  background-image: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%);
+  margin: 1rem;
+  padding: 1rem;
+  width: 150px;
+  height: 150px;
+  border-radius: 200px;
+  animation: spin infinite 20s linear;
+}
+
+.follower img {
+  width: 100px;
+  border-radius: 80px;
+  animation: spin infinite 20s linear reverse;
+}
+
+.follower h3 {
+  animation: spin infinite 20s linear reverse;
+}
+
+.follower a {
+  color: white;
+  animation: spin infinite 20s linear reverse;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
