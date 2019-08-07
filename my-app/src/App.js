@@ -1,26 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios';
+
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(){
+    super();
+
+    this.state = {
+      gitHubData : {},
+      gitHubFollowers : {}
+    }
+  }
+  
+  componentDidMount(){
+    //Fetches general data around the github user
+    axios.get(`https://api.github.com/users/allenben746`)
+      .then(response => {
+        const gitHubData = response.data;
+        this.setState({
+          gitHubData : gitHubData
+        })
+    console.log(this.state.gitHubData)
+      })
+
+      //Fetchs the followers of the github user
+    axios.get(`https://api.github.com/users/allenben746/followers`)
+      .then(response =>{
+        const gitHubFollowers = response.data;
+        this.setState({
+          gitHubFollowers : gitHubFollowers
+        })
+        console.log("Followers ->", this.state.gitHubFollowers)
+      })
+    .catch(err => {
+      console.log(`Error in fetching data: ${err}`);
+    })
+  }
+
+
+  render(){
+    return (
+      <div>My App</div>
+    )
+  }
+
+
+
 }
 
 export default App;
