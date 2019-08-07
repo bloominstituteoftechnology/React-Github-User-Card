@@ -2,13 +2,16 @@ import React from 'react';
 
 const UserCard = (props) => {
 
-    console.log("Properties of UserCard ->", props.data.gitHubData)
+
+    //These two variable just set props to a shorter name, for easier reading
+    const genData = props.data.gitHubData;
+
     return (
         <div className="userCard">
-            <h2>{props.data.gitHubData.login}</h2>
-            <img src={props.data.gitHubData.avatar_url} alt="Profile" />
-            <h3>{props.data.gitHubData.bio}</h3>
-            <h4>{props.data.gitHubData.location}</h4>
+            <h2>{genData.login}</h2>
+            <img src={genData.avatar_url} alt="Profile" />
+            <h3>{genData.bio}</h3>
+            <h4>{genData.location}</h4>
         </div>
     )
 }

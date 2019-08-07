@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import './App.css';
 import UserCard from "./components/UserCard";
+import FollowerCard from './components/FollowerCard';
 
 class App extends React.Component {
   constructor(){
@@ -10,7 +11,7 @@ class App extends React.Component {
 
     this.state = {
       gitHubData : {},
-      gitHubFollowers : {}
+      gitHubFollowers : []
     }
   }
   
@@ -22,29 +23,36 @@ class App extends React.Component {
         this.setState({
           gitHubData : gitHubData
         })
-    console.log(this.state.gitHubData)
       })
 
       //Fetchs the followers of the github user
     axios.get(`https://api.github.com/users/allenben746/followers`)
       .then(response =>{
         const gitHubFollowers = response.data;
+        console.log(response.data)
         this.setState({
           gitHubFollowers : gitHubFollowers
         })
-        console.log("Followers ->", this.state.gitHubFollowers)
+        console.log("Testing ->", gitHubFollowers)
       })
     .catch(err => {
       console.log(`Error in fetching data: ${err}`);
     })
   }
 
-
   render(){
     return (
       <>
       <h1>GitHub Information using React.JS</h1>
-      <UserCard data={this.state}/>
+
+      <UserCard data= {this.state} />
+
+      {this.state.gitHubFollowers.map(follower => {
+        console.log(follower)
+        return(
+          <FollowerCard follower={follower} />
+        )
+      })}
       </>
     )
   }
