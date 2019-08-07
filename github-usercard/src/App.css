@@ -1,17 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 
 body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
-  /* background: 
-  linear-gradient(to bottom, #030106 10%,#06020D 25%, #130320 70%, #1f003b 100%); */
   background: linear-gradient(141deg, #dfe1e3 0%, #701acf 51%, #350b57 75%);
-  /* background-attachment: fixed; */
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
@@ -25,19 +61,28 @@ html {
 
 h1 {
   font-size: 40px;
+  
 }
 
 h2 {
   font-size: 30px;
+  font-weight: bold;
 }
 
 h3 {
   font-size: 28px;
+  font-weight: 600;
+  padding:10px;
 }
 
 h4 {
   font-size: 24px;
-  font-weight: light;
+}
+
+p{
+  font-size: 18px;
+  line-height: 24px;
+  text-align: left;
 }
 
 
@@ -63,12 +108,37 @@ h4 {
 .user-card {
   background: white;
   width: 50%;
-  margin: 0 auto;
+  margin: 0 auto 80px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
   border-radius: 5px;
 }
 
 .userImage {
   width: 430px;
-  padding: 20px 20px 0px;
+  padding: 20px 20px 10px;
+}
+
+.userInfo {
+  margin: 10px 40px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.user-login {
+  font-size: 24px;
+  font-style: italic;
+  padding: 15px;
+  text-align: center;
+}
+
+.user-description {
+  justify-content: space-between;
+}
+
+.userFooter {
+  border-top: 1px lightgray solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 40px;
 }

@@ -6,19 +6,22 @@ const UserCard = props => {
         <div className='container'>
             <div className="user-card">
                 <div className="user-imgContainer">
-                    <img key={props.user.id} src={props.user.avatar_url} alt={props.user.name} className="userImage"/>
+                    <img key={props.user.id} src={props.user.avatar_url} alt={props.user.name} className="userImage" />
                 </div>
-                <div className='user-cardInfo'>
+                <div className='userInfo'>
                     <h3>{props.user.name}</h3>
                     <p className="user-login">{props.user.login}</p>
-                    <p>Location: {props.user.location}</p>
-                    <p>
-                        Profile: <a href={props.user.html_url}> {props.user.html_url}</a>
-                    </p>
+                    <div className="user-description">
+                        <p>Location: {props.user.location}</p>
+                        <p>
+                            Profile: <a href={props.user.html_url}> {props.user.html_url}</a>
+                        </p>
+                    </div>
+
 
                     <p> Bio: {props.user.bio}</p>
                 </div>
-                <div className="user-cardFooter">
+                <div className="userFooter">
                     <p>Followers: {props.user.followers}</p>
                     <p>Following: {props.user.following}</p>
                 </div>
