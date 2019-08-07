@@ -22,10 +22,10 @@ class App extends React.Component {
 
 //Can't fetch data for some reason
   // fetchUsers = () => {
-  //   fetch(``)
+  //   fetch(`https://api.github.com/users/jadeli1720`)
   //   // first promise resolution is used to format the data.
   //   .then(res => {
-  //     return res.json(`https://api.github.com/users/jadeli1720`);
+  //     return res.json();
   //   })
   //   //what gets returned from the previous promise moves into the next promise
   //   .then(user => this.setState({users: user.res.data}))
@@ -36,9 +36,10 @@ class App extends React.Component {
 
   //axios call:
 
+  //https://api.github.com/users/jadeli1720
   fetchUsers = () => {
     axios
-    .get(``)
+    .get(`https://api.github.com/users/jadeli1720`)
     .then(res => {
       this.setState({users: res.data})
     })
