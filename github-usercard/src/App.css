@@ -1,33 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  /* background: 
+  linear-gradient(to bottom, #030106 10%,#06020D 25%, #130320 70%, #1f003b 100%); */
+  background: linear-gradient(141deg, #dfe1e3 0%, #701acf 51%, #350b57 75%);
+  /* background-attachment: fixed; */
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 28px;
+}
+
+
+
 .App {
+  max-width: 960px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  font-weight: bold;
+  padding: 40px 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
 }
 
-.App-link {
-  color: #61dafb;
+.user-card {
+  background: white;
+  width: 50%;
+  margin: 0 auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userImage {
+  width: 430px;
+  padding: 20px 20px 0px;
 }

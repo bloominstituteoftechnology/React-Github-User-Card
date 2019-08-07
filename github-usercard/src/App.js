@@ -49,7 +49,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>User</h1>
+        <h1 className="header">User</h1>
         <UserCard user={this.state.users}/>
       </div>
     );

@@ -26,7 +26,7 @@ class FollowersCard extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="card-container">
                 {this.state.followers.map(follower => {
                     return (
                         <div className="card">
