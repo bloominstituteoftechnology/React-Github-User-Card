@@ -1,3 +1,10 @@
+body {
+  -webkit-animation: bgcolor 20s infinite;
+  animation: bgcolor 10s infinite;
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+}
+
 h1,
 h2,
 h3,
@@ -8,7 +15,6 @@ h6 {
 }
 
 .App {
-  background-color: #282c34;
   color: white;
 }
 
@@ -38,7 +44,7 @@ input {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-image: linear-gradient(#ffffff00,#ffffff15 );
+  background-image: linear-gradient(#ffffff00, #ffffff15);
 }
 
 .profile img {
@@ -55,18 +61,17 @@ input {
 }
 .stats h5 {
   display: flex;
-
   margin: 1rem;
 }
 
 .follower-list {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   flex-wrap: wrap;
 }
 
-.follower {
+.rainbow-wrapper {
   background-image: linear-gradient(
       217deg,
       rgba(255, 0, 0, 0.8),
@@ -74,27 +79,26 @@ input {
     ),
     linear-gradient(127deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%),
     linear-gradient(336deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%);
+  animation: spin infinite 10s linear;
+  border-radius: 150px;
   margin: 1rem;
+}
+
+.follower {
   padding: 1rem;
   width: 150px;
   height: 150px;
-  border-radius: 200px;
-  animation: spin infinite 20s linear;
+  text-align: center;
+  animation: spin infinite 10s linear reverse;
 }
 
 .follower img {
-  width: 100px;
+  width: 80px;
   border-radius: 80px;
-  animation: spin infinite 20s linear reverse;
-}
-
-.follower h3 {
-  animation: spin infinite 20s linear reverse;
 }
 
 .follower a {
   color: white;
-  animation: spin infinite 20s linear reverse;
 }
 
 @keyframes spin {
@@ -103,5 +107,27 @@ input {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes bgcolor {
+  0% {
+    background-color: #45a3e5;
+  }
+
+  30% {
+    background-color: #66bf39;
+  }
+
+  60% {
+    background-color: #eb670f;
+  }
+
+  90% {
+    background-color: #f35;
+  }
+
+  100% {
+    background-color: #864cbf;
   }
 }
