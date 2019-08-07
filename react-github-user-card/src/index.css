@@ -5,7 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  max-width: 1280px;
+  background-image: url("https://carlosbuenosvinos.com/wp-content/uploads/2016/09/octocat_darkwood.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 auto !important;
 }
 
 code {
@@ -14,9 +18,77 @@ code {
 }
 
 .mainWrapper {
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
 }
 .mainContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+}
+.mainUserWrapper {
   padding: 20px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+}
+.mainUserWrapper img {
+  width: 80%;
+  height: auto;
+}
+.followersWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.followers-container h1 {
+  color: white;
+  margin-top: 40px;
+}
+.mainUserMeta {
+}
+.mainUserMeta.container h2 {
+  color: white;
+}
+.mainUserWrapper .col-sm-2 {
+  flex: 0 0 9.666667%;
+  max-width: 9.666667%;
+  border-left: 1px solid grey;
+  height: 60px;
+  justify-content: flex-end;
+}
+.mainUserWrapper .col-sm-2 p {
+  font-size: 0.8rem;
+}
+.mainUserWrapper .col-sm-2 h2 {
+  padding: 0px;
+  margin: 0px;
+  color: white !important;
+}
+
+.row {
+  justify-content: flex-end;
+}
+
+.reposWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.followCard.row {
+  background-color: red;
+  padding: 10px;
+  width: 33.3333%;
+}
+.repoCard.card {
+  margin: 15px 15px 0px 0px;
+}
+.repo-container.container h1 {
+  color: white;
+  margin-top: 40px;
+  margin-bottom: 25px;
 }
