@@ -8,24 +8,24 @@ class App extends React.Component {
     this.state ={
     user:[],
     github:[],
-    userName:'zachtyoung'
+    userName:''
     }
   }
-  componentDidMount() {
-    this.getFollowers();
-    this.getUser();
-  }
+  // componentDidMount() {
+
+  //   this.getUser();
+  // }
   
-  getUser = () => {
-    fetch(`https://api.github.com/users/${this.state.userName}`)
-      .then(response => {
-        return response.json();
-      })
-      .then(github => this.setState({ user: github }))
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  // getUser = () => {
+  //   fetch(`https://api.github.com/users/${this.state.userName}`)
+  //     .then(response => {
+  //       return response.json();
+  //     })
+  //     .then(github => this.setState({ user: github }))
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
   getFollowers = () => {
     fetch(`https://api.github.com/users/${this.state.userName}/followers`)
       .then(response => {
@@ -47,6 +47,7 @@ class App extends React.Component {
   login = e => {
     e.preventDefault();
     this.getFollowers();
+    // this.getUser();
     this.setState({userName:''})
   };
 
@@ -58,13 +59,14 @@ class App extends React.Component {
           <input
             type="text"
             name="userName"
+            placeholder="Enter a username"
             value={this.state.userName}
             onChange={this.handleChange}
           />
           <button>Search</button>
         </form>
       <div className="flex">
-      <div className="git-card"><h2>{this.state.user.login}</h2><img className="git-img" src={this.state.user.avatar_url}/></div>
+      {/* <div className="git-card"><h2>{this.state.user.login}</h2><img className="git-img" src={this.state.user.avatar_url}/></div> */}
     {this.state.github.map(follower => {
           return <div className="git-card"><h2>{follower.login}</h2><img className="git-img" src={follower.avatar_url}/></div>
         })}
