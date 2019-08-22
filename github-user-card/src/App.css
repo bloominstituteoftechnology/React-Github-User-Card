@@ -25,3 +25,22 @@ span{
   text-align: center;
   padding-top: 25px;
 }
+form{
+  display: block;
+  text-align: center;
+  padding-top: 25px;
+  text-align: center;
+}
+input{
+  font-weight: 400;
+  font-size: 22px;
+}
+button{
+  margin-left: 10px;
+  font-size: 24px;
+  padding: 5px 10px;
+border-radius: 5px;
+  background: #0695FF;
+  border: none;
+  color: white;
+}

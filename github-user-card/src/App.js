@@ -1,20 +1,23 @@
 import React from 'react';
 import './App.css';
 
+
 class App extends React.Component {
   constructor(){
     super();
     this.state ={
     user:[],
     github:[],
+    userName:'zachtyoung'
     }
   }
   componentDidMount() {
     this.getFollowers();
     this.getUser();
   }
+  
   getUser = () => {
-    fetch(`https://api.github.com/users/zachtyoung`)
+    fetch(`https://api.github.com/users/${this.state.userName}`)
       .then(response => {
         return response.json();
       })
@@ -24,7 +27,7 @@ class App extends React.Component {
       });
   };
   getFollowers = () => {
-    fetch(`https://api.github.com/users/zachtyoung/followers`)
+    fetch(`https://api.github.com/users/${this.state.userName}/followers`)
       .then(response => {
         return response.json();
       })
@@ -33,11 +36,33 @@ class App extends React.Component {
         console.log(err);
       });
   };
+  
+  handleChange = e => {
+    this.setState({
+        ...this.state,
+        [e.target.name]: e.target.value
+    });
+  };
+
+  login = e => {
+    e.preventDefault();
+    this.getFollowers();
+    this.setState({userName:''})
+  };
 
   render(){
   return (
     <div className="App">
-      <span>My Github</span>
+      <span>My Github Followers</span>
+      <form onSubmit={this.login}>
+          <input
+            type="text"
+            name="userName"
+            value={this.state.userName}
+            onChange={this.handleChange}
+          />
+          <button>Search</button>
+        </form>
       <div className="flex">
       <div className="git-card"><h2>{this.state.user.login}</h2><img className="git-img" src={this.state.user.avatar_url}/></div>
     {this.state.github.map(follower => {
