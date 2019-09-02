@@ -31,3 +31,36 @@
     transform: rotate(360deg);
   }
 }
+
+.row.headerNav {
+  padding: 1rem 0;
+  background: rgba(30, 58, 254, 0.8); 
+  display: flex;
+  justify-content: space-between;
+}
+
+ .headerTitle {
+  color: white;
+  font-weight: bold;
+  font-size: 1.8rem;
+  padding: 0 1rem;
+}
+
+ .card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  justify-items: center;
+}
+
+ .cardObj {
+  margin: 2rem 0;
+}
+
+ .chart {
+  margin-top: 1rem;
+}
+
+ .loader {
+  text-align: center;
+  margin: 1rem 0;
+}
