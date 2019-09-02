@@ -1,7 +1,7 @@
 import React from 'react';
 
  import Header from './components/Header';
-import Card from './components/Card';
+import Card from './components/Card.js';
 import { Container } from 'shards-react';
 
  import "bootstrap/dist/css/bootstrap.min.css";
