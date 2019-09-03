@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 
+
 class App extends React.Component {
   constructor(){
     super();
@@ -27,7 +28,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
-    console.log("runs on every rerencer -DidUpdate", this.state);
+    console.log("runs on every rerender -DidUpdate", this.state);
   }
 
 
@@ -46,17 +47,30 @@ function UserCard(props) {
 
   return(
     <div>
-        <h2> {props.user.login} </h2>
-        <p> {props.user.bio || "no bio"} </p>
-        <p>{props.user.location || "15 Yemen Rd, Yemen"} </p>
-        <p>{props.user.url} </p>
+        
+        <div className="kelly">
+        <img src={props.user.avatar_url} />
+            
+            <h2> {props.user.login} </h2>
+            <p> Bio: {props.user.bio || "no bio"} </p>
+            <p> Location: {props.user.location || "15 Yemen Rd, Yemen"} </p>
+            {/* <p> URL: {props.user.url} </p> */}
+            
+        </div>
+        
 
-          <div>
+          <div className="followers">
+
             {props.followers.map(follower => (
-            <div key={follower.id}>
-            {follower.login}</div>
+            <div key={follower.id}> 
+              <img src={follower.avatar_url} />           
+              <h3>{follower.login}</h3>                          
+            </div>
             ))}
+
+                          
           </div>
+
     </div>
   );    
 }

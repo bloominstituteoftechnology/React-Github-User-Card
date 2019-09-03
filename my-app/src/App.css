@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: url(https://images.unsplash.com/photo-1546146830-2cca9512c68e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2200&q=80) no-repeat center center fixed; 
 }
 
 .App-logo {

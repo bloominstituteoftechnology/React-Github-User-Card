@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: white;
+  
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.followers {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-evenly;
+  padding: 5rem;
+  text-align: center;
+  
+}
+
+
+
+
+img {
+  height: 20rem;
+  object-fit: contain;
+  padding-top: 1rem;
+}
+
+h3{
+  background-color: black;
+  font-size: 1.5rem;
 }
