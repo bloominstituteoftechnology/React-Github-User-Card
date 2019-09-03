@@ -23,7 +23,7 @@ import './App.css';
   }
 
    fetchMyData = () => {
-    fetch('https://api.github.com/users/danbergelt')
+    fetch('https://api.github.com/users/adriancobon')
       .then(res => {
         return res.json()
       })
@@ -35,7 +35,7 @@ import './App.css';
 
 
    fetchData = () => {
-    fetch('https://api.github.com/users/danbergelt/followers')
+    fetch('https://api.github.com/users/adriancobon/followers')
       .then(res => {
         return res.json()
       })
