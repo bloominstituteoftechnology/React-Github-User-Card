@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import UserCard from "./components/UserCard";
-import UserGrid from "./components/UserGrid";
-import FollowersCard from "./components/FollowersCard";
+import UserCard from "./UserCard.js";
+import UserGrid from "./UserGrid";
+import FollowersCard from "./FollowersCard.js";
 
 import "./App.css";
 
@@ -54,8 +54,6 @@ class App extends Component {
           user={this.state.userInfo}
           followers={this.state.userFollowers}
         />
-        <UserCard></UserCard>
-        <FollowersCard></FollowersCard>
       </div>
     );
   }
