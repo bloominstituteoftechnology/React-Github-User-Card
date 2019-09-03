@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 
+// import { Card, Icon, Image } from 'semantic-ui-react';
+import Card from './Card';
+
 class App extends React.Component {
   constructor() {
     super();
@@ -27,25 +30,30 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <UserCard user={this.state.user} followers={this.state.followers} />
+        <Card user={this.state.user} />
+        {this.state.followers.map(follower => ( 
+            <Card user={follower} key={follower.id} />
+          ))}
     </div>
     );
   }
 }
 
-function UserCard(props) {
-  return (
-    <div>
-      <h2>{props.user.login}</h2>
-      <p>{props.user.location}</p>
-      <p>{props.user.url}</p>
-      <div>
-          {props.followers.map(follower => ( 
-            <div key={follower.id}>{follower.login}</div>
-          ))}
-      </div>
-    </div>
-  );
-}
+// followers={this.state.followers}
+
+// function UserInfo(props) {
+//   return (
+//     <div>
+//       <h2>{props.user.login}</h2>
+//       <p>{props.user.location}</p>
+//       <p>{props.user.url}</p>
+//       <div>
+//           {this.state.followers.map(follower => ( 
+//             <Card user={follower} key={follower.id} />
+//           ))}
+//       </div>
+//     </div>
+//   );
+// }
 
 export default App;
