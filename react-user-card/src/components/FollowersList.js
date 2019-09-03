@@ -8,7 +8,9 @@ function FollowersList(props) {
             <List as = 'ul'>
                 {props.followers.map(follower => {
                     return (
+                        
                         <List.Item as='li' key={follower.login}>
+        
                             {follower.login}
                             </List.Item>
                     )
@@ -17,3 +19,5 @@ function FollowersList(props) {
         </div>
     )
 }
+
+export default FollowersList;
