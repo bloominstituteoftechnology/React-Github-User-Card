@@ -16,18 +16,18 @@ class App extends React.Component {
     axios
     .get('https://api.github.com/users/mchrupcala')
      .then(res => 
-      // console.log(JSON.stringify(res.data))
-      this.setState({users: JSON.stringify(res.data)})
+      this.setState({users: res.data})
       )
     .catch(err => console.log(err)); 
   }
+
 
   componentDidUpdate() {
     axios
     .get('https://api.github.com/users/mchrupcala/followers')
      .then(res => 
-      console.log(res.data)
-      // this.setState({followers: res.data})
+      // console.log(res.data)
+      this.setState({followers: res.data})
       )
     .catch(err => console.log(err))
   }
@@ -35,7 +35,10 @@ class App extends React.Component {
 render() {
   return (
     <div className="App">
-      <UserList users={this.state.users}/>
+      <UserList 
+      users={this.state.users}
+      followers={this.state.followers}/>
+      {/* {console.log(this.state.users)} */}
     </div>
   );
 
