@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import './App.css';
+import UserList from './components/UserList';
 
 export default class App extends Component {
 
@@ -22,6 +23,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>Github Users</h1>
+        <UserList users={this.state.users} />
       </div>
     );
   }
