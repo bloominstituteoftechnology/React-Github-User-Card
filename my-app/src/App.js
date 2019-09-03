@@ -1,50 +1,64 @@
 import React, { Component } from "react";
 import axios from "axios";
-import User from "../src/User.js";
+import UserCard from "./components/UserCard";
+import UserGrid from "./components/UserGrid";
+import FollowersCard from "./components/FollowersCard";
 
-export default class App extends Component {
+import "./App.css";
+
+class App extends Component {
   constructor() {
     super();
     this.state = {
-      userData: [],
+      userInfo: [],
       userFollowers: []
     };
   }
 
   componentDidMount() {
-    this.getUsers();
-    this.getFollowers();
+    this.fetchUser();
+    this.fetchFollowers();
   }
 
-  getUsers = () => {
+  fetchUser = () => {
     axios
-      .get("https://api.github.com/user/strimnal32246")
-      .then(res => this.setState({ userData: res.data }))
+      .get("https://api.github.com/users/strimnal32246")
+      .then(response => {
+        console.log("response.data:", response.data);
+        const userInfo = response.data;
+        this.setState({ userInfo });
+      })
       .catch(err => {
-        console.log("error", err);
+        console.log(err);
       });
   };
 
-  getFollowers = () => {
+  fetchFollowers = () => {
     axios
-      .get("https://api.github.com/users/strimnal32246/followers")
-      .then(res => this.setState({ userFollowers: res.data }))
+      .get(`https://api.github.com/users/strimnal32246/followers`)
+      .then(response => {
+        console.log("followers:", response);
+        const userFollowers = response.data;
+        this.setState({ userFollowers });
+      })
       .catch(err => {
-        console.log("error", err);
+        console.log(err);
       });
   };
 
   render() {
+    console.log("this.state.userFollowers", this.state.userFollowers);
     return (
-      <div className="App">
-        <header className="App-header">
-          {console.log(this.state.userFollowers)}
-        </header>
-        <User
-          userData={this.state.userData}
-          userFollowers={this.state.userFollowers}
+      <div>
+        <UserGrid
+          user={this.state.userInfo}
+          followers={this.state.userFollowers}
         />
+        <UserCard></UserCard>
+        <FollowersCard></FollowersCard>
       </div>
     );
   }
 }
+
+export default App;
