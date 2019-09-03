@@ -17,7 +17,7 @@ class App extends React.Component {
       .then(data => this.setState({ user:data }));
     fetch('https://api.github.com/users/ChristopherHernandezW22/followers')
       .then(res => res.json())
-      .then(data => this.setState({ follower:data }));
+      .then(data => this.setState({ followers:data }));
   }
 
   componentDidUpdate () {
