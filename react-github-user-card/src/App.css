@@ -31,3 +31,42 @@
     transform: rotate(360deg);
   }
 }
+
+.avatar-img {
+  width: 200px;
+  height: 200px;
+}
+
+.follower-card {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0.5px 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.follower-deets {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.user-card {
+  width: 80%;
+  margin: 20px auto;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0.5px 1px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user-deets {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: center;
+}
