@@ -7,6 +7,7 @@ class App extends React.Component {
     super();
     this.state = {
       user: {},
+      followers: []
     };
   }
 
@@ -19,9 +20,9 @@ class App extends React.Component {
       .then(data => this.setState({user: data}));
 
       // followers fetch
-      fetch('https://api.github.com/users/followers')
+      fetch('https://api.github.com/users/misskellymore/followers')
       .then(res => res.json())
-      .then(data => this.setState({user: data}));
+      .then(data => this.setState({followers: data}));
 
   }
 
@@ -33,7 +34,7 @@ class App extends React.Component {
   render() {
     return(
       <div className="App">
-        <UserCard user={this.state.user} />
+        <UserCard user={this.state.user} followers={this.state.followers} />
       </div>
     )
   }
@@ -49,6 +50,13 @@ function UserCard(props) {
         <p> {props.user.bio || "no bio"} </p>
         <p>{props.user.location || "15 Yemen Rd, Yemen"} </p>
         <p>{props.user.url} </p>
+
+          <div>
+            {props.followers.map(follower => (
+            <div key={follower.id}>
+            {follower.login}</div>
+            ))}
+          </div>
     </div>
   );    
 }
