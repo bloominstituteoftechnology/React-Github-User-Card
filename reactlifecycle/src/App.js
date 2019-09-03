@@ -1,6 +1,7 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Card from './card';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor(){
@@ -13,21 +14,21 @@ class App extends React.Component {
 
   componentDidMount(){
     console.log('CDM invoked!')
-    fetch('https://api.github.com/users/connorholly11')
-    .then(response => response.json())
-    .then((response) => console.log(response))
-    .then(card => this.setState({users: card}) )
-    
+    axios.get('https://api.github.com/users/connorholly11')
+    // .then(response => response.json())
+    // .then((response) => console.log(response))
+    .then(response => this.setState({users: response.data}) )
   }
 
 
   render() {
-  console.log('render invoked!')
+  console.log(this.state)
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1>Github Card</h1>
+        <h1>HELLO WORLD</h1>
+        {/* <h1>{this.state.name}</h1> */}
+        <Card users={this.state.users}/>
       </header>
     </div>
   );
