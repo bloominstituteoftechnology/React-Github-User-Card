@@ -6,7 +6,7 @@ class App extends React.Component {
     super();
     this.state = {
       user: {},
-      follower: []
+      followers: []
     };
   }
 
@@ -15,7 +15,7 @@ class App extends React.Component {
     fetch('https://api.github.com/users/ChristopherHernandezW22')
       .then(res => res.json())
       .then(data => this.setState({ user:data }));
-    fetch('https://api.github.com/users/followers')
+    fetch('https://api.github.com/users/ChristopherHernandezW22/followers')
       .then(res => res.json())
       .then(data => this.setState({ follower:data }));
   }
