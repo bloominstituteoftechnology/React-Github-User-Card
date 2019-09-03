@@ -8,7 +8,7 @@ export default class App extends Component {
   state = { users: [] }
 
   componentDidMount() {
-    axios.get('https://api.github.com/users/lambertoasghedom')
+    axios.get('https://api.github.com/users')
       .then(res => {
         const users = res.data
         this.setState({ users })
