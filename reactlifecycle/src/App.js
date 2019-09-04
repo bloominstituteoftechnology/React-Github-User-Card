@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Card from './card';
 import axios from 'axios';
+import Followercards from './followercards';
 
 class App extends React.Component {
   constructor(){
@@ -36,6 +37,7 @@ class App extends React.Component {
       <header className="App-header">
         <Card users={this.state.users}
               followers={this.state.followers}/>
+        <Followercards followers={this.state.followers}/>
       </header>
     </div>
   );
