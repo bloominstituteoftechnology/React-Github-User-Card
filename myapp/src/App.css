@@ -1,0 +1,12 @@
+html{
+text-align: center;
+}
+.wrapper1{
+align-content: center;
+margin-left: 500px;
+}
+.wrapper2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
