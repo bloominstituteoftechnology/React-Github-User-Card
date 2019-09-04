@@ -21,7 +21,12 @@ function Card(props){
     console.log('props', props)
     return(
         <div>
-             {props.users.name}
+             <h1>{props.users.name}</h1>
+             <div>
+             {props.followers.map(follower => 
+                <h3 key={follower.id}> {follower.login} </h3>
+             )}
+             </div>
         </div>
     )
 }

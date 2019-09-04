@@ -8,7 +8,8 @@ class App extends React.Component {
     console.log('constructor invoked!')
     super();
     this.state = {
-      users: []
+      users: {},
+      followers: []
     }
   }
 
@@ -18,17 +19,23 @@ class App extends React.Component {
     // .then(response => response.json())
     // .then((response) => console.log(response))
     .then(response => this.setState({users: response.data}) )
+
+    axios.get('https://api.github.com/users/connorholly11/followers')
+    // .then(response => response.json())
+    // .then((response) => console.log(response))
+    .then(response => this.setState({followers: response.data}) )
   }
 
 
+
+
   render() {
-  console.log(this.state)
+  console.log('state', this.state)
   return (
     <div className="App">
       <header className="App-header">
-        <h1>HELLO WORLD</h1>
-        {/* <h1>{this.state.name}</h1> */}
-        <Card users={this.state.users}/>
+        <Card users={this.state.users}
+              followers={this.state.followers}/>
       </header>
     </div>
   );
