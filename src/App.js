@@ -8,6 +8,13 @@ class App extends React.Component {
       user: {},
     };
   }
+
+  componentDidMount() {
+    fetch('https://api.github.com/users/bangstry')
+      .then(res => res.json())
+      .then(data => console.log(data));
+  }
+
   render() {
     return (
       <div className="App">
