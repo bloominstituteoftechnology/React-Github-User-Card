@@ -6,20 +6,44 @@ class App extends React.Component {
     super();
     this.state= {
       user: {},
+      followers: []
     };
   }
 
   componentDidMount() {
+    console.log("First Render (mounting)");
     fetch('https://api.github.com/users/bangstry')
       .then(res => res.json())
-      .then(data => console.log(data));
+      .then(data => this.setState({ user: data }));
+    fetch('https://api.github.com/users/bangstry/followers')
+      .then(res => res.json())
+      .then(data => this.setState({ followers: data }));
+  }
+
+  componentDidUpdate() {
+    console.log(this.state);
   }
 
   render() {
     return (
       <div className="App">
+        <UserCard user={this.state.user} followers={this.state.followers} />
       </div>
     );
   }
+}
+
+function UserCard(props) {
+  return(
+    <div>
+      <h2>{props.user.login}</h2>
+      <p>{props.user.location}</p>
+      <p>{props.user.url}</p>
+      <div>
+        {props.followers.map(follower => (
+           <div key={follower.id}>{follower.login}</div>
+        ))}
+    </div>
+  );
 }
 export default App;
