@@ -37,7 +37,10 @@ class App extends React.Component {
       <header className="App-header">
         <Card users={this.state.users}
               followers={this.state.followers}/>
-        <Followercards followers={this.state.followers}/>
+
+        {this.state.followers.map(follower => {
+          return <Followercards login={follower.login}/>
+        })}
       </header>
     </div>
   );

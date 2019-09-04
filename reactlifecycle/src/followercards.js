@@ -11,9 +11,9 @@ return(
                     <img key={follower.id} src={follower.avatar_url}></img>                
                 )} wrapped ui={false} /> */}
     <Card.Content>
-      {props.followers.map(follower => 
-                    <h3 key={follower.id}> {follower.login} </h3>,
-                 )}
+      
+                   {props.login}
+                 
       <Card.Meta>
         <span className='date'>Joined in 2015</span>
       </Card.Meta>
