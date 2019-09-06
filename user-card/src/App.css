@@ -1,0 +1,8 @@
+.App {
+  max-width: 968px;
+  margin: 70px auto;
+}
+
+.MuiTypography-root.MuiCardHeader-title.MuiTypography-h5.MuiTypography-displayBlock {
+  font-weight: 600;
+}

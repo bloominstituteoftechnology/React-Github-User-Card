@@ -43,7 +43,6 @@ class CardList extends React.Component {
                                         arr.push(secondOrderList)
                                         arr.push(thirdOrderList)
                                         this.setState({ users: arr })
-                                        console.log(this.state.users)
                                     })
                                     .catch( err => console.log("Third fetch error: ", err))
                             })
@@ -59,10 +58,15 @@ class CardList extends React.Component {
             return (
                 <div className="App">
                     {                       
-                        this.state.users.map( u => {
-                            return (
-                                <UserCard user={u} />
-                            )                        
+                        this.state.users.map( u => {  
+                            console.log('u: ', u)                          
+                            u.map( a => {
+                                console.log('a: ', a)                          
+                                return (
+                                    <UserCard user={a} />
+                                )
+
+                            })                                                    
                         })
                     }
                 </div>
