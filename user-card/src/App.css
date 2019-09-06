@@ -1,0 +1,12 @@
+.App {
+  max-width: 1200px;
+  margin: 70px auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.MuiTypography-root.MuiCardHeader-title.MuiTypography-h5.MuiTypography-displayBlock {
+  font-weight: 600;
+}
