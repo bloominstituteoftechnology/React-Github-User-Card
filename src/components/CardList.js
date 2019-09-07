@@ -1,6 +1,24 @@
 import React from 'react';
 import UserCard from './UserCard';
+import { makeStyles } from '@material-ui/core/styles';
+import CircularProgress from '@material-ui/core/CircularProgress';
 let arr = []
+
+const useStyles = makeStyles(theme => ({
+    progress: {
+      margin: theme.spacing(2),
+    },
+}));
+
+function CircularIndeterminate() {
+    const classes = useStyles();
+  
+    return (
+      <div className="loader">
+        <CircularProgress className={classes.progress} color="secondary" />
+      </div>
+    );
+}
 
 class CardList extends React.Component {
     
@@ -9,6 +27,14 @@ class CardList extends React.Component {
         secondOrderList: [],
         users: [],
     }
+    
+    // FilterProfiles = () => {
+    //     this.state.users.filter((item, index) => this.state.users.indexOf(item) === index).map( u => {
+    //         return (
+    //             <UserCard user={u} />
+    //         )
+    //     })
+    // }
 
     componentDidMount() {
         fetch('https://api.github.com/users/benjidoyle/followers', {
@@ -19,38 +45,41 @@ class CardList extends React.Component {
         })
             .then( res => res.json() )
             .then( firstOrderList => {                
-                this.setState({ firstOrderList: firstOrderList })
-                firstOrderList.map( u => {
-                    fetch(`https://api.github.com/users/${u.login}/followers`, {
+                firstOrderList.forEach( obj => {
+                    arr.push(obj);                    
+                })
+                firstOrderList.map( obj => {
+                    fetch(`https://api.github.com/users/${obj.login}/followers`, {
                         method: 'GET',
                         headers: {
                             'User-Agent': 'request'
                         }
                     })
-                        .then( res => res.json() )
+                        .then( res => res.json())
                         .then( secondOrderList => {
-                            this.setState({ secondOrderList: secondOrderList })
-                            secondOrderList.map( u => {
-                                fetch(`https://api.github.com/users/${u.login}/followers`, {
+                            secondOrderList.forEach( obj => {
+                                arr.push(obj)
+                            })
+                            secondOrderList.map( obj => {
+                                fetch(`https://api.github.com/users/${obj.login}/followers`, {
                                     method: 'GET',
                                     headers: {
-                                        'User-Agent': 'request'
+                                       'User-Agent': 'request'
                                     }
                                 })
-                                    .then( res => res.json() )
-                                    .then( thirdOrderList => {
-                                        arr.push(firstOrderList)
-                                        arr.push(secondOrderList)
-                                        arr.push(thirdOrderList)
-                                        this.setState({ users: arr })
-                                    })
-                                    .catch( err => console.log("Third fetch error: ", err))
+                                .then( res => res.json())
+                                .then( thirdOrderList => {
+                                    thirdOrderList.forEach( obj => {
+                                        arr.push(obj)
+                                    })                                
+                                })
+                                .then( this.setState({ users: arr }))
                             })
                         })
-                        .catch( err => console.log("Second fetch error: ", err))
+                        .catch( err => console.log('Second fetch error: ', err))
                 })
             })
-            .catch( err => console.log("First fetch error: ", err));
+            .catch( err => console.log('First fetch error: ', err));
     }
  
     render() {
@@ -58,15 +87,12 @@ class CardList extends React.Component {
             return (
                 <div className="App">
                     {                       
-                        this.state.users.map( u => {  
-                            console.log('u: ', u)                          
-                            u.map( a => {
-                                console.log('a: ', a)                          
-                                return (
-                                    <UserCard user={a} />
-                                )
-
-                            })                                                    
+                        this.state.users.reduce((unique, item) => 
+                            unique.includes(item) ? unique : [...unique, item], []
+                        ).map( u => {
+                            return (
+                                <UserCard user={u} />
+                            )
                         })
                     }
                 </div>
@@ -75,7 +101,7 @@ class CardList extends React.Component {
         else {
             return (
                 <div className="App">
-                    <div>Loading...</div>
+                    <CircularIndeterminate />
                 </div>
             )
         }

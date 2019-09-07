@@ -10,3 +10,7 @@
 .MuiTypography-root.MuiCardHeader-title.MuiTypography-h5.MuiTypography-displayBlock {
   font-weight: 600;
 }
+
+.loader {
+  margin: 70px auto;
+}
