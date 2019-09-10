@@ -1,3 +1,28 @@
+# Jashele Tillman - GitHub User Card Using React
+
+
+<br />
+
+
+<a href="https://www.linkedin.com/in/jashelet/" target=_blank>
+<img src="images/linkedin.png" alt="Contact Jashele on LinkedIn"> </a><a href="https://twitter.com/jasheloper" target=_blank>
+<img src="images/twitter.png" alt="Contact Jashele on Twitter"></a><a href="mailto:jtmediaaccts@gmail.com">
+<img src="images/email.png" alt="Contact Jashele via Email"></a>
+
+<br />
+
+**My Portfolio:** <a href="http://jasheletillman.me/" target=_blank>JasheleTillman.Me</a>
+<br />
+**My Blog:** <a href="https://jashele.blog/" target=_blank>Jashele.Blog</a>
+
+<br />
+<br />
+<br />
+
+
+
+
+
 # Module Project: Component Lifecycle Methods - React Github User Card
 
 This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by recreating the Github User Card project, but as a React application this time.
