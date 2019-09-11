@@ -1,0 +1,25 @@
+.user-card_container {
+    height: 400px;
+    width: 600px;
+    box-shadow: 6px 6px 6px 4px gray;
+    display: flex;
+    flex-direction: column;
+    font-size: 2.4rem;
+}
+p:first-of-type {
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+p {
+    margin: 10px;
+    text-align: center;
+}
+.user-card_avatar {
+    height: 80px;
+    width: 80px;
+    border: 1px solid red;
+    position: absolute;
+}
+.user-card_name {
+    font-size: 3.8rem;
+}

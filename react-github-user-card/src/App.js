@@ -1,10 +1,12 @@
 import React from 'react';
+
+import UserCard from './UserCard';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      Hello World!
+      <UserCard />
     </div>
   );
 }
