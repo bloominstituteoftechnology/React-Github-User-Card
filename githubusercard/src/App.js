@@ -1,6 +1,6 @@
 import React from 'react';
 import users from './components/users';
-import userCard, {user} from './components/usercard';
+import UserCard, {user} from './components/usercard';
 import axios from 'axios';
 import './App.css';
 
