@@ -1,6 +1,7 @@
 import React from 'react';
 import users from './components/users';
-import userCard from './components/usercard';
+import userCard, {user} from './components/usercard';
+import axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
@@ -8,22 +9,19 @@ class App extends React.Component {
     console.log("Constructor Invoked");
     super();
     this.state = {
-      users: []
+      user: []
     };
   }
   componentDidMount() {
     console.log("CDM Invoked!");
-    this.setState({ users: users })
+    this.setState({ user: userCard })
   }
 
   render() {
     return (
       <div className="App">
         <h1>Welcome to Github User Card!</h1>
-        </div>{this.state.users.map(user => (
-          <div key={user.id}>
-            {user.first_name + user.email}
-        ))}
+       
       </div>
     ); 
   }
