@@ -13,16 +13,23 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
-    console.log("CDM Invoked!");
-    this.setState({ user: userCard })
+    axios.get(`https://api.github.com/users/shgradyy`)
+      .then(res => {
+        const user = res.data;
+        this.setState({ user });
+      })
   }
-
   render() {
     return (
       <div className="App">
         <h1>Welcome to Github User Card!</h1>
-       
-      </div>
+        <UserCard {this.state.users.map(user => (
+          <div key={user.name}>
+          {user.name + user.email}
+          </div>
+        ))
+        
+      <div>
     ); 
   }
 }
