@@ -43,28 +43,31 @@ class User extends React.Component{
           // userFollowers: response.data[n].login,
           followerArray: this.state.followerArray.concat(response.data[n].login)
         })
+        
       })
       .catch(error => {
         console.log('Error', error)
       })
     }
-
-    // this.state.followerArray.forEach(item => {
-    //   axios
-    //   .get(`https://api.github.com/users/${item}`)
-    //   .then(response => {
-    //     console.log('RESPONSE', response)
-    //     this.setState({
-    //       followerInfo: response.data
-    //     })
-    //   })
-    // })
+    this.state.followerArray.forEach(item => {
+      axios
+      .get(`https://api.github.com/users/${item}`)
+      
+      .then(response => {
+        console.log('RESPONSE', response)
+        this.setState({
+          followerInfo: response.data.name
+        })
+      })
+    })
+    
   }
   
 
   // SEND USERINFO TO PROFILE CARDS AS PROPS
   render() {
     console.log('followerArray', this.state.followerArray)
+    // console.log('RESPONSE', this.state.followerInfo)
     return(
       <div>
         <ProfileCards 
