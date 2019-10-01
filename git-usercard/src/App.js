@@ -10,7 +10,7 @@ class App extends React.Component {
     this.state = {
       users:[],
       followers:[],
-      followerData:[]
+      followerData:{}
   }
   }
   
@@ -19,7 +19,7 @@ class App extends React.Component {
   componentDidMount() {
     axios.get(`https://api.github.com/users/kmallen91`)
     .then (res => {
-      console.log(res.data.followers_url)
+      console.log(res.data)
       this.setState ({
         users:res.data
       })
