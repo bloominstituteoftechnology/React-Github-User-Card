@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState, initialState } from "react";
 import { Card, Icon, Image, Grid, List } from "semantic-ui-react";
 import FollowersCard from "./FollowersCard";
 
 const UserGrid = props => {
   console.log("usergrid props", props);
 
+  const [follower, setFollower] = useState(initialState);
   return (
     <Grid>
       <Grid.Column width={4}>
@@ -19,19 +20,16 @@ const UserGrid = props => {
         <p>{props.user.bio}</p>
       </Grid.Column>
       <Grid.Column width={3}>
-        <List bulleted>
-
-          {props.followers.map(follower => (
-            <List.Item
-              key={follower.id}
-              target="_blank"
-              href={`http://www.github.com/${follower.login}`}
-            >
-              <br></br>
-              {follower.login}
-            </List.Item>
-          ))}
-        </List>
+        <h1>Follower</h1>
+        <List.Item
+          key={follower.id}
+          target="_blank"
+          href={`http://www.github.com/${follower.login}`}
+        >
+          <br></br>
+          {follower.login}
+        </List.Item>
+        )}
       </Grid.Column>
     </Grid>
   );
