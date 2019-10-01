@@ -33,6 +33,7 @@ class App extends React.Component {
     console.log('rendering...')
     return (
       <div className="App">
+        <h1>GitHub User Profiles</h1>
         <UserCard user={this.state.user} />
         <Followers followerData={this.state.followers} />
       </div>
