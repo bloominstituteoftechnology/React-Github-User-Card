@@ -8,7 +8,7 @@ const UserGrid = props => {
   return (
     <Grid>
       <Grid.Column width={4}>
-        <Image width="300px" src={props.user.avatar_url} />
+        <Image width="500px" src={props.user.avatar_url} />
       </Grid.Column>
       <Grid.Column width={9}>
         <h1>{props.user.name}</h1>
@@ -27,6 +27,7 @@ const UserGrid = props => {
               target="_blank"
               href={`http://www.github.com/${follower.login}`}
             >
+              <br></br>
               {follower.login}
             </List.Item>
           ))}

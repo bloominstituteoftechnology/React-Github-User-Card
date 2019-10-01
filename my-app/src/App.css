@@ -43,6 +43,10 @@ body {
   margin: 30px;
 }
 
-.userFollowers {
-  margin: 20px;
+div {
+  border: 1px solid deeppink;
+}
+img{
+  width: 500px;
+  height:400px;
 }
