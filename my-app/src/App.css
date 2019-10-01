@@ -39,4 +39,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-size: 1.5rem;
+  margin: 30px;
 }
+
