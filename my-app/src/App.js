@@ -52,7 +52,7 @@ class App extends Component {
       <div>
         <UserGrid
           user={this.state.userInfo}
-          followers={this.state.userFollowers}
+          followers={this.state.u}
         />
       </div>
     );
