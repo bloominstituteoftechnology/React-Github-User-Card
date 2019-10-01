@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "axios": "^0.19.0",
+    "material-ui-react": "^0.0.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1",
-    "react-scripts": "3.1.2"
+    "react-scripts": "3.1.2",
+    "semantic-ui-react": "^0.88.1"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -37,16 +37,17 @@ componentDidUpdate(){
   console.log('THIS update State:', this.state)
 }
 
- render() {
-  console.log('This.state.user:', this.state.user)
-  console.log('This.state.followers:', this.state.followers)
-  
-  return (
-    <div className="App">
-      <UserCard user={this.state.user} followers={this.state.followers} />
-    </div>
-  );
-}
-}
 
-export default App;
+  render() {
+    console.log('This.state.user:', this.state.user)
+    console.log('This.state.followers:', this.state.followers)
+    
+    return (
+      <div className="App">
+        <UserCard user={this.state.user} followers={this.state.followers} />
+      </div>
+    );
+  }
+  }
+  
+  export default App;
