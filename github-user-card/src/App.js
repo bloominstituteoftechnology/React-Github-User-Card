@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from "axios";
+import LambdaLogo from "./images/lambdalogo.png";
+import GithubLogo from "./images/githublogo.png";
+import "./styles.css";
 
-function App() {
+class App extends React.Component {
+constructor(){
+  super();
+  this.state = {
+    userData: [],
+    primaryUser: []
+  };
+}
+
+//functions here
+
+
+render(){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class="container">
+      <div class="header">
+        <img src={LambdaLogo} alt="Lambda Logo"/>
+        <p>❤️'s</p>
+        <img src={GithubLogo} alt="GitHub Logo" />
+      </div>
+      <div class="cards"></div>
     </div>
   );
+}
+ 
 }
 
 export default App;

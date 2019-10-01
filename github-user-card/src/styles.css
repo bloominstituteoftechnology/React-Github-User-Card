@@ -1,0 +1,8 @@
+.header{
+    display: flex;
+
+}
+
+.header img{
+    height: 3rem;
+}
