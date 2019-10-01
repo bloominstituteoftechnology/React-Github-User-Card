@@ -20,7 +20,7 @@ const UserGrid = props => {
       </Grid.Column>
       <Grid.Column width={3}>
         <List bulleted>
-          <h1>Followers</h1>
+
           {props.followers.map(follower => (
             <List.Item
               key={follower.id}
