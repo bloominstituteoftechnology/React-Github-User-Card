@@ -4,6 +4,7 @@ import LambdaLogo from "./images/lambdalogo.png";
 import GithubLogo from "./images/githublogo.png";
 import "./styles.css";
 import UserCard from "./Components/UserCard";
+import FollowerCards from "./Components/FollowerCards";
 
 class App extends React.Component {
   constructor() {
@@ -18,7 +19,7 @@ class App extends React.Component {
     axios
       .get("https://api.github.com/users/arizephyr123")
       .then(res => {
-        console.log(res.data);
+        //console.log(res.data);
         this.setState({
           primaryUserData: res.data
         });
@@ -30,7 +31,7 @@ class App extends React.Component {
     axios
       .get("https://api.github.com/users/arizephyr123/followers")
       .then(res => {
-        console.log("", res.data);
+        //console.log("followers data", res.data);
         this.setState({
           userData: res.data
         });
@@ -51,9 +52,16 @@ class App extends React.Component {
           <img src={GithubLogo} alt="GitHub Logo" />
         </div>
         <div className="cards">
-          <UserCard primaryUserData={this.state.primaryUserData}/>
-          {/* this.state.userData.map(each =>{<UserCard userData={each.userData} />}
-          {}) */}
+          <UserCard primaryUserData={this.state.primaryUserData} />
+          {this.state.userData.map(each => {
+            console.log(each);
+            return (
+              <FollowerCards
+                key={each.id}
+                userData={each}
+              />
+            );
+          })}
         </div>
       </div>
     );
