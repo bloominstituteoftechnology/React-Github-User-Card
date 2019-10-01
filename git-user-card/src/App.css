@@ -1,0 +1,82 @@
+.App {
+  width: 100%;
+  background-color: lightgrey;
+  box-sizing: border-box;
+}
+
+.appContainer {
+  width: 100%;
+}
+
+.searchForm {
+  width: 100%;
+  text-align: center;
+  height: 80px;
+}
+
+.searchForm input {
+  height: 50%;
+  width: 200px;
+  margin: 2%;
+  border: 1px black solid;
+  border-radius: 5px;
+  font-size: 15px;
+  color: black;
+}
+
+.searchForm button {
+  height: 50%;
+  width: 80px;
+  padding: 5px;
+  border-radius: 2px;
+  border: 1px black solid;
+  background-color: lightblue;
+}
+
+.userCard {
+  width: 60%;
+  margin: 5% 20%;
+  border: 1px gray solid;
+  border-radius: 5px;
+}
+
+.userImage {
+  width: 100%;
+}
+
+.userInfo {
+  width: 60%;
+  margin: 0 20%;
+  text-align: center;
+}
+
+.userName {
+  margin-bottom: 10px;
+}
+
+.userBio {
+  margin: 0;
+}
+
+.followersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.followerCard {
+  width: 30%;
+  margin: 5% 9%;
+  background-color: grey;
+  border: 1px black solid;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.followerImage {
+  width: 100%;
+}
+
+h2 {
+  text-align: center;
+}
