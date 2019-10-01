@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios'
+import UserCard from './UserCard'
 import './App.css';
 
 class App extends React.Component {
@@ -7,22 +8,22 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      user: {},
+      user: 'juarezfrench',
       followers: []
     }
   }
 
   componentDidMount(){
     axios
-    .get('https://api.github.com/users/juarezfrench')
+    .get(`https://api.github.com/users/${this.state.user}`)
     // .then(res => console.log(res.data))
    
     .then(res =>this.setState({user: res.data}))
     
-    .catch(err => console.err("Something is wrong with user data. Take a look here:", err));
+    .catch(err => console.error("Something is wrong with user data. Take a look here:", err));
 
   axios
-  .get('https://api.github.com/users/juarezfrench/followers')
+  .get(`https://api.github.com/users/${this.state.user}/followers`)
   // .then(res => console.log(res.data))
   .then(res =>this.setState({followers: res.data}))
   // console.log('App.js -> %cres.data:', 'color: magenta', res.data)
@@ -42,7 +43,7 @@ componentDidUpdate(){
   
   return (
     <div className="App">
-      <div user={this.state.user} followers={this.state.followers} />
+      <UserCard user={this.state.user} followers={this.state.followers} />
     </div>
   );
 }
