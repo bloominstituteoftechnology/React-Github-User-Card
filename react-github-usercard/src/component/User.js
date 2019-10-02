@@ -8,7 +8,7 @@ import React from "react";
   render() {
       console.log("props from app", this.props.user)
     return (<div className="user">
-        <img className="image" src={this.props.user.avatar_url}></img>
+        <img className="user-image" src={this.props.user.avatar_url}></img>
         <p>Name: {this.props.user.name}</p>
         <p>Bio: {this.props.user.bio}</p>
         <p>Location: {this.props.user.location}</p>

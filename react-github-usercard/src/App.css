@@ -1,29 +1,114 @@
 .App {
   text-align: center;
   display: flex;
+  background-color: #000;
+  font-family: "Indie Flower", cursive;
 }
 
 .user {
-  width:30vw;
-  height:100vh;
+  width: 30vw;
+  height: 100vh;
+  border-right: 1px solid gray;
+  background-color: white;
+  color: black;
+  font-weight: bold;
 }
 
 .followers {
-  margin: 1em;
-  padding: 1em;
-  
+  width: 1500px;
+  text-align: center;
+  margin: 20vh;
+  /* height: 100vh; */
+  background-color: #000;
+  overflow: hidden;
+}
+
+.followers > div > a {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5em;
+  background: white;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+.followers > div > a:active {
+  top: 1px;
+}
+.followers > div > a:focus {
+  background: #000;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  background-color: #000;
+  font-weight: bold;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 60vw;
+  height: 30vh;
+  margin-right: 50px;
+  border-radius: 10px;
+  background: white;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .following {
+  display: flex;
   margin: 1em;
   padding: 1em;
+  background-color: #000;
 }
 
 .image {
   width: 20vw;
   height: 30vh;
+  margin: 0.5em;
+  padding: 0.5em;
+  border-radius: 1em;
 }
 
+.user-image {
+  width: 20vw;
+  height: 30vh;
+  margin-top: 20vh;
+  padding: 0.5em;
+  border-radius: 1em;
+}
+
+.header {
+  color: white;
+}
 
 .App-logo {
   height: 40vmin;
