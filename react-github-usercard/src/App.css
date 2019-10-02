@@ -1,6 +1,28 @@
 .App {
   text-align: center;
+  display: flex;
 }
+
+.user {
+  width:30vw;
+  height:100vh;
+}
+
+.followers {
+  width: 70vw;
+  text-align: center;
+  
+}
+
+.following {
+  display: flex;
+}
+
+.image {
+  width: 20vw;
+  height: 30vh;
+}
+
 
 .App-logo {
   height: 40vmin;

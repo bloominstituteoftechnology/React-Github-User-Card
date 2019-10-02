@@ -1,23 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import UserList from './component/UserList';
-
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import User from "./component/User";
+import axios from "axios";
+import Followers from "./component/Followers";
+import {Route} from "react-router-dom";
+// import  * from "./component/styles";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      user: {},
+      followers: [],
+    };
+  }
 
-    }
+  componentDidMount() {
+    this.gitHubUser = axios.get("https://api.github.com/users/awuorm");
+    this.gitHubFollowers = axios.get("https://api.github.com/users/awuorm/followers");
+    Promise.all([this.gitHubUser,this.gitHubFollowers])
+      .then(([userRes,followersRes]) => {
+        this.setState({
+          user: { ...userRes.data },
+          followers: [...followersRes.data]
+        });
+        console.log("response from server", this.state.followers);
+      })
+      .catch(err => console.log("error from server", err.message));
   }
   render() {
-    return(
+    return (
       <div className="App">
-      Hello from App!
-      <UserList/>
-      
+       <Route path="/" render={(props) => <User {...props} user={this.state.user} /> }/>
+       <Route path="/followers" render={(props) => <Followers {...props} followers={this.state.followers}/>}/>
+        
       </div>
-    )
+    );
   }
-} 
+}
