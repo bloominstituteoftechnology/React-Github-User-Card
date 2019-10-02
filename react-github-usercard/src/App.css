@@ -9,13 +9,14 @@
 }
 
 .followers {
-  width: 70vw;
-  text-align: center;
+  margin: 1em;
+  padding: 1em;
   
 }
 
 .following {
-  display: flex;
+  margin: 1em;
+  padding: 1em;
 }
 
 .image {
