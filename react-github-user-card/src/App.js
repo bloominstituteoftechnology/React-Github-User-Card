@@ -74,7 +74,7 @@ class App extends React.Component {
               <div>Username: {this.state.myData.login}</div>
               <div>Location: {this.state.myData.location}</div>
               <div>Followers: {this.state.myData.followers}</div>
-              <div>{this.state.myData.html_url}</div>
+              <a href={this.state.myData.html_url}>{this.state.myData.html_url}</a>
             </div>
 
           {this.state.followers.map(follower => (
@@ -85,7 +85,7 @@ class App extends React.Component {
               <div>Username: {follower.login}</div>
               <div>Location: {follower.location}</div>
               <div>Followers: {follower.followers}</div>
-              <div>{follower.html_url}</div>
+              <a href={follower.html_url}>{follower.html_url}</a>
             </div>
 
           ))} 

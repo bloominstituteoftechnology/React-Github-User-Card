@@ -1,12 +1,9 @@
-.App {
-  text-align: center;
-  
-}
 
 h1{
   color: #ffffff;
   font-size: 200px;
   text-shadow: 4px 2px black;
+  text-align: center; 
 }
 
 .follower{
@@ -22,14 +19,16 @@ h1{
   border-radius: 30px;
   margin: 20px;
   padding: 30px;
-  background-color: #FF00FF;
+  background-color: #F0FFF0;
   width: 300px;
 }
 
-.user div{
+.user div, a {
   text-align: left;
-  padding-top: 10px;
+  padding-bottom: 15px;
 }
+
+
 
 .user img{
   border-radius: 50%;
