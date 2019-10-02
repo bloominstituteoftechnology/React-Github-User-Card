@@ -36,10 +36,7 @@ class App extends React.Component {
 
   usersGet = () => {
     axios
-      .get(`https://api.github.com/users/${this.state.userName}`)
-      // .get(`https://api.github.com/users/a-soren`)
-
-      // .then(res => res.json())
+      .get('https://api.github.com/users/a-soren')
       .then(res => {
         console.log(res);
         this.setState({ user: res.data });
@@ -51,7 +48,7 @@ class App extends React.Component {
 
   usersFollowers = () => {
     axios
-    .get(`https://api.github.com/users/${this.state.userName}/followers`)
+    .get(`https://api.github.com/users/a-soren/followers`)
     .then(res => {  console.log(res.data);
       this.setState({ followers: res.data });
     });
