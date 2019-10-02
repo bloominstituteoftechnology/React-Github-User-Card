@@ -1,4 +1,5 @@
 import React from "react";
+import {NavLink} from "react-router-dom";
 
  class User extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ import React from "react";
         <p>Name: {this.props.user.name}</p>
         <p>Bio: {this.props.user.bio}</p>
         <p>Location: {this.props.user.location}</p>
+        <NavLink className="see-followers" to="/followers">See my followers</NavLink>
         </div>)
   }
 }

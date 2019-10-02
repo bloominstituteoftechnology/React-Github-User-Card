@@ -17,9 +17,9 @@ export default class App extends React.Component {
   }
 
   componentDidMount() {
-    this.gitHubUser = axios.get("https://api.github.com/users/awuorm");
-    this.gitHubFollowers = axios.get("https://api.github.com/users/awuorm/followers");
-    Promise.all([this.gitHubUser,this.gitHubFollowers])
+     const gitHubUser = axios.get("https://api.github.com/users/awuorm");
+    const gitHubFollowers = axios.get("https://api.github.com/users/awuorm/followers");
+    Promise.all([gitHubUser,gitHubFollowers])
       .then(([userRes,followersRes]) => {
         this.setState({
           user: { ...userRes.data },
