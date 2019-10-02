@@ -1,0 +1,45 @@
+
+
+.App {
+  text-align: center;
+  background-image: url('./background-2426328.jpg');
+  margin-top: -21px;
+  color: white;
+
+  a{
+    text-decoration: none;
+    color: rgb(95, 95, 95);
+  }
+}
+
+.follower-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  img{
+    width: 350px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  } 
+}
+
+.cards {
+  border:1px solid rgba(0, 0, 0, 0.9);
+  background: rgba(22, 22, 22, .8);
+  margin: 20px;
+  border-radius: 10px;
+}
+
+
+.profile-container{
+  border:1px solid rgba(0, 0, 0, 0.9);
+  background: rgba(22, 22, 22, .8);
+  border-radius: 10px;
+  width: 375px;
+  margin: 0 auto;
+  img{
+    width: 375px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+}
