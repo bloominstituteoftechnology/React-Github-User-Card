@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import github from "../imgs/github.png"
 
 class Followers extends React.Component {
   constructor(props) {
@@ -8,7 +9,7 @@ class Followers extends React.Component {
   render() {
     return (
       <div className="followers">
-          <h1 className="header">Mildred's awesome followers ❤️</h1>
+          <h1 className="header">Mildred's awesome <img className="git-logo" src={github}/> followers ❤️</h1>
         <div>
           <a href="#slide-0">0</a>
           <a href="#slide-1">1</a>
