@@ -5,6 +5,13 @@ class App extends React.Component {
     constructor() {
         super();
 
+        this.state = {
+            //set initial default state values
+            name: "Amber Pittman",
+            username: "Amber-Pittman",
+            location: " || 'Not Available' ",
+        }
+
     }
 
     
