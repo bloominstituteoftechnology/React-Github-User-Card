@@ -1,19 +1,22 @@
 import './App.css';
 import React, { Component } from 'react'
 import axios from 'axios'
+import Card from './components/Card'
+import Followers from './components/Followers'
 
 export default class App extends Component {
 
   constructor(){
     super();
     this.state = {
-      user: []
+      user: [],
+      followers: []
     }
   }
 
   componentDidMount(){
     this.fetchUserData() 
-    // console.log(this.state)
+    this.fetchFollowers()
   }
 
 
@@ -29,10 +32,23 @@ fetchUserData = () => {
     })
 } 
 
+
+fetchFollowers = () => {
+  axios.get('https://api.github.com/users/bobbidigi/followers')
+      .then(res => {
+      console.log(res)
+      this.setState({followers: res.data})   
+    })
+    .catch(error => {
+      console.log(error)
+    })
+} 
+
   render() {
     return (
       <div>
-        {this.state.user.name}
+        <Card user={this.state.user}/>
+        <Followers followers={this.state.followers}/>
       </div>
     )
   }
