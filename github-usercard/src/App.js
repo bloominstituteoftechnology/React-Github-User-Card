@@ -16,8 +16,7 @@ class App extends React.Component {
           <option value="bio">Bio</option>
           <option value="followers">Followers</option>
         </select>
-      
-      <UserCard />
+       <UserCard />
        
         
         </div>

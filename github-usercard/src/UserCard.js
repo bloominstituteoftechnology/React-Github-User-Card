@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import axios from 'axios';
-import UserList from './UserLIst';
+import UserName from './UserName';
 
 class UserCard extends React.Component {
     constructor() {
@@ -49,15 +49,8 @@ render() {
     return(
         <>
         {this.state.followers.map((item, index) => (
-            <UserList item={item} key={index} />
+            <UserName item={item} key={index} />
         ))} 
-        {/* <div>
-            {this.state.map((id, index) => (
-                <ul>
-                    key={index} id={id} />
-                </ul>
-            ))}
-        </div> */}
         </>
     )
  }
