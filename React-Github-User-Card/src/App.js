@@ -1,6 +1,7 @@
 import React from "react";
 // import ReactDOM from "react-dom";
 import axios from "axios";
+import Followers from "./Components/Followers";
 
 class App extends React.Component {
     constructor() {
@@ -22,15 +23,15 @@ class App extends React.Component {
   
     fetchUserInfo = () => {
         axios.get(`https://api.github.com/users/Amber-Pittman`) // gets my personal card information
-        .then(result => {
+        .then(response => {
           
           this.setState({
-              avatar: result.data.avatar_url,
-              name: result.data.name,
-              followers: result.data.followers,
-              following: result.data.following,
-              location: result.data.location,
-              bio: result.data.bio
+              avatar: response.data.avatar_url,
+              name: response.data.name,
+              followers: response.data.followers,
+              following: response.data.following,
+              location: response.data.location,
+              bio: response.data.bio
           })
         })
         .catch(error => {
@@ -42,8 +43,11 @@ class App extends React.Component {
     render() {
         return (
             <div class="card">
+              <h1>GitHub Profile Card</h1>
               <div class="card-info">
-                <img src={this.state.avatar} data-pin-nopin="true" alt="user's github profile image" />
+                <img src={this.state.avatar} 
+                     data-pin-nopin="true" 
+                     alt="user's github profile avatar" />
                   <h3 class="name">{this.state.name}</h3>
                   <p class="username">{this.state.username}</p>
                   <p>Location: {this.state.location || "Not Available"}</p>
@@ -54,6 +58,8 @@ class App extends React.Component {
                   <p>Following: {this.state.following}</p>
                   <p>Bio: {this.state.bio}</p>
               </div>
+              <h3> {this.state.name}'s Followers</h3>
+              <Followers />
             </div>
         )
     }

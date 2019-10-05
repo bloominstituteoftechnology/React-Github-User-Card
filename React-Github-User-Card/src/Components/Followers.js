@@ -1,7 +1,7 @@
 import React from "react";
 // import ReactDOM from "react-dom";
 import axios from "axios";
-import FollowerData from "FollowerData";
+import FollowerData from "./FollowerData";
 
 class Followers extends React.Component {
     constructor() {
@@ -22,12 +22,13 @@ class Followers extends React.Component {
         .then(result => {
           
           this.setState({
-            avatar: result.data.avatar_url,
-            name: result.data.name,
-            followers: result.data.followers,
-            following: result.data.following,
-            location: result.data.location,
-            bio: result.data.bio
+            follower: result.data
+            // avatar: result.data.avatar_url,
+            // name: result.data.name,
+            // followers: result.data.followers,
+            // following: result.data.following,
+            // location: result.data.location,
+            // bio: result.data.bio
           })
         })
         .catch(error => {
@@ -38,19 +39,10 @@ class Followers extends React.Component {
     
       render() {
         return (
-            <div class="card">
-              <div class="card-info">
-                <img src={this.state.avatar} data-pin-nopin="true" alt="user's github profile image" />
-                  <h3 class="name">{this.state.name}</h3>
-                  <p class="username">{this.state.username}</p>
-                  <p>Location: {this.state.location || "Not Available"}</p>
-                  {/* <p>Profile:  
-                  <a href={address to users github page}>{address to users github page}</a>
-                  </p>  */}
-                  <p>Followers: {this.state.followers}</p>
-                  <p>Following: {this.state.following}</p>
-                  <p>Bio: {this.state.bio}</p>
-              </div>
+            <div>
+                {this.state.follower.map((item, index)=> (
+                    <FollowerData item={item} key={index} />
+                ))}
             </div>
         )
     }
