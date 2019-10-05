@@ -1,33 +1,60 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Followers from './Followers'
+
+
 
 export default class App extends Component {
+  
 constructor() {
   super()
   this.state = {
     followers: []
+  
     
   }
 }
 
 componentDidMount() {
-  axios.get(`https://api.github.com/users/Reticent93/${this.state.followers}`)
+  this.fetchUsers()
+ 
+}
+
+// componentDidUpdate(prevProps,prevState) {
+//   if(prevState.followers !==this.state.followers) {
+//     this.setState({
+//       images:[]
+//     })
+//   }
+
+//   this.fetchUsers()
+// }
+
+
+fetchUsers = () => {
+  axios.get('https://api.github.com/users/Reticent93/followers')
   .then(res => {
-    console.log(res)
+   this.setState({
+     followers: res.data
+   })
   })
   .catch(err => {
     console.log(err.res)
   })
 }
 
+
   render() {
+    
     return (
-      <form>
-      <h1>GitHub Friends</h1>
+      <>
       {this.state.followers.map((item, index) => (
-        <h1 key={index} item={item} />
+        <Followers key={index} login={item.login} url={item.avatar_url} followers={item.followers_url} />
       ))}
-      </form>
-    )
-  }
+       
+      </>
+  
+    
+         )
+         }
 }
