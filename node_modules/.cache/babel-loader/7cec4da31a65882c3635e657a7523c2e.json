@@ -1,0 +1,1 @@
+{"ast":null,"code":"import * as PropTypes from 'prop-types';\n/** A checker that matches the React.Ref type. */\n\nexport var refPropType = PropTypes.oneOfType([PropTypes.func, PropTypes.object]);","map":null,"metadata":{},"sourceType":"module"}
