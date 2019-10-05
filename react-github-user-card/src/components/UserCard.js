@@ -16,7 +16,6 @@ const Column = styled.div`
     flex-direction: column;
 `
 function UserCard (props) {
-    console.log(props);
     return (
        <Card>
            <img className="avatar" src={props.avatar_url}></img>
