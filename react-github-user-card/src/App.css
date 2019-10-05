@@ -20,3 +20,30 @@
 .App-link {
   color: #09d3ac;
 }
+
+body {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 3px;
+    margin-right: 20px;
+}
+
+p {
+  font-size: 0.9rem;
+  margin-bottom: 1px;
+}
+
+.login {
+  font-size: 1.0rem;
+  font-style: italic;
+  margin: 1px;
+}
