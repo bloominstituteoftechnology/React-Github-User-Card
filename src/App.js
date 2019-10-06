@@ -40,7 +40,6 @@ class App extends Component{
   }
 
   addUser = (event, user) => {
-    this.fetchUsers(user)
     const newUser = user
     this.setState({
       username: newUser
