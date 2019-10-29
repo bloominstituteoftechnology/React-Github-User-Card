@@ -5,7 +5,8 @@ import MyCard from './Components/MyCard';
 
 class App extends React.Component {
   state = {
-    myCard: []
+    myCard: "",
+    followers: []
   };
 
   componentDidMount() {
@@ -16,6 +17,16 @@ class App extends React.Component {
           myCard: res.data
         });
         console.log("My Github data", this.state.myCard)
+      })
+      .catch(err => console.log(err));
+
+      axios 
+      .get("https://api.github.com/users/chelsabeth/followers")
+      .then(res => {
+        this.setState({
+          followers: res.data
+        });
+        console.log("My Github followers data", this.state.followers)
       })
       .catch(err => console.log(err));
   }
