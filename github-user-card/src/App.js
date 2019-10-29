@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import axios from "axios";
+import UserCard from "./components/UserCard";
+import Followers from "./components/Followers"
 
-function App() {
+class App extends React.Component {
+
+  state ={
+    name: [],
+  }
+
+  componentDidMount () {
+    axios
+    .get(`https://api.github.com/users/Sara-DLC`)
+    .then (res => {
+      this.setState({
+        name: res.data.name,
+        img: res.data.avatar_url,
+        bio: res.data.bio,
+      });
+    })
+    .catch (error => console.log (error));
+  }
+
+
+  render (){
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>GitHub User Card</h1>
+      <UserCard user={this.state.name} img={this.state.img} bio={this.state.bio}  />
+      <Followers/>
     </div>
   );
+  }
 }
 
 export default App;
