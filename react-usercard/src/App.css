@@ -1,3 +1,7 @@
+body {
+  background: lightgray
+}
+
 .App {
   text-align: center;
 }
@@ -20,3 +24,22 @@
 .App-link {
   color: #09d3ac;
 }
+
+.avatar {
+  width: 400px;
+}
+
+.usernames {
+  font-size: 25px;
+  color: dimgrey;
+}
+
+/* .card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-between;
+  margin: 40px;
+} */
+
+

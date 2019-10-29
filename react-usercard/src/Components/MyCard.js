@@ -9,8 +9,8 @@ function MyCard(props) {
   return (
     <div className="card-container">
       <div key={data.id} className="my-card"></div>
-      <img src={data.avatar_url} alt="user avatar"></img>
-      <h2>Username: {data.name}</h2>
+      <img className="avatar"src={data.avatar_url} alt="user avatar"></img>
+      <h2 className="usernames">Username: {data.name}</h2>
     </div>
   );
 }

@@ -3,6 +3,7 @@ import './App.css';
 import axios from "axios";
 import MyCard from './Components/MyCard';
 import Followers from "./Components/Followers";
+import "./App.css";
 
 class App extends React.Component {
   state = {
