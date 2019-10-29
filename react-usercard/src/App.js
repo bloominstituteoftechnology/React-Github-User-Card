@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import axios from "axios";
 import MyCard from './Components/MyCard';
+import Followers from "./Components/Followers";
 
 class App extends React.Component {
   state = {
@@ -37,6 +38,7 @@ class App extends React.Component {
       <div className="App">
         <h1>Welcome to the Github User Card App!</h1>
         <MyCard data={this.state.myCard} />
+        <Followers follower={this.state.followers}/>
       </div>
     );
   }
