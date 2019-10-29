@@ -29,7 +29,7 @@ Follow these steps for completing your project.
 
 ## Minimum Viable Product
 
-- [ ] Fetch data from the Github API for a Github user
+- [X] Fetch data from the Github API for a Github user
 - [ ] Display the user data on the DOM
 - [ ] Use class components when you need to hold any state or use any lifecycle methods
 
