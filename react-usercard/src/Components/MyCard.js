@@ -10,7 +10,9 @@ function MyCard(props) {
     <div className="card-container">
       <div key={data.id} className="my-card"></div>
       <img src={data.avatar_url}></img>
-
+      <h2>Name: {data.name}</h2>
+      <h3>Bio: {data.bio}</h3>
+      <h3>Location: {data.location}</h3>
     </div>
   );
 }
