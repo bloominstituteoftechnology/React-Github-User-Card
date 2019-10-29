@@ -10,16 +10,12 @@ class Followers extends React.Component {
     }
     
     componentDidMount = () => {
-      // let followersArray =[];
-      // followersArray.forEach(follower =>
     axios
     .get(`https://api.github.com/users/Sara-DLC/followers`)
     .then (res => {
       console.log("follower data", res.data);
       this.setState({
-        followers: res.data.login,
-        img: res.data.avatar_url,
-        bio: res.data.bio,
+        followers: res.data
       });
     })
     .catch (error => console.log (error));
@@ -30,12 +26,18 @@ class Followers extends React.Component {
   
     render (){
     return (
-      <div>
-       
-        <FollowersCard  followers={this.state.login} img={this.state.img} bio={this.state.bio}  />
-      </div>
+    
+        <div>
+           {this.state.followers.map (follower => (
+                <FollowersCard key={follower.id}
+                    img={follower.avatar_url} 
+                    followers = {follower.login}
+                    bio = {follower.bio}
+                />
+           ))}
+        </div>
     );
-    }
-  }
+}
+ }
   
   export default Followers;
