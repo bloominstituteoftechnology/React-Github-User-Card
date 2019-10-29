@@ -10,10 +10,8 @@ function Followers(props) {
     <div className="follower-container">
       {props.follower.map(follower => (
         <div key={follower.id} className="follower">
-          <img src={follower.avatar_url}></img>
-          <h2>Name: {follower.name}</h2>
-          <h3>Bio: {follower.bio}</h3>
-          <h3>Location: {follower.location}</h3>
+          <img src={follower.avatar_url} alt="follower avatar"></img>
+          <h2>Username: {follower.login}</h2>
         </div>
       ))}
     </div>

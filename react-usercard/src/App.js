@@ -6,7 +6,7 @@ import Followers from "./Components/Followers";
 
 class App extends React.Component {
   state = {
-    myCard: "",
+    myCard: [],
     followers: []
   };
 
