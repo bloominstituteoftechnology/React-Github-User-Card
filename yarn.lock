@@ -25,6 +25,15 @@
     "@babel/runtime" "^7.1.2"
     prop-types "^15.7.2"
 
+"@stardust-ui/react-component-ref@^0.39.0":
+  version "0.39.0"
+  resolved "https://registry.yarnpkg.com/@stardust-ui/react-component-ref/-/react-component-ref-0.39.0.tgz#d75e797f799a78a6acbcee7f7aaaf8fdd0f3a5d6"
+  integrity sha512-HQAk+AHCS3rOWptB8I4KocBJ3mJCFm0bo22+NrFZMkhnIVdN/oOoUmHgdhhEBOL/DUR03Ehk0IhKoFsO2IWwbQ==
+  dependencies:
+    "@babel/runtime" "^7.1.2"
+    prop-types "^15.7.2"
+    react-is "^16.6.3"
+
 "@stardust-ui/react-component-ref@~0.38.0":
   version "0.38.0"
   resolved "https://registry.yarnpkg.com/@stardust-ui/react-component-ref/-/react-component-ref-0.38.0.tgz#52d555f2d5edd213c923c93a106f7de940e427ef"
