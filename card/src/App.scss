@@ -2,42 +2,43 @@
 
 html{
     font-size: 62.5%;
-    background-color: black;
+    background-color: lightgray;
 
     .App{
         margin: auto;
         width: 80%;
         font-size: 1.6rem;
         font-family: 'Permanent Marker', cursive;
-        color: blue;
+        color: darkblue;
         
         .pictures{
 
             display: flex;
             flex-wrap: wrap;
             
-            div{
+            .user{
                 
                 
-                border: 1px solid solid;
+                border: 1px solid #000;
                 background-color: #fff;
                 width: 300px;
-                height: 350px;
+                height: 420px;
                 margin: 20px;
                 border-radius: 2px;
     
                 img{
                     
                     margin: 0 auto;
-                    width: 100px;
+                    width: 100%;
                     justify-content: center;
                 }
 
                 p{
                     font-size: 2.8rem;
                     text-align: center;
-                    border: 1px lightgray solid;
-                    margin: 20px 20px;
+                    //border: 1px lightgray solid;
+                    width: 80%;
+                    margin: 20px auto;
                     
                 }
             }

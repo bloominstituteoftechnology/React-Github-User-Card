@@ -2,7 +2,8 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
-import MyProfile from "./components/MyProfile";
+import MyProfile from "./components/MyProfile.jsx";
+import MyFollowers from "./components/MyFollowers.jsx";
 
 class App extends React.Component{
 
@@ -47,7 +48,7 @@ class App extends React.Component{
             this.setState({
               myFans: [...this.state.myFans, myFan]
             })
-            console.log(this.state.myFans)
+            //console.log(this.state.myFans)
           })
       })
     })
@@ -57,23 +58,12 @@ class App extends React.Component{
     return (
       <div className="App">
         <header className="App-header">
-         <div className="pictures">
-            <div>
-              <MyProfile />
-              <img src={this.state.myInfo.avatar_url} key={this.state.myInfo.id} alt={this.state.myInfo.login} />
-              <p>{this.state.myInfo.name}</p>
-            </div>
+          <div className="pictures">
+    
+            <MyProfile myInfo={this.state.myInfo} />
+            <MyFollowers myFans={Object.values(this.state.myFans)} />
   
-            {this.state.myFans.map(fan => (
-  
-              <div>
-                <img src={fan.avatar_url} key={fan.id} alt={fan.login} />
-                <p>{fan.name}</p>
-              </div>
-  
-  
-            ))}
-         </div>
+          </div>
         </header>
       </div>
     );

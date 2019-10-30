@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Permanent+Marker");
 html {
   font-size: 62.5%;
-  background-color: black;
+  background-color: lightgray;
 }
 
 html .App {
@@ -9,7 +9,7 @@ html .App {
   width: 80%;
   font-size: 1.6rem;
   font-family: 'Permanent Marker', cursive;
-  color: blue;
+  color: darkblue;
 }
 
 html .App .pictures {
@@ -20,27 +20,27 @@ html .App .pictures {
       flex-wrap: wrap;
 }
 
-html .App .pictures div {
-  border: 1px solid solid;
+html .App .pictures .user {
+  border: 1px solid #000;
   background-color: #fff;
   width: 300px;
-  height: 350px;
+  height: 420px;
   margin: 20px;
   border-radius: 2px;
 }
 
-html .App .pictures div img {
+html .App .pictures .user img {
   margin: 0 auto;
-  width: 100px;
+  width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-html .App .pictures div p {
+html .App .pictures .user p {
   font-size: 2.8rem;
   text-align: center;
-  border: 1px lightgray solid;
-  margin: 20px 20px;
+  width: 80%;
+  margin: 20px auto;
 }
 /*# sourceMappingURL=App.css.map */
