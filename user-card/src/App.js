@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios"
+import Following from './components/follow';
 import UserCard from './components/userCard'
 
 class App extends React.Component {
@@ -9,12 +10,16 @@ class App extends React.Component {
     super();
 
     this.state = {
-     userData :  []
-  }
+     userData :  [],
+     following: []
+  };
+
+   
 
   }
 
 
+  
 
   componentDidMount() {
        
@@ -22,22 +27,23 @@ class App extends React.Component {
       .then(res => res.json())
  
       .then(res => this.setState({userData: res}))
-
-         
+ 
       
         
         .catch(err => console.log ("ERR", err))
          
        
-       console.log("YO!!",this.state.userData)
+      
 
-  //   axios.get('https://api.openbrewerydb.org/breweries')
-  //   .then(res => this.setState({users: res.data}))
-  //   .then(res=> console.log (res.data))
-  //    .catch(err => console.log(err))
-     
 
-  //   console.log( "RES2",this.state.users)
+        fetch('https://api.github.com/users/Zealll/followers')
+        .then(res => res.json())
+        .then(res=> this.setState({following: res}))
+    
+        // .then(res=> console.log("F___REZ", res))
+         .catch(err => console.log(err))
+    
+    
 
   }
 
@@ -45,6 +51,7 @@ class App extends React.Component {
   render(){
 
     console.log( "HERE22",this.state.userData)
+    console.log ("FOLLOWERS::", this.state.following)
   return (
     <div className="App">
       <header className="App-header">
@@ -63,7 +70,8 @@ class App extends React.Component {
         </a>
       </header>
 
-      <UserCard data={this.state.userData}/>
+      <UserCard data={this.state.userData} following={this.state.following}/>
+      <Following  following = {this.state.following}/> 
     </div>
   );}
 }
