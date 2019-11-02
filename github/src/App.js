@@ -1,19 +1,38 @@
 import React from 'react';
+import axios from 'axios';
+import UserCard from './Components/UserCard.js'
 
 import './App.css';
 
 class App extends React.Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      users: []
+    };
+  }
+
+  componentDidMount() {
+    console.log("here");
+    axios.get('https://api.github.com/users/vetorobert3')
+      .then((res) => {
+        console.log(res);
+        this.setState({ users: res })
+      })
+      .catch((err) => {
+        console.log(err)
+      });
   }
 
   render() {
     return(
-      <h1>GitHub Users</h1>
-    )
+      <div>
+        <h1>GitHub Users</h1>
+        <UserCard />
+      </div>
+    );
   }
-  
+
 }
 
 export default App;
