@@ -1,26 +1,53 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import UserCard from "./UserCard"
+import FollowerCard from "./FollowerCard"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import "./App.css";
+
+class App extends React.Component {
+
+  state = {
+    data: {},
+    dataFollowers: [],
+  }
+
+  // componentDidMount() {
+  //   fetch(`https://api.github.com/users/Git-Grobe`)
+  //   .then(res => res.json())
+  //   .then(res => {
+  //     console.log(res, 'DATA');
+  //     this.setState({
+  //       data: res
+  //     })
+  //   })
+  //   .catch(err => console.log(err))
+  // }
+  
+  componentWillMount() {
+    Promise.all([
+      fetch(`https://api.github.com/users/Git-Grobe`),
+      fetch(`https://api.github.com/users/Git-Grobe/followers`)
+    ])
+    .then(([res1, res2]) => Promise.all([res1.json(), res2.json()]))
+    .then(([data1, data2]) => this.setState({
+      data: data1,
+      dataFollowers: data2
+    }))
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  render() {
+    return (
+      <>
+      {console.log(this.state.data.name, 'AHHH NAME')}
+      {console.log(this.state.dataFollowers, 'AHHH 2')}
+      <UserCard username={this.state.data.name} image={this.state.data.avatar_url}/>
+      <FollowerCard followers={this.state.dataFollowers}/>
+      </>
+    );
+  }
 }
 
 export default App;
