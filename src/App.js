@@ -2,9 +2,15 @@ import React from "react";
 import UserCard from "./UserCard"
 import FollowerCard from "./FollowerCard"
 
-import "./App.css";
+import styled from 'styled-components'
+
+const Wrapper = styled.section`
+  text-align: center;
+`;
 
 class App extends React.Component {
+
+
 
   state = {
     data: {},
@@ -40,12 +46,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <>
+      <Wrapper>
       {console.log(this.state.data.name, 'AHHH NAME')}
       {console.log(this.state.dataFollowers, 'AHHH 2')}
       <UserCard username={this.state.data.name} image={this.state.data.avatar_url}/>
       <FollowerCard followers={this.state.dataFollowers}/>
-      </>
+      </Wrapper>
     );
   }
 }

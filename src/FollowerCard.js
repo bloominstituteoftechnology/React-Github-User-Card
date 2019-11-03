@@ -3,7 +3,7 @@ import React from "react";
 const FollowerCard = (props) => {
     return (
         <div>
-        <h1>Followers</h1>
+        <h3>Followers</h3>
         <div>
         {props.followers.map(item => (<p>{item.login}</p>))}
         </div>
