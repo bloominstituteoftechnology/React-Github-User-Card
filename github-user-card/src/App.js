@@ -2,6 +2,7 @@ import React from 'react';
  import 'semantic-ui-css/semantic.min.css';
 import UserCard from './components/UserCard.js';
 import CardList from './components/CardList.js';
+import "./components.css"
 
 
 
