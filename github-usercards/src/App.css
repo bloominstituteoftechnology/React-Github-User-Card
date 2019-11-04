@@ -1,9 +1,29 @@
+#root {
+  display: block;
+  background-color: #208191;
+  text-align: center;
+  width: auto;
+  border: 15px solid #223843;
+  border-radius: 10px;
+}
+
+.graph {
+  background: #25272A;
+  padding: 5px;
+  margin-top: 10px;
+  color: #F2C14E;
+  border-radius: 3px;
+}
+
+
 .App {
   text-align: center;
 }
 
 .App-logo {
+  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
+  pointer-events: none;
 }
 
 .App-header {
@@ -18,5 +38,14 @@
 }
 
 .App-link {
-  color: #09d3ac;
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
