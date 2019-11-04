@@ -8,13 +8,12 @@
 }
 
 .graph {
-  background: #25272A;
+  background: #25272a;
   padding: 5px;
   margin-top: 10px;
-  color: #F2C14E;
+  color: #f2c14e;
   border-radius: 3px;
 }
-
 
 .App {
   text-align: center;

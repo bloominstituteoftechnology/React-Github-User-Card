@@ -1,15 +1,15 @@
-import React from 'react';
-import GitHubUserCard from './components/GitHubUserCard';
-import PageHeader from './components/PageHeader';
-import './App.css';
+import React from "react";
+import GitHubUserCard from "./components/GitHubUserCard";
+import PageHeader from "./components/PageHeader";
+import "./App.css";
 
 class App extends React.Component {
-  constructor(){
+  constructor() {
     super();
     this.state = {
       user: {},
       followersLinks: [],
-      followers: [],
+      followers: []
     };
   }
 
@@ -32,23 +32,26 @@ class App extends React.Component {
             );
         });
       });
-  }
-  
+  };
+
   render() {
-  return (
-    <div className="App">
-      <PageHeader />
-      <GitHubUserCard followers={this.state.followers} user={this.state.user} />
-      <div class="graph">
-        <p>Contributions for Adkhiker:</p>
-        <img
-          src="http://ghchart.rshah.org/adkhiker"
-          alt="Github Chart for Adkhiker"
-          title="Github Chart for Adkhiker"
+    return (
+      <div className="App">
+        <PageHeader />
+        <GitHubUserCard
+          followers={this.state.followers}
+          user={this.state.user}
         />
+        <div class="graph">
+          <p>Contributions for Adkhiker:</p>
+          <img
+            src="http://ghchart.rshah.org/adkhiker"
+            alt="Github Chart for Adkhiker"
+            title="Github Chart for Adkhiker"
+          />
+        </div>
       </div>
-    </div>
-  );
+    );
   }
 }
 
