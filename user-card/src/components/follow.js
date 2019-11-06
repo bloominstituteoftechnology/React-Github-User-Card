@@ -8,27 +8,9 @@ import React from "react"
 
     return (
 
-           <div>
-          <h2>Following:</h2>
-
-          {props.following.map (f => {
-              return (
-                <div>
-              <h2>{f.login}</h2>
-                    </div>
-
-
-              )
-          })}
-
-         
-
-
-
-
-           </div>
-
-
+           <div className ="Following">
+             <h2> {props.following.login}</h2>
+         </div>
 
 
 

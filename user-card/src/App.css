@@ -20,3 +20,27 @@
 .App-link {
   color: #09d3ac;
 }
+
+
+.Following {
+  display:flex;
+  border: 2px solid dodgerblue;
+  background-color: lightblue;
+  color: navy;
+  align-content: center;
+  justify-content: center;
+   
+ 
+}
+
+ .UserCard {
+
+  display:flex;
+  flex-direction: column;
+  border: 2px solid navy;
+  background-color: dodgerblue;
+  color: navy;
+  align-content: center;
+  justify-content: center;
+
+}
