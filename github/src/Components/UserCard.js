@@ -1,15 +1,8 @@
 import React from 'react';
 
-class UserCard extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  render() {
-    return null;
-  }
-
+const UserCard = props => {
+  console.log('Props', props);
+  return null;
 }
-
+ 
 export default UserCard; 

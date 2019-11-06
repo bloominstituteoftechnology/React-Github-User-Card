@@ -28,7 +28,7 @@ class App extends React.Component {
     return(
       <div>
         <h1>GitHub Users</h1>
-        <UserCard />
+        <UserCard namesProp={this.state.users}/>
       </div>
     );
   }
