@@ -13,10 +13,10 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    console.log("here");
+    // console.log("here");
     axios.get('https://api.github.com/users/vetorobert3')
       .then((res) => {
-        console.log(res);
+        console.log(res.data);
         this.setState({ users: res })
       })
       .catch((err) => {
@@ -28,6 +28,7 @@ class App extends React.Component {
     return(
       <div>
         <h1>GitHub Users</h1>
+        <div>{this.state.login}</div>
         <UserCard namesProp={this.state.users}/>
       </div>
     );
