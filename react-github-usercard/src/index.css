@@ -1,0 +1,22 @@
+
+@import url('https://fonts.googleapis.com/css?family=Saira+Condensed&display=swap');
+
+html body
+* {
+  font-family: 'Saira Condensed', sans-serif;
+  box-sizing: border-box;
+
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: lightsalmon;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
