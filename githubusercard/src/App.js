@@ -1,7 +1,6 @@
 import React from 'react';
 import users from './components/users';
 import UserCard, {user} from './components/usercard';
-import axios from 'axios';
 import './App.css';
 
 class App extends React.Component {
@@ -9,15 +8,21 @@ class App extends React.Component {
     console.log("Constructor Invoked");
     super();
     this.state = {
-      user: []
+      people: {},
+      followers: []
     };
   }
   componentDidMount() {
-    axios.get(`https://api.github.com/users/shgradyy`)
-      .then(res => {
-        const user = res.data;
-        this.setState({ user });
-      })
+    console.log("Component mounted!!!")
+    fetch('https://api.github.com/users/shgradyy')
+    .then(res => res.json())
+    .then(res => this.setState({people: res}))
+    .catch(err => console.log(err));
+
+    fetch('https://api.github.com/users/shgradyy/followers')
+    .then(res => res.json())
+    .then(res => this.setState({followers: res}))
+    .catch(err => console.log(err))
   }
   render() {
     return (
