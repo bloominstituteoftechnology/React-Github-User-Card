@@ -1,22 +1,17 @@
 .App {
   text-align: center;
+  background: linear-gradient(90deg, #5fc2d8 0%, #5a65e2 100%);
+  height: 200%;
 }
-
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.User {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #09d3ac;
+.Cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 100px;
+  justify-content: space-evenly;
 }
