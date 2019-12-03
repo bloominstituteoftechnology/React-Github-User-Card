@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  text-shadow: 2px 2px 3px black;
+}
+
+.card {
+  padding: 20px;
+  align-items:center;
+  border-radius: 5px;
+  box-shadow: 4px 4px 6px black;
+  background-color: #fff;
+  margin-bottom: 30px;
+  margin-left: 20%;
+  width: 60%;
+}
+
+
+.card img {
+  width: 23vw;
+  height: 150px;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+
+.name {
+  font-size: 1.5rem;
+  display:flex;
+  flex-direction: column;
+  width: 50vw;
+}
