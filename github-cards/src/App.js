@@ -23,7 +23,7 @@ class App extends React.Component {
         this.setState({ user: res.data });
 
         axios
-          .get(res.data.followers_url)
+          .get("https://api.github.com/users/Lfritze/followers")
           .then(followerInfo => {
             this.setState({ followers: followerInfo.data });
           })
@@ -62,3 +62,5 @@ export default App;
 // NOTES **********
 
 // https://api.github.com/users/Lfritze - this in browser displays the data
+
+// res.data.followers_url

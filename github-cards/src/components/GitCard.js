@@ -29,7 +29,7 @@ class GitCard extends React.Component {
             <p>Following: {this.props.following}</p>
             <p>Bio: {this.props.bio}</p>
           </div>
-          <div className="contributin-chart">
+          <div className="contribution-chart">
             <div className="followers">
               <h2>Followers</h2>
               {this.props.followerList.map((follower, idx) => (
@@ -43,8 +43,8 @@ class GitCard extends React.Component {
                       src={follower.avatar_url}
                       alt={`${follower.login}'s avatar`}
                     />
+                    <p>{follower.login}</p>
                   </a>
-                  <p>{follower.login}</p>
                 </div>
               ))}
             </div>
