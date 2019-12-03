@@ -27,3 +27,5 @@ class User extends React.Component{
         )
     }
 }
+
+export default User
