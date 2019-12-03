@@ -1,9 +1,11 @@
 .App {
   text-align: center;
 }
+
 .App-logo {
   height: 40vmin;
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -14,19 +16,21 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
 .App-link {
   color: #09d3ac;
 }
-.app {
+
+.app{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-}
-.app .followerInfo {
-  margin: 10px;
-  background: rgba(128, 128, 128, 0.164);
-}
-.app .followerInfo img {
-  width: 300px;
-  height: auto;
+  .followerInfo{
+    margin: 10px;
+    background: rgba(128, 128, 128, 0.164);
+    img{
+      width: 300px;
+      height: auto;
+    }
+  }
 }
