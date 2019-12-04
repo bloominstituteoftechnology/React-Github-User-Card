@@ -1,59 +1,74 @@
 import React from "react";
+import styled from "styled-components";
 import GithubCalendar from "github-calendar";
+
+import {
+  GitCardContainer,
+  GitUser,
+  GitAvatar,
+  GitInfo,
+  GitFollowers,
+  GitFollower,
+  ContributionChart
+} from "../styling/AppStyle";
 
 class GitCard extends React.Component {
   componentDidUpdate(prevProps) {
     if (prevProps.username !== this.props.username) {
       GithubCalendar(".calendar", this.props.username, { responsive: true });
-      //previousProps go with componentDidUpdate
-      // Username is a parameter in axios get in App.js
     }
   }
+
   render() {
     return (
-      <div className="git-card-container">
-        <div className="user">
-          <a
+      <GitCardContainer>
+        <GitUser>
+          <GitAvatar
             href={this.props.profileUrl}
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={this.props.avatarUrl} alt="avatar name" />
-          </a>
-          <div className="user-info">
+            <img
+              src={this.props.avatarUrl}
+              alt={`${this.props.name}'s avatar`}
+            />
+          </GitAvatar>
+          <GitInfo>
             <h1>{this.props.name}</h1>
-            <p>{this.props.username}</p>
-            <p>{this.props.location}</p>
-            <p>Repositories: {this.props.repos}</p>
+            <h2>{this.props.username}</h2>
+            <p>Location: {this.props.location}</p>
+            <p>Repos: {this.props.repos}</p>
             <p>Followers: {this.props.followers}</p>
             <p>Following: {this.props.following}</p>
             <p>Bio: {this.props.bio}</p>
-          </div>
-          <div className="contribution-chart">
-            <div className="followers">
-              <h2>Followers</h2>
-              {this.props.followerList.map((follower, idx) => (
-                <div key={idx}>
-                  <a
-                    href={follower.html_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      src={follower.avatar_url}
-                      alt={`${follower.login}'s avatar`}
-                    />
-                    <p>{follower.login}</p>
-                  </a>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
+          </GitInfo>
+        </GitUser>
+        <ContributionChart className="calendar">
+          Loading contribution chart....
+        </ContributionChart>
+        <GitFollowers>
+          <h1>Followers</h1>
+          {this.props.followerList.map((follower, idx) => (
+            <GitFollower key={idx}>
+              <a
+                href={follower.html_url}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  src={follower.avatar_url}
+                  alt={`${follower.login}'s avatar`}
+                />
+              </a>
+              <p>{follower.login}</p>
+            </GitFollower>
+          ))}
+        </GitFollowers>
+      </GitCardContainer>
     );
   }
 }
+
 export default GitCard;
 
 // NOTES ****
