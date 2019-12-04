@@ -4,8 +4,8 @@ const UserCard = ({user, img, bio}) => {
     return (
         <div>
             <img src={img} alt="user" />
-            <p>Name:{user}</p>
-            <p>Bio:{bio}</p>
+            <p>Name: {user}</p>
+            <p>Bio: {bio}</p>
         </div>
     )
 }
