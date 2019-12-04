@@ -1,0 +1,51 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: url('./images/iceberg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.followers{
+  color: white;
+  border: honeydew 1px solid;
+  width: 70%;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5%;
+  background: rgba(79, 99, 134, 0.701);
+  border-radius: 12px;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+
+  
+}
+.followersinfo{
+  display: flex;
+  flex-direction: column;
+  margin-top: 5%;
+  margin-left: 5%;
+  font-size:20px;
+  font-weight: bolder;
+  font-family: fantasy;
+  text-shadow: 0 0 2px black;
+}
+
+img{
+  width: 30%;
+  height: auto;
+  margin-top: 2%;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  border: powderblue 1px solid;
+}
