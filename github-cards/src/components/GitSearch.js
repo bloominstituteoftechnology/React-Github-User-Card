@@ -1,6 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-
 import { SearchForm } from "../styling/AppStyle";
 
 class GitSearch extends React.Component {

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 // GitCard Styling*********
 
 export const GitCardContainer = styled.div`

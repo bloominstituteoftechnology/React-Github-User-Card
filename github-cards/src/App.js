@@ -1,7 +1,5 @@
 import React from "react";
-
 import axios from "axios";
-
 import GitSearch from "./components/GitSearch";
 import GitCard from "./components/GitCard";
 

@@ -1,5 +1,4 @@
 import React from "react";
-import styled from "styled-components";
 import GithubCalendar from "github-calendar";
 
 import {
@@ -43,9 +42,7 @@ class GitCard extends React.Component {
             <p>Bio: {this.props.bio}</p>
           </GitInfo>
         </GitUser>
-        <ContributionChart className="calendar">
-          Loading contribution chart....
-        </ContributionChart>
+        <ContributionChart className="calendar">Loading ...</ContributionChart>
         <GitFollowers>
           <h1>Followers</h1>
           {this.props.followerList.map((follower, idx) => (
