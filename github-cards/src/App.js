@@ -16,7 +16,7 @@ class App extends React.Component {
     this.getApiData(this.state.userSearch);
   }
 
-  componentDidUpdate(prevState) {
+  componentDidUpdate(prevProps, prevState) {
     if (prevState.userSearch !== this.state.userSearch) {
       this.getApiData(this.state.userSearch);
     }
