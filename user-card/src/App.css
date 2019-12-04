@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  background-image: url(../src/img/woodtable.jpg);
+  border: 40px solid white;
+}
+.App h1 {
+  font-size: 400%;
+  color: white;
+}
+
+.userClass {
+  border: 5px solid white;
+  width: 80%;
+  margin: 0% 5% 5% 10%;
+}
+
+.userClass img {
+  border-radius: 50%;
+}
+
+.userClass h2{
+font-size: 400%;
+color: white;
+}
+
+.userClass a{
+color: white;
+font-size: 400%;
+}
+
+
