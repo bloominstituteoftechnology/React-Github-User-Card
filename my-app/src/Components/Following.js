@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import FollowingCard from './FollowCard'
 
 
 class Following extends React.Component {
@@ -7,9 +8,9 @@ class Following extends React.Component {
         following: []
     }
 
-    componentDidMount = () => {
+    componentDidMount(){
         axios
-            get(`https://api.github.com/users/jarrod847/following`)
+            .get(`https://api.github.com/users/jarrod847/following`)
             .then(res =>{
                 console.log("Following", res.data);
                 this.setState({
@@ -20,7 +21,17 @@ class Following extends React.Component {
     }
     render(){
         return (
-            <div></div>
+            <div>
+                {this.state.following.map (following => (
+                <FollowingCard key={following.id}
+                    img={following.avatar_url} 
+                    following = {following.login}
+                    bio = {following.bio} 
+                    />
+                ))}
+            </div>
         )
     }
 }
+
+export default Following
