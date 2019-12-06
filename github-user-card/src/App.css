@@ -1,0 +1,19 @@
+.main-content {
+    margin: auto;
+}
+
+.user-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    padding: 5%;
+    border: 1px solid black;
+}
+
+.user-img {
+    height: 100px;
+    width: 100px;
+    border: 1px solid black;
+}
