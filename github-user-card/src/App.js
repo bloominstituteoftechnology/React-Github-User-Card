@@ -1,66 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
-import axios from "axios";
+import User from "./components/Users";
+import Followers from "./components/Followers";
 
-class App extends Component {
-  constructor() {
-    super()
-    this.state = {
-      login: 'carlostbanks',
-      followernames: []
-    }
-  }
-
-  componentDidMount() {
-    axios.get(`https://api.github.com/users/${this.state.login}`)
-      .then(result => {
-        this.setState({
-          name: result.data.name,
-          bio: result.data.bio,
-          followers: result.data.followers,
-        })
-      })
-      axios.get(`https://api.github.com/users/${this.state.login}/followers`)
-      .then(res => {
-        this.setState({ followernames: res.data })
-        console.log(res)
-    })
-      .catch(error => {
-        console.log('error:', error)
-      })
-  }
-
-  // componentDidUpdate = () => {
-  //   axios.get(`https://api.github.com/users/${this.state.login}/followers`)
-  //     .then(res => {
-  //       this.setState({ followernames: res })
-  //       console.log(res)
-  //   })
-      
-  //     .catch(error => console.log('error:', error));
-  // }
-
-  render() {
+function App () {
     return (
-      <>
+      <div>
         <h1>Github User Card</h1>
-        <div>
-          <h1>Name: {this.state.name}</h1>
-          <h3>Bio: {this.state.bio}</h3>
-          <h3>Number of followers: {this.state.followers}</h3>
-        </div>
-
-        <div>
-          This user's followers:
-          {this.state.followernames.map((followername) => (
-            <li login={followername.login}
-                id={followername.id}
-            />
-          ))}
-        </div>
-      </>
+        <User/>
+        <Followers/>
+      </div>
     )
   }
-}
 
 export default App;
