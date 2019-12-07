@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import UserCard from './Components/UserCard'
 import Axios from 'axios';
 import FollowersCard from './Components/FollowersCard';
+import { Card } from 'semantic-ui-react'
 
 export default class App extends Component {
   constructor(){
@@ -56,11 +57,11 @@ export default class App extends Component {
       ))}
         </div>
         <h1>Followers:</h1>
-        <div>
+        <Card.Group>
         {this.state.followers.map(user => (
           <FollowersCard key={user.id} users={user} />
       ))}
-        </div>
+        </Card.Group>
       </div>
     )
   }
