@@ -9,13 +9,13 @@ const NavBar = () =>{
     <div>
       <Nav tabs>
         <NavItem>
-          Main
+          <NavLink href='#' active>Main</NavLink>
         </NavItem>
         <NavItem>
-          Followers
+          <NavLink href='#' active>Followers</NavLink>
         </NavItem>
         <NavItem>
-          Github
+          <NavLink href='#' active>Github</NavLink>
         </NavItem>
       </Nav>
     </div>
