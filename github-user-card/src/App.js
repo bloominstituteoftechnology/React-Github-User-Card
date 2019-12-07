@@ -1,4 +1,4 @@
-// import './App.css';
+import './App.css';
 
 import React, { Component } from 'react'
 import UserCard from './Components/UserCard'
@@ -26,12 +26,8 @@ export default class App extends Component {
         .then(res => {
           console.log(res)
           this.setState({
-            users: [{
-              name: res.data.name,
-              image: res.data.avatar_url,
-              bio: res.data.bio,
-              followers: res.data.followers,
-          }]})
+            users: [res.data]
+          })
         })
   }
 
@@ -50,13 +46,13 @@ export default class App extends Component {
     console.log(this.state.users)
     console.log(this.state.followers)
     return (
-      <div>
-        <div>
+      <div className="profile-display">
+        <div className='center'>
         {this.state.users.map((user, index) => (
           <UserCard key={index} users={user} />
       ))}
         </div>
-        <h1>Followers:</h1>
+        <h1 className="follower-header">Followers</h1>
         <Card.Group>
         {this.state.followers.map(user => (
           <FollowersCard key={user.id} users={user} />
