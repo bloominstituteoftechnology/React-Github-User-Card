@@ -2,6 +2,7 @@ import React from 'react';
 
 import {Container, Row, Col} from 'reactstrap';
 
+import FollowerCard from './followercard.js';
 
 
 
@@ -32,6 +33,24 @@ const UserCard = props => {
           <h4>Following: {props.users.data.following}</h4>
           <h4>Followers: {props.users.data.followers}</h4>
         </Col>
+      </Row>
+      <Row>
+        <Col>
+          <h2>Followers</h2>
+        </Col>
+      </Row>
+      <Row>
+        {props.followers.data.map(follower =>{
+          return (<FollowerCard
+                    key={follower.id}
+                    profile={follower.avatar_url}
+                    login={follower.login}
+                    name={follower.name}
+                    repo={follower.public_repos}
+                    follow={follower.followers}
+
+                  />);
+        })}
       </Row>
     </Container>
   )
