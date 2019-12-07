@@ -3,13 +3,12 @@ import axios from "axios";
 import UserCard from "./UsersCard";
 
 class User extends Component {
-
-      state = {
-        user: [],
-      }
+    state = {
+      user: [],
+    }
 
     componentDidMount() {
-    axios.get(`https://api.github.com/users/carlostbanks`)
+    axios.get(`https://api.github.com/users/${this.state.user}`)
       .then(result => {
         this.setState({
           name: result.data.name,
@@ -24,9 +23,15 @@ class User extends Component {
     }
 
     render() {
+
     return (
         <div>
-            <UserCard name={this.state.name} img={this.state.img} bio={this.state.bio} followers={this.state.followers} />
+            <UserCard 
+            name={this.state.name} 
+            img={this.state.img} 
+            bio={this.state.bio} 
+            followers={this.state.followers} 
+            />
         </div>
         );
     }

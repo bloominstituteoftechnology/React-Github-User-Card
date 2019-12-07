@@ -17,8 +17,8 @@ const useStyles = makeStyles({
     },
     cardimg: {
         margin: "0 auto",
-        maxWidth: "90%",
-        borderRadius: "50px",
+        maxWidth: "75%",
+        borderRadius: "40%",
     },
     cardText: {
         textAlign: 'center'
