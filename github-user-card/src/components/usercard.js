@@ -11,27 +11,27 @@ const UserCard = props => {
   console.log('props: ', props);
   console.log('users: ', props.users);
   console.log('followers: ', props.followers);
-  console.log('profile pic: ',props.users.data.avatar_url)
+  console.log('profile pic: ',props.users.avatar_url)
 
 
   return(
     <Container className='user-container'>
       <Row>
         <Col>
-         <img src={props.users.data.avatar_url} alt={props.users.data.login} />
+         <img src={props.users.avatar_url} alt={props.users.login} />
         </Col>
       </Row>
       <Row>
         <Col>
-          <h2>{props.users.data.login}</h2>
-          <h3>{props.users.data.name}</h3>
+          <h2>{props.users.login}</h2>
+          <h3>{props.users.name}</h3>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h4>Repos worked on: {props.users.data.public_repos}</h4>
-          <h4>Following: {props.users.data.following}</h4>
-          <h4>Followers: {props.users.data.followers}</h4>
+          <h4>Repos worked on: {props.users.public_repos}</h4>
+          <h4>Following: {props.users.following}</h4>
+          <h4>Followers: {props.users.followers}</h4>
         </Col>
       </Row>
       <Row>
@@ -40,7 +40,8 @@ const UserCard = props => {
         </Col>
       </Row>
       <Row>
-        {props.followers.data.map(follower =>{
+        {props.followers.map(follower =>{
+
           return (<FollowerCard
                     key={follower.id}
                     profile={follower.avatar_url}
