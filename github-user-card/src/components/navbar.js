@@ -12,10 +12,10 @@ const NavBar = () =>{
           <NavLink href='#' active>Main</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href='#' active>Followers</NavLink>
+          <NavLink href='#'>Followers</NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href='#' active>Github</NavLink>
+          <NavLink href='#' >Github</NavLink>
         </NavItem>
       </Nav>
     </div>
