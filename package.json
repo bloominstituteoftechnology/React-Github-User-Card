@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "create-react-app": "^3.3.0",
+    "yarn-install": "^1.0.0"
+  }
+}
