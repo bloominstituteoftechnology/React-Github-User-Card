@@ -1,19 +1,25 @@
-.main-content {
-    margin: auto;
-}
-
 .user-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200px;
+    height: 350px;
     width: 200px;
-    padding: 5%;
+    padding: 2%;
+    background-image: url("./images/simple-background-banner-1.jpg");
+    background-position: fixed;
+    background-size: cover;
+    border: 1px solid black;
+}
+
+.user-name {
+    padding: 3%;
+    color: whitesmoke;
+    background-color: teal;
     border: 1px solid black;
 }
 
 .user-img {
-    height: 100px;
-    width: 100px;
+    height: 150px;
+    width: 150px;
     border: 1px solid black;
 }
