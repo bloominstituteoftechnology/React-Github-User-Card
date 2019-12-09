@@ -1,26 +1,56 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super()
+      this.state = {
+        users: 'users',
+        followers: 'followers'
+      }
+  }
+
+  componentDidMount() {
+    axios.get(`https://api.github.com/users/hdnye`)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log('error:', err)
+      })
+  }
+
+  handleChange = (event) => {
+    this.setState({
+      users: event.target.value,
+      followers: event.targe.value
+    })
+  }
+
+
+  render() {
+    return (
+      <>
+      <h1>GitHub User Card</h1>
+        <select value={this.state.user} onChange={this.handleChange}>
+          <option value='users'>User</option>
+          <option value='followers'>Followers</option>        
+        </select>
+      </>
+    )
+  }
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default App;
