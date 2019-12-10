@@ -1,0 +1,39 @@
+.names {
+  text-align: center;
+}
+
+.cards {
+  max-width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px auto;
+  border: 2px solid black;
+  background: black;
+  color: white;
+}
+
+.images {
+  max-width: 120px;
+  margin: auto;
+}
+
+.title {
+  margin: 0px auto 20px auto;
+  color: black;
+  text-align: center;
+  border-bottom: 2px solid red;
+}
+
+.dropdown {
+  border: 1px solid red;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  background: black;
+}
+
+.userCards {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
