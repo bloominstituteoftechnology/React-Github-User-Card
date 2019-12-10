@@ -1,33 +1,32 @@
-import React, { Component } from 'react';
+import React from 'react';
 import axios from 'axios';
 import './App.css';
 
-class App extends Component {
+class App extends React.Component {
   constructor() {
     super();
     this.state = { 
       user: 'TreyMcGarity', 
-      followers: '',
-      //jbrock1981
+      followers: [],
     }
   }
-
+ 
   componentDidMount() {
     this.getUsers();
     this.getFollowers();
   }
-
+ 
   getUsers = () => {
-      axios.get(`https://api.github.com/users/${this.state.user}`)
-      .then(response => {
-        console.log("data from user axios",response.data);
-        this.setState({ user: response.data })
-      })
-      .catch(error => {
-        console.log('Data was not returned', error)
-      })
+    axios.get(`https://api.github.com/users/${this.state.user}`)
+    .then(response => {
+      console.log("data from user axios",response.data);
+      this.setState({ user: response.data })
+    })
+    .catch(error => {
+      console.log('Data was not returned', error)
+    })
   }
-
+ 
   getFollowers = () => {
     axios.get(`https://api.github.com/users/${this.state.user}/following`)
     .then(response => {
@@ -38,10 +37,8 @@ class App extends Component {
       console.log('Data was not returned', error)
     })
   }
-
+ 
   render() {
-    // console.log("user from render:",this.state.user);
-    // console.log("followers from render:",this.state.followers);
     return(
       <div>
         <h1>Github User Card</h1>
@@ -51,11 +48,12 @@ class App extends Component {
             <div>
             <p>Bio:{this.state.user.bio}</p>
             <p>Location:{this.state.user.location}</p>
-            <p>Followers:{this.state.user.following}</p>
+            <p>Followers:{this.state.followers.map(follower => ( follower.login))}</p>
             </div>
         </div>
       </div>
     )
   }
 }
+
 export default App;
