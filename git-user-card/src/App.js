@@ -1,7 +1,7 @@
 import React from 'react';
 import Axios from 'axios';
 import UserCard from './Components/GitUserCard';
-
+import './Components/App.css';
 class App extends React.Component {
 
   constructor (){
@@ -45,17 +45,17 @@ class App extends React.Component {
     return(
      
       <div className = 'App'>
-         {this.state.followers.map(followme => {
+         {this.state.followers.map(follower => {
            return (
              
              <div className = 'followers'> 
-              <img src = {followme.avatar_url} />
+             <h1>Chirag Thesia GitUserCard</h1>
+              <img src = {follower.avatar_url} />
               <div className = 'followersinfo'>
-                <p>{followme.name}</p>
-                <p>USERNAME: {followme.login}</p>
-                {/* <p>{followme.email}</p> */}
+                <p>{follower.name}</p>
+                <p>USERNAME: {follower.login}</p>
                 <p> Here is my github url so you know where to find me! </p>
-                <p>{followme.html_url}</p>
+                <p>{follower.html_url}</p>
               </div>
                
              </div>
@@ -64,7 +64,6 @@ class App extends React.Component {
          }
           )}
 
-        {console.log(this.state) }
           <UserCard 
           name = {this.state.name}
           email = {this.state.email}
