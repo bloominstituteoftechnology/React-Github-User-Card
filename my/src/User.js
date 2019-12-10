@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Followers from './Followers';
+import { CarouselItem, CarouselCaption } from 'reactstrap';
 
 class User extends React.Component {
     constructor() {
@@ -33,18 +34,18 @@ class User extends React.Component {
         <div>
           <h1>{this.props.login.name}</h1>
            <img src={this.props.login.avatar_url} alt='user'/>
-           <div>
-               <h2>{this.props.login.login}</h2>
-               &nbsp;
-               <h2>{this.props.login.location}</h2>
+             
+             <div>
+               <h2>{this.props.login.name}</h2>
+                </div>
+                
+                  <div className='followers'>
+                    {this.state.followers && this.state.followers.map(follower => (
+                      <Followers key={follower.id} follower={follower} img={follower.avatar_url} />
+                     ))} 
+                </div>  
            </div>
-            <div>
-                {this.state.followers && this.state.followers.map(follower => (
-                     <Followers key={follower.id} follower={follower} img={follower.avatar_url} />
-                ))} 
-          </div>     
-       </div>
-      )
+        )
    };
  };
     

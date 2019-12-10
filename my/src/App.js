@@ -3,6 +3,8 @@ import axios from 'axios';
 import User from './User';
 
 
+
+
 class App extends React.Component {
   constructor() {
     console.log('const');
@@ -47,7 +49,7 @@ class App extends React.Component {
 
   render() {
     return (
-     <div>
+     <div className='App'>
        <h1>GitHub User Card</h1>
         <User login={this.state.login} img={this.state.img}/>          
          {/* <select value={this.state.login} onChange={this.handleChange}>

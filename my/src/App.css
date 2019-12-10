@@ -1,0 +1,12 @@
+.App {
+   padding: 2rem;
+}
+
+h1 {
+    text-align: center;
+}
+.followers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
