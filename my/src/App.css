@@ -1,6 +1,9 @@
 .App {
    padding: 2rem;
+   background-blend-mode: color-burn;
+   
 }
+
 
 h1 {
     text-align: center;

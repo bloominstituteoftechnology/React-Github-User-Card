@@ -15,6 +15,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
+    console.log('CDU');
      this.fetchUser('hdnye')
   };
 
@@ -28,11 +29,11 @@ class App extends React.Component {
 // };
 
  fetchUser =  (login) => {
-   axios.get(`https://api.github/users/${login}`)
+   axios.get(`https://api.github.com/users/${login}`)
     .then(res => {
       console.log('my data:', res.data)
       this.setState({
-        login: res.data.name
+        login: res.data
       })
     })
     .catch(err => {
