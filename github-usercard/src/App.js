@@ -32,7 +32,8 @@ export default class App extends Component {
     super();
     this.state = {
       data: [],
-      follow: []
+      following: [],
+      url: []
     };
   }
 
@@ -49,12 +50,13 @@ export default class App extends Component {
       });
   };
 
-  gitGitFollowers = () => {
+  getGitFollowing = () => {
     axios
-      .get("https://api.github.com/users/JacobWilliams90/followers")
+      .get("https://api.github.com/users/JacobWilliams90/following")
       .then(res => {
+        console.log(res)
         this.setState({
-          follow: res.data
+          following: res.data
         });
       })
       .catch(err => {
@@ -64,7 +66,7 @@ export default class App extends Component {
 
   componentDidMount() {
     this.getGitUser();
-    this.gitGitFollowers();
+    this.getGitFollowing();
   }
 
   render() {
@@ -88,9 +90,9 @@ export default class App extends Component {
           </Div3>
         </Div2>
         <Div4>
-          <h2>My Followers:</h2>
-          {this.state.follow.map((follower, index) => (
-            <Followers follower={follower} key={index} />
+          <h2>Who I Follow: </h2>
+          {this.state.following.map((following, index) => (
+            <Followers following={following} key={index} />
           ))}
         </Div4>
       </Div>
