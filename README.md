@@ -49,6 +49,7 @@ When you have those completed, you're ready to start coding!
 
 - When your component mounts, send a GET request to the following URL (replacing the palceholder with your Github name):
   - https://api.github.com/users/<your name>
+  - https://api.github.com/users/wtrawlings
 - After you fetch your data, set it to state
 
 ## STEP 2 - Display the User Data
