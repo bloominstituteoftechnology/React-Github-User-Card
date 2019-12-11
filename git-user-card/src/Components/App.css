@@ -20,3 +20,16 @@
   .App-link {
     color: #09d3ac;
   }
+
+  img {
+    border-radius: 20px;;
+  }
+
+  .follower{
+    
+  }
+  .followersinfo{
+    border: skyblue solid 1px;
+    margin:0px 500px 0 500px;
+    
+  }

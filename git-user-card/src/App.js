@@ -45,11 +45,12 @@ class App extends React.Component {
     return(
      
       <div className = 'App'>
+        <h1>Chirag Thesia GitUserCard</h1>
          {this.state.followers.map(follower => {
            return (
              
              <div className = 'followers'> 
-             <h1>Chirag Thesia GitUserCard</h1>
+             
               <img src = {follower.avatar_url} />
               <div className = 'followersinfo'>
                 <p>{follower.name}</p>
