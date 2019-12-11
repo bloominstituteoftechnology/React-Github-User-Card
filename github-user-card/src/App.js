@@ -2,6 +2,7 @@ import React from 'react';
 //import logo from './logo.svg';
 import './App.css';
 import Axios from "axios";
+import UserCard from "./component/UserCard"
 
 class App extends React.Component {
   //you don't need a constructor function
@@ -21,6 +22,7 @@ class App extends React.Component {
       <div className="App">
         <h1>GET THIS THING WORKING!!!</h1>
         <h2>from inside the render of class App</h2>
+        <UserCard dataSet={dataSet} />
       </div>
     );
   }
