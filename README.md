@@ -27,6 +27,10 @@ Follow these steps for completing your project.
 - [ ] Your team lead will count the project as complete by merging the branch back into master.
 - [ ] Do your magic!
 
+#WARREN NOTES:
+This is so frustrating! I had to start this over because of some problem with my npm. Now I have to push but it doesn't like my push because it things it is an old version of the file. So I'm going to make a new branch and push to that.
+
+
 ## Minimum Viable Product
 
 - [ ] Fetch data from the Github API for a Github user
