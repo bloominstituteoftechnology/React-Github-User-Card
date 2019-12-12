@@ -12,6 +12,8 @@ class App extends React.Component {
     this.state = {
       dataSet: []
     }
+    //can I assign two seperate states? Send them to two seperate
+    //components?
     this.state = {
       followerDataSet: []
     }
@@ -24,7 +26,7 @@ class App extends React.Component {
       this.setState({ dataSet: response.data })
     });
     Axios.get("https://api.github.com/users/wtrawlings/followers")
-    .then(response =>{
+    .then(response => {
       console.log(response.data);
       this.setState({ followerDataSet: response.data })
     });
