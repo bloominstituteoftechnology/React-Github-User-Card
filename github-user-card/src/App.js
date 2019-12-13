@@ -5,18 +5,30 @@ import Axios from "axios";
 import UserCard from "./component/UserCard"
 import FollowerCard from './component/FollowerCard';
 
+import styled from 'styled-components';
+
+const FollowerDiv = styled.div`
+    color: dodgerblue;
+    background-color: lightgrey;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+`
+
+
 class App extends React.Component {
   constructor() {
     super()
 
     this.state = {
-      dataSet: []
+      dataSet: [],
+      followerDataSet: []
     }
     //can I assign two seperate states? Send them to two seperate
     //components?
-    this.state = {
-      followerDataSet: []
-    }
+    // this.state = {
+    //   followerDataSet: []
+    // }
   }
   
   componentDidMount() {
@@ -40,9 +52,12 @@ class App extends React.Component {
         <UserCard 
           dataSet={this.state.dataSet} 
           />
+        <FollowerDiv>
+          <p>...here are some of my friends...</p>
         <FollowerCard
           followerDataSet={this.state.followerDataSet}
         />
+        </FollowerDiv>
       </div>
     );
   }

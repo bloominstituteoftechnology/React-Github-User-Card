@@ -3,12 +3,12 @@ import React from 'react';
 
 function FollowerCard (props) {
     console.log(props)
-    const data = this.props.followerDataSet;
+    const data = props.followerDataSet;
 
-    const followerLogins = data.map(login => {
+    const followerLogins = data.map(foobar => {
         return(
             <div>
-                <p>{this.props.followerDataSet.login} </p>
+                <p>{foobar.login} </p>
             </div>
         );
     })
