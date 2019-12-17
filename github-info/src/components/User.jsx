@@ -23,21 +23,27 @@ function User({ username, followers }) {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper className={classes.paper}>
-            {" "}
-            <img src={avatar_url} alt="profile" /> <br />
-            Username : {name}
-          </Paper>
-        </Grid>
-        <Grid item xs={6}>
-          <Paper className={classes.paper}>
-            {followers.map(follower => (
-              <Followers name={follower.login} image={follower.avatar_url} />
-            ))}
-           </Paper>
+      <Grid item xs={12}>
+        <Paper className={classes.paper}>
+          <img src={avatar_url} alt="profile pic" /> <br />
+          Username: {name}
+        </Paper>
         </Grid>
       </Grid>
+      
+      <Grid container spacing={3}>
+        {followers.map(follower => (
+          <Grid item xs={6} sm={3}><Paper className={classes.paper}>
+            <Followers
+              name={follower.login}
+              image={follower.avatar_url}
+              key={follower.id}
+            />
+          </Paper>
+          </Grid>
+         
+        ))}
+         </Grid>
     </div>
   );
 }

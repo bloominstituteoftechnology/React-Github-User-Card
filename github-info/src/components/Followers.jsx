@@ -1,5 +1,4 @@
 import React from "react";
-//
 import {
   Card,
   CardActionArea,
@@ -9,7 +8,12 @@ import {
   CardActions,
   Button
 } from "@material-ui/core";
+import axios from "axios"
+
+
+
 function Followers({ image, name }) {
+
   return (
     <Card>
       <CardActionArea>
@@ -22,21 +26,17 @@ function Followers({ image, name }) {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            Lizard
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
+            {name}
           </Typography>
         </CardContent>
       </CardActionArea>
 
       <CardActions>
         <Button size="small" color="primary">
-          Share
+          Followers
         </Button>
         <Button size="small" color="primary">
-          Learn More
+          Followings
         </Button>
       </CardActions>
     </Card>
