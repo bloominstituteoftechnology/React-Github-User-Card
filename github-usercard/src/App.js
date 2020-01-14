@@ -4,6 +4,7 @@ import axios from "axios";
 import './App.css';
 
 import FollowerList from "./components/FollowerList"
+import Profile from "./components/Profile";
 
 class App extends Component {
   
@@ -47,7 +48,7 @@ class App extends Component {
     console.log(`2. Render`)
     return (
       <div className="App">
-        <h2>{this.state.me.name} Followers:</h2>        
+        <Profile me={this.state.me}/>
         <FollowerList followers={this.state.followers}/>
       </div>
     );
