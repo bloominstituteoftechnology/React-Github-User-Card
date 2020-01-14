@@ -3,7 +3,6 @@ import axios from "axios";
 
 import './App.css';
 
-import logo from './logo.svg';
 import FollowerList from "./components/FollowerList"
 
 class App extends Component {
@@ -17,34 +16,39 @@ class App extends Component {
     }
   }
   
-  componentDidMount(){
+  componentDidMount() {
     console.log(`3. cDM`)
     axios
       .get("https://api.github.com/users/nwkendall")       
-      .then(res => {
-        console.log(`this is res.data:`, res.data)
+      .then(initialRes => {
+        console.log(`this is initialRes.data:`, initialRes.data)
         this.setState({
-          me: res.data
-        })
-        
+          me: initialRes.data
+        })        
       })
       .catch(err => {
         console.log(`this is err:`, err)
       })
+
+    axios
+    .get("https://api.github.com/users/nwkendall/followers")       
+    .then(res => {
+      console.log(`this is res.data:`, res.data)
+      this.setState({
+        followers: res.data
+      })        
+    })
+    .catch(err => {
+      console.log(`this is err:`, err)
+    })
   }
 
   render() {
     console.log(`2. Render`)
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />          
-        </header>
-        <div>
-          <h2>{this.state.me.name}</h2>
-        </div>
+        <h2>{this.state.me.name} Followers:</h2>        
         <FollowerList followers={this.state.followers}/>
-
       </div>
     );
   }

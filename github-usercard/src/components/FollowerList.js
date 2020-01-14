@@ -5,7 +5,10 @@ const FollowerList = (props) => {
   console.log(`this is props in FollowerList`, props)
   return (
     <div>
-      <FollowerCard followers={props.followers}/>
+      {props.followers.map(follower => (
+        <FollowerCard follower={follower}/>
+
+      ))}
     </div>
   )
 }
