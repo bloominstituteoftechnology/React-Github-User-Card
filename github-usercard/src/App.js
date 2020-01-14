@@ -8,14 +8,11 @@ import Profile from "./components/Profile";
 
 class App extends Component {
   
-  constructor() {
-    console.log(`1. Constructor`)
-    super();
-    this.state = {
+  state = {
       me: "",
       followers: []
     }
-  }
+  
   
   componentDidMount() {
     console.log(`3. cDM`)
@@ -47,7 +44,9 @@ class App extends Component {
   render() {
     console.log(`2. Render`)
     return (
-      <div className="App">
+      <div 
+        className="App"
+        style={{marginLeft: "5%", marginRight: "5%"}}>
         <Profile me={this.state.me}/>
         <FollowerList followers={this.state.followers}/>
       </div>
