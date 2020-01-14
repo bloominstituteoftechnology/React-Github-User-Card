@@ -7,11 +7,11 @@ a {
   border: 1px solid black;
   border-radius: 5px;
   text-decoration: none;
-  color: #f5eaea;
-  background-color: #5b5656;
+  color: #f0e3ff;
+  background-color: #d89cf6;
 }
 a:hover {
-  background-color: #f5eaea;
+  background-color: #916dd5;
   color: #7fcd91;
   font-weight: 800;
 }
@@ -35,5 +35,5 @@ img {
   height: 300px;
   border: 1px solid black;
   border-radius: 15px;
-  background-color: #4d4646;
+  background-color: #3e206d;
 }
