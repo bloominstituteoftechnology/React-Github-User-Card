@@ -1,30 +1,97 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import axios from "axios";
+import './App.css'
 class App extends React.Component {
+  // constructor, super, etc, are all still built into this class, just under the hood
+  state = {
+    user: [],
+    followers: []
+  };
+
+  componentDidMount() {
+    axios
+      .get("https://api.github.com/users/RobertElias")
+      .then(res => {
+        // res.data.message
+        this.setState({
+          user: res.data
+        });
+        console.log(res);
+      })
+      .catch(err => console.log(err))
+      .finally( res => {
+        axios
+        .get(`https://api.github.com/users/RobertElias/followers`)
+        .then(res => {
+          // res.data.message
+          this.setState({
+            followers: res.data
+          });
+          console.log(res);
+        })
+        .catch(err => console.log(err))
+      } )
+  }
+// Stretch Problem
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (this.state.doggos !== prevState.doggos) {
+  //     console.log("inside first if?");
+  //     if (this.state.doggoText === "chihuahua") {
+  //       console.log("inside second if?");
+  //       axios
+  //         .get("https://dog.ceo/api/breed/husky/images")
+  //         .then(res => {
+  //           // res.data.message
+  //           this.setState({
+  //             doggos: res.data.message,
+  //             doggoText: "husky"
+  //           });
+  //           console.log(res);
+  //         })
+  //         .catch(err => console.log(err));
+  //     }
+  //   }
+  // }
+
+  handleChanges = e => {
+    this.setState({
+      userText: e.target.value
+    });
+  };
+
+  fetchUsers = e => {
+    e.preventDefault();
+    axios
+      .get(`https://api.github.com/users/RobertElias/followers`)
+      .then(res => {
+        // res.data.message
+        this.setState({
+          followers: res.data
+        });
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <h1>Hello GitHub Users</h1>
+        <input
+          type="text"
+          value={this.state.userText}
+          onChange={this.handleChanges}
+        />
+        <button onClick={this.fetchUsers}>Fetch Users</button>
+        <div className="doggos">
+          {this.state.followers.map((user, i ) => (
+            <img width="200" src={user.avatar_url} key={i} alt={user.login} />
+            
+          ))}
+        </div>
       </div>
     );
   }
-
-  }
- 
+}
 
 export default App;
