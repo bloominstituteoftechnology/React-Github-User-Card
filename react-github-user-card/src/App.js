@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import UserCard from './userCard';
 import axios from 'axios';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class App extends Component {
 
@@ -47,28 +48,29 @@ class App extends Component {
         <h1>Git Hub User Cards</h1>
 
         {console.log(this.state) }
-        <UserCard 
+        <div className="center"><UserCard 
         name = {this.state.name}
         login = {this.state.login}
         email = {this.state.email}
         avatar = {this.state.avatar}
-        />
+        /></div>
 
         <h2>Followers</h2>
-         {this.state.followers.map(e => {
-           return (             
-             <div> 
-             <UserCard 
-             name = {e.name}
-             login = {e.login}
-             email = {e.html_url}
-             avatar = {e.avatar_url}
-             />
-            </div>          
-           )
-         }
-        )}
-
+          <div className="flex">
+          {this.state.followers.map(e => {
+            return (             
+              
+              <UserCard 
+              name = {e.name}
+              login = {e.login}
+              email = {e.html_url}
+              avatar = {e.avatar_url}
+              />
+                      
+            )
+          }
+          )}
+        </div>
       </div>
     )
   }

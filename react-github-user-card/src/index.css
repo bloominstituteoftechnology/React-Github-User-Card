@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(op4.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+ 
 }
 
 code {

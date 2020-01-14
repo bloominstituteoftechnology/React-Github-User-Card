@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+.App h1, .App h2{
+  margin:2%;
+  color:#A4B3B6;
+}
+
+.card{
+  margin: 0 auto;
+  box-shadow: 10px 10px 8px #2A1B3D;
+  margin-top: 2%;
+}
