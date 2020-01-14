@@ -8,7 +8,7 @@ function UserCard(props){
                 <h2>{props.name}</h2>
                 <img src={props.avatar} />
                 <p>Username: {props.login}</p>
-                <p>Email: {props.email}</p>
+                <p>Location: {props.location}</p>
                 <p>Website: {props.html}</p>
                 <p>Blog: {props.blog}</p>
             </div>

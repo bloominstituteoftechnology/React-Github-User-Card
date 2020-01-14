@@ -46,6 +46,7 @@ class App extends React.Component {
             login={this.state.user.login}
             html={this.state.user.html_url}
             blog={this.state.user.blog}
+            location={this.state.user.location}
              />
           </div>
 
