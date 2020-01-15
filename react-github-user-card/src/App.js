@@ -1,29 +1,38 @@
 import React from 'react';
 import axios from 'axios';
-import UserPage from './components/UserPage';
-import './App.css';
+import UsrPge from './components/UserPage';
+import FollowPage from './components/FollowPage';
 
-class App extends React.Component {
-
-  constructor() { 
-    super()
-    this.state = {
-      followersArray: []
+class App extends React.Component { 
+    state = {
+      aaron:[],
+      followersArray:[]
     }
-  }
   componentDidMount() {
     const URL = 'https://api.github.com/users/anders529';
-    axios
-      .get(`${URL}`)
-      .then(response => {
-      this.setState({followersArray: response.data})
-    })
-    .catch(error => console.log(error))
-  }
+    const FOLLOWERS = 'https://api.github.com/users/anders529/followers'
+    axios.get(`${URL}`)
+      .then(response => 
+        {
+        this.setState({
+          aaron: response.data
+        }) 
+        axios.get(`${FOLLOWERS}`)
+        .then(response => {
+          this.setState({
+            followersArray: response.data
+          })
+        })
+      })
+        .catch(error => {
+          console.log(error);
+        })
+    }
   render() {
     return  (
      <>
-        <UserPage data={this.state.followersArray}/>
+        <UsrPge data={this.state.aaron}/>
+        <FollowPage data={this.state.followersArray}/>
      </> 
     );
   }}
