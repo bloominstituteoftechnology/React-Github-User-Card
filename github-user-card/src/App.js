@@ -20,7 +20,6 @@ class App extends React.Component {
         this.setState({
           user: res.data
         });
-        console.log('User', res.data);
       })
       .catch(err => console.log(err)); 
 
@@ -49,7 +48,6 @@ class App extends React.Component {
           location={this.state.user.location}
           followers={this.state.user.followers}
           followersData={this.state.followersData}
-          followersImg={this.state.followersData.avatar_url}
         />
           
       </div>

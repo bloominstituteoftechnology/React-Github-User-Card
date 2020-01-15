@@ -1,4 +1,5 @@
 import React from 'react';
+import FollowersData from './FollowersData.js';
 
 function UserCard(props) {
     return (
@@ -9,8 +10,9 @@ function UserCard(props) {
             <h2>followers: {props.followers}</h2>
             <img src={props.img}></img>
             {props.followersData.map(follower => (
-                <img src={follower.avatar_url}></img>
-            ))}
+                // <h3>{follower.followersUsename}</h3>
+                <FollowersData img={follower.avatar_url} username={follower.login}/>
+            ))};
         </div>
     )
 }
