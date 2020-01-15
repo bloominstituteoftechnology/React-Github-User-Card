@@ -1,11 +1,14 @@
 .App {
   text-align: center;
-  /* background-image: url(../src/img/woodtable.jpg); */
-  border: 40px solid white;
+  /* background-image: url(https://figma.imgix.net/5M2puKwSoznulyXdFOeDll/ff8bcf78b377a8af78877483fe8a02ba/Github_Case_Study_Header_New.png?&w=1060&auto=compress%2Cformat&crop=entropy&fit=crop&q=75); */
+  /* border: 40px solid white; */
+  background-color: gray;
+  width: 100%;
 }
 .App h1 {
   font-size: 400%;
   color: black;
+  margin:auto;
 }
 
 .userClass {
@@ -15,7 +18,7 @@
 }
 
 .userClass img {
-  border-radius: 50%;
+  border-radius: 100px;
 }
 
 .userClass h2{
@@ -25,5 +28,5 @@ color: rgb(17, 17, 17);
 
 .userClass a{
 color: rgb(20, 20, 20);
-font-size: 400%;
+font-size:200%;
 }
