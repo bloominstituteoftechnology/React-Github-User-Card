@@ -1,5 +1,5 @@
 import React from 'react';
-import './App.css';
+import './App.scss';
 
 import axios from 'axios';
 import UserCard from './UserCard';
@@ -49,11 +49,10 @@ class App extends React.Component {
             location={this.state.user.location}
              />
           </div>
-
+            <h2>My followers</h2>
               {this.state.followers.map(follower => {
                 return (
                   <div className="followers">
-                    <h2>My followers</h2>
                     <img src={follower.avatar_url} />
                     <p>Username: {follower.login}</p>
                     <p>Website: {follower.html_url}</p>

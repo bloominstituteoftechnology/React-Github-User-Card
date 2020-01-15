@@ -1,4 +1,71 @@
-.App {
+body {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #f1f1f1;
+}
+
+body #root .user div .main-container .my-info {
+  text-align: center;
+  border: 5px dotted gray;
+}
+
+body #root .user div .main-container .my-info h1 {
+  color: cornflowerblue;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #00afaf;
+          text-decoration-color: #00afaf;
+}
+
+body #root .user div .main-container .my-info img {
+  width: 350px;
+}
+
+body #root .user div .main-container .my-info p {
+  margin-left: 14.5%;
+  width: 75%;
+  color: teal;
+  background-color: #aac8ff;
+  padding: 2% 0;
+}
+
+body #root .user h2 {
+  text-align: center;
+  color: steelblue;
+  text-decoration: underline;
+  -webkit-text-decoration-color: #027979;
+          text-decoration-color: #027979;
+}
+
+body #root .user .followers {
+  border-bottom: 3px dotted black;
+  margin-bottom: 2%;
+  text-align: center;
+}
+
+body #root .user .followers img {
+  width: 300px;
+}
+
+body #root .user .followers p {
+  color: #027979;
+  background-color: #6cbdff;
+  width: 50%;
+  margin-left: 25%;
+  padding: 1% 0;
+}
+
+body #root .user .followers p:nth-child(3) {
+  width: 60%;
+  margin-left: 20%;
+}
+
+body #root .user .followers p:last-child {
+  width: 70%;
+  margin-left: 15%;
+}
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +102,5 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+/*# sourceMappingURL=App.css.map */
