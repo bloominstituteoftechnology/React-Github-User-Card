@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.scss';
-
 import axios from 'axios';
 import UserCard from './UserCard';
+import { Link } from 'react';
 
 class App extends React.Component {
     // constructor, super, etc, are all still built into this class, just under the hood
