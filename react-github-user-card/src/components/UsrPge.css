@@ -1,0 +1,15 @@
+div {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+h1, h2, p{
+    text-align: center;
+}
+img {
+    width: 75%;
+    margin-left: 10%;
+}
+a {
+    text-align: center;
+}
