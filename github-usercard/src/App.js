@@ -29,11 +29,19 @@ class App extends Component {
     axios
     .get("https://api.github.com/users/nwkendall/followers")       
     .then(res => {
-      console.log(`this is "followers" state:`, res.data)
-      this.setState({
-        followers: res.data
-      })        
-    })
+      res.data.forEach(user => {
+        axios
+          .get(`https://api.github.com/users/${user.login}`)
+          
+          .then(res => {
+            console.log(`this is "res[i]" state:`, res)
+
+            this.setState({
+              followers: [...this.state.followers, res.data]
+            })        
+          })       
+        })
+      })
     .catch(err => {
       console.log(`this is err:`, err)
     })
