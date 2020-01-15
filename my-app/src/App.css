@@ -1,0 +1,41 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+
+.userCards {
+  margin-top: 40px;
+  box-shadow: 4px 5px 25px 4px rgba(0, 0, 0, 0.577);
+  transition: all 0.2s ease-in-out;
+}
+
+.userCards:hover {
+  transform: scale(1.1);
+  box-shadow: 4px 10px 25px 8px rgba(0, 0, 0, 0.906);
+}
