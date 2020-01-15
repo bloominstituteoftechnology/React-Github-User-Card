@@ -13,13 +13,11 @@ class App extends Component {
       followers: []
     }
   
-  
   componentDidMount() {
-    console.log(`3. cDM`)
     axios
       .get("https://api.github.com/users/nwkendall")       
       .then(initialRes => {
-        console.log(`this is initialRes.data:`, initialRes.data)
+        console.log(`this is "me" state:`, initialRes.data)
         this.setState({
           me: initialRes.data
         })        
@@ -31,7 +29,7 @@ class App extends Component {
     axios
     .get("https://api.github.com/users/nwkendall/followers")       
     .then(res => {
-      console.log(`this is res.data:`, res.data)
+      console.log(`this is "followers" state:`, res.data)
       this.setState({
         followers: res.data
       })        
@@ -42,11 +40,10 @@ class App extends Component {
   }
 
   render() {
-    console.log(`2. Render`)
     return (
       <div 
         className="App"
-        style={{marginLeft: "5%", marginRight: "5%"}}>
+        style={{ marginLeft: "5%", marginRight: "5%", padding: "1%" }}>
         <Profile me={this.state.me}/>
         <FollowerList followers={this.state.followers}/>
       </div>

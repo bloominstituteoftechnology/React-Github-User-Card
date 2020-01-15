@@ -1,18 +1,18 @@
 import React from "react";
 
-const Profile = props => {
+const Profile = ({ me }) => {
+  
+  const {
+    avatar_url,
+    login,
+    name
+  } = me
+  
   return (
-    <div style={{display: "flex", flexDirection: "column", alignItems: "center"}}>
-      <img style={{
-        width: "40%",
-        padding: "2%"
-        }} 
-        src={props.me.avatar_url} 
-        alt="profile pic"
-      />
-
-      <h1>{props.me.name}'s Followers:</h1>        
-
+    <div style={{padding: "1%", backgroundColor: "gray"}}>
+      <img src={avatar_url} alt="profile pic" />
+      <h4>{login}</h4>
+      <h1>{name}'s Followers:</h1>        
     </div>
   )
 }

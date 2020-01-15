@@ -1,22 +1,22 @@
 import React from "react";
-import FollowerCard from "./FollowerCard"
+import FollowerCard from "./FollowerCard";
+// import gitroot from "./gitimage.png";
 
-const FollowerList = (props) => {
-  console.log(`this is props in FollowerList`, props)
+const FollowerList = ({ followers }) => {
+  
   return (
     <div style={{
-
       display: "grid", 
       flexWrap: "wrap", 
       gridGap: "1%",  
-      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))"
-      ,
+      gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+      padding: "2%",
+      overflow: "auto",
     }}>
-      {props.followers.map(follower => (
+      {followers.map(follower => (
         <FollowerCard 
           follower={follower}
           key={follower.id}/>
-
       ))}
     </div>
   )
