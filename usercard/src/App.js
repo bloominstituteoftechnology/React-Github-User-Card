@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
-import './App.css'
+import "./App.css";
+import UsersCard from "./components/UsersCard";
 class App extends React.Component {
   // constructor, super, etc, are all still built into this class, just under the hood
   state = {
@@ -19,20 +20,20 @@ class App extends React.Component {
         console.log(res);
       })
       .catch(err => console.log(err))
-      .finally( res => {
+      .finally(res => {
         axios
-        .get(`https://api.github.com/users/RobertElias/followers`)
-        .then(res => {
-          // res.data.message
-          this.setState({
-            followers: res.data
-          });
-          console.log(res);
-        })
-        .catch(err => console.log(err))
-      } )
+          .get(`https://api.github.com/users/RobertElias/followers`)
+          .then(res => {
+            // res.data.message
+            this.setState({
+              followers: res.data
+            });
+            console.log(res);
+          })
+          .catch(err => console.log(err));
+      });
   }
-// Stretch Problem
+  // Stretch Problem
   // componentDidUpdate(prevProps, prevState) {
   //   if (this.state.doggos !== prevState.doggos) {
   //     console.log("inside first if?");
@@ -83,10 +84,10 @@ class App extends React.Component {
           onChange={this.handleChanges}
         />
         <button onClick={this.fetchUsers}>Fetch Users</button>
-        <div className="doggos">
-          {this.state.followers.map((user, i ) => (
-            <img width="200" src={user.avatar_url} key={i} alt={user.login} />
-            
+        <div className="card">
+          <UsersCard user={this.state.user} />
+          {this.state.followers.map((follower, i) => (
+            <UsersCard user={follower} key={follower.id}/>
           ))}
         </div>
       </div>

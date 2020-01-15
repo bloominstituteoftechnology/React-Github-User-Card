@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "axios": "^0.19.1"
+    "axios": "^0.19.1",
+    "react-strap": "^0.0.1",
+    "reactstrap": "^8.2.0"
   }
 }

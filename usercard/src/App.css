@@ -37,3 +37,40 @@
     transform: rotate(360deg);
   }
 }
+
+/* Card Styling */
+
+.card {
+  border: 1px solid #282c34;
+  width: 75%;
+  padding: 20px;
+  display: flex;
+  border-radius: 5px;
+  box-shadow: 0 1px 6px -2px #000;
+  background-color: #FFF;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.card-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 3px;
+  margin-right: 20px;
+}
+.card .name {
+  font-size: 3.4rem;
+}
+
+.card p {
+  font-size: 1.4rem;
+  margin-bottom: 3px;
+}
+
+.card .username {
+  font-size: 1.8rem;
+  font-style: italic;
+  margin: 3px 0 10px;
+}
