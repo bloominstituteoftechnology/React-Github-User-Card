@@ -8,6 +8,9 @@ function UserCard(props) {
             <h2>location: {props.location}</h2>
             <h2>followers: {props.followers}</h2>
             <img src={props.img}></img>
+            {props.followersData.map(follower => (
+                <img src={follower.avatar_url}></img>
+            ))}
         </div>
     )
 }

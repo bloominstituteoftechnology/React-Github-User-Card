@@ -8,7 +8,7 @@ class App extends React.Component {
     super();
     this.state={
       user: [],
-      followers: []
+      followersData: []
     };
   }
 
@@ -28,9 +28,9 @@ class App extends React.Component {
       .get('https://api.github.com/users/christinakal/followers')
       .then(res => {
         
-        // this.setState({
-        //   followers: res.data
-        // });
+        this.setState({
+          followersData: res.data
+        });
         console.log('Followers', res.data);
       })
       .catch(err => console.log(err)); 
@@ -48,6 +48,8 @@ class App extends React.Component {
           img={this.state.user.avatar_url} 
           location={this.state.user.location}
           followers={this.state.user.followers}
+          followersData={this.state.followersData}
+          followersImg={this.state.followersData.avatar_url}
         />
           
       </div>
