@@ -5,12 +5,13 @@ const Profile = ({ me }) => {
   const {
     avatar_url,
     login,
-    name
+    name,
+    html_url
   } = me
   
   return (
     <div style={{padding: "1%", backgroundColor: "gray"}}>
-      <img src={avatar_url} alt="profile pic" />
+    <a href={html_url} target="__blank"><img src={avatar_url} alt="profile pic" /></a>
       <h4>{login}</h4>
       <h1>{name}'s Followers:</h1>        
     </div>
