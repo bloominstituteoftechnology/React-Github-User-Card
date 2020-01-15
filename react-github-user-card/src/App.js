@@ -32,6 +32,7 @@ class App extends React.Component {
     return  (
      <>
         <UsrPge data={this.state.aaron}/>
+        
         <FollowPage data={this.state.followersArray}/>
      </> 
     );
