@@ -10,3 +10,7 @@ img {
     width: 75%;
     margin-left: 10%;
 }
+a {
+    text-decoration: none;
+    margin-left: 40%;
+}
