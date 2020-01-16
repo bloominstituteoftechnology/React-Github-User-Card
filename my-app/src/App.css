@@ -43,3 +43,11 @@
   display: flex;
   justify-content: space-around;
 }
+
+.user-card img {
+  border-radius: 20px;
+}
+
+h1 {
+  text-decoration: underline;
+}

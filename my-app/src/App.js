@@ -51,6 +51,7 @@ class App extends React.Component {
               key={item.id}
               login={item.login}
               img={item.avatar_url}
+              url={item.html_url}
             />
           ))}
         </div>
