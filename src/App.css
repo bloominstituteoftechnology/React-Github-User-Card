@@ -38,12 +38,49 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
-img {
-  width: 60%;
-  border-radius: 50%;
+
+
+.user-card {
+  border: 1px solid black;
+  border-radius: 3rem;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 5px 5px 10px gray;
+  background-color: white;
+  max-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.user-card a {
+  color: #2d2d37;
+  text-decoration: none;
+}
+
+.user-card a:hover {
+  font-weight: 900;
+}
+
+.container {
+  background-color: skyblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.user-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.user-card img {
+  max-width: 300px;
 }
