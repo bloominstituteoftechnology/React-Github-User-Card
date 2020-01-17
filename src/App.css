@@ -8,6 +8,10 @@
   text-align: center;
 }
 
+body {
+  background-color: #2d2d37;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -43,6 +47,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+
 
 .user-card {
   border: 1px solid black;
