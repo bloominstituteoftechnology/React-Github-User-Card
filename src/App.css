@@ -31,7 +31,7 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: #2d2d37;
 }
 
 @keyframes App-logo-spin {
@@ -69,7 +69,7 @@
 }
 
 .container {
-  background-color: skyblue;
+  background-color: lightgrey;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

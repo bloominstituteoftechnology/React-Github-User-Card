@@ -17,9 +17,9 @@ class App extends React.Component {
     });
   };
 
-  componentDidUpdate() {
+  componentDidMount() {
     axios
-      .get(`https://api.github.com/users/bkoehler2016`)
+      .get("https://api.github.com/users/bkoehler2016")
       .then(res => {
         console.log(res.data);
         this.setState({ user: res.data });
