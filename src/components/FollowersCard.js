@@ -1,13 +1,13 @@
 import React from "react";
-
+import { Card, CardTitle, CardImg } from "reactstrap";
 const FollowerCard = props => {
   return (
-    <div className="follower-card">
-      <img src={props.img} alt={props.login} width="40%"></img>
-      <p>
+    <Card>
+      <CardImg src={props.img} alt={props.login} width="40%"></CardImg>
+      <CardTitle>
         <a href={props.url}>{props.login}</a>
-      </p>
-    </div>
+      </CardTitle>
+    </Card>
   );
 };
 
