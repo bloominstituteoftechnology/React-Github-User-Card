@@ -69,8 +69,6 @@ class App extends React.Component {
               key={item.id}
               loginFollow={item.login}
               imgFollow={item.avatar_url}
-              urlFollow={item.url}
-              urlFollowing={item.following_url}
             />
           ))}
         </div>

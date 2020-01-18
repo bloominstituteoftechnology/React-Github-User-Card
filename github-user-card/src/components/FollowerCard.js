@@ -7,9 +7,7 @@ const FollowerCard = props => {
             <p>
                 <a href="{props.urlFollow}">{props.loginFollow}</a>
             </p>
-            <p>Total Repos: {props.reposFollow}</p>
-            <p>Location: {props.locationFollow}</p>
-            <p> Following: {props.urlFollowing}</p>
+
         </div>
     )
 }
