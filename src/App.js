@@ -36,7 +36,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h2>User</h2>
-        <UserCard user={this.state.user}/>
+        <UserCard user={this.state.user} followers={this.state.followers} />
       </div>
     );
   }
