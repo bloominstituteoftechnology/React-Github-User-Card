@@ -1,7 +1,6 @@
 import React from 'react';
-import axios from 'axios';
-import UserCard from './Components/UserCard.js'
 
+import UserCard from './Components/UserCard.js'
 import './App.css';
 
 class App extends React.Component {
@@ -13,11 +12,11 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    // console.log("here");
-    axios.get('https://api.github.com/users/vetorobert3')
-      .then((res) => {
-        console.log(res.data);
-        this.setState({ users: res })
+    fetch(`https://api.github.com/users/vetorobert3`)
+      .then(res => res.json())
+      .then(persons => {
+        console.log('fetch: person', persons)
+        this.setState({...this.state, users: persons.message})
       })
       .catch((err) => {
         console.log(err)
@@ -28,8 +27,7 @@ class App extends React.Component {
     return(
       <div>
         <h1>GitHub Users</h1>
-        <div>{this.state.login}</div>
-        <UserCard namesProp={this.state.users}/>
+        <UserCard users={this.state.login}/>
       </div>
     );
   }
