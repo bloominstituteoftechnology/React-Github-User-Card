@@ -5,6 +5,7 @@ const UserCard = props => {
   return (
     <div>
       <h3>{props.users.login}</h3>
+      <img src={props.users.avatar_url} alt="followerImage" />
     </div>
   )         
 };

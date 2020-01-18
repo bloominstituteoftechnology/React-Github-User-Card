@@ -12,20 +12,14 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`https://api.github.com/users`)
+    fetch(`https://api.github.com/users/vetorobert3/followers`)
       .then(res => res.json())
       .then(user => {
-        console.log(user);
-        // const userArray = user.map(u => {
-        //   return user;
-        // })
         this.setState({users: user})
       })
       .catch((err) => {
         console.log(err)
       });
-
-      console.log(this.state.users)
   }
 
   render() {
@@ -33,7 +27,7 @@ class App extends React.Component {
       <div>
         <h1>GitHub Users</h1>
         {this.state.users.map(users => {
-          return <UserCard users={users} /> 
+          return <UserCard users={users} key={users.id} />
         })}
       </div>
     );
