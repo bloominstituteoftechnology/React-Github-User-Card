@@ -8,7 +8,10 @@ const UserCard = props => {
             <span>GitHub Handle: </span>
             <a href={props.url}>{props.login}</a>
             <p> Total Followers: {props.followers}</p>
-            <a href={props.listFollower}>Followers</a>
+            <p> Total Repos: {props.repos}</p>
+            <p> Location: {props.location}</p>
+            <p> Following: {props.following}</p>
+
         </div>
     )
 }
