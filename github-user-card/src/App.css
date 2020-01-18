@@ -1,0 +1,40 @@
+.App {
+  text-align: center;
+}
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.follower-section {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-flow: row; */
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.follower-cards {
+  background-color: rgba(180, 240, 205, 0.705);
+  box-shadow: 10px 10px 25px grey;
+  width: 24%;
+  height: 100%;
+  margin: 5px 0;
+  padding: 5px;
+}
+
+.user-card {
+background-color: blanchedalmond;
+box-shadow: 10px 10px 25px grey;
+width: 50%;
+margin: 0 auto;
+padding: 10px;
+}
