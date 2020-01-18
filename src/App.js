@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import axios from 'axios';
 import UserCard from './UserCard';
 import FollowerList from './FollowerList';
@@ -49,13 +50,27 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h2>User</h2>
-        <UserCard user={this.state.user} />
-        <FollowerList followers={this.state.followers} />
-        <FollowingList followings={this.state.followings} />
+        <Route 
+          path='/' 
+          render={()=> <UserCard user={this.state.user} />} 
+        />
+
+        <Route 
+          path='/followers' 
+          render={()=> <FollowerList followers={this.state.followers} />} 
+        />
+
+        <Route 
+          path='/following' 
+          render={()=> <FollowingList followings={this.state.followings} />} 
+        />
       </div>
     );
   }
 }
 
 export default App;
+
+{/* <UserCard user={this.state.user} /> */}
+// {<FollowerList followers={this.state.followers} />
+// <FollowingList followings={this.state.followings} />}
