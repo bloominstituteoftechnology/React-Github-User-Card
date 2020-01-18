@@ -10,7 +10,6 @@ const UserCard = props => {
             <p> Total Followers: {props.followers}</p>
             <p> Total Repos: {props.repos}</p>
             <p> Location: {props.location}</p>
-            <p> Following: {props.following}</p>
 
         </div>
     )
