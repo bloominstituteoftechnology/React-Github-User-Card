@@ -1,11 +1,14 @@
 import React from 'react';
 import axios from 'axios';
 import UserCard from './UserCard';
+import FollowerList from './FollowerList';
+import FollowingList from './FollowingList'
 
 class App extends React.Component {
   state = {
     user: {},
-    followers: []
+    followers: [],
+    followings: [],
   }
 
   componentDidMount() {
@@ -30,13 +33,26 @@ class App extends React.Component {
         })
       })
       .catch(err2 => console.log('NOOOOOO!!!!', err2))
+
+      axios
+      .get('https://api.github.com/users/Adrian-Guadalupe/following')
+      .then(res3 => {
+        console.log(res3.data);
+        this.setState({
+          ...this.state,
+          followings: res3.data
+        })
+      })
+      .catch(err3 => console.log('NOOOOOO!!!!', err3))  
   }
 
   render() {
     return (
       <div className="App">
         <h2>User</h2>
-        <UserCard user={this.state.user} followers={this.state.followers} />
+        <UserCard user={this.state.user} />
+        <FollowerList followers={this.state.followers} />
+        <FollowingList followings={this.state.followings} />
       </div>
     );
   }

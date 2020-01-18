@@ -5,7 +5,10 @@ const UserCard = ({ user }) => {
       <div>
          <img src={user.avatar_url} alt='Adrian Guadalupe' />
          <h2>{user.name}</h2>
-         <h3>{user.bio}</h3>
+         <p>{user.bio}</p>
+         <p>{user.location}</p>
+         <p>Followers: {user.followers}</p>
+         <p>Following: {user.following}</p>
       </div>
    )
 }
