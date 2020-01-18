@@ -13,6 +13,8 @@ class App extends React.Component {
 
   state = {
     listFollowers: [],
+    originalList: [],
+    searchTerm: ""
   }
 
   componentDidMount() {
@@ -21,7 +23,10 @@ class App extends React.Component {
     axios
       .get('https://api.github.com/users/Heart8reak/followers')
       .then((response) => {
-        this.setState({ listFollowers: response.data })
+        this.setState({
+          listFollowers: response.data,
+          originalList: response.data
+        })
         console.log(this.state)
       })
       .catch(err => console.log(err))
@@ -44,6 +49,24 @@ class App extends React.Component {
       .catch(err => console.log("error on fetch:", err));
   }
 
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.searchTerm !== this.state.searchTerm) {
+      console.log("SearchTerm: we have a state change!")
+
+      const characters = this.state.originalList.filter(char =>
+        char.login.toLowerCase().includes(this.state.searchTerm.toLowerCase()))
+      this.setState({
+        listFollowers: characters
+      })
+      console.log(this.state)
+    }
+  }
 
   render() {
     return (
@@ -62,6 +85,17 @@ class App extends React.Component {
         />
 
         <h1>GitHub Followers:</h1>
+        <div>
+          <form>
+            {/* <label>Search </label> */}
+            <input
+              onChange={this.handleChange}
+              type="text"
+              name="searchTerm"
+              value={this.state.searchTerm} placeholder="Search "></input>
+          </form>
+          <br />
+        </div>
         <div className="follower-section">
           {this.state.listFollowers.map(item => (
             <FollowerCard
