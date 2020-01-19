@@ -22,6 +22,12 @@
   justify-content: space-evenly;
 }
 
+input {
+  width: 25%;
+  padding: 10px 5px;
+  font-size: 1.5em;
+}
+
 .follower-cards {
   background-color: rgba(180, 240, 205, 0.705);
   box-shadow: 10px 10px 25px grey;
@@ -37,4 +43,30 @@ box-shadow: 10px 10px 25px grey;
 width: 50%;
 margin: 0 auto;
 padding: 10px;
+}
+
+
+
+/* Mobile Media 600px */
+
+@media only screen and (max-width: 600px) {
+  body {
+    background-color: aqua;
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .follower-section {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .follower-cards {
+  width: 100%;
+  }  
+
+  .user-card {
+    width: 100%;
+  }
+
 }
