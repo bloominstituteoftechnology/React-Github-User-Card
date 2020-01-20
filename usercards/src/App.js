@@ -1,46 +1,68 @@
-import React from 'react'
-import './App.css'
+import React from "react";
+import "./App.css";
+import axios from "axios";
+import User from "./User";
+import Followers from "./Followers";
 
 class App extends React.Component {
   constructor() {
-    super()
+    super();
     this.state = {
-      UserCard: [],
-    }
+      User:{},
+      Followers: []
+    };
   }
 
   componentDidMount() {
-    fetch('https://api.github.com/users/ZIng178')
-      .then(res => res.json())
-      .then(res => {
-        console.log(res)
-        this.setState({
-          ...this.state,
-          UserCard: [res.avatar_url],
-        })
-      })
-      .catch(err => console.log('Error', err))
+    this.getUser();
+    this.getFollowers();
   }
 
+  getUser = () => {
+    axios
+      .get("https://api.github.com/users/ZIng178")
+      .then(res =>
+        this.setState({
+          UserName: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
+  getFollowers = () => {
+    axios
+      .get("https://api.github.com/users/ZIng178/followers")
+      .then(res =>
+        this.setState({
+          Followers: res.data
+        })
+      )
+      .catch(err => console.log(err));
+  };
+
   render() {
+    console.log(this.state);
     return (
-      <div className='App'>
-        <header className='App-header'>
-          {this.state.UserCard.map(user => {
-            return (
-              <div>
-                <img src={user.avatar_url} alt='user-image'></img>
-                <div className='info'>
-                  <p>{user.name}</p>
-                  <p>{user.email}</p>
-                </div>
-              </div>
-            )
-          })}
-        </header>
+      <div className="App">
+        <h1> MY GitHubUserCard</h1>
+        
+          <User 
+          name={this.state.User.name}
+            image={this.state.User.avatar_url}
+            html_url={this.state.User.html_url}
+
+          />
+      
+        {this.state.Followers.map(follower => (
+          <Followers
+            name={follower.login}
+            image={follower.avatar_url}
+            html_url={follower.html_url}
+          />
+        ))}
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
