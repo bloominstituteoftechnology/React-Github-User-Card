@@ -1,0 +1,36 @@
+Arguments: 
+  /usr/local/Cellar/node/12.11.1/bin/node /usr/local/bin/yarn add bootstrap reactstratp
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+
+Yarn version: 
+  1.21.1
+
+Node version: 
+  12.11.1
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/reactstratp: Not found
+      at Request.params.callback [as _callback] (/usr/local/lib/node_modules/yarn/lib/cli.js:66947:18)
+      at Request.self.callback (/usr/local/lib/node_modules/yarn/lib/cli.js:140665:22)
+      at Request.emit (events.js:210:5)
+      at Request.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141637:10)
+      at Request.emit (events.js:210:5)
+      at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/yarn/lib/cli.js:141559:12)
+      at Object.onceWrapper (events.js:299:28)
+      at IncomingMessage.emit (events.js:215:7)
+      at endReadableNT (_stream_readable.js:1183:12)
+      at processTicksAndRejections (internal/process/task_queues.js:80:21)
+
+npm manifest: 
+  No manifest
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
