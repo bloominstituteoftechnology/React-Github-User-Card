@@ -8,8 +8,9 @@ const UserCard = (props) => {
     const {name, avatar_url, followers, login, html_url, id, following, userRepo} = props.data;
     return (
         <>
+        <div className = "mainUserConatiner">
             <div className="header" >
-                <h1>My name is {name} </h1>
+                <h1>This is {name}'s gitHub userCard </h1>
                 <img src={avatar_url} alt={name} />
             </div>
             
@@ -17,31 +18,42 @@ const UserCard = (props) => {
                 <p>Username: {login} </p>
                 <p>Github Link: <a href={html_url} target="_blank" rel="noopener noreferrer" > {html_url} </a> </p>
             </div>
-
+        </div>
             
             <div className="followers">
-                <h2 className="secondary-heading" >My Followers</h2>
-                <p>Number of Followers: {followers} </p>
-                {props.followerData.map( follower => (
-                    <div key={follower.id} className="followers__detail">
-                        <p> {follower.login} </p>
-                        <img src={follower.avatar_url} alt={follower.login} />
-                        <p>Github Link:<a href={follower.html_url} target="_blank" rel="noopener noreferrer" > {follower.html_url} </a></p>
+            <h2>My Followers</h2>
+               <div className ="usersCardsBox">
+               {props.followerData.map( follower => (
+                    <div key={follower.id} className="card">
+                        <div class="userPhoto">
+                            <img src={follower.avatar_url} alt={follower.login} />
+                        </div>
+                        <div className="userInfo">
+                            <p> {follower.login} </p>
+                            <p>Github Link:<a href={follower.html_url} target="_blank" rel="noopener noreferrer" > {follower.html_url} </a></p>
+                        </div>
                     </div>
                 ))}
+               </div>
             </div>
+
             <div className="following">
-                <h2 className="secondary-heading" >My following</h2>
-                <p>Number of following: {following} </p>
-                {props.followingData.map( following => (
-                    <div key={following.id} className="followings__detail">
-                        <p> {following.login} </p>
-                        <img src={following.avatar_url} alt={following.login} />
-                        <p>Github Link:<a href={following.html_url} target="_blank" rel="noopener noreferrer" > {following.html_url} </a></p>
-                    </div>
-                ))}
+                <h2>I follow</h2>
+                <div className ="usersCardsBox">
+                    {props.followingData.map( following => (
+                        <div key={following.id} className="card">
+                            <div class="userPhoto">
+                                <img src={following.avatar_url} alt={following.login} />
+                            </div>
+                            <div className="userInfo">
+                                <p> {following.login} </p>
+                            </div>
+                            <p>Github Link:<a href={following.html_url} target="_blank" rel="noopener noreferrer" > {following.html_url} </a></p>
+                        </div>
+                    ))}
+                 </div>
             </div>
-            <h2 className="secondary-heading">My Repos</h2>
+            <h2>My Repos</h2>
             <div className="repos">
                 {props.userRepos.map(repo => (
                      <ul key={repo.id}>
@@ -50,9 +62,8 @@ const UserCard = (props) => {
                         </li>
                     </ul>
                 ))}
-            </div>
-            
-        </>
+            </div>   
+       </>
     );
 };
 

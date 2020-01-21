@@ -11,3 +11,38 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.mainUserConatiner, .followers, .following{
+  display:flex;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+.usersCardsBox, .repos{
+  display:flex;
+  flex-direction: row;
+  width:100%;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+}
+.card{
+  width:20%;
+}
+.userPhoto img{
+  margin: 0 auto;
+  width: 50%;
+  border-radius: 70px;
+}
+p {
+  font-size: 18px;
+}
+h2{
+  font-size: 20px;
+}
+a{
+  font-size: 15px;
+  text-decoration: none;
+}
+li{
+font-size: 14px;
+}
