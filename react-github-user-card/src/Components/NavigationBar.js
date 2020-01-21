@@ -9,7 +9,9 @@ const NavigationBar = () => {
             <AppBar position='static'>
                 <ToolBar>
                     <Typography variant='title' color='inherit'>
-                        React Github Usercard
+                        <div>
+                            <h2>React Github Usercard - Followers</h2>
+                        </div>
                     </Typography>
                 </ToolBar>
             </AppBar>

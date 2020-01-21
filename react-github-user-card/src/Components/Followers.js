@@ -1,9 +1,8 @@
 import React from 'react';
-import '../../src/Followers.css';   
+import '../../src/App.css';
 
 
-class Followers extends React.Component {
-   
+class Followers extends React.Component {   
         state = {
         followersData: []
         };  
@@ -16,31 +15,29 @@ class Followers extends React.Component {
                 this.setState({ ...this.state, followersData: data})
                 })
             .catch(err => console.log('error on fetch: ', err));
-
         };
 
         render() {
             return (
 
-                <div className="followers"> 
-                    <h1>Followers</h1>
+                <div className="followers">             
                     <div className= 'followers-header'>
                         {this.state.followersData.map(info => {
                             return <div className='usercards'>
-                            <p>{info.login}</p>
+                            <h3>{info.login}</h3>
                             <img className= 'image'
                                 width= '250'
                                 src= {info.avatar_url}
                                 alt= {info.avatar_url}
-                            />
+                            />                        
                             <a 
-                                href= {info.html_url}>
-                                {info.html_url}
-                            </a>
-                        <p>ID: {info.id}</p>
-                        <p>API GET/POST: {info.url}</p>
+                                href= {info.html_url}
+                                    alt= {info.html_url}>GITHUB 
+                            </a>                            
+                            <p>ID: {info.id}</p>                            
+                            <p>API GET/POST: {info.url}</p>                        
                             </div>
-                     })}
+                        })}
                     </div>
                 </div>                               
             ); 
