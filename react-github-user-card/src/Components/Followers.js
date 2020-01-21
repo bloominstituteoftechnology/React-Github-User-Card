@@ -8,7 +8,7 @@ class App extends React.Component {
   };  
 
   componentDidMount() {
-    fetch('https://api.github.com/users/Wade-Coplen')
+    fetch('https://api.github.com/users/Wade-Coplen/followers')
       .then(res => res.json())
       .then(data => { 
         console.log('fetch: data: ', data);
