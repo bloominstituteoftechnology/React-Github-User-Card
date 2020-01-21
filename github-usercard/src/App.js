@@ -1,13 +1,17 @@
 import React from 'react';
+import UserCard from "./components/UserCard"
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      
-    </div>
-  );
+export default class App extends React.Component {
+
+  render(){
+    return (
+      <div className="App">
+        <h1>My Followers</h1>
+        <UserCard />
+      </div>
+    );
+  }
 }
 
-export default App;
