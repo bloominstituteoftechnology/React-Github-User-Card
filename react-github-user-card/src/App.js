@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationBar from './Components/NavigationBar'
+import Followers from './Components/Followers';
 import './App.css';
 
 class App extends React.Component {
@@ -22,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="App"> 
         <NavigationBar />        
-        
+        <Followers />
           <h3>{this.state.userProfileData.name}</h3> 
           <img 
               width= '250'

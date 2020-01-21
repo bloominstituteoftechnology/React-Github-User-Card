@@ -1,42 +1,50 @@
 import React from 'react';
-import NavigationBar from './Components/NavigationBar'
-import './App.css';
+import '../../src/Followers.css';   
 
-class App extends React.Component {
- state = {
-        userProfileData: {}
-  };  
 
-  componentDidMount() {
-    fetch('https://api.github.com/users/Wade-Coplen/followers')
-      .then(res => res.json())
-      .then(data => { 
-        console.log('fetch: data: ', data);
-        this.setState({ ...this.state, userProfileData: data})
-  })
-      .catch(err => console.log('error on fetch: ', err));
+class Followers extends React.Component {
+   
+        state = {
+        followersData: []
+        };  
 
-  }
-  
-  render() {
-    return (
-      <div className="App"> 
-        <NavigationBar />        
-        
-          <h3>{this.state.userProfileData.name}</h3> 
-          <img 
-              width= '250'
-              src= {this.state.userProfileData.avatar_url}
-              alt= 'null'
-               />  
-          <p>{this.state.userProfileData.url}</p>
-          <p>Located: {this.state.userProfileData.location}</p>
-          <p>Public Repos: {this.state.userProfileData.public_repos}</p>
-          <p>Followers: {this.state.userProfileData.followers}</p>
-        
-      </div>                                 
-    );
-    
-  }  
-}
-export default App;
+        componentDidMount() {
+            fetch('https://api.github.com/users/Wade-Coplen/followers')
+            .then(res => res.json())
+            .then(data => { 
+                console.log('fetch: followersData: ', data);
+                this.setState({ ...this.state, followersData: data})
+                })
+            .catch(err => console.log('error on fetch: ', err));
+
+        };
+
+        render() {
+            return (
+
+                <div className="followers"> 
+                    <h1>Followers</h1>
+                    <div className= 'followers-header'>
+                        {this.state.followersData.map(info => {
+                            return <div className='usercards'>
+                            <p>{info.login}</p>
+                            <img className= 'image'
+                                width= '250'
+                                src= {info.avatar_url}
+                                alt= {info.avatar_url}
+                            />
+                            <a 
+                                href= {info.html_url}>
+                                {info.html_url}
+                            </a>
+                        <p>ID: {info.id}</p>
+                        <p>API GET/POST: {info.url}</p>
+                            </div>
+                     })}
+                    </div>
+                </div>                               
+            ); 
+        }
+}  
+
+export default Followers;

@@ -1,0 +1,34 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
+.followers {
+    text-align: center;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  .usercards {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: gray;
+    margin:  0 30% 3% 30%;
+    border-radius:5%;
+    box-shadow: 5px 10px #888888;
+  }
+  
+  .image {
+    border-radius: 5%;
+  }
+  a:link {
+    color: red;
+  }
+  a:hover {
+    color: white;
+  }
+ 
