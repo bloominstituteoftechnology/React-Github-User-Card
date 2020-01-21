@@ -3,14 +3,16 @@ import { Image, List, Icon } from 'semantic-ui-react';
 
 const FollowerCard = ({ follower }) => {
    return (
-      <List animated verticalAlign='middle'>
+      <a href={follower.html_url} className='follower-card'>
+      <List animated verticalAlign='middle' size='huge'>
          <List.Item>
-           <Image size='mini' avatar src={follower.avatar_url} />
+           <Image avatar src={follower.avatar_url} />
            <List.Content>
-             <List.Header><Icon name='github' /> {follower.login}</List.Header>
+             <List.Header>{follower.login}</List.Header>
            </List.Content>
          </List.Item>
       </List> 
+      </a>
    )
 }
 

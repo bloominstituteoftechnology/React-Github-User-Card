@@ -12,6 +12,26 @@ code {
     monospace;
 }
 
-.list-link {
-  margin-top: 100px;
+.user-card {
+  margin-top: 20px;
+}
+
+.list-container {
+  border: 1px solid rgb(212, 212, 212);
+  border-radius: 8px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 35%;
+  height: 45vh;
+}
+
+.follower-card {
+  /* border: 1px solid blue; */
+  margin-bottom: 9px;
+  margin-top: 9px;
+  margin-left: 9px;
+  width: 50%;
 }

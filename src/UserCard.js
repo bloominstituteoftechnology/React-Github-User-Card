@@ -4,7 +4,7 @@ import { Card, Icon, Image, Button, Divider } from 'semantic-ui-react';
 
 const UserCard = ({ user }) => {
    return (
-      <>
+      <div className='user-card'>
       <Card centered>
          <Image src={user.avatar_url} wrapped ui={false} />
          <Card.Content>
@@ -30,7 +30,7 @@ const UserCard = ({ user }) => {
       </Card>
 
       <Divider section/>
-      </>
+      </div>
    )
 }
 
