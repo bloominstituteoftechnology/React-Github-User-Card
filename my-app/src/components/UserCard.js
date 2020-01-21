@@ -1,22 +1,41 @@
 import React from 'react';
-import { Card, Image, Button } from 'react-bootstrap';
+import { Button, Icon } from 'antd';
+import GitHubCalendar from 'react-github-calendar';
+import ReactTooltip from 'react-github-calendar';
 
 function UserCard(props) {
  
   
     return (
-      <div className="userCards">
-        <Card>
-            <Image src={props.img} rounded/>
+     
+        <section id="userCard">
+            <div>
+                <img src={props.img} />
+            </div>
+
             <div>
 
-                <Card.Text><h2>{props.login}</h2></Card.Text>
-                <Card.Text>{props.followers}</Card.Text>
-                <Card.Text>{props.location}</Card.Text>
-                <Button href={props.html_url}>Github</Button>
+            <div>
+                <h1>{props.login}</h1>
             </div>
-        </Card>
-      </div>
+
+            <div>
+                <h3 className="following">{props.followers} Followers</h3>
+            </div>
+
+            <div>
+                <h3 className="following">{props.following} Following</h3>
+            </div>
+
+            <p><Icon type="environment" /> {props.location}</p>
+            <div className='container'>
+                <GitHubCalendar username="JRodDvlpr"/>
+                <Icon type="github" />
+            </div>
+            
+            </div>
+        </section>
+    
     );
 }
   

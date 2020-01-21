@@ -1,27 +1,33 @@
 import React from 'react';
-import { Button, Figure } from 'react-bootstrap';
-
+import "../App.css";
+import { Col, Avatar, Button, Icon } from 'antd';
+import GitHubCalendar from 'react-github-calendar';
 
 const FollowersCard = (props) => {
  
   
     return (
-      <div>
-        <Figure>
-
-            <Figure.Image 
+      
+        <section>
+        
+            <Col id='figure' span={8}>
+                
+                <Avatar shape='square' size={200}
                 width={110}
                 height={120}
-                src={props.img} roundedCircle/>
-            <div>
-            
-                <Figure.Caption><h4>{props.login}</h4></Figure.Caption>
-                <Figure.Caption>{props.followers}</Figure.Caption>
-                <Button href={props.html_url}>Github</Button>
-            </div>
-            
-        </Figure>
-      </div>
+                src={props.img}/> 
+
+                <h2>{props.login}</h2>
+                
+                <GitHubCalendar id="secbg" color="hsl(203, 82%, 33%)" username={props.login}/>
+
+                <Button value="large" href={props.html_url}><Icon type="github" /></Button>
+                
+            </Col>
+                
+  
+        </section>
+     
     );
 }
   

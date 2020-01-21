@@ -1,10 +1,23 @@
 .App {
   text-align: center;
+  background-color: rgb(14, 116, 171);
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  color: white;
+}
+
+a {
+  color: #000000;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -13,19 +26,10 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
-  color: #61dafb;
+  color: #000000;
 }
 
 @keyframes App-logo-spin {
@@ -37,12 +41,60 @@
   }
 }
 
+/* Flex style for my followers */
 .followers {
   display: flex;
-  flex-direction: column;
-  background-color: rgb(100, 150, 100);
+  flex-wrap: wrap;
+  
+  
 } 
 
-.figure {
-  width: 21%;
+
+.following {
+  background-color: whitesmoke;
+  margin-left: 450px;
+  margin-right: 450px;
 }
+
+
+/* Follower Cards */
+#figure {
+  margin-bottom: 40px;
+  margin-left: 35px;
+  width: 30%;
+  border-radius: 5px;
+  box-shadow: 0 4px 2px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  background-color: white;
+  
+}
+
+
+
+/* My personal card */
+.githubCards {
+  border-bottom: 1px solid #000000;
+  margin-bottom: 40px;
+  background-color: white;
+  border-radius: 5px;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+#userCard {
+ 
+  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+  align-content: center;
+}
+/* 
+#background {
+  background-color: rgb(14, 116, 171);
+} */
+
+#secbg {
+  color: #000000;
+}
+

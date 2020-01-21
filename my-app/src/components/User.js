@@ -3,6 +3,7 @@ import axios from "axios";
 import UserCard from "./UserCard";
 import FollowersCard from './FollowersCard';
 import "../App.css";
+import { Row, Switch, Meta } from 'antd';
 
 
 class User extends React.Component {
@@ -11,7 +12,7 @@ class User extends React.Component {
     this.state = {
       user: {},
       followers: [],
-      
+     
     };
   }
 
@@ -40,10 +41,14 @@ class User extends React.Component {
       .catch(err => console.log(err));
   }
 
-  render() {
+
+  
+render() {
+  
+
     return (
-      <div>
-        <div className="container mainUser">
+      <div id='background'>
+        <div className='githubCards'>
 
           {
             <UserCard
@@ -53,26 +58,33 @@ class User extends React.Component {
               location={this.state.user.location}
               html_url={this.state.user.html_url}
               followers={this.state.user.followers}
+              following={this.state.user.following}
               repo={this.state.user.public_repos}
             />
           }
         </div>
 
-        <div className="followers">
+        <h2>Followers</h2>
+        
+        <br></br>
+        
+        <Row className='followers' >
+            
           {this.state.followers.map(follower => (
-            <FollowersCard
+            <FollowersCard 
               login={follower.login}
               id={follower.id}
               img={follower.avatar_url}
               location={follower.location}
               html_url={follower.html_url}
               followers={follower.followers}
-              
             />
+            
           ))}
-        </div>
+        </Row>
+    
       </div>
     );
-  }
+}
 }
 export default User;
