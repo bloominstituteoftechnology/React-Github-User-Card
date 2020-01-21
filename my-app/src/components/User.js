@@ -1,28 +1,34 @@
 import React from "react";
 import axios from "axios";
 import UserCard from "./UserCard";
+import FollowersCard from './FollowersCard';
 import "../App.css";
+
 
 class User extends React.Component {
   constructor() {
     super();
     this.state = {
       user: {},
-      followers: []
+      followers: [],
+      
     };
   }
 
   componentDidMount() {
+
+    // Retrieving my profile on github to set the user state on the date I want to use
     axios
       .get("https://api.github.com/users/JRodDvlpr")
       .then(res => {
-        console.log(res.data.followers_url);
+        console.log(res.data);
         this.setState({
           user: res.data
         });
       })
       .catch(err => console.log(err));
 
+        // Retrieving my followers on github to set the state
     axios
       .get("https://api.github.com/users/JRodDvlpr/followers")
       .then(res => {
@@ -36,26 +42,32 @@ class User extends React.Component {
 
   render() {
     return (
-      <div className="cards">
-        <div className="card">
+      <div>
+        <div className="container mainUser">
+
           {
             <UserCard
               login={this.state.user.login}
               id={this.state.user.id}
-              avatar_url={this.state.user.avatar_url}
+              img={this.state.user.avatar_url}
+              location={this.state.user.location}
               html_url={this.state.user.html_url}
+              followers={this.state.user.followers}
+              repo={this.state.user.public_repos}
             />
           }
         </div>
 
-        <div className="card">
+        <div className="followers">
           {this.state.followers.map(follower => (
-            <UserCard
+            <FollowersCard
               login={follower.login}
               id={follower.id}
-              avatar_url={follower.avatar_url}
+              img={follower.avatar_url}
               location={follower.location}
               html_url={follower.html_url}
+              followers={follower.followers}
+              
             />
           ))}
         </div>

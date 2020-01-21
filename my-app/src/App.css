@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.followers {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(100, 150, 100);
+} 
+
+.figure {
+  width: 21%;
+}
