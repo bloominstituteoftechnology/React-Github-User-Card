@@ -5,7 +5,7 @@ import { Card, Icon, Image, Button, Divider } from 'semantic-ui-react';
 const UserCard = ({ user }) => {
    return (
       <div className='user-card'>
-      <Card centered>
+      <Card centered raised>
          <Image src={user.avatar_url} wrapped ui={false} />
          <Card.Content>
             <Card.Header><Icon name='github' />{user.name}</Card.Header>
