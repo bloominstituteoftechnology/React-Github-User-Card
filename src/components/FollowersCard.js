@@ -1,6 +1,6 @@
 import React from 'react';
 import "../App.css";
-import { Col, Avatar, Button, Icon } from 'antd';
+import { Col, Row, Avatar, Button, Icon } from 'antd';
 import GitHubCalendar from 'react-github-calendar';
 
 const FollowersCard = (props) => {
@@ -8,8 +8,9 @@ const FollowersCard = (props) => {
   
     return (
       
-        <section>
         
+        
+       
             <Col id='figure' span={8}>
                 
                 <Avatar shape='square' size={200}
@@ -24,9 +25,9 @@ const FollowersCard = (props) => {
                 <Button value="large" href={props.html_url}><Icon type="github" /></Button>
                 
             </Col>
-                
-  
-        </section>
+               
+        
+        
      
     );
 }

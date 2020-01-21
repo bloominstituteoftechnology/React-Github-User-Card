@@ -3,7 +3,7 @@ import axios from "axios";
 import UserCard from "./UserCard";
 import FollowersCard from './FollowersCard';
 import "../App.css";
-import { Row } from 'antd';
+
 
 
 class User extends React.Component {
@@ -68,7 +68,7 @@ render() {
         
         <br></br>
         
-        <Row className='followers' >
+        <div className='followers' >
             
           {this.state.followers.map(follower => (
             <FollowersCard 
@@ -81,7 +81,7 @@ render() {
             />
             
           ))}
-        </Row>
+        </div>
     
       </div>
     );
