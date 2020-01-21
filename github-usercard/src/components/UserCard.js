@@ -5,7 +5,7 @@ export default function UserCard(props) {
         avatar_url,
         id,
         login,
-        url
+        html_url
     } = props.user;
 
     return(
