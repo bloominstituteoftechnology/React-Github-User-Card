@@ -36,24 +36,25 @@ class App extends React.Component {
       })
       .catch(err => console.log("errorfollowers", err));
   }
- 
- 
+
   handleSearchFollowers = e => {
-    this.setState({ ...this.state, Searchfollowers: e.target.value })
+    this.setState({ ...this.state, Searchfollowers: e.target.value });
     // .catch(err=> console.log("searchFollowererror", err))
   };
 
-  getFollowers =e=>{
+  getFollowers = e => {
     e.preventDefault();
     axios
-    .get(`https://api.github.com/users/ZIng178/followers/${this.state.Searchfollowers}`)
-  
-    .then(followerData=>
-      {
-        if(followerData.status!=="error"){
-        this.setState({...this.state, Searchfollowers: followerData.login})}})
-  }
+      .get(
+        `https://api.github.com/users/ZIng178/followers/${this.state.Searchfollowers}`
+      )
 
+      .then(followerData => {
+        if (followerData.status !== "error") {
+          this.setState({ ...this.state, Searchfollowers: followerData.login });
+        }
+      });
+  };
 
   render() {
     console.log(this.state);
@@ -61,16 +62,24 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1> MY GitHubUserCard</h1>
-        <input
+        <input 
           type="text "
           value={this.state.Searchfollowers}
           onChange={this.handleSearchFollowers}
+          placeholder="Search my followers"
         />
-        <button onClick={this.getFollowers}> Search Followers</button>
+        <div>
+          <button className="button" onClick={this.getFollowers}>
+            {" "}
+            Search Followers
+          </button>
+        </div>
+
         <User user={this.state.User} />
 
-        {this.state.Followers.filter(follower=>follower.login.includes(this.state.Searchfollowers))
-        .map(follower => (
+        {this.state.Followers.filter(follower =>
+          follower.login.includes(this.state.Searchfollowers)
+        ).map(follower => (
           <Followers
             name={follower.login}
             image={follower.avatar_url}
