@@ -51,6 +51,7 @@ export default class User extends React.Component{
                     <UserCard
                         avatar_url={follower.avatar_url}
                         id={follower.id}
+                        name={follower.name}
                         login={follower.login}
                         html_url={follower.html_url}
                     />
