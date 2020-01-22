@@ -1,33 +1,35 @@
-import React, { Component } from "react";
-
+import React, { Component } from 'react';
+import Followers from './components/Followers';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      friends: []
-    };
-  }
+	state = {
+		me: {}
+	};
 
-  componentDidMount(){
-   
-    const getFriends = () => {
-      fetch('https://api.github.com/users/')
-        .then(response => response.json())
-        .then(friends => this.setState({friends: friends}))
-        .catch(err => console.log('Error'));
-  };
+	componentDidMount() {
+		const getProfile = () => {
+			fetch('https://api.github.com/users/kayladailey')
+				.then((response) => response.json())
+				.then((profile) => {
+					console.log(profile);
+					this.setState({ me: profile });
+				})
+				.catch((error) => console.log('error'));
+		};
+		getProfile();
+	}
 
-    this.setState({});
-  }
+	render() {
+		console.log(this.state);
+		return (
+			<div className="App">
+				<h1>My GitHub Group</h1>
 
-  render() {
-    return (
-      <div className="App">
-        <h1> Welcome to Friends! </h1>
-      </div>
-    );
-  }
+				<h2>{this.state.me.name} </h2>
+				<Followers />
+			</div>
+		);
+	}
 }
- 
+
 export default App;
