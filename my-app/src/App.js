@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import UserCard from "./UserCard";
 
 class App extends React.Component {
   constructor() {
@@ -20,11 +21,11 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>React Github User Cards</h1>
-        <div className="usercard">
+        <UserCard user={userCard} className="user">
           {this.state.userCard.map(user => {
           return <div>hello</div>
           })}
-        </div>
+        </UserCard>
       </div>
     );
   }
