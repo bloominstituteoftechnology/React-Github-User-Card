@@ -38,14 +38,14 @@ export default class User extends React.Component{
     render() {
         return(
             <div>
-                {/* {
+                {
                     <UserCard
                         avatar_url={this.state.user.avatar_url}
                         id={this.state.user.id}
                         login={this.state.user.login}
                         html_url={this.state.user.html_url}
                     />
-                } */}
+                }
 
                 {this.state.followers.map(follower =>
                     <UserCard
