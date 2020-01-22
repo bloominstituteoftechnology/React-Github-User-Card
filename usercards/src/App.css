@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   background-color:#1b262c;
+ 
   
 }
 
@@ -17,3 +18,7 @@ h1,h2{
   color:#bbe1fa;
 }
 
+.bio{
+  color:#bbe1fa;
+  font-size:1.5rem;
+}

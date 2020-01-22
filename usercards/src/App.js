@@ -8,51 +8,42 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      User:{},
+      User: {},
       Followers: []
     };
   }
 
   componentDidMount() {
-    this.getUser();
-    this.getFollowers();
-  }
-
-  getUser = () => {
     axios
       .get("https://api.github.com/users/ZIng178")
-      .then(res =>
+      .then(res => {
+        console.log("userdata", res.data);
         this.setState({
-          UserName: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
+          ...this.state,
+          User: res.data
+        });
+      })
+      .catch(err => console.log("ErrorUSers", err));
 
-  getFollowers = () => {
     axios
       .get("https://api.github.com/users/ZIng178/followers")
-      .then(res =>
+      .then(response => {
+        console.log(response);
         this.setState({
-          Followers: res.data
-        })
-      )
-      .catch(err => console.log(err));
-  };
+          Followers: response.data
+        });
+      })
+      .catch(err => console.log("errorfollowers", err));
+  }
 
   render() {
     console.log(this.state);
+
     return (
       <div className="App">
         <h1> MY GitHubUserCard</h1>
-        
-          <User 
-          name={this.state.User.name}
-            image={this.state.User.avatar_url}
-            html_url={this.state.User.html_url}
+        <User user={this.state.User} />
 
-          />
-      
         {this.state.Followers.map(follower => (
           <Followers
             name={follower.login}
