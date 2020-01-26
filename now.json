@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "name": "github-cards",
+  "builds": [
+    {
+      "src": "github-cards/package.json",
+      "use": "@now/static-build",
+      "config": { "distDir": "build" }
+    }
+  ],
+  "routes": [{ "src": "/(.*)", "dest": "github-cards/$1" }]
+}
