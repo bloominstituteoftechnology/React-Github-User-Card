@@ -2,7 +2,6 @@ import React from 'react';
 import './App.scss';
 import axios from 'axios';
 import UserCard from './UserCard';
-import { Link } from 'react';
 
 class App extends React.Component {
     // constructor, super, etc, are all still built into this class, just under the hood
@@ -32,6 +31,12 @@ class App extends React.Component {
       })
       .catch(err => console.log(err));
     }
+
+    // handleWebsite = (e, state) => {
+    //   e.preventDefault();
+    //   console.log(state)
+      
+    // }
   
     
     render() {
@@ -40,6 +45,8 @@ class App extends React.Component {
         <div className="user">
           <div>
             <UserCard 
+            key={this.state.user.id}
+            id={this.state.user.id}
             avatar={this.state.user.avatar_url}
             name={this.state.user.name}
             email={this.state.user.email}
@@ -52,10 +59,10 @@ class App extends React.Component {
             <h2>My followers</h2>
               {this.state.followers.map(follower => {
                 return (
-                  <div className="followers">
-                    <img src={follower.avatar_url} />
+                  <div className="followers" key={follower.id}>
+                    <img src={follower.avatar_url} alt="profile" />
                     <p>Username: {follower.login}</p>
-                    <p>Website: {follower.html_url}</p>
+                    <a href={follower.html_url}><p>Website: {follower.html_url}</p></a>
                     <p>Followers: {follower.followers_url}</p>
                     {/* <p>Following: {follower.following_url}</p> */}
                 </div>

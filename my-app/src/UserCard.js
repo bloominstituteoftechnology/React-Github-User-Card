@@ -1,4 +1,4 @@
-import React, { Link } from 'react';
+import React from 'react';
 
 
 function UserCard(props){
@@ -7,11 +7,11 @@ function UserCard(props){
         <div className='main-container'>
             <div key={props.id} className="my-info">
                 <h1>{props.name}</h1>
-                <img src={props.avatar} />
+                <img src={props.avatar} alt="profile" />
                 <p>Username: {props.login}</p>
                 <p>Location: {props.location}</p>
-                <p>Website: {props.html}</p>
-                <p>Blog: {props.blog}</p>
+                <a href={props.html}><p>Website: {props.html}</p></a>
+                <a href={props.blog}><p>Blog: {props.blog}</p></a>
             </div>
             <div className='user-info'></div>
         </div>
