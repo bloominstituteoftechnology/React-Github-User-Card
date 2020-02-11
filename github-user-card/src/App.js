@@ -2,6 +2,7 @@ import React from 'react';
 import Loading from './Loading';
 import User from './User';
 import Follower from './Follower';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {

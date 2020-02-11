@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css';
 
 class User extends React.Component {
     constructor(props) {
@@ -11,9 +12,9 @@ class User extends React.Component {
     }
     render() {
         return (
-            <div>
-                <p>Username: {this.props.user.login}</p>
+            <div className='user-container'>
                 <div><img src={this.props.user.avatar_url}/></div>
+                <p>Username: {this.props.user.login}</p>
                 <p>Profile: <a href={this.props.user.url}>{this.props.user.url}</a></p>
                 <p>Name: {this.props.user.name ? this.props.user.name : "None"}</p>
                 <p>Company: {this.props.user.company ? this.props.user.company : "None"}</p>
