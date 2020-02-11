@@ -3,7 +3,7 @@ import React from 'react';
 
 function UserCard (props) {
   
-
+  console.log("props followers", props.followers)
   
     return (
       <div className="App">
@@ -13,14 +13,17 @@ function UserCard (props) {
             <img src = {data.avatar_url} alt= {data.name}/>
             <h2>Name: {data.name}</h2>
             <h3>Bio: {data.bio}</h3>
-            <p>Followers: {data.followers_url}</p>
-
-
           </div>
 
+        ))}
 
+        {props.followers.map(follower => (
+          
+          <div key={follower.id}>
+            <h2>{follower.login}</h2>
+            <img src={follower.avatar_url}/>
 
-
+          </div>
         ))}
       </div>
     );

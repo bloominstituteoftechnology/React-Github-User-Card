@@ -23,13 +23,13 @@ class App extends React.Component {
       .catch(err => console.log("error", err));
 
       axios
-      .get(`https://api.github.com/users/caw442000`)
+      .get(`https://api.github.com/users/caw442000/followers`)
       .then(res => {
-        console.log("this is the response", res)
+        console.log("this is the followers response ", res)
         this.setState({
-          personalData: [res.data]
+          followersList: res.data
         });
-        console.log("this is personal data", this.state.personalData)
+        console.log("this is followers data", this.state.followersList)
       })
       .catch(err => console.log("error", err));
   }
@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Github User Card</h1>
-        <UserCard personalData={this.state.personalData} />
+        <UserCard followers= {this.state.followersList} personalData={this.state.personalData} />
       </div>
     );
   }
