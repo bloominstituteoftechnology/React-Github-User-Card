@@ -7,7 +7,9 @@ class App extends React.Component {
   state = {
     userData: [],
     followersList:[],
-    username:'caw442000'
+    username:'caw442000',
+    followersData:[]
+
 
   };
 
@@ -15,11 +17,11 @@ class App extends React.Component {
     axios
       .get(`https://api.github.com/users/${this.state.username}`)
       .then(res => {
-        console.log("this is the response", res)
+        console.log("this is the original username response", res)
         this.setState({
           userData: [res.data]
         });
-        console.log("this is personal data", this.state.userData)
+        console.log("this is the User Data", this.state.userData)
       })
       .catch(err => console.log("error", err));
 
@@ -30,9 +32,28 @@ class App extends React.Component {
         this.setState({
           followersList: res.data
         });
-        console.log("this is followers data", this.state.followersList)
+        console.log("this is follower List", this.state.followersList)
+        this.state.followersList.map(follower => {
+          console.log("login", follower.login)
+          axios
+          .get(`https://api.github.com/users/${follower.login}`)
+          .then(res => {
+            console.log("this is the follower login response", res)
+            this.setState({
+              followersData: [...this.state.followersData, res.data]
+            });
+            console.log("this is Followers data", this.state.followersData)
+          })
+          .catch(err => console.log("error", err));
+        })
       })
       .catch(err => console.log("error", err));
+      console.log("this is followers data", this.state.followersData)
+      
+      
+      
+
+
   }
 
   
@@ -40,7 +61,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Github User Card</h1>
-        <UserCard followers= {this.state.followersList} userData={this.state.userData} />
+        <UserCard followers= {this.state.followersData} userData={this.state.userData} />
       </div>
     );
   }

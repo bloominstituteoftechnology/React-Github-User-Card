@@ -21,7 +21,8 @@ function UserCard (props) {
           
           <div key={follower.id}>
             <img src={follower.avatar_url}/>
-            <h2>{follower.login}</h2>
+            <h2>Name: {follower.name}</h2>
+            <h3>Bio: {follower.bio}</h3>
             
 
           </div>
