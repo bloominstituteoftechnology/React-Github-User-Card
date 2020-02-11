@@ -8,7 +8,7 @@ function UserCard (props) {
     return (
       <div className="App">
         
-        {props.personalData.map(data => (
+        {props.userData.map(data => (
           <div key={data.id}>
             <img src = {data.avatar_url} alt= {data.name}/>
             <h2>Name: {data.name}</h2>
@@ -20,8 +20,9 @@ function UserCard (props) {
         {props.followers.map(follower => (
           
           <div key={follower.id}>
-            <h2>{follower.login}</h2>
             <img src={follower.avatar_url}/>
+            <h2>{follower.login}</h2>
+            
 
           </div>
         ))}

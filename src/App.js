@@ -5,20 +5,21 @@ import './App.css';
 
 class App extends React.Component {
   state = {
-    personalData: [],
-    followersList:[]
+    userData: [],
+    followersList:[],
+    username:'caw442000'
 
   };
 
   componentDidMount(){
     axios
-      .get(`https://api.github.com/users/caw442000`)
+      .get(`https://api.github.com/users/${this.state.username}`)
       .then(res => {
         console.log("this is the response", res)
         this.setState({
-          personalData: [res.data]
+          userData: [res.data]
         });
-        console.log("this is personal data", this.state.personalData)
+        console.log("this is personal data", this.state.userData)
       })
       .catch(err => console.log("error", err));
 
@@ -39,7 +40,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Github User Card</h1>
-        <UserCard followers= {this.state.followersList} personalData={this.state.personalData} />
+        <UserCard followers= {this.state.followersList} userData={this.state.userData} />
       </div>
     );
   }
