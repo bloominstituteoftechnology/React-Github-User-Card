@@ -1,10 +1,27 @@
 import React, { Component } from "react";
 import "./App.css";
 import axios from "axios";
+import styled from "styled-components"
 // import Followers from "./components/FollowersCard";
 
 import UserCard from "./UserCard";
 // import UserCard from "./components/UserCard";
+
+
+const MyCard = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  margin: auto;
+  width: 150px;
+  flex-wrap: wrap;
+  align-self: auto
+`
+const Header = styled.h1`
+  text-align: center; 
+`
 
 class App extends Component {
   constructor() {
@@ -39,29 +56,33 @@ class App extends Component {
       });
   }
 
+
   render() {
     return (
       <div>
-        <h1>GitHub Card</h1>
+        <Header>GitHub Card</Header>
         {/* <p>{this.state.name}</p>
         <p>{this.state.login}</p>
         <img src={this.state.avatar} alt="" /> */}
+        <MyCard>
         <UserCard  
           name = {this.state.name}
           login = {this.state.login}
           location = {this.state.location}
           avatar = {this.state.avatar}
         />
-        <h1>Followers</h1>
+        </MyCard>
+        <Header>Followers</Header>
         {this.state.followers.map(follower => {
           return (
+            <MyCard>
             <UserCard
               name = {follower.name}
               login = {follower.login}
               location = {follower.location}
               avatar = {follower.avatar_url}
             />
-
+            </MyCard>
           );
         })}
       </div>
