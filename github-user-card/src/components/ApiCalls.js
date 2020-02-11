@@ -2,6 +2,7 @@ import React from "react";
 import axios from "axios";
 import UserCard from "./UserCard";
 import FollowersCard from "./FollowersCard";
+import FollowersList from "./FollowersList";
 class ApiCalls extends React.Component {
   state = {
     UserData: [],
@@ -38,13 +39,7 @@ class ApiCalls extends React.Component {
       <div className="container">
         <h1>My React Followers and I:</h1>
         <UserCard UserData={this.state.UserData} />
-        <FollowersCard
-          FollowersData={this.state.FollowersData.map(Follower => {
-            {
-              Follower = { Follower };
-            }
-          })}
-        />
+        <FollowersList FollowersData={this.state.FollowersData} />
       </div>
     );
   }
