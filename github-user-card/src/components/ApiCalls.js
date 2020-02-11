@@ -39,7 +39,9 @@ class ApiCalls extends React.Component {
       <div className="container">
         <h1>My React Followers and I:</h1>
         <UserCard UserData={this.state.UserData} />
-        <FollowersList FollowersData={this.state.FollowersData} />
+        <div className="follower">
+          <FollowersList FollowersData={this.state.FollowersData} />
+        </div>
       </div>
     );
   }

@@ -1,0 +1,26 @@
+.UserCard {
+  display: flex;
+  background: lightgoldenrodyellow;
+  flex-direction: column;
+  box-shadow: 5px 5px 2px goldenrod;
+  width: 40%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
+img {
+  margin-bottom: 2%;
+  border: 4px solid grey;
+  border-radius: 15px;
+  margin: 0 auto;
+  width: 250px;
+  height: 200px;
+}
+.FollowersCard {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 3px 5px 2px goldenrod;
+  background: rgb(212, 184, 111);
+  width: 35%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+}
