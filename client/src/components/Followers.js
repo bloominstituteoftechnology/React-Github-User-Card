@@ -8,7 +8,7 @@ const Followers = (props) => {
 <h1>My followers</h1>
    {console.log('Followers in followers ->', props.followers.map(folks => folks.login))}
    {props.followers.map(folks => (
-       <Users folks={folks} />
+       <Users key={folks.id} folks={folks} />
        ))}
 
         </div>
