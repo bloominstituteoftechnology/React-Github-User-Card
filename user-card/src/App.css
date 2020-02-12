@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  margin-top: 1%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  margin: auto;
+  margin-top: 2%;
+}
