@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 class App extends Component {
 
@@ -8,6 +9,18 @@ class App extends Component {
     users: [],
     userText: '',
     error: ''
+  }
+
+  componentDidMount(){
+axios
+.get(`https://api.github.com/users/ebisLab`)
+.then(res=>{
+  console.log(res, '<--res')
+  this.setState({
+    users: res.data
+  })
+  .catch(err=> console.log(err))
+})
   }
 
   render(){
