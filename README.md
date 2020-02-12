@@ -50,8 +50,8 @@ When you have those completed, you're ready to start coding!
 ## STEP 2 - Display the User Data
 
 - ✔️ Pass the data to the component that will be displaying it
-- Build out a user card using the data that the Github API returns to you
-  - You may reference your old project for this, or you may wish to build this from scratch yourself
+- ✔️ Build out a user card using the data that the Github API returns to you
+  - ✔️ You may reference your old project for this, or you may wish to build this from scratch yourself
 
 ## STEP 3 - Fetch the User's Followers
 
