@@ -4,6 +4,12 @@ import './App.css';
 
 class App extends Component {
 
+  state={
+    users: [],
+    userText: '',
+    error: ''
+  }
+
   render(){
     return (
       <div className="App">
