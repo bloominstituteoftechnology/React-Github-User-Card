@@ -3,6 +3,8 @@ import axios from "axios";
 import UserCard from "./UserCard";
 import FollowersCard from "./FollowersCard";
 import FollowersList from "./FollowersList";
+//initial state:
+
 class ApiCalls extends React.Component {
   state = {
     UserData: [],
@@ -10,6 +12,7 @@ class ApiCalls extends React.Component {
     error: ""
   };
 
+  //get request for user
   componentDidMount() {
     axios
       .get("https://api.github.com/users/mjs001")
@@ -20,7 +23,7 @@ class ApiCalls extends React.Component {
         console.log(res.data);
       })
       .catch(err => console.log("the error for the git for userdata", err));
-
+    //get request for followers
     axios
       .get("https://api.github.com/users/mjs001/followers")
       .then(res => {

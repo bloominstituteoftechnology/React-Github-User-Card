@@ -1,5 +1,5 @@
 import React from "react";
-
+//writing what the contents of the followers card is going to have
 const FollowersCard = props => {
   return (
     <div className="FollowersCard">

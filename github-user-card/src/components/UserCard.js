@@ -1,5 +1,5 @@
 import React from "react";
-
+//all of the data contained inside userCard
 const UserCard = props => {
   return (
     <div className="UserCard">
