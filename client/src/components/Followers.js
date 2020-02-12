@@ -1,15 +1,15 @@
 import React from 'react';
+import Users from './Users'
 
 const Followers = (props) => {
 
     return(
-        <div style={{borderRadius: '20px', border: '1px solid black', padding: '5px', width: '400px', display: 'inline-block', boxShadow: '5px 10px'}}>
-
+        <div style={{margin: '50px'}}>
+<h1>My followers</h1>
    {console.log('Followers in followers ->', props.followers.map(folks => folks.login))}
    {props.followers.map(folks => (
-   <div key={folks.id}>
-       <h1>{folks.login}</h1>
-       </div>))}
+       <Users folks={folks} />
+       ))}
 
         </div>
     )
