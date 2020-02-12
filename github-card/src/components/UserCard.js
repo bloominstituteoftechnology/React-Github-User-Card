@@ -1,7 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const OuterDiv = styled.div`
+height: 400px;
+width: 400px;
+display: flex;
+flex-direction: column;
+align-items: center;
+align-content: center
+background: yellow;
 
+`;
 const UserDiv = styled.div `
 
 `;
@@ -13,7 +22,7 @@ const UserImage = styled.image`
 function UserCard (props){
 
     return(
-        <div>
+        <OuterDiv>
             <div>
             <h1>User Card</h1>
             {props.userData.map(data => (
@@ -28,13 +37,13 @@ function UserCard (props){
             <div>
                 {props.followers.map(follower => (
                     <div key={follower.id}>
-                        <UserImage src={follower.avatar_url}} alt = {follower.name} />
+                        <UserImage src={follower.avatar_url} alt = {follower.name} />
                         <h2> Name: {follower.name}</h2>
                         <h2> About: {follower.bio}</h2>
                     </div>    
                 ))}
             </div>
-        </div>
+        </OuterDiv>
     );
 }
 
