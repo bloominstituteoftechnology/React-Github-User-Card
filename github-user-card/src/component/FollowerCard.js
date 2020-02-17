@@ -5,11 +5,11 @@ function FollowerCard (props) {
     console.log(props)
     const data = props.followerDataSet;
 
-    const followerLogins = data.map(foobar => {
+    const followerLogins = data.map((foobar, key) => {
         return(
             <div>
                 <p><a href={foobar.html_url}>{foobar.login} </a></p>
-                <img src={foobar.avatar_url}/>
+                <img src={foobar.avatar_url} alt={key}/>
             </div>
         );
     })

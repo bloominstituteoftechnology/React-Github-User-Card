@@ -47,7 +47,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>GET THIS THING WORKING!!!</h1>
+        <h1>MAKE IT LOOK GOOD!!!</h1>
         <h2>from inside the render of class App</h2>
         <UserCard 
           dataSet={this.state.dataSet} //this is my data
