@@ -15,7 +15,7 @@ const StyledDiv = styled.div`
   background: powderblue;
   border: 1 solid black;
   box-shadow: 5px 7px 5px #888888;
-
+  border-radius: 5%;
 `
 const StyledImg = styled.img`
   width: 40%;
