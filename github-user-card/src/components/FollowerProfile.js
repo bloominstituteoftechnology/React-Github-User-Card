@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 
 const StyledCardContainer = styled.div`
   width: 40%;
-  border: 2 solid black;
+  
 `
 const StyledHeader = styled.header`
   margin: 0 auto;
