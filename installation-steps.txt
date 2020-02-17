@@ -1,0 +1,9 @@
+Create React App
+npm install -g create-react-app
+npx create-react-app react-github-user-card
+
+
+https://grubersjoe.github.io/react-github-calendar/
+npm install axios --save
+npm install react-github-calendar --save
+npm install react-tooltip --save
