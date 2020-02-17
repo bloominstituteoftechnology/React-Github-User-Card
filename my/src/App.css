@@ -1,8 +1,7 @@
 .App {
    padding: 2rem;
-   background-blend-mode: color-burn;
-   
-}
+   background-color: gainsboro;
+ }
 
 
 h1 {
@@ -12,4 +11,18 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+}
+
+.card {
+    background-color: #615d5d;
+}
+
+.card-img {
+    width: 50vh;
+    padding: 1rem;
+    margin: auto;
+}
+
+.card-title, p {
+    text-align: center;
 }

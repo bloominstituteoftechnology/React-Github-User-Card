@@ -1,13 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 import Followers from './Followers';
+import {  Card, CardImg, CardText, CardBody,
+  CardTitle } from 'reactstrap';
 
 
 class User extends React.Component {
     constructor() {
         super();
             this.state = {
-              followers: []
+              followers: [],
+              activeIndex: 0,
+              animating: false
         }
     }   
         componentDidMount() {
@@ -32,23 +36,19 @@ class User extends React.Component {
   render() {
     return(
         <div>
-          <img src={this.props.login.avatar_url} alt='user'/>
-           <h2>{this.props.login.login}</h2> 
-              
-                <div className='followers'>
-                  {this.state.followers && this.state.followers.map(follower => (
-                    <Followers key={follower.id} img={follower.avatar_url} follower={follower}  />
-                    ))} 
-               </div>  
+         <Card>
+           <CardImg src={this.props.login.avatar_url} alt='user'/>
+             <CardTitle>{this.props.login.login}</CardTitle> 
+                <CardBody className='followers'>
+                    {this.state.followers && this.state.followers.map(follower => (
+                      <Followers key={follower.id} img={follower.avatar_url} follower={follower}  />
+                     ))} 
+                </CardBody>  
+             </Card> 
            </div>
         )
      };
  };           
-                
-    
-
-
-
-
+  
 
 export default User;
