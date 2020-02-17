@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Followers from './Followers';
-import {  Card, CardImg, CardText, CardBody,
+import {  Card, CardImg, CardBody,
   CardTitle } from 'reactstrap';
 
 
@@ -10,12 +10,10 @@ class User extends React.Component {
         super();
             this.state = {
               followers: [],
-              activeIndex: 0,
-              animating: false
-        }
+            }
     }   
         componentDidMount() {
-            this.fetchFollowers();       
+            this.fetchFollowers('user');       
        
     };
 

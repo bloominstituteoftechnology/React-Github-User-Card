@@ -18,14 +18,14 @@ class App extends React.Component {
      this.fetchUser('hdnye')
   };
 
-  componentDidUpdate(prevProps, prevState) {
-    if(prevState.followers !== this.state.followers) {
-      this.setState({
-       followers: 0
-     })}  else {  
-     //this.fetchFollowers()
-  };
-};
+//   componentDidUpdate(prevProps, prevState) {
+//     if(prevState.followers !== this.state.followers) {
+//       this.setState({
+//        followers: 0
+//      })}  else {  
+//      this.fetchFollowers()
+//   };
+// };
 
  fetchUser =  (login) => {
    axios.get(`https://api.github.com/users/${login}`)
@@ -52,15 +52,7 @@ class App extends React.Component {
      <div className='App'>
        <h1>GitHub User Card</h1>
         <User login={this.state.login} img={this.state.img}/>          
-         {/* <select value={this.state.login} onChange={this.handleChange}>
-           <option value='users'>User</option>
-            <option value='followers'>Followers</option>        
-            </select>
-              <div>
-               {this.state.followersNames && this.state.followersNames.map((follower) => (
-                <img key={follower.id} src={follower.login} alt='Follower' />
-            ))} 
-         </div> */}
+         
          </div>
        )
     }

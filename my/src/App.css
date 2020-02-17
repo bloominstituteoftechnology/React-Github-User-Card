@@ -26,3 +26,6 @@ h1 {
 .card-title, p {
     text-align: center;
 }
+.followers.card-body {
+    background-color: #3f3f3f;
+}
