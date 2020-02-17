@@ -8,15 +8,24 @@ const StyledDiv = styled.div`
     padding: 10px;
     margin: 10px;
 `
+const StyledImage = styled.img`
+    border-radius: 50%;
+    outline: 3px solid black;
+    width: 30%;
+    height: auto;
 
+`
 
 function UserCard (props) {
     return(
-        <StyledDiv className="MainUser">
-            <p>...this is my information...</p>
-            <h3>login: {props.dataSet.login} </h3>
-            <p>name: {props.dataSet.name}</p>
-        </StyledDiv>
+        <div className="MainHeader">
+            <StyledDiv className="MainUser">
+                <p>...this is my information...</p>
+                <h3>login: {props.dataSet.login} </h3>
+                <p>name: {props.dataSet.name}</p>
+                <img src={props.dataSet.avatar_url} alt={props.dataSet.login}/>
+            </StyledDiv>
+        </div>
     );
 };
 

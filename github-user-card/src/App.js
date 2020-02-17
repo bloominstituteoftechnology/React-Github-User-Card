@@ -40,7 +40,7 @@ class App extends React.Component {
     Axios.get("https://api.github.com/users/wtrawlings/followers")
     .then(response => {
       console.log(response.data);
-      this.setState({ followerDataSet: response.data })
+      this.setState({ followerDataSet: response.data })//set it to state
     });
   }
   
@@ -50,12 +50,12 @@ class App extends React.Component {
         <h1>GET THIS THING WORKING!!!</h1>
         <h2>from inside the render of class App</h2>
         <UserCard 
-          dataSet={this.state.dataSet} 
+          dataSet={this.state.dataSet} //this is my data
           />
         <FollowerDiv>
           <p>...here are some of my friends...</p>
         <FollowerCard
-          followerDataSet={this.state.followerDataSet}
+          followerDataSet={this.state.followerDataSet} 
         />
         </FollowerDiv>
       </div>

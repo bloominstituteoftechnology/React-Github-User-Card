@@ -8,7 +8,8 @@ function FollowerCard (props) {
     const followerLogins = data.map(foobar => {
         return(
             <div>
-                <p>{foobar.login} </p>
+                <p><a href={foobar.html_url}>{foobar.login} </a></p>
+                <img src={foobar.avatar_url}/>
             </div>
         );
     })
