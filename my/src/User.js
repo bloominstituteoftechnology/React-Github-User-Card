@@ -13,7 +13,7 @@ class User extends React.Component {
             }
     }   
         componentDidMount() {
-            this.fetchFollowers('user');       
+            this.fetchFollowers('users');       
        
     };
 

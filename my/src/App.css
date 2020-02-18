@@ -29,3 +29,8 @@ h1 {
 .followers.card-body {
     background-color: #3f3f3f;
 }
+
+.Form {
+    display: flex;
+    justify-content: center;
+}
