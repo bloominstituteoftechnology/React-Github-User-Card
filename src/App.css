@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600|Saira+Semi+Condensed&display=swap&subset=latin-ext');
+
+html,
+body,
+#root {
+	width: 100%;
+	height: auto;
+	max-height: 1500px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #000000;
+	/* display: flex; */
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+	color: #000000;
+	font-family: "Roboto", sans-serif;
+}
+
+.App {
+	background-color: rgba(14, 13, 13, 0.521);
+	color: #ffffff;
+	display: flex;
+	flex-flow: row nowrap;
+	align-content: center;
+	justify-content: center;
+	border-radius: 10px;
+}
+
+.App h1 {
+	color: #909094;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+	font-size: 40pt;
+	margin: 3rem 0;
+}
+
+.App h2 {
+	color: #9a98eb;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+	font-size: 48pt;
+}
+
+.App h3 {
+	color: #4e4c9e;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+	font-size: 32pt;
+}
+
+.App h4,
+h5,
+h6,
+p {
+	color: #ffffff;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+}
+
+#user-card h4,
+h5,
+h6,
+p {
+	color: #ffffff;
+}
+
+#user-card {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: flex-start;
+	padding: 5rem 9rem;
+	border-radius: 15px;
+	position: fixed;
+	top: 0;
+}
+
+#user-card .counters p {
+	font-size: 13pt;
+	border: 1px solid white;
+	width: 11%;
+	border-radius: 100%;
+	margin-left: 200px;
+}
+
+#user-card a {
+	font-size: 12pt;
+}
+
+.counters {
+	text-align: center;
+}
+
+#user-card h4 {
+	font-size: 18pt;
+	margin-top: 2.5rem;
+}
+
+#user-card .counters h3 {
+	margin-right: 2.5rem;
+	text-decoration: underline;
+	text-decoration-color: #000000;
+}
+
+.user-column {
+	position: relative;
+	margin-right: 15rem;
+}
+
+.followers-column {
+	position: relative;
+}
+
+.user-image {
+	margin: 4rem 8rem;
+	transform: scale(.8);
+	-webkit-filter: brightness(.7);
+}
+
+#follower-card {
+	display: flex;
+	border-radius: 30px;
+}
+
+.follower-image {
+	transform: scale(.85);
+	border-radius: 20px;
+	-webkit-filter: brightness(.7);
+}
+
+.followers-header {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	margin-top: 2.5rem;
+	margin-bottom: 0;
+}
+
+.followers-header h4 {
+	font-size: 30pt;
+	border: 2px solid white;
+	border-radius: 100%;
+	padding: 5px;
+	margin: 10px 10px;
+}
+
+.followers-header h1 {
+	line-height: 100px;
+	margin-left: 50px;
+	text-decoration: underline;
+	text-decoration-color: #ffffff;
+}
+
+.card-text h4 {
+	line-height: 2rem;
+	color: #b300fa;
+	font-size: 25pt;
+	margin-right: 16px;
+}
+
+#follower-card .card-text p {
+	line-height: 2.5rem;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bolder;
+	color: rgb(255, 255, 255);
+	font-size: 19pt;
+	text-decoration: double;
+	margin-left: 14px;
+}
+
+.content-block-1 h2 {
+	text-decoration: underline;
+	text-align: center;
+	margin-left: 12rem;
+	width: 550px;
+	font-size: 50pt;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.content-block-1 h5 {
+	font-size: 26pt;
+	text-align: center;
+	margin-left: 16rem;
+	width: 400px;
+}
+
+.profile {
+	margin-top: 11rem;
+	background-color: #00000060;
+}
+
+.handle {
+	margin-bottom: 8rem;
+	background-color: #00000060;
+}
