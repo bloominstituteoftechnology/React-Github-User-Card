@@ -20,7 +20,7 @@ class App extends React.Component {
   };
 
 //   componentDidUpdate(prevProps, prevState) {
-//     if(prevState.login !== this.state.login) {
+//     if(prevProps.login !== this.state.login) {
 //       this.setState({
 //        login: prevProps.login
 //      })}  else {  
