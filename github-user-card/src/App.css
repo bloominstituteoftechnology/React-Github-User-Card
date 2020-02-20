@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+box-sizing: border-box;
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +36,75 @@
   to {
     transform: rotate(360deg);
   }
+}
+h5{
+  margin: 0
+}
+.card-container{
+  display: flex;
+  margin: 0 auto;
+  color: #666;
+  padding: .666rem;
+  width: 80%;
+}
+.card-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.card-container .card{
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid rgba(102, 102, 102, 0.425);
+  padding: .666rem;
+  border-radius: 7px;
+  margin-top: 1em;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+.card-container .card:hover {
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+button {
+  margin-top: 1.2rem;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+
+.card .img-container{
+  object-fit: cover;
+  width: 20%;
+}
+.card .img-container img{
+  width: 100%;
+  border-radius: 50%;
+}
+
+.card .details{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin-left: .666rem;
+  width: 85%;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', Verdana, sans-serif;
+  text-transform: uppercase;
+}
+
+.following{
+  display: none;
 }
