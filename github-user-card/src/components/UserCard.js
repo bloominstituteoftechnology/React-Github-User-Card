@@ -16,8 +16,8 @@ text-align:center;
 
 const FollowerStyle = styled.div`
 background-color: yellow;
-width: 350px;
-height:200px;
+width: 100%;
+
 margin: 0 auto;
 text-align:center;
     li{
@@ -32,11 +32,6 @@ flex-wrap: wrap;
 height: 50px;
 `
 
-const CardList = styled.div`
-height:50px;
-background-color:orange;
-flex-wrap:wrap;
-`
 
 class UserCard extends React.Component {
 
@@ -75,11 +70,13 @@ class UserCard extends React.Component {
                         followers:
                     {this.state.followers.map(follower => 
                     <CardCont>
-                        <CardList>
-                            <li>
+                        <div class='follower-list'>
+                            <div class='follower-container'>
+                            
                                 {follower.login}
-                                </li>
-                                </CardList>
+                                
+                                </div>
+                                </div>
                                 </CardCont>
                     )}
                 </FollowerStyle>

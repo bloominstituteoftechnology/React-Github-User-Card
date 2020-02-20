@@ -28,6 +28,16 @@
   color: #61dafb;
 }
 
+.follower-list {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.follower-container {
+  height:10px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
