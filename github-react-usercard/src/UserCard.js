@@ -1,11 +1,7 @@
 import React from 'react';
-import {
-  Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, 
-} from 'reactstrap';
 
 const UserCard = (props) => {
-    const {name, avatar_url, followers, login, html_url, id, following, userRepo} = props.data;
+    const {name, avatar_url, login, html_url} = props.data;
     return (
         <>
         <div className = "mainUserConatiner">
