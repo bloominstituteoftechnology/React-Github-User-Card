@@ -1,17 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import Card from './Card';
-import './lambdalogo.png';
-import './githublogo.png';
+import Lambdalogo from './lambdalogo.png';
+import Githublogo from './githublogo.png';
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
       user: [],
-      // followers: ''     
+      followers: []     
     };
   }  
 
@@ -21,35 +20,52 @@ class App extends React.Component {
       .then(res => {   
         console.log(res.data)     
         this.setState({
-          user: res.data.name
+          user: [
+            res.data.name,
+            res.data.bio,
+            res.data.login,
+            res.data.followers,
+            res.data.following
+          ]
         });
       })
       .catch(err => console.log(err.message));
 
-      // axios
-      // .get('https://api.github.com/users/Pete1701/followers')
-      // .then(res => {   
-      //   console.log(res.data)     
-      //   this.setState({
-      //     followers: res.data.map(() => {
-      //       return res.data.login;
-      //     })
-      //   });
-      // })
-      // .catch(err => console.log(err.message));
+      axios
+      .get('https://api.github.com/users/Pete1701/followers')
+      .then(res => {   
+        console.log(res.data)
+        this.setState({
+          followers: res.data.forEach(item => {
+            axios.get(item.url)
+            .then(res => {
+              console.log(res.data);
+              return res.data
+            })
+          })
+        });    
+        // this.setState({
+        //   followers: res.data.map(item => {
+        //     return item.url
+        //   })          
+        // });
+      })
+      .catch(err => console.log(err.message));
   }
 
   render() {
     return (
       <div className="container">
         <div className="header">
-          <img src="./lambdalogo.png" alt="Lambda Logo"/>
+          <img src={Lambdalogo} alt="Lambda Logo"/>
           <p>❤️'s</p>
-          <img src="./githublogo.png" alt="GitHub Logo" />
+          <img src={Githublogo} alt="GitHub Logo" />
         </div>
         <div className="cards">
-          {this.state.user}
-          {/* {this.state.followers} */}
+          <Card
+            user={this.state.user}
+            followers={this.state.followers}
+          />          
         </div>
       </div>
     );
