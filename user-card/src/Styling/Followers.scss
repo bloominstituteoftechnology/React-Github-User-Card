@@ -1,0 +1,12 @@
+.FollowerContainer{
+	margin: 0px auto;
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+
+	.Follower{
+		margin: 15px 0px;
+		width: 40vw;
+		border: 1px grey solid;
+	}
+}
