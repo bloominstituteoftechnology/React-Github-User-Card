@@ -4,6 +4,7 @@ import axios from 'axios';
 import Card from './Card';
 import Lambdalogo from './lambdalogo.png';
 import Githublogo from './githublogo.png';
+import Followers from './Followers';
 
 class App extends React.Component {
   constructor() {
@@ -20,30 +21,36 @@ class App extends React.Component {
       .then(res => {   
         console.log(res.data)     
         this.setState({
-          user: [
-            res.data.name,
-            res.data.bio,
-            res.data.login,
-            res.data.followers,
-            res.data.following
-          ]
+          user: [res.data]         
         });
       })
       .catch(err => console.log(err.message));
+
+    // axios
+    //   .get('https://api.github.com/users/Pete1701/followers')
+    //   .then(res => {
+    //     console.log(res.data)
+    //   })
+    //   .catch(err => console.log(err.message));
+    // }
 
       axios
       .get('https://api.github.com/users/Pete1701/followers')
       .then(res => {   
         console.log(res.data)
-        this.setState({
-          followers: res.data.forEach(item => {
+        
+          res.data.map(item => {
             axios.get(item.url)
             .then(res => {
-              console.log(res.data);
-              return res.data
-            })
-          })
-        });    
+              console.log('bio', res.data);
+              this.state.followers.push(res.data);
+              this.setState({
+                followers: this.state.followers
+              })              
+            })          
+        });
+
+        console.log('abc', this.state.followers)
         // this.setState({
         //   followers: res.data.map(item => {
         //     return item.url
@@ -63,9 +70,11 @@ class App extends React.Component {
         </div>
         <div className="cards">
           <Card
-            user={this.state.user}
+            user={this.state.user}            
+          />
+          <Followers
             followers={this.state.followers}
-          />          
+          />
         </div>
       </div>
     );

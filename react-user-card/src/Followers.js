@@ -1,17 +1,17 @@
 import React from 'react';
 import './Card.css';
 
-function Card(props) {
+function Followers(props) {
     return (
         <>
-          {props.user.map(user => (
+          {props.followers.map(user => (
             <div key={user.id} className='user'>
               <div>
-                <h3>{user.name}</h3> 
-                <p>{user.login}</p>
+                <h3>{user.name}</h3>
+                <p>{user.login}</p>            
                 <p>{user.bio}</p>
                 <p>Location: {user.location}</p>
-                <p>Repos: {user.public_repos}</p>                     
+                <p>Repos: {user.public_repos}</p>                    
                   </div>          
               </div>
             ))}                
@@ -20,4 +20,4 @@ function Card(props) {
         
    
 
-export default Card;
+export default Followers;
