@@ -4,8 +4,6 @@ import Info from './Info';
 import Followers from './Followers';
 import '../Styling/Profile.scss';
 
-const urlMain = "https://api.github.com/users/kenjigr";
-const urlFollowers = "https://api.github.com/users/kenjigr/followers";
 
 class Profile extends React.Component {
 	constructor() {
@@ -17,9 +15,9 @@ class Profile extends React.Component {
 	}
 
 	componentDidMount(){
-		axios.get(urlMain)
+		axios.get('https://api.github.com/users/kenjigr')
 		.then(res => {
-			//console.log("Profile API ~ ", res);
+			console.log("Profile", res);
 			this.setState({
 				user:res.data
 			})
@@ -28,9 +26,9 @@ class Profile extends React.Component {
 			console.log(err);
 		})//urlMain
 
-		axios.get(urlFollowers)
+		axios.get('https://api.github.com/users/kenjigr/followers')
 		.then(res => {
-			//console.log("Followers Call ~ ", res);
+			console.log("Followers", res);
 			this.setState({
 				followers: res.data
 			})			
