@@ -1,0 +1,80 @@
+body {
+  box-sizing: border-box;
+}
+.App {
+  text-align: center;
+}
+.app-user {
+  background-image: url('https://images.unsplash.com/photo-1523878288860-7ad281611901?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1951&q=80');
+  
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  margin:1%;
+  width: 98%;
+  display:flex;
+  justify-content: center;
+  
+}
+@media screen and (max-width: 500px) {
+ .app-user {
+  flex-direction:column;
+  margin:0 auto;
+}
+}
+
+.user-search-form{
+  margin-bottom: 5%;
+}
+
+.user-card{
+  width:320px;
+  padding:2%;
+  height:500px;
+  border-style: ridge;
+  margin:0 auto;
+}
+
+.user-card img {
+  width:300px;
+  height:300px;
+  border-radius:50%;
+}
+.followers{
+  
+  margin: 0 auto;
+  padding: 5%;
+  border-style: ridge;
+  display: flex;
+  flex-direction: column;
+}
+
+.follower {
+  width:300px;
+}
+ .follower img {
+  width:200px;
+  height:200px;
+  border-radius: 50%;
+
+
+}
+
+
+input {
+  border:2px solid black;
+  border-radius:15px;
+  padding:10px;
+  
+}
+
+button {
+  background-color: teal;
+  border:1px teal;
+  width:100px;
+  height: 40px;
+  margin-left:10px;
+  border-radius:15px;
+  color:white;
+}
+
