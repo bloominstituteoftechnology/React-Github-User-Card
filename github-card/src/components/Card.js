@@ -7,6 +7,7 @@ const Container = styled.div`
   width: 500px;
   border: 2px solid #333333;
   background: ghostwhite;
+  margin-bottom: 10px;
   .profile-main-div {
     display: flex;
     justify-content: space-evenly;
