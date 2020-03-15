@@ -1,7 +1,12 @@
-html {
-    font-size: 62.5%;
+.page-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
 }
 
-body {
-    font-family: 'Open Sans Condensed', sans-serif !important;
+.text-center {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
 }
