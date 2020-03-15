@@ -2,18 +2,36 @@
 import React from 'react'
 import axios from 'axios'
 
+// Component imports
+import Card from './Comp-Card'
+
 
 class Home extends React.Component {
+
     constructor() {
         super()
         this.state = {
-            // github state
+            ghUserData: []
         }
     }
 
-    render () {
+    componentDidMount() {
+        axios
+            .get('https://api.github.com/users/JasonNeale/following')
+            .then(res => {
+                this.setState({ghUserData: res.data})
+            })
+            .catch(err => console.error(err))
+    }
+
+    render() {
+        
         return (
-            <h2>Home Render</h2>
+            <div>
+                {this.state.ghUserData.map(item => {
+                    return <Card key={item.id} data={item} />
+                })}
+            </div>
         )
     }
 }
