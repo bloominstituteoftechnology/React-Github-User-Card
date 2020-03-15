@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c3c77bdb-134f-4248-a2e2-73ca643ff1bc/deploy-status)](https://app.netlify.com/sites/react-github-user-card-2020/deploys)
+
+https://react-github-user-card-2020.netlify.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

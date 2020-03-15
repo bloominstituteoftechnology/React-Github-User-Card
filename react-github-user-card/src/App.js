@@ -1,6 +1,6 @@
 // Package imports
 import React from 'react'
-import { Container, Header, List } from "semantic-ui-react";
+import { Container, Header } from "semantic-ui-react";
 
 // Component imports
 import Home from './components/Comp-Home'

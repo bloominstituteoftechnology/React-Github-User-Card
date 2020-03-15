@@ -2,10 +2,12 @@
 import React from 'react'
 import axios from 'axios'
 import { Card, Icon } from 'semantic-ui-react'
+import { Route, Link } from 'react-router-dom'
 
 // File imports
 
 // Component imports
+import FollowersComp from './Comp-Followers'
 
 
 class Home extends React.Component {
@@ -34,6 +36,10 @@ class Home extends React.Component {
             .catch(err => console.error(err))
     }
 
+    checkRoute(e) {
+
+    }
+
     render() {
         
         return (
@@ -48,21 +54,26 @@ class Home extends React.Component {
                             <span>
                                 <hr />
                                 <p>
-                                    [<a target="_blank" href={this.state.ghUserData.html_url}>Profile</a>] - 
-                                    [<a target="_blank" href={this.state.ghUserData.repos_url}>Repos</a>] -  
-                                    [<a target="_blank" href={this.state.ghUserData.gists_url}>Gists</a>]
+                                    [<a target="_blank" rel="noopener noreferrer" href={this.state.ghUserData.html_url}>Profile</a>] - 
+                                    [<a target="_blank" rel="noopener noreferrer" href={this.state.ghUserData.repos_url}>Repos</a>] -  
+                                    [<a target="_blank" rel="noopener noreferrer" href={this.state.ghUserData.gists_url}>Gists</a>]
                                 </p>
                             </span>
                         )}
                         extra={(
                             <span>
-                                <Icon name="user" /> <a target="_blank" href={this.state.ghUserData.following_url}>
+                                <Icon name="user" /> <Link to="/followers">
                                     {`View Followers (${this.state.ghUserDataFollowers.length})`}
-                                </a>
+                                </Link>
                             </span>
                         )}
                     />
                 </Card.Group>
+                <br />
+                <Route path="/followers" render={renderProps => {
+                        return <FollowersComp {...renderProps} followers={this.state.ghUserDataFollowers} />
+                    }}
+                />
             </div>
         )
     }
