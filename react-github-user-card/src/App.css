@@ -1,0 +1,12 @@
+.page-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
