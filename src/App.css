@@ -37,8 +37,41 @@
   }
 }
 
-.header{
+div{
+  margin: 10px;
+  padding: 0;
+  width: 20vw;
+  position: relative;
+  left: 15%;
+
+
+}
+.divcards{
   display:flex;
-  justify-content: space-space-between;
-  width:75%; 
+}
+.emptydiv{
+  background:black;
+  color: white;
+  padding: 450px;
+  position: relative;
+  left: -21%;
+}
+
+img{
+  filter: contrast(1.4);
+  margin: 0px;
+  padding: 0px;
+
+
+
+}
+.password{
+  filter:blur(3.5px)
+}
+h1{
+  color: red;
+  padding: 20px;
+  background: black;
+  position: relative;
+  left: 80%;
 }
