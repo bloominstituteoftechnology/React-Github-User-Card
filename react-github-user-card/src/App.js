@@ -5,6 +5,7 @@ import axios from 'axios';
 class App extends React.Component {
   state = {
     users: [],
+    followers: [],
     userInfo: ''
   };
 
@@ -12,9 +13,10 @@ class App extends React.Component {
     axios
       .get('https://api.github.com/users/Dmhabh1992')
       .then(res => {
+        console.log(res);
         // res.data.message
         this.setState({
-          users: res.data.users
+          users: res.data
         });
       })
       .catch(err => console.log(err));
@@ -26,9 +28,8 @@ class App extends React.Component {
         axios
           .get('https://api.github.com/users/Dmhabh1992/followers')
           .then(res => {
-            // res.data.message
             this.setState({
-              users: res.data.users,
+            followers: res.data
             });
           })
           .catch(err => console.log(err));
@@ -47,13 +48,14 @@ class App extends React.Component {
       <div className="App">
         <input
           type="text"
-          value={this.state.usersText}
+          value={this.state.userInfo}
           onChange={this.handleChanges}
         />
         <div className="users">
           {/* {this.state.users.map(users => (
-            <img width="200" src={users} key={users} alt={users} />
+
           ))} */}
+          <div>{this.state.users.login} </div>
         </div>
       </div>
     );
@@ -61,4 +63,3 @@ class App extends React.Component {
 }
 
 export default App;
-
