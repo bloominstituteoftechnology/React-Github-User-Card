@@ -9,7 +9,7 @@ class App extends React.Component {
   super();
   this.state = {
     userData: {},
-    followers: ""
+    followerData: []
     }
   };
 
@@ -19,6 +19,12 @@ class App extends React.Component {
       .then(user => {
         console.log("kk: App.js: CDM: fetch: then2: user: ", user);
         this.setState({userData: user});
+        fetch("https://api.github.com/users/kkdev211/followers")
+          .then(res => res.json())
+          .then(followers => {
+            console.log("kk: App.js: CDM: fetch: then2: followerData: ", followers);
+            this.setState({followerData: followers}); 
+          } )
       })
       .catch(err => console.error(err));
   }
@@ -31,13 +37,13 @@ render() {
         <UserCard 
           user={this.state.userData}
         />
-        {/* <TodoForm addItem={this.addItem} /> */}
+        <h1> Followers</h1>
+        {this.state.followerData.map(follower => {
+          return <UserCard user={follower} />;
+        })}
+        
       </div>
-      {/* <TodoList
-        tasks={this.state.tasks}
-        toggleCompleted={this.toggleCompleted}
-        clearCompleted={this.clearCompleted}
-      /> */}
+      
     </div>
   );
 }
