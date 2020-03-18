@@ -3,19 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 import UserCard from "./UserCard";
 import axios from "axios";
+import FriendCard from "./FriendCard";
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      userCard: {}
+      userCard: {},
+      friendCard: []
     }
+
   }
   componentDidMount() {
     axios.get(`https://api.github.com/users/VitaliyM3`)
-    .then(res => this.setState({ userCard: res.data })
-      
-    )
+    .then(res => this.setState({ userCard: res.data }));
+
+    axios.get('https://api.github.com/users/VitaliyM3/followers')
+    // .then(res => console.log(res, "this is resposnse for freinds card"))
+    .then(res => this.setState({ friendCard: res.data }))
+    .catch(err => console.log(err, "error from .catch"));
 
     // fetch("https://api.github.com/users/VitaliyM3")
     //   .then(res => console.log(res))
@@ -34,6 +40,8 @@ class App extends React.Component {
           return <div>hello</div>
           })} */}
         </UserCard>
+        <FriendCard friend={this.state.friendCard} className="friend">
+        </FriendCard>
       </div>
     );
   }
