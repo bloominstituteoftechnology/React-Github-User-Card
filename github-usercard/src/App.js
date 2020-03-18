@@ -9,6 +9,7 @@ export default class App extends React.Component {
       <div className="App">
         <h1>My Followers</h1>
         <User />
+        
       </div>
     );
   }

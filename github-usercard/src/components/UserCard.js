@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Styled = styled.div`
-  width:400px;
+  width:440px;
   margin:0px auto;
   margin-bottom:50px;
   padding:20px;
