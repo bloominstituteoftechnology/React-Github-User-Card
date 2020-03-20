@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+
+.fcont {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.friendcard {
+  Width: 500px;
+  height:550px;
+  background-color: rgba(252, 229, 126, 0.699);
+  border: solid 2px black;
+  margin: 15px;
+}
+
+
