@@ -53,4 +53,12 @@
   margin: 15px;
 }
 
+.usercard {
+  width: 500px;
+  height: 550px;
+  border: solid 2px black;
+  background-color: rgb(130, 95, 163);
+  margin: auto;
+}
+
 
