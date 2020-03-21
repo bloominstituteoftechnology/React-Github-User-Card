@@ -1,41 +1,46 @@
 import React from 'react';
-import users from './components/users';
-import UserCard, {user} from './components/usercard';
-import './App.css';
+import FollowerCard from './components/FollowerCard';
+import InputForm from './components/InputForm';
+import UserCard from './components/UserCard';
 
 class App extends React.Component {
   constructor() {
-    console.log("Constructor Invoked");
     super();
     this.state = {
-      people: {},
-      followers: []
+      name: [],
+      avatar: [],
+      location: [],
+      bio: [],
+      public_repos: []
     };
   }
   componentDidMount() {
-    console.log("Component mounted!!!")
     fetch('https://api.github.com/users/shgradyy')
-    .then(res => res.json())
-    .then(res => this.setState({people: res}))
-    .catch(err => console.log(err));
-
-    fetch('https://api.github.com/users/shgradyy/followers')
-    .then(res => res.json())
-    .then(res => this.setState({followers: res}))
-    .catch(err => console.log(err))
+      .then(res => res.json())
+      .then(userData => {
+        console.log('User Data', userData);
+        this.setState({ name: userData.name });
+        this.setState({ avatar: userData.avatar_url });
+        this.setState({ location: userData.location });
+        this.setState({ bio: userData.bio });
+        this.setState({ public_repos: userData.public_repos });
+      })
+      .catch(err => console.error(err));
   }
   render() {
     return (
-      <div className="App">
-        <h1>Welcome to Github User Card!</h1>
-        <UserCard {this.state.users.map(user => (
-          <div key={user.name}>
-          {user.name + user.email}
-          </div>
-        ))
-        
       <div>
-    ); 
+        <UserCard
+          name={this.state.name}
+          avatar={this.state.avatar}
+          location={this.state.location}
+          bio={this.state.bio}
+          public_repos={this.state.public_repos}
+        />
+        <InputForm name={this.state.name} />
+        <FollowerCard />
+      </div>
+    );
   }
 }
 

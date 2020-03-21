@@ -1,15 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 
-const UserCard = props => {
-    console.log("Props", props);
-    return <div>
-        {props.userProp.map(user => {user.name + user.email})}
-    </div>}
-
-UserCard.propTypes = {
-    name: propTypes.string,
-    email: propTypes.string
+function UserCard(props) {
+  return (
+    <div className='card'>
+      <div className='left'>
+        <img className='img' src={props.avatar} alt='user avatar' />
+        <h4>{props.name}</h4>
+        <p>{props.location}</p>
+      </div>
+    </div>
+  );
 }
-export default userCard;
+
+export default UserCard;
