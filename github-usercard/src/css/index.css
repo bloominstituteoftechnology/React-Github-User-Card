@@ -15,6 +15,8 @@ h4 {
 }
 body {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 .userCardContainer {
   margin: 0 auto;
@@ -22,7 +24,7 @@ body {
 .userCardContainer .userCard {
   display: flex;
   justify-content: space-around;
-  margin: 20px 0;
+  margin: 49px auto;
   padding: 20px;
   border: 1px solid #ddd;
   max-width: 600px;
