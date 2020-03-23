@@ -33,8 +33,8 @@ class App extends React.Component {
   }
 
   render() {
-    const { user } = this.state;
-    return <UserCardContainer user={user} />;
+    const { user, followers } = this.state;
+    return <UserCardContainer user={user} followers={followers} />;
   }
 }
 

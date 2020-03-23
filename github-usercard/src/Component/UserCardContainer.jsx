@@ -4,7 +4,7 @@ import UserCard from "./UserCard";
 export default function UserCardContainer(props) {
   return (
     <div className="userCardContainer">
-      <UserCard user={props.user} />
+      <UserCard user={props.user} followers={props.followers} />
     </div>
   );
 }
