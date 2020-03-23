@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import UserCardContainer from "./Component/UserCardContainer";
-import "./App.css";
+import "./css/index.css";
 
 class App extends React.Component {
   constructor(props) {

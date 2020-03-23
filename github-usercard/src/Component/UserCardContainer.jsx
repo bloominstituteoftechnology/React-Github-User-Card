@@ -6,9 +6,9 @@ export default function UserCardContainer(props) {
   return (
     <div className="userCardContainer">
       <UserCard user={props.user} followers={props.followers} />
-      {props.user.followers > 0 ? (
+      {/* {props.user.followers > 0 ? (
         <Followers followers={props.followers} />
-      ) : null}
+      ) : null} */}
     </div>
   );
 }
