@@ -23,7 +23,6 @@ export default function UserCard(props) {
           <button>Following</button>
           <button>Followers</button>
         </div>
-
       </div>
     </div>
   );

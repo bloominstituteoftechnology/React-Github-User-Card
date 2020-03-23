@@ -5,7 +5,13 @@ export default function Followers(props) {
   console.log(followers);
   return (
     <div>
-      <h1>Followers: </h1>
+      {followers.map(follower => {
+        return (
+          <>
+            <h1>Followers: {follower.login}</h1>
+          </>
+        )
+      })}
     </div>
   );
 }
