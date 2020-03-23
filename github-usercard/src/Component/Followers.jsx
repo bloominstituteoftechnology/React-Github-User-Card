@@ -13,10 +13,12 @@ export default function Followers(props) {
               <img src={follower.avatar_url} alt="Follower profile image" />
             </div>
             <div className="followerCard-right">
-              <a href={follower.url}><h4>{follower.login}</h4></a>
+              <a href={follower.url}>
+                <h4>@{follower.login}</h4>
+              </a>
             </div>
           </div>
-        )
+        );
       })}
     </div>
   );

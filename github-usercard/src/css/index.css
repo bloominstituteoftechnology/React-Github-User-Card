@@ -72,3 +72,28 @@ body {
   padding: 6px 12px;
   font-size: 1rem;
 }
+.followerCardContainer {
+  display: flex;
+  flex-direction: column;
+  width: 67%;
+  margin: auto;
+}
+.followerCardContainer .followerCard {
+  display: flex;
+  border: 1px solid #ccc;
+}
+.followerCardContainer .followerCard .followerCard-left {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.followerCardContainer .followerCard .followerCard-left img {
+  width: inherit;
+}
+.followerCardContainer .followerCard .followerCard-right {
+  align-self: center;
+  padding: 0 40px;
+}
+.followerCardContainer .followerCard .followerCard-right h4 {
+  text-align: left;
+}
