@@ -78,6 +78,9 @@ body {
   width: 67%;
   margin: auto;
 }
+.followerCardContainer h3 {
+  text-align: left;
+}
 .followerCardContainer .followerCard {
   display: flex;
   border: 1px solid #ccc;
