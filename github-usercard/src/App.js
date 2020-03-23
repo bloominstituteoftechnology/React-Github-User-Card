@@ -1,8 +1,15 @@
 import React from "react";
+import UserCardContainer from "./Component/UserCardContainer";
 import "./App.css";
 
-function App() {
-  return <div className="App"></div>;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return <UserCardContainer />;
+  }
 }
 
 export default App;
