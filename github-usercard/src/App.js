@@ -20,6 +20,7 @@ class App extends React.Component {
     return axios.get("https://api.github.com/users/yirano/followers");
   };
 
+
   componentDidMount() {
     axios
       .all([this.getUser(), this.getFollowers()])
