@@ -1,10 +1,10 @@
 import React from "react";
 import UserCard from "./UserCard";
 
-export default function UserCardContainer() {
+export default function UserCardContainer(props) {
   return (
     <div className="userCardContainer">
-      <UserCard />
+      <UserCard user={props.user} />
     </div>
   );
 }

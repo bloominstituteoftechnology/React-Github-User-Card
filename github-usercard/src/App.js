@@ -7,16 +7,25 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: ""
+      user: "",
+      followers: ""
     };
   }
 
+  getUser = () => {
+    return axios.get("https://api.github.com/users/yirano");
+  };
+
+  getFollowers = () => {
+    return axios.get("https://api.github.com/users/yirano/followers");
+  };
+
   componentDidMount() {
     axios
-      .get("https://api.github.com/users/yirano")
+      .all([this.getUser(), this.getFollowers()])
       .then(res => {
         console.log(res);
-        this.setState({ user: res });
+        this.setState({ user: res[0].data, followers: res[1].data });
       })
       .catch(err => {
         console.log(err);
@@ -24,7 +33,8 @@ class App extends React.Component {
   }
 
   render() {
-    return <UserCardContainer />;
+    const { user } = this.state;
+    return <UserCardContainer user={user} />;
   }
 }
 
