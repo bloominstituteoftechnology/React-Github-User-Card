@@ -45,16 +45,10 @@ class App extends React.Component {
       gitUser: this.state.input,
       input: ""
     });
-    console.log("-----SUBMIT-----");
-    console.log(this.state.gitUser);
-    console.log(this.state.input);
-    console.log("----------------");
-    this.getData();
   };
 
   handleChange = e => {
     this.setState({
-      gitUser: e.target.value,
       input: e.target.value
     });
   };
@@ -63,11 +57,14 @@ class App extends React.Component {
     return this.getData();
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.gitUser !== this.state.gitUser) {
+      return this.getData();
+    }
+  }
+
   render() {
     const { user, followers, input, gitUser } = this.state;
-    console.log("-----RENDER-----");
-    console.log(this.state.gitUser);
-    console.log("----------------");
     return (
       <>
         <Form
