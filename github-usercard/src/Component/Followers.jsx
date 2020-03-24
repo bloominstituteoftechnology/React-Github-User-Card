@@ -2,7 +2,6 @@ import React from "react";
 
 export default function Followers(props) {
   const { followers } = props;
-  console.log(followers);
   return (
     <div className="followerCardContainer">
       <h3>Followers: </h3>
