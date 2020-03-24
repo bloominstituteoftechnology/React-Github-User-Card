@@ -4,6 +4,9 @@ import UserCardContainer from "./Component/UserCardContainer";
 import Form from "./Component/Form";
 import "./css/index.css";
 
+const test = document.querySelector('#graph');
+console.log(test);
+
 class App extends React.Component {
   constructor(props) {
     super(props);

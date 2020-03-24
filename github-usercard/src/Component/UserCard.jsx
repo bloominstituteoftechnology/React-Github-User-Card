@@ -3,7 +3,7 @@ import ReactHtmlParser from "react-html-parser";
 
 export default function UserCard(props) {
   const { user, followers, contributions } = props;
-  console.log(typeof contributions);
+  console.log(contributions);
   return (
     <div className="userCard">
       <div className="userCard-top">
@@ -33,7 +33,7 @@ export default function UserCard(props) {
       </div>
 
       <div className="userCard-bottom">
-        <div>{ReactHtmlParser(contributions)}</div>
+        <div id="graph">{ReactHtmlParser(contributions)}</div>
       </div>
     </div>
   );

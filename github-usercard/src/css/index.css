@@ -23,11 +23,12 @@ body {
 }
 .userCardContainer .userCard {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   margin: 49px auto;
   padding: 20px;
   border: 1px solid #ddd;
-  max-width: 600px;
+  max-width: 712px;
 }
 .userCardContainer .userCard .userCard-top {
   display: flex;
