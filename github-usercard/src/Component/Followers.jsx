@@ -9,10 +9,10 @@ export default function Followers(props) {
         return (
           <div className="followerCard">
             <div className="followerCard-left">
-              <img src={follower.avatar_url} alt="Follower profile image" />
+              <img src={follower.avatar_url} alt="Follower profile" />
             </div>
             <div className="followerCard-right">
-              <a href={follower.html_url} target="_blank">
+              <a href={follower.html_url} target="_blank" rel="noopener noreferrer">
                 <h4>@{follower.login}</h4>
               </a>
             </div>

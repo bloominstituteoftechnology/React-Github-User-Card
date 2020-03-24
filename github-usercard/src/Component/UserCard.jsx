@@ -2,16 +2,15 @@ import React from "react";
 import ReactHtmlParser from "react-html-parser";
 
 export default function UserCard(props) {
-  const { user, followers, contributions } = props;
-  console.log(contributions);
+  const { user, contributions } = props;
   return (
     <div className="userCard">
       <div className="userCard-top">
         <div className="userCard-left">
           <div className="imgContainer">
-            <img src={user.avatar_url} alt="User image" />
+            <img src={user.avatar_url} alt="Github user profile" />
           </div>
-          <a href={user.html_url} target="_blank">
+          <a href={user.html_url} target="_blank" rel="noopener noreferrer">
             <p>@{user.login}</p>
           </a>
         </div>
