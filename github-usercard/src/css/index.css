@@ -29,6 +29,11 @@ body {
   border: 1px solid #ddd;
   max-width: 600px;
 }
+.userCardContainer .userCard .userCard-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 .userCardContainer .userCard .userCard-left {
   width: 30%;
 }

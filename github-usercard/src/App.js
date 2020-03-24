@@ -11,6 +11,7 @@ class App extends React.Component {
       user: "",
       gitUser: "yirano",
       followers: "",
+      contributions: "",
       input: ""
     };
   }
@@ -27,12 +28,22 @@ class App extends React.Component {
     );
   };
 
+  getContributions = () => {
+    return axios.get(
+      `https://cors-anywhere.herokuapp.com/https://github.com/users/${this.state.gitUser}/contributions`
+    );
+  };
+
   getData = () => {
     return axios
-      .all([this.getUser(), this.getFollowers()])
+      .all([this.getUser(), this.getFollowers(), this.getContributions()])
       .then(res => {
         console.log(res);
-        this.setState({ user: res[0].data, followers: res[1].data });
+        this.setState({
+          user: res[0].data,
+          followers: res[1].data,
+          contributions: res[2].data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -64,7 +75,7 @@ class App extends React.Component {
   }
 
   render() {
-    const { user, followers, input, gitUser } = this.state;
+    const { user, followers, input, gitUser, contributions } = this.state;
     return (
       <>
         <Form
@@ -73,7 +84,11 @@ class App extends React.Component {
           handleChange={this.handleChange}
           handleSubmit={this.handleSubmit}
         />
-        <UserCardContainer user={user} followers={followers} />
+        <UserCardContainer
+          user={user}
+          followers={followers}
+          contributions={contributions}
+        />
       </>
     );
   }
