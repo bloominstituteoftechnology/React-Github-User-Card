@@ -4,10 +4,12 @@ export default function Form(props) {
   return (
     <form onSubmit={props.handleSubmit}>
       <Input
+        className="formInput"
         id="outlined-basic"
         label="Search a User"
         variant="outlined"
         type="text"
+        placeholder="Search User Here"
         value={props.input}
         onChange={e => props.handleChange(e)}
       />

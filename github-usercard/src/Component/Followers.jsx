@@ -2,9 +2,10 @@ import React from "react";
 
 export default function Followers(props) {
   const { followers } = props;
+  console.log(followers);
   return (
     <div className="followerCardContainer">
-      <h3>Followers: </h3>
+      <h3>Followers: {followers.length}</h3>
       {followers.map(follower => {
         return (
           <div className="followerCard">
@@ -12,7 +13,7 @@ export default function Followers(props) {
               <img src={follower.avatar_url} alt="Follower profile image" />
             </div>
             <div className="followerCard-right">
-              <a href={follower.url}>
+              <a href={follower.html_url} target="_blank">
                 <h4>@{follower.login}</h4>
               </a>
             </div>

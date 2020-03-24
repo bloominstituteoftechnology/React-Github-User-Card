@@ -8,7 +8,7 @@ export default function UserCard(props) {
         <div className="imgContainer">
           <img src={user.avatar_url} alt="User image" />
         </div>
-        <a href={user.url}>
+        <a href={user.html_url} target="_blank">
           <p>@{user.login}</p>
         </a>
       </div>

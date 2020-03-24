@@ -100,3 +100,7 @@ body {
 .followerCardContainer .followerCard .followerCard-right h4 {
   text-align: left;
 }
+.formInput {
+  width: 600px;
+  margin-top: 30px;
+}
