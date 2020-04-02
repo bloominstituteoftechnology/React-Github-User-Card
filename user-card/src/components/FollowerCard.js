@@ -30,7 +30,7 @@ export default function FollowerCard(props) {
           title="user avatar"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography gutterBottom variant="h5" component="h3">
             {props.follower.login}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
