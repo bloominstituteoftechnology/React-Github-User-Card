@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
+import axios from 'axios'
 import './App.css';
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      profile: [],
+      followers: []
+    }
+  }
+  componentDidMount(){
+    axios.get("https://api.github.com/users/joowoonk")
+    .then(response => {
+      console.log(response.data)
+      this.setState({
+        profile: response.data
+      })
+    
+    })
+    axios.get("https://api.github.com/users/joowoonk/followers")
+    .then(response => {
+      console.log("follwers",response.data)
+      // this.setState({
+      //   ...folowers,
+      //   profile: response.data
+      // })
+    
+    })
+    
+  }
+  render(){
+      return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      
     </div>
   );
+  }
+
 }
 
 export default App;
