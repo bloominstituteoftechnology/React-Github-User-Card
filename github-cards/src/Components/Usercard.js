@@ -18,7 +18,7 @@ export default class Usercard extends React.Component
         <p>url: {this.props.userData.html_url}</p>
         <p>follower count: {this.props.userData.followers}</p>
         {this.props.followers.map(item=>
-        <p>{item.login}</p>
+        <a href={item.html_url}>{item.login}, </a>
           )}
         <p>following: {this.props.userData.following}</p>
         <p>bio: {this.props.userData.bio}</p>
