@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios"
 import Usercard from './Components/Usercard'
 import Followercard from './Components/Followercard'
+import Form from './Components/Form'
 import './App.css';
 
 
@@ -12,15 +13,16 @@ class App extends React.Component
     super()
     this.state = {
       userData: [],
-      followers:[]
+      followers:[],
+      userName:"Diddleslip"
     }
   }
 
 
   componentDidMount()
   {
-    let userName = "GeraldRyan"
-    axios.get(`https://api.github.com/users/${userName}`)
+
+    axios.get(`https://api.github.com/users/${this.state.userName}`)
       .then(response =>
       {
         this.setState({
@@ -30,7 +32,7 @@ class App extends React.Component
       })
       .catch("You caught me")
 
-      axios.get(`https:api.github.com/users/${userName}/followers`)
+      axios.get(`https:api.github.com/users/${this.state.userName}/followers`)
       .then(response =>{
         this.setState({
           followers: response.data
@@ -45,6 +47,24 @@ class App extends React.Component
   }
 
 
+
+  searchUser = (e, t) =>
+  {
+    e.preventDefault()
+    const newTask = {
+      task: t,
+      id: Date.now(),
+      completed: false
+    }
+    this.setState({
+      tasks: [...this.state.tasks, newTask]
+    })
+    // console.log("t is for task:", t)  //pass
+    // console.log("tasks:", this.state.tasks)  //pass
+    // console.log("newTask:", newTask) //pass
+  }
+
+
   render()
   {
 
@@ -52,6 +72,7 @@ class App extends React.Component
     return (
       <div className="App">
         <h1>Github User Info</h1>
+        <Form></Form>
         <h2>User</h2>
         <Usercard userData={this.state.userData} followers={this.state.followers}></Usercard>
         <h2>Followers:</h2>
