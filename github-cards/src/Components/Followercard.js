@@ -9,11 +9,13 @@ export default class Followercard extends React.Component
   {
 
     return (
-      <div class="followercard">
-        <img src={this.props.userData.avatar_url} alt=""/>
-        <p>Login: {this.props.userData.login}</p>
-        <a href={this.props.userData.html_url}>url: {this.props.userData.html_url}</a>
-        <p>Type: {this.props.userData.type}</p>
+      <div class="card followercard">
+        <img src={this.props.userData.avatar_url} alt="" />
+        <div className="card-info">
+          <h3>{this.props.userData.login}</h3>
+          <p>Profile:<a href={this.props.userData.html_url}> {this.props.userData.html_url}</a></p>
+          <p>Type: {this.props.userData.type}</p>
+        </div>
       </div>
     )
   }

@@ -88,16 +88,22 @@ class App extends React.Component
 
     return (
       <div className="App">
-        <h1>Github User Info</h1>
-        <Form searchUser={this.searchUser}></Form>
-        <h2>User</h2>
-        <Usercard userData={this.state.userData} followers={this.state.followers}></Usercard>
-        <h2>Followers:</h2>
-        {this.state.followers.map((item, index) =>
-        {
-          // console.log("item",item)
-          return (<Followercard key={index} userData={item} followers={[]}></Followercard>)
-        })}
+        <div className="container">
+          <h1>Github User Info</h1>
+          <Form searchUser={this.searchUser}></Form>
+          <h2>User</h2>
+          <div className="cards">
+            <Usercard userData={this.state.userData} followers={this.state.followers}></Usercard>
+          </div>
+          <h2>Followers:</h2>
+          <div className="cards">
+            {this.state.followers.map((item, index) =>
+            {
+              // console.log("item",item)
+              return (<Followercard key={index} userData={item} followers={[]}></Followercard>)
+            })}
+          </div>
+        </div>
       </div>
     );
   }
