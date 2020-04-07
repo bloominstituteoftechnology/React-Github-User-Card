@@ -1,5 +1,10 @@
+body{
+  background-color: rgb(51, 51, 51)
+}
+
 .App {
   text-align: center;
+  color:white;
 }
 
 .App-logo {
@@ -35,4 +40,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.usercard{
+  
+  max-width:50%;
+  margin:auto;
 }

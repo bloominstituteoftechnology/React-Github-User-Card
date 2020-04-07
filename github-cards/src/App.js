@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from "axios"
-
+import Usercard from './Components/Usercard'
 import './App.css';
 
 
@@ -10,20 +10,28 @@ class App extends React.Component
   {
     super()
     this.state = {
-      users: []
+      userData: []
     }
   }
 
   componentDidMount()
   {
     axios.get(`https://api.github.com/users/GeraldRyan`)
-    .then(response=>{
-      this.setState({
-        users: response.data
+      .then(response =>
+      {
+        this.setState({
+          userData: response.data
+        })
+        console.log(response.data)
       })
-      console.log(response.data)
-    })
+      .catch("You caught me")
   }
+
+  componentDidUpdate()
+  {
+    console.log("component did update")
+  }
+
 
   render()
   {
@@ -31,9 +39,9 @@ class App extends React.Component
 
     return (
       <div className="App">
-      <h1>Github User Info</h1>
-
-
+        <h1>Github User Info</h1>
+        <Usercard userData={this.state.userData}></Usercard>
+        
       </div>
     );
   }
