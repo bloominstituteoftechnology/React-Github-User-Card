@@ -15,7 +15,7 @@ class App extends React.Component {
             .then((response) => {
                 console.log(response.data);
                 this.setState({
-                    myCard: response.data.message,
+                    myCard: response.data,
                 });
             });
     }
@@ -24,7 +24,9 @@ class App extends React.Component {
         return (
             <div className="App">
                 <h1>Github Card Displayer</h1>
-                <div></div>
+                <div>
+                    <h2>{this.state.myCard.login}</h2>
+                </div>
             </div>
         );
     }
