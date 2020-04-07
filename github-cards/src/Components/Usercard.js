@@ -12,6 +12,7 @@ export default class Usercard extends React.Component
     
     return (
       <div class="usercard">
+        <img src={this.props.userData.avatar_url} alt=""/>
         <p>Login: {this.props.userData.login}</p>
         <p>Location: {this.props.userData.location}</p>
         <p>url: {this.props.userData.html_url}</p>

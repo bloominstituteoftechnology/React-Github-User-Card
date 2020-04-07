@@ -43,7 +43,9 @@ body{
 }
 
 .usercard{
-  
+  background-color:white;
+  color:black;
+  text-align:left;
   max-width:50%;
   margin:auto;
 }
