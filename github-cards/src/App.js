@@ -10,13 +10,16 @@ class App extends React.Component
   {
     super()
     this.state = {
-      userData: []
+      userData: [],
+      followers:[]
     }
   }
 
+
   componentDidMount()
   {
-    axios.get(`https://api.github.com/users/GeraldRyan`)
+    let userName = "GeraldRyan"
+    axios.get(`https://api.github.com/users/${userName}`)
       .then(response =>
       {
         this.setState({
@@ -25,6 +28,14 @@ class App extends React.Component
         console.log(response.data)
       })
       .catch("You caught me")
+
+      axios.get(`https:api.github.com/users/${userName}/followers`)
+      .then(response =>{
+        this.setState({
+          followers: response.data
+        })
+        console.log(response.data)
+      })
   }
 
   componentDidUpdate()
@@ -40,7 +51,7 @@ class App extends React.Component
     return (
       <div className="App">
         <h1>Github User Info</h1>
-        <Usercard userData={this.state.userData}></Usercard>
+        <Usercard userData={this.state.userData} followers={this.state.followers}></Usercard>
         
       </div>
     );
