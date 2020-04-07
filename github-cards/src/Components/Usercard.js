@@ -15,7 +15,7 @@ export default class Usercard extends React.Component
         <img src={this.props.userData.avatar_url} alt=""/>
         <p>Login: {this.props.userData.login}</p>
         <p>Location: {this.props.userData.location}</p>
-        <p>url: {this.props.userData.html_url}</p>
+        <a href={this.props.userData.html_url}>url: {this.props.userData.html_url}</a>
         <p>follower count: {this.props.userData.followers}</p>
         {this.props.followers.map(item=>
         <a href={item.html_url}>{item.login}, </a>

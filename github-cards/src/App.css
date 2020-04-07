@@ -49,3 +49,9 @@ body{
   max-width:50%;
   margin:auto;
 }
+
+
+
+a, a:visited{
+  color:rgb(206, 7, 7);
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios"
 import Usercard from './Components/Usercard'
+import Followercard from './Components/Followercard'
 import './App.css';
 
 
@@ -51,8 +52,13 @@ class App extends React.Component
     return (
       <div className="App">
         <h1>Github User Info</h1>
+        <h2>User</h2>
         <Usercard userData={this.state.userData} followers={this.state.followers}></Usercard>
-        
+        <h2>Followers:</h2>
+        {this.state.followers.map((item, index)=>{
+          console.log("item",item)
+         return( <Followercard key={index} userData={item} followers={[]}></Followercard>)
+        })}
       </div>
     );
   }
