@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import FollowerCard from "./follower-card";
 import "./followers-list.scss";
-import Axios from "axios";
 
 class FollowerList extends Component {
   constructor() {
@@ -24,7 +24,18 @@ class FollowerList extends Component {
       });
   }
   render() {
-    return <div>followerlist</div>;
+    const { followers } = this.state;
+    return (
+      <div>
+        {followers && (
+          <div className="card-container">
+            {followers.map((follower) => {
+              return <FollowerCard key={follower.id} followerLogin={follower.login} />;
+            })}
+          </div>
+        )}
+      </div>
+    );
   }
 }
 export default FollowerList;
