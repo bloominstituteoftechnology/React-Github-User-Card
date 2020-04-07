@@ -7,7 +7,7 @@ export default class Usercard extends React.Component
 
   render()
   {
-    console.log("This props", this.props)
+    // console.log("This props", this.props)
 
     
     return (

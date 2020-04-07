@@ -7,9 +7,7 @@ export default class Followercard extends React.Component
 
   render()
   {
-    console.log("This props", this.props)
 
-    
     return (
       <div class="followercard">
         <img src={this.props.userData.avatar_url} alt=""/>

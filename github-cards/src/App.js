@@ -13,8 +13,8 @@ class App extends React.Component
     super()
     this.state = {
       userData: [],
-      followers:[],
-      userName:"Diddleslip"
+      followers: [],
+      userName: "GeraldRyan"
     }
   }
 
@@ -28,36 +28,53 @@ class App extends React.Component
         this.setState({
           userData: response.data
         })
-        console.log(response.data)
+        // console.log(response.data)
       })
       .catch("You caught me")
 
-      axios.get(`https:api.github.com/users/${this.state.userName}/followers`)
-      .then(response =>{
+    axios.get(`https:api.github.com/users/${this.state.userName}/followers`)
+      .then(response =>
+      {
         this.setState({
           followers: response.data
         })
-        console.log(response.data)
+        // console.log(response.data)
       })
   }
 
-  componentDidUpdate()
+  componentDidUpdate(prevProps, prevState)
   {
-    console.log("component did update")
+    if (prevState.userName !== this.state.userName)
+    {
+      axios.get(`https://api.github.com/users/${this.state.userName}`)
+        .then(response =>
+        {
+          this.setState({
+            userData: response.data
+          })
+          // console.log(response.data)
+        })
+        .catch("You caught me")
+
+      axios.get(`https:api.github.com/users/${this.state.userName}/followers`)
+        .then(response =>
+        {
+          this.setState({
+            followers: response.data
+          })
+          // console.log(response.data)
+        })
+    }
   }
 
 
 
-  searchUser = (e, t) =>
+  searchUser = (e, text) =>
   {
     e.preventDefault()
-    const newTask = {
-      task: t,
-      id: Date.now(),
-      completed: false
-    }
+
     this.setState({
-      tasks: [...this.state.tasks, newTask]
+      userName: [text]
     })
     // console.log("t is for task:", t)  //pass
     // console.log("tasks:", this.state.tasks)  //pass
@@ -72,13 +89,14 @@ class App extends React.Component
     return (
       <div className="App">
         <h1>Github User Info</h1>
-        <Form></Form>
+        <Form searchUser={this.searchUser}></Form>
         <h2>User</h2>
         <Usercard userData={this.state.userData} followers={this.state.followers}></Usercard>
         <h2>Followers:</h2>
-        {this.state.followers.map((item, index)=>{
-          console.log("item",item)
-         return( <Followercard key={index} userData={item} followers={[]}></Followercard>)
+        {this.state.followers.map((item, index) =>
+        {
+          // console.log("item",item)
+          return (<Followercard key={index} userData={item} followers={[]}></Followercard>)
         })}
       </div>
     );
