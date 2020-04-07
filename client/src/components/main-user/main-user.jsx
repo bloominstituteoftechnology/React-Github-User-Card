@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import FollowerList from "../followers-list/followers-list";
 import "./main-user.scss";
 
 class MainUser extends Component {
@@ -18,7 +19,7 @@ class MainUser extends Component {
     });
   }
   render() {
-    const { user } = this.state;
+    const { user, followerUrl } = this.state;
     return (
       <div>
         {user && (
@@ -26,6 +27,7 @@ class MainUser extends Component {
             <p>{user.login}</p>
           </div>
         )}
+        {user ? <FollowerList followerUrl={followerUrl} /> : null}
       </div>
     );
   }
