@@ -10,7 +10,6 @@ class App extends React.Component {
         super();
         this.state = {
             myCard: [],
-            following: [],
             followers: [],
         };
     }
@@ -22,17 +21,15 @@ class App extends React.Component {
                 this.setState({
                     myCard: response.data,
                 });
-                axios.get(response.data.followers_url).then((response2) => {
-                    console.log(response2);
-                    this.setState({
-                        followers: response2.data,
+                axios.get(response.data.followers_url).then((response20) => {
+                    console.log(response20.data);
+                    response20.data.map((value) => {
+                        axios.get(value.url).then((response2) => {
+                            this.setState({
+                                followers: response2.data,
+                            });
+                        });
                     });
-                });
-                axios.get(response.data.following_url).then((response3) => {
-                    console.log(response3);
-                    // this.setState({
-                    //     following: response3.data,
-                    // });
                 });
             });
     }
@@ -46,11 +43,12 @@ class App extends React.Component {
                     <Followers
                         followersInfo={this.state.followers}
                         followersTotal={this.state.myCard.followers}
+                        key={this.state.followers.id}
                     />
-                    <Following
+                    {/* <Following
                         followingInfo={this.state.following}
                         followingTotal={this.state.myCard.following}
-                    />
+                    /> */}
                 </div>
             </div>
         );

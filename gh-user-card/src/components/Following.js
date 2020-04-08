@@ -1,11 +1,10 @@
 import React from 'react';
 
 function Following(props) {
-    console.log(props.followingInfo);
     console.log(props.followingTotal);
     return (
         <section>
-            {/* <h2>
+            <h2>
                 These are the people I'm following: ({props.followingTotal}
                 total followers)
             </h2>
@@ -27,7 +26,7 @@ function Following(props) {
                         <p>My Github was created on {value.created_at}</p>
                     </div>
                 );
-            })} */}
+            })}
         </section>
     );
 }
