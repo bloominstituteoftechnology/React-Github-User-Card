@@ -31,6 +31,7 @@ class Form extends React.Component
     return (
 
       <div>
+        <h1>Welcome to Today </h1>
         <form onSubmit={this.handleSubmit} action="">
           <input name="text"
             type="text"
