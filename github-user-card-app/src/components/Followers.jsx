@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Follower } from './Follower';
 
-export const Followers = (props) => {
+export const Followers = ({user}) => {
     const [followers, setFollowers] = useState([]);
-    console.log(props.user.login);
+    
    useEffect(() =>{
-       axios.get(`https://api.github.com/users/${props.user.login}/followers`)
+       axios.get(`https://api.github.com/users/${user}/followers`)
        .then(response => setFollowers(response.data))
        .catch(error => console.log(error))
-    }, [])
+    }, [user])
     
     
         return ( 

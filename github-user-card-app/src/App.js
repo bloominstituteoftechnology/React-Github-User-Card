@@ -25,8 +25,8 @@ class App extends Component {
     this.setState({
         ...this.state,
         textInput: e.target.value
-    })
-    
+    })  
+    console.log(this.state.textInput); 
 }
 
 
@@ -76,7 +76,7 @@ handleSubmit= e => {
       
     </div>
       
-          <Followers user={this.state.user}/>
+          <Followers user={this.state.user.login}/>
           
       
         
