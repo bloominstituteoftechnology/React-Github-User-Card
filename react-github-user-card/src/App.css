@@ -125,3 +125,29 @@ body {
 
 
 
+.followers{
+  font-size: 2.4rem;
+  margin: 2%;
+  text-align: center;
+}
+
+.followerContainer{
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ font-size: 3rem;
+ text-align: center;
+ border-radius: 5px;
+ box-shadow: 0 1px 6px -2px #000;
+ background-color: #FFF;
+ margin-bottom: 30px;
+ width: 100%;
+ padding: 20px;
+}
+
+.image {
+  height: 400px;
+  width: 40%;
+  margin: 0 auto;
+}

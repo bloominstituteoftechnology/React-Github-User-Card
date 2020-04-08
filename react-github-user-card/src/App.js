@@ -1,37 +1,58 @@
 import React from 'react';
-import axios from 'axios'
+import axios from 'axios';
+
 import './App.css';
+
+const tok = 'joowoonk:1b02135b5c1878cc2cd1a6443d2fa9284eab7171';
+const hash = btoa(tok);
+const Basic = 'Basic ' + hash;
+var config = {headers: {'Authorization': Basic  }} 
+
+// 1b02135b5c1878cc2cd1a6443d2fa9284eab7171
+
+let followersArray = ["freedomwriter", "nataliastewart", "devjaymoe","Diddleslip","Riley-Robinson"];
+
+
+
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
       profile: [],
-      followers: []
+      followers: [],
+      follower:[]
     }
   }
-  componentDidMount(){
-    axios.get("https://api.github.com/users/joowoonk")
-    .then(response => {
-      console.log(response.data)
-      this.setState({
-        profile: response.data
+
+    componentDidMount(){
+      axios.get("https://api.github.com/users/joowoonk", config)
+      .then(response => {
+        console.log(response.data)
+        this.setState({
+          profile: response.data
+        })
       })
-     })
-    axios.get("https://api.github.com/users/joowoonk/followers")
-    .then(response => {
-      console.log("follwers",response.data)
-      this.setState({
-        followers: response.data
+      axios.get("https://api.github.com/users/joowoonk/followers", config)
+      .then(response => {
+        console.log("follwers",response.data)
+        this.setState({
+          followers: response.data
+        })
       })
-    })
-    .catch(error => {
-      console.log("the data was not returned", error)
-    })
-  }
- 
+      // .then((props)=> {
+      //   console.log(props)
+    
+      // })
+      .catch(error => {
+        console.log("the data was not returned", error)
+      })
+    }
+
+   
   
   render(){
+    // console.log("fetchfollower", fetchfollower)
       return (
         <div>
           <div className="card">
@@ -48,14 +69,18 @@ class App extends React.Component {
               <p>Bio: {this.state.profile.bio}</p>
             </div> 
           </div>
-          <div>
+          <h2 className="followers">Followers:</h2>
+          
+          <div className="followerContainer"> 
           {this.state.followers.map(follower => (
-                  <div className="card"> 
-                  <img src={follower.avatar_url} alt={follower.id} />
-                  <h3 className="name">{follower.login}</h3>
-                   
+                 <div>
+                 <h3 className="name">{follower.login.toUpperCase()}</h3>
+                  <img classsName="image" src={follower.avatar_url} alt={follower.id} />
+            
                   </div>
+           
                 ))}
+          
         </div>
       </div>
 
