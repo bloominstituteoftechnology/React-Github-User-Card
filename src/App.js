@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Followers from "./components/Followers";
 import Profile from "./components/Profile";
+import "./App.css";
 
 
 

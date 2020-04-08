@@ -1,0 +1,25 @@
+
+.app {
+  text-align: center;
+}
+
+.profileCard {
+  margin: 2% auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  width: 250px;
+  }
+  .followersCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  }
+  .followerCard {
+  margin: 0 5% 2%;
+  box-shadow: 0 4px 8px 0 rgba(2, 87, 15, 0.755), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+  }
+  .nameDiv {
+  background-color: rgba(2, 87, 15, 0.755);
+  padding: 10px;
+  }
