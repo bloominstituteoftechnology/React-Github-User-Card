@@ -21,6 +21,12 @@ class App extends React.Component {
                 this.setState({
                     myCard: response.data,
                 });
+                axios.get(response.data.followers_url).then((response2) => {
+                    console.log(response2);
+                    this.setState({
+                        followers: response2.data,
+                    });
+                });
             });
     }
     render() {

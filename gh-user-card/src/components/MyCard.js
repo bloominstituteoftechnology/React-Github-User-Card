@@ -3,15 +3,15 @@ import React from 'react';
 function MyCard(props) {
     return (
         <section>
-            <h4>Hey there I'm {props.name} </h4>
-            <h3>My Github handle is {props.login}</h3>
-            <p>I am located near {props.location}</p>
-            <img src={props.avatar_url} />
+            <h4>Hey there I'm {props.myInfo.name} </h4>
+            <h3>My Github handle is {props.myInfo.login}</h3>
+            <p>I am located near {props.myInfo.location}</p>
+            <img src={props.myInfo.avatar_url} />
             <h5>A little bit about me: </h5>
-            <p>{props.bio}</p>
-            <h6>Followers on Github: {props.followers}</h6>
-            <h6>Following: {props.following} </h6>
-            <p>My Github was created on {props.created_at}</p>
+            <p>{props.myInfo.bio}</p>
+            <h6>Followers on Github: {props.myInfo.followers}</h6>
+            <h6>Following: {props.myInfo.following} </h6>
+            <p>My Github was created on {props.myInfo.created_at}</p>
         </section>
     );
 }
