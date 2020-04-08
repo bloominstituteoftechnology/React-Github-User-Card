@@ -1,0 +1,34 @@
+@import "~react-bulma-components/src/index.sass";
+.user-section{
+  text-align: center;
+  .user-avatar{
+    border-radius:50%;
+    width:20rem;
+    height:20rem; 
+  }
+}
+
+
+
+
+
+.followers-section{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: baseline;
+  
+  .follower-avatar{
+    border-radius:50%;
+    width:10rem;
+    height:10rem;
+  }
+}
+
+.form-div{
+    width:30%;
+    margin-bottom:2rem; 
+  .input{
+    width:80%;
+  } 
+}
