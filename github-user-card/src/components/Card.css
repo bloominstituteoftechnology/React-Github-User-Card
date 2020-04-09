@@ -1,0 +1,31 @@
+button {
+	margin: 0 auto;
+	width: 80px;
+	display: flex;
+	box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+	text-align: center;
+	padding: 10px;
+	border-radius: 10px;
+}
+
+.card {
+	margin: auto;
+	width: 450px;
+    display: flex;
+    padding: 10px 10px;
+    border: 2px black solid;
+	
+}
+.img {
+	width: 100px;
+	height: 100px;
+}
+
+.card {
+	top: 80%;
+	left: 50%;
+	width: 450px;
+	display: flex;
+	justify-content: space;
+	box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+}
