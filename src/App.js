@@ -16,6 +16,13 @@ class App extends React.Component {
 
   componentDidMount() {
     console.log('componentDidMount');
+
+    fetch(`https://api.github.com/users/PL9627`)
+    .then(res => res.json())
+    .then(users => {
+      console.log('User: ', users);
+    })
+    .catch(err => console.log("error: ", err));
   }
 
 render() {
