@@ -3,16 +3,20 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends React.Component {
-constructor() {
-  console.log('constructor is running');
+  constructor() {
+    console.log('constructor is running');
 
-  super();
+    super();
 
-  this.state = {
-    user: [],
-    userText: ""
+    this.state = {
+      user: [],
+      userText: ""
+    }
   }
-}
+
+  componentDidMount() {
+    console.log('componentDidMount');
+  }
 
 render() {
 
