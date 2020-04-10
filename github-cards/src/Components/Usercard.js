@@ -3,13 +3,13 @@ import React from 'react'
 
 export default class Usercard extends React.Component
 {
-
+// let userSince = 
 
   render()
   {
     // console.log("This props", this.props)
 
-
+console.log(this.props.userData)
     return (
       <div class="card usercard">
         <img src={this.props.userData.avatar_url} alt="" />
