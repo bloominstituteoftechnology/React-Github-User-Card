@@ -21,6 +21,8 @@ class App extends React.Component {
     .then(res => res.json())
     .then(users => {
       console.log('User: ', users);
+
+      this.setState({user: users.avatar_url})
     })
     .catch(err => console.log("error: ", err));
   }
