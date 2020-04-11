@@ -1,6 +1,6 @@
 import React from 'react';
 
-const FollowerList = follow => {
+const FollowerList = ({follow} )=> {
     return (
         <div>
             <h3>{follow.login}</h3>

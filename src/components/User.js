@@ -1,6 +1,6 @@
 import React from 'react';
 
-const User = user => {
+const User = ({user}) => {
     return (
         <div className="User">
             <div>

@@ -21,7 +21,6 @@ class App extends React.Component {
 
     axios
     .get(`https://api.github.com/users/PL9627`)
-    .then(res => res.json())
     .then(users => {
       console.log('User: ', users);
 
