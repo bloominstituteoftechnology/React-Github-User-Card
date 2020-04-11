@@ -1,10 +1,9 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import User from './components/User';
 import Followers from './components/Followers';
-import FollowerList from './components/FollowerList';
+
 
 class App extends React.Component {
   constructor() {
@@ -52,7 +51,8 @@ render() {
   return (
     <div className="App">
       <header className="App-header">
-        
+        <User user = {this.state.user}/>
+        <Followers />
       </header>
     </div>
   );
