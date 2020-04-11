@@ -51,6 +51,7 @@ render() {
     <div className="App">
       <header className="App-header">
         <User user = {this.state.user}/>
+        <h1>Followers' Profiles</h1>
         <Followers />
       </header>
     </div>
