@@ -15,7 +15,7 @@ import Followers from "./Followers";
 const CardWrapper = props => {
   return (
     <Container>
-      <UserSearch searchUser={props.searchUser} />
+      <UserSearch searchUser={props.searchUser} error={props.error} />
       <Card>
         <Image src={props.userData.data.avatar_url} wrapped ui={false} />
         <Card.Content>

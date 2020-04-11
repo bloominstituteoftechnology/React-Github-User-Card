@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Form, Button } from "semantic-ui-react";
+import { Input, Form, Button, Modal } from "semantic-ui-react";
 
 class UserSearch extends React.Component {
   constructor(props) {
@@ -22,20 +22,52 @@ class UserSearch extends React.Component {
     this.setState({ userEntry: "" });
   };
 
+  errorHandler = event => {
+    event.preventDefault();
+    this.setState({ error: "" });
+  };
+
   render() {
-    console.log(this.state.userEntry);
     return (
-      <Form onSubmit={this.submitHandler}>
-        <Button type="submit">Search</Button>
-        <Input
-          icon="users"
-          iconPosition="left"
-          placeholder="Search users..."
-          name="userEntry"
-          value={this.state.userEntry}
-          onChange={this.changeHandler}
-        />
-      </Form>
+      <>
+        <Form onSubmit={this.submitHandler}>
+          <Button type="submit">Search</Button>
+          <Input
+            icon="users"
+            iconPosition="left"
+            placeholder="Search users..."
+            name="userEntry"
+            value={this.state.userEntry}
+            onChange={this.changeHandler}
+          />
+        </Form>
+        {this.props.error && (
+          <Modal
+            size="small"
+            trigger={
+              <Button
+                onClick={this.errorHandler}
+                color="red"
+                style={{ marginTop: "2%" }}
+              >
+                Unknown User, Do Not Click.
+              </Button>
+            }
+          >
+            <Modal.Content style={{ margin: "0 auto" }}>
+              <iframe
+                title="videoPlayer"
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/oHg5SJYRHA0?autoplay=1"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              />
+            </Modal.Content>
+          </Modal>
+        )}
+      </>
     );
   }
 }

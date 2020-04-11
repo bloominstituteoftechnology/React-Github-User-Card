@@ -14,11 +14,11 @@ class App extends React.Component {
   state = {
     user: [],
     followers: [],
-    defaultUser: "Ariels713"
+    defaultUser: "Ariels713",
+    error: ""
   };
 
   componentDidMount() {
-    //make userName dynamic for search function
     axios
       .get(`https://api.github.com/users/${this.state.defaultUser}`)
       .then(res => this.setState({ user: res }))
@@ -37,26 +37,15 @@ class App extends React.Component {
       axios
         .get(`https://api.github.com/users/${this.state.defaultUser}`)
         .then(res => this.setState({ user: res }))
-        .catch(err => console.log(err));
+        .catch(err => this.setState({ error: "Unknown User" }));
     }
-
-    // if (prevProps.defaultUser !== this.state.defaultUser) {
-    //   axios
-    //     .get(`https://api.github.com/users/${this.state.defaultUser}`)
-    //     .then(res => this.setState({ user: res }))
-    //     .catch(err => console.log(err));
-    // }
   }
 
   searchUser = searchEntry => {
-    // const newUser = {
-    //   userName: searchEntry
-    // };
     this.setState({ defaultUser: searchEntry });
   };
 
   render() {
-    console.log("DefaltUser", this.state.defaultUser);
     return (
       <div className="App">
         {this.state.user.length === 0 ? (
@@ -68,6 +57,7 @@ class App extends React.Component {
             userData={this.state.user}
             followers={this.state.followers}
             searchUser={this.searchUser}
+            error={this.state.error}
           />
         )}
       </div>
