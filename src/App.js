@@ -27,7 +27,7 @@ class App extends React.Component {
 
       this.setState({user: users.data})
     })
-    .catch(err => console.log("error: ", err));
+    .catch(err => console.log("componentDidMount error: ", err));
   };
 
   /* componentDidUpdate(prevProps, prevState) {

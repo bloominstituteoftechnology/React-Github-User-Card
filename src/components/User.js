@@ -5,7 +5,7 @@ const User = user => {
         <div className="User">
             <div>
                 <h3>{user.login}</h3>
-                <img src={user.avatar_url} alt="user photo"/>
+                <img src={user.avatar_url} alt="user profile"/>
                 <a href={user.html_url}>My Repositories</a>
             </div>
         </div>
