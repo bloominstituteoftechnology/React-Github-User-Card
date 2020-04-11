@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
+
 
 class App extends React.Component {
   constructor() {
@@ -10,40 +12,45 @@ class App extends React.Component {
 
     this.state = {
       user: [],
-      userText: ""
     }
-  }
+  };
 
   componentDidMount() {
     console.log('componentDidMount');
 
-    fetch(`https://api.github.com/users/PL9627`)
+    axios
+    .get(`https://api.github.com/users/PL9627`)
     .then(res => res.json())
     .then(users => {
       console.log('User: ', users);
 
-      this.setState({user: users.avatar_url})
+      this.setState({user: users.data})
     })
     .catch(err => console.log("error: ", err));
-  }
+  };
+
+  /* componentDidUpdate(prevProps, prevState) {
+    console.log("componentDidUpdate");
+
+    console.log("prevProps:", prevProps);
+    console.log("prevState:", prevState);
+  } */
+
+  /* fetchFollowers = e => {
+    e.preventDefault();
+
+    fetch(`https://api.github.com/users/PL9627/followers`)
+    .then(res => res.json())
+    .then(users => this.setState({user: users.}))
+    .catch(err => console.log("FetchFollowers err", err))
+  } */
 
 render() {
 
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        
       </header>
     </div>
   );
