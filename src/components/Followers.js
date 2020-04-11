@@ -30,7 +30,7 @@ class Followers extends React.Component {
                 {this.state.followers.map(follow => {
                     return(
                         <div>
-                            <FollowerList />
+                            <FollowerList key={follow.login} follow={follow}/>
                         </div>
                 )})}
             </div>
