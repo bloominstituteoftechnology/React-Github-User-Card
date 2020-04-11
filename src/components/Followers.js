@@ -26,8 +26,13 @@ class Followers extends React.Component {
 
     render() {
         return(
-            <div className="followers">
-                <FollowerList />
+            <div>
+                {this.state.followers.map(follow => {
+                    return(
+                        <div>
+                            <FollowerList />
+                        </div>
+                )})}
             </div>
         )
     }
