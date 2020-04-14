@@ -1,6 +1,8 @@
 import React from 'react';
 import { Component } from 'react';
 
+import styled from 'styled-components';
+
 import './App.css';
 
 class App extends Component {
@@ -38,13 +40,46 @@ class App extends Component {
 
    render() {
 
+      const Container = styled.div`
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         background: lightgreen;
+         color: white;
+      `;
+
+      const Followers = styled.div`
+         width: 100%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      `;
+
+
+      const Card = styled.div`
+         width: 45%;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin: 10px 0 10px 0;
+         border: 2px solid white;
+         background: lightgrey;
+      `;
+
+
+      const Image = styled.img`
+         width: 200px;
+         height: 200px;
+     `;
+
       return (
-         <div className='App'>
-            <h1>Github UserCard</h1>
-            <div className='usercard'>
-			      <h2>{this.state.users.name}</h2>
+         <Container className='App'>
+            <h1>My Github UserCard</h1>
+            <Card className='usercard'>
+			      <h3>{this.state.users.name}</h3>
 			      <div className='img-container'>
-				      <img src={this.state.users.avatar_url} alt={this.state.users.avatar_url} key={this.state.users.avatar_url} />
+				      <Image src={this.state.users.avatar_url} alt={this.state.users.avatar_url} key={this.state.users.avatar_url} />
 			      </div>
 			      <div className='user-data'>
                   <p>username: {this.state.users.login}</p>
@@ -54,25 +89,23 @@ class App extends Component {
                   <p># of followers: {this.state.users.followers}</p>
                   <p># following: {this.state.users.following}</p>
 			      </div>
-		      </div>
-            <div className='followers-container'>
-               <h2>Followers</h2>
-               <div className='followers'>
-                  {this.state.followers.map(follower => (
-                     <div className='follower' key={follower.id}>
-                        <div className='img-container'>
-                           <img src={follower.avatar_url} alt={follower.avatar_url} key={follower.avatar_url} />
-                        </div>
-                        <div className='user-data'>
-                           <p>username: {follower.login}</p>
-                           <p>id: {follower.id}</p>
-                           <p>url: <a href={follower.html_url}>{follower.html_url}</a></p>
-                        </div>
+		      </Card>
+            <Followers className='followers'>
+               <h2>My Github Followers</h2>
+               {this.state.followers.map(follower => (
+                  <Card className='follower' key={follower.id}>
+                     <div className='img-container'>
+                        <Image src={follower.avatar_url} alt={follower.avatar_url} key={follower.avatar_url} />
                      </div>
-                  ))}
-               </div>
-            </div>
-         </div>
+                     <div className='user-data'>
+                        <p>username: {follower.login}</p>
+                        <p>id: {follower.id}</p>
+                        <p>url: <a href={follower.html_url}>{follower.html_url}</a></p>
+                     </div>
+                  </Card>
+               ))}
+            </Followers>
+         </Container>
       )
    }
 }
