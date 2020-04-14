@@ -1,0 +1,25 @@
+.card-container {
+    background-color: #95dada;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}
+.user-card-form {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info {
+    flex-direction: column;
+
+}
+
+.user-image {
+    height: 315px;
+    width: 315px;
+}

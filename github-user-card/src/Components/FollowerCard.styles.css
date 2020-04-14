@@ -1,0 +1,17 @@
+.follower-image {
+    height: 200px;
+    width: 200px;
+}
+
+.follower {
+    background-color: #6ebebe;
+    border: 2px solid grey;
+    border-radius: 5px;
+    padding: 25px;
+    margin: 20px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+}

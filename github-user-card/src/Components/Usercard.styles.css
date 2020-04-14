@@ -1,0 +1,10 @@
+.user-card {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.follower-cards {
+    display: flex;
+}
