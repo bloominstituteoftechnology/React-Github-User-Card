@@ -30,33 +30,43 @@ class App extends React.Component {
       })
   }
 
-  handlechange = (event) => {
-    this.setState({ searchField: event.target.value });
-  }
-
   componentDidUpdate(prevProps, prevState) {
     // console.log('Component did update')
 
     if (prevState.githubUser !== prevProps.githubUser) {
-      // console.log('State updated')
+      console.log('State updated')
     }
   }
 
+  handlechange = event => {
+    this.setState({ searchField: event.target.value });
+  }
+
   render() {
-    // const { githubUser, searchField } = this.state;
     // const filtereduser = githubUser.filter(user => 
     //   user.login.toLowerCase(searchField.toLocaleLowerCase()));
     return (
       <div className='App'>
-        <h1>Github User Card</h1>
-        <SearchBox
+        <h1 className='app-header' >Github User Card</h1>
+        <div className='search-box'>
+            <form onSubmit={this.handlechange}>
+                <input
+                    className='search'
+                    type='text'
+                    name='searchField'
+                    placeholder='Does not work yet'
+                />
+                <button>Search</button>
+            </form>
+        </div>
+        {/* <SearchBox
           placeholder='Search Users'
           handlechange={this.handlechange}
-        />
+          searchField={this.searchField}
+        /> */}
         <Usercard
           githubUser={this.state.githubUser}
           githubFollowers={this.state.githubFollowers}
-          handlechange={this.handlechange}
         />
       </div>
     )
