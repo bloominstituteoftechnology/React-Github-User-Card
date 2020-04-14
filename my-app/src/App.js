@@ -45,8 +45,9 @@ class App extends Component {
          display: flex;
          flex-direction: column;
          align-items: center;
-         background: lightgreen;
-         color: white;
+         background: black;
+         color: #ba0c2f;
+         
       `;
 
       const Followers = styled.div`
@@ -63,8 +64,8 @@ class App extends Component {
          flex-direction: column;
          align-items: center;
          margin: 10px 0 10px 0;
-         border: 2px solid white;
-         background: lightgrey;
+         border: 4px solid gray;
+         background: silver ;
       `;
 
 
@@ -77,7 +78,7 @@ class App extends Component {
          <Container className='App'>
             <h1>My Github UserCard</h1>
             <Card className='usercard'>
-			      <h3>{this.state.users.name}</h3>
+			      <h2>{this.state.users.name}</h2>
 			      <div className='img-container'>
 				      <Image src={this.state.users.avatar_url} alt={this.state.users.avatar_url} key={this.state.users.avatar_url} />
 			      </div>
