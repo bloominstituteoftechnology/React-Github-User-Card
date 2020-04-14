@@ -1,6 +1,5 @@
 import React from 'react';
 import Usercard from './Components/Usercard';
-import SearchBox from './Components/SearchBox'
 
 import './App.css';
 
@@ -38,32 +37,33 @@ class App extends React.Component {
     }
   }
 
-  handlechange = event => {
-    this.setState({ searchField: event.target.value });
-  }
+  submitSearch = event => {
+    event.preventDefault();
+    
+    this.setState({ [event.target.name]: event.target.value })
+  };
+
+  handleChanges = event => {
+    // this.setState({ [event.target.name]: event.target.value });
+    console.log(event.target.name, event.target.value)
+  };
 
   render() {
-    // const filtereduser = githubUser.filter(user => 
-    //   user.login.toLowerCase(searchField.toLocaleLowerCase()));
     return (
       <div className='App'>
         <h1 className='app-header' >Github User Card</h1>
         <div className='search-box'>
-            <form onSubmit={this.handlechange}>
-                <input
-                    className='search'
-                    type='text'
-                    name='searchField'
-                    placeholder='Does not work yet'
-                />
-                <button>Search</button>
-            </form>
+          <form onSubmit={this.submitSearch}>
+            <input
+              className='search'
+              type='text'
+              name='searchField'
+              placeholder='Does not work yet'
+              onChange={this.handleChanges}
+            />
+            <button>Search</button>
+          </form>
         </div>
-        {/* <SearchBox
-          placeholder='Search Users'
-          handlechange={this.handlechange}
-          searchField={this.searchField}
-        /> */}
         <Usercard
           githubUser={this.state.githubUser}
           githubFollowers={this.state.githubFollowers}
