@@ -14,14 +14,16 @@ class App extends Component {  //
       };
    }
 
-   componentDidMount() {  //set state 
+   componentDidMount() {  //component being built out from ground 
       console.log('Component did mount!');
 
       fetch(`https://api.github.com/users/lela23`)  //same as a get request 
          .then(results => results.json())
          .then(users => {
             console.log('users: ', users);
-            this.setState({ users: users });
+            this.setState({ users: users });  
+            //setState can be used to change the component’s state data-forcing a call to render
+
          })
          .catch(err => {
             console.log('Error: ', err)
@@ -31,14 +33,16 @@ class App extends Component {  //
          .then(results => results.json())
          .then(follows => {
             console.log('followers: ', follows);
-            this.setState({ followers: follows });
+            this.setState({ followers: follows });  //allows you to access to data in order to render
          })
          .catch(err => {
             console.log('Errors: ', err)
          });
    }
 
-   render() {
+   render() {  //render is required for a class component-without it -the component won’t work - tells react to return some part of DOM
+
+
 
       const Container = styled.div`
          width: 100%;
