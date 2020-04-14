@@ -5,19 +5,19 @@ import styled from 'styled-components';
 
 import './App.css';
 
-class App extends Component {
+class App extends Component {  //
    constructor() {
       super();
-      this.state = {
+      this.state = {  //set initial state of user data
          users: [],
-         followers: []
+         followers: []  //data of followers
       };
    }
 
-   componentDidMount() {
+   componentDidMount() {  //set state 
       console.log('Component did mount!');
 
-      fetch(`https://api.github.com/users/lela23`)
+      fetch(`https://api.github.com/users/lela23`)  //same as a get request 
          .then(results => results.json())
          .then(users => {
             console.log('users: ', users);
