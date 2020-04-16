@@ -1,0 +1,64 @@
+.App {
+  text-align: center;
+
+  background-color: #e7eaec;
+}
+
+.App-logo {
+  height: 40vmin;
+
+  pointer-events: none;
+}
+
+h1,
+h2 {
+  color: #010d14;
+}
+
+.url {
+  color: #1886cf;
+}
+
+.bio {
+  color: #0e6097;
+
+  font-size: 1.5rem;
+}
+
+button {
+  border-radius: 10px;
+
+  height: 25px;
+
+  margin-top: 10px;
+
+  margin-bottom: 10px;
+
+  border: 2px solid #c7f0db;
+
+  color: white;
+
+  font-size: 16px;
+
+  background-color: #5d96bd;
+}
+
+input {
+  background-color: #ffffff;
+
+  border: 0;
+
+  padding: 6px 0;
+
+  font-size: 1rem;
+
+  width: 240px;
+
+  outline: 0;
+
+  color: rgb(15, 13, 13);
+
+  border-bottom: 1px solid white;
+
+  margin-right: 8px;
+}
