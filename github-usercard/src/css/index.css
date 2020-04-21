@@ -1,0 +1,113 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.06rem;
+  text-align: center;
+}
+h4 {
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.userCardContainer {
+  margin: 0 auto;
+}
+.userCardContainer .userCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 49px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  max-width: 712px;
+}
+.userCardContainer .userCard .userCard-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.userCardContainer .userCard .userCard-left {
+  width: 30%;
+}
+.userCardContainer .userCard .userCard-left .imgContainer {
+  width: 220px;
+  height: 220px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.userCardContainer .userCard .userCard-left .imgContainer img {
+  width: inherit;
+}
+.userCardContainer .userCard .userCard-left p {
+  font-style: italic;
+}
+.userCardContainer .userCard .userCard-right {
+  display: flex;
+  width: 60%;
+  justify-content: space-between;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+.userCardContainer .userCard .userCard-right .userInfo-top {
+  background: #000;
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+}
+.userCardContainer .userCard .userCard-right .userInfo-middle {
+  text-align: left;
+}
+.userCardContainer .userCard .userCard-right .userInfo-bottom {
+  text-align: right;
+}
+.userCardContainer .userCard .userCard-right .userInfo-bottom button {
+  color: #fff;
+  background: #000;
+  border: none;
+  border-radius: 4px;
+  margin: 0 4px;
+  padding: 6px 12px;
+  font-size: 1rem;
+}
+.followerCardContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  min-width: 300px;
+  margin: auto;
+}
+.followerCardContainer h3 {
+  text-align: left;
+}
+.followerCardContainer .followerCard {
+  display: flex;
+  border: 1px solid #ccc;
+}
+.followerCardContainer .followerCard .followerCard-left {
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.followerCardContainer .followerCard .followerCard-left img {
+  width: inherit;
+}
+.followerCardContainer .followerCard .followerCard-right {
+  align-self: center;
+  padding: 0 40px;
+}
+.followerCardContainer .followerCard .followerCard-right h4 {
+  text-align: left;
+}
+.formInput {
+  width: 600px;
+  margin-top: 30px;
+}

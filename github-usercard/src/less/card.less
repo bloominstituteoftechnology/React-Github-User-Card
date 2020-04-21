@@ -1,0 +1,113 @@
+.userCardContainer {
+  margin: 0 auto;
+
+  .userCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 49px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    max-width: 712px;
+    
+    .userCard-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+    }
+
+    .userCard-left {
+      width: 30%;
+
+      .imgContainer {
+        width: 220px;
+        height: 220px;
+        .border-radius(5px);
+        overflow: hidden;
+
+        img {
+          width: inherit;
+        }
+      }
+
+      p {
+        font-style: italic;
+      }
+    }
+
+    .userCard-right {
+      display: flex;
+      width: 60%;
+      justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 50px;
+
+      .userInfo-top {
+        background: #000;
+        color: #fff;
+        padding: 10px;
+        .border-radius(5px);
+      }
+
+      .userInfo-middle {
+        text-align: left;
+      }
+
+      .userInfo-bottom {
+        text-align: right;
+
+        button {
+          color: #fff;
+          background: #000;
+          border: none;
+          border-radius: 4px;
+          margin: 0 4px;
+          padding: 6px 12px;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.followerCardContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 760px;
+  min-width: 300px;
+  margin: auto;
+
+  h3 {
+    text-align: left;
+  }
+
+  .followerCard {
+    display: flex;
+    border: 1px solid #ccc;
+
+    .followerCard-left {
+      width: 100px;
+      height: 100px;
+      overflow: hidden;
+
+      img {
+        width: inherit;
+      }
+    }
+
+    .followerCard-right {
+      align-self: center;
+      padding: 0 40px;
+
+      h4 {
+        text-align: left;
+      }
+    }
+  }
+}
+
+.formInput {
+  width: 600px;
+  margin-top: 30px;
+}
+
