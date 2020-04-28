@@ -7,18 +7,18 @@ import FollowersList from './components/FollowersList';
 class App extends React.Component {
 
 constructor() {
-    console.log("Constructor");
+    console.log("Constructor invoked");
     super();
     this.state = {
       user: {},
-      followers: []
+      followers: [],
     };
   }
 
 componentDidMount(){
   this.fetchUser();
   this.fetchFollowers();
-}
+} 
 
 fetchUser = () => {
   axios
