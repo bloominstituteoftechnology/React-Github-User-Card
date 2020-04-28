@@ -3,7 +3,7 @@ import axios from 'axios'
 import './App.css';
 import UserCard from './components/UserCard';
 import FollowersList from './components/FollowersList';
-
+import NavBar from './components/NavBar';
 class App extends React.Component {
 
 constructor() {
@@ -47,6 +47,7 @@ render(){
   console.log("RENDER INVOKED")
   return (
     <div className="App">
+      <NavBar/>
       <UserCard user={this.state.user} />
       <FollowersList followers={this.state.followers} />
     </div>

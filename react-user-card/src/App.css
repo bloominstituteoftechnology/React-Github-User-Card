@@ -27,6 +27,28 @@ ul.ui.list {
   margin-right: 2%;
 }
 
+.nav {
+  display: flex;
+  background-color: #24292e;
+}
+
+nav.nav-bar {
+  display: flex;
+}
+.nav-list{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.a {
+  margin-right: 20%;
+  color: aliceblue;
+}
+
+.color{
+  color: wheat;
+}
+
 
 @keyframes App-logo-spin {
   from {
