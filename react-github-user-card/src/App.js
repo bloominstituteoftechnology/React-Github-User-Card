@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import UserCard from './components/UserCard';
 
 
 class App extends React.Component {
@@ -7,7 +8,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state= {
-      users: []
+      userData: []
     }
   }
 
@@ -17,7 +18,7 @@ class App extends React.Component {
     .get("https://api.github.com/users/erictaylor103")
     .then(response => {
       this.setState({
-        users: response.data
+        userData: response.data
       });
       console.log(response.data)
       
@@ -31,7 +32,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>Github User</h1>
-        </div>
+        <UserCard userData={this.state.userData}></UserCard>
+      </div>
       
     );
   }
