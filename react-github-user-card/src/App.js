@@ -2,7 +2,17 @@ import React from 'react';
 import axios from 'axios';
 import UserCard from './components/UserCard';
 import FollowerCard from './components/FollowerCard';
+import styled from 'styled-components';
 
+//app container styles
+const AppContainer = styled.div`
+
+.followers-title{
+  font-size: 50px;
+  text-align:center;
+}
+
+`
 
 class App extends React.Component {
 //constructor to set state
@@ -16,7 +26,7 @@ class App extends React.Component {
 
 
   componentDidMount(){
-    //get my git hub user data via axios
+    //get my git hub user data via axios and update userData state
     axios
     .get("https://api.github.com/users/erictaylor103")
     .then(response => {
@@ -45,12 +55,18 @@ class App extends React.Component {
   //render components
   render(){
     return (
-      <div className="App">
-        <h1>Github User</h1>
+      <AppContainer>
+      
+        
         <UserCard userData={this.state.userData}></UserCard>
+        <br />
+        <br />
+        <br />
+        <h1 className="followers-title">Followers</h1>
         <FollowerCard followers={this.state.followers}></FollowerCard>
         
-      </div>
+      
+      </AppContainer>
       
     );
   }
