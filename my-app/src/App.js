@@ -3,6 +3,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
+import UserCard from "./Components/UserCard";
 
 class App extends React.Component {
     state= {
@@ -38,6 +39,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>GitHub UserCard</h1>
+      
+        <UserCard userData={this.state.userData}></UserCard>
       </div>
     );
   }
