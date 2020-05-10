@@ -1,0 +1,12 @@
+// Mixins
+@mixin phone-view {
+    @media (max-width: 600px) {
+        @content; 
+    }
+}
+
+@mixin mid-view {
+    @media (max-width: 800px) {
+        @content; 
+    }
+}
