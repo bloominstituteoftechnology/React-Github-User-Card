@@ -1,0 +1,38 @@
+.follow-grid {
+    background-color: $white;
+    width: 70vw;
+    margin: 0 auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 6fr 6fr;
+    @include mid-view() {
+        width: 50vw;
+        grid-template-columns: 12fr;
+
+    }
+    a{
+        text-decoration: none;
+        color: $link;
+        &:hover {
+            color: darken($color: $link, $amount: 30)
+        }
+    }
+}
+.follow-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.follow-img{
+    img{
+        width: 15vw;
+        height: 100%;
+        @include mid-view() {
+            width: 15vw;
+        }
+    }
+}
+.follow-name {
+    padding: 1rem;
+
+}

@@ -1,0 +1,44 @@
+.git-card {
+    background-color: $white;
+    margin: 0 auto;
+    width: 80vw;
+    display: flex;
+    border-radius: 2rem;
+    @include mid-view(){
+        flex-direction: column;
+    }
+}
+.git-img {
+    img{
+    width: 35vw;
+    height: 100%;
+    }
+}
+.git-data {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-items: start;
+    line-height: 1.2rem;
+    color: $black;
+
+    h1{
+        font-size: 2rem;
+
+    }
+    h2{
+        font-size: 1.6rem ;
+        line-height: 2rem;
+    }
+    .bio {
+        text-align: initial;
+    }
+    a{
+        text-decoration: none;
+        color: $link;;
+        &:hover {
+            color: darken($color: $link, $amount: 30)
+        }
+    }
+}
