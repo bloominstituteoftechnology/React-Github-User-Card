@@ -14,6 +14,9 @@
     width: 35vw;
     height: 100%;
     }
+    @include mid-view(){
+        padding-top: 3rem;
+    }
 }
 .git-data {
     padding: clamp(2.5rem, 6vw, 10rem);
@@ -23,9 +26,7 @@
     align-items: flex-start;
     justify-items: center;
     font-size: clamp(1.2rem, 3vw, 3rem) ;
-
     color: $black;
-
 
     h1{
         font-size: clamp(2rem, 6vw, 7rem);

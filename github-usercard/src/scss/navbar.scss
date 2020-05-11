@@ -5,4 +5,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: darken($color: $bg-color, $amount: 3%);
+    h1{
+        font-size: clamp(1.5rem, 4vw, 5rem);
+    }
 }
