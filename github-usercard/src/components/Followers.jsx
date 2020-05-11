@@ -8,8 +8,8 @@ const Followers = ({ followers, following }) => {
     const follow = (followArr) => {
         return (
             <div className="follow-grid">
-                {followArr.map(follower => (
-                    <a href={follower.html_url}>
+                {followArr.map((follower,id) => (
+                    <a key={id} href={follower.html_url}>
                     <div className="follow-card">
                         <div className="follow-img">
                             <img src={follower.avatar_url} alt={follower.login}></img>
@@ -22,7 +22,11 @@ const Followers = ({ followers, following }) => {
     }
 
     return (
-        follow(following)
+        <div>
+        <p>Following/Followers</p>
+        {follow(followers)}
+        </div>
+        
 
     )
 };

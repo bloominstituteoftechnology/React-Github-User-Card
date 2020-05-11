@@ -8,6 +8,7 @@ const NavBar = ({ changeUser }) => {
   const handleSubmit = () => {
     changeUser(searchTerm);
   };
+
   return (
     <div className="navbar">
       <h1>GitHub</h1>
