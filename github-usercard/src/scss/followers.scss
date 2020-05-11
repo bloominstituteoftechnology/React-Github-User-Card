@@ -1,6 +1,6 @@
 .follow-grid {
 
-    width: 70vw;
+    width: 95vw;
     margin: 0 auto;
     display: grid;
     grid-template-rows: auto;
@@ -8,7 +8,7 @@
     grid-row-gap: .8rem;
     grid-column-gap: .8rem;
     @include mid-view() {
-        width: 50vw;
+        width: 75vw;
         grid-template-columns: 12fr;
 
     }
@@ -33,6 +33,7 @@
 }
 .follow-img{
     img{
+        margin-left: .2rem;
         width: 15vw;
         height: 100%;
         box-shadow: 0 19px 38px rgba($black, 0.5), 0 15px 12px rgba($black, 0.22);

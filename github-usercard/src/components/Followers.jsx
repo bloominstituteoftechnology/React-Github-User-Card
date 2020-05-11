@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 
 const Followers = ({ followers, following }) => {
-    const [followView, setFollowView] = useState("followers")
+    const [followView, setFollowView] = useState(true)
     console.log(following)
 
     const follow = (followArr) => {
@@ -21,10 +21,14 @@ const Followers = ({ followers, following }) => {
         )
     }
 
+    const flipFollow = () => {
+        setFollowView(!followView);
+    }
     return (
         <div>
-        <p>Following/Followers</p>
-        {follow(followers)}
+        {followView ? <div><button disabled>Followers</button><button onClick={flipFollow}>Following</button></div>: <div><button onClick={flipFollow}>Followers</button><button disabled>Following</button></div>}
+        {followView ? follow(followers):follow(following)}
+        
         </div>
         
 

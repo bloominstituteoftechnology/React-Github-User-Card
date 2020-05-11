@@ -18,14 +18,14 @@ const App = () => {
   }
 
   useEffect(() => {
-    axios.get(`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${user}`)
+    axios.get(`https://api.github.com/users/${user}`)
     .then(response => {
       setData(response.data);
-      axios.get(`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${user}/followers`)
+      axios.get(`https://api.github.com/users/${user}/followers`)
       .then(response => {
         setFollowers(response.data);
       })
-      axios.get(`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${user}/following`)
+      axios.get(`https://api.github.com/users/${user}/following`)
       .then(response => {
         setFollowing(response.data);
       })
