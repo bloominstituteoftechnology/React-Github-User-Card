@@ -40,6 +40,11 @@ img:hover {
   display: inline-block;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
 
 .card, .card2 {
   display: flex;

@@ -6,6 +6,7 @@ import axios from "axios";
 import UserCard from "./Components/UserCard";
 import Followerscard from "./Components/FollowersCard";
 
+
 class App extends React.Component {
     state= {
       userData: [],
@@ -47,6 +48,7 @@ class App extends React.Component {
               >
               </Followerscard>
           </div>
+        <main />
       </div>
     );
   }
