@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 import UserCard from "./Components/UserCard";
+import Followerscard from "./Components/FollowersCard";
 
 class App extends React.Component {
     state= {
@@ -27,7 +28,7 @@ class App extends React.Component {
     .get("https://api.github.com/users/lex-marie790/followers")
     .then(response => {
       this.setState({
-        followers: response.data
+        followersData: response.data
       });
       console.log(response.data)
     })
@@ -38,9 +39,14 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>GitHub UserCard</h1>
-      
-        <UserCard userData={this.state.userData}></UserCard>
+          <h1>GitHub UserCard</h1>
+            <div className="alldata">
+              <UserCard userData={this.state.userData} className="user"></UserCard>
+              <Followerscard 
+              followersData={this.state.followersData}
+              >
+              </Followerscard>
+          </div>
       </div>
     );
   }

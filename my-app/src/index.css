@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(to bottom right,#FC466B, #3F5EFB) no-repeat center center fixed;
+  background-size: cover;
+  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h1 {
+  text-shadow: 2px 1px white;
+}
+
+h1:hover {
+  font-size: 3rem;
+  color: aqua;
+  transform: rotateY(180deg);
+}
+
+
+img {
+  width: auto;
+  height: 200px;
+  border-radius: 10px;
+}
+
+img:hover {
+  opacity: .06;
+}
+
+.data, .data2 {
+  display: inline-block;
+}
+
+
+.card, .card2 {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+
+.data2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login,  .login2 {
+  font-weight: bolder;
+}
+
+p:hover {
+  color: aqua;
+  transform: rotateY(180deg);
 }
