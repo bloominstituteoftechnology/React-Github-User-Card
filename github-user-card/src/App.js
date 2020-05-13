@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react';
+import FollowerCard from './components/FollowerCard.js';
+import UserCard from './components/UserCard.js';
+
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      name: [],
+      avatar: [],
+      location: [],
+    };
+  }
+  componentDidMount() {
+    fetch('https://api.github.com/users/lworku')
+      .then(res => res.json())
+      .then(userData => {
+        console.log('User Data', userData);
+        this.setState({ name: userData.name });
+        this.setState({ avatar: userData.avatar_url });
+        this.setState({ location: userData.location });
+      })
+      .catch(err => console.error(err));
+  }
+  render() {
+    return (
+      <div>
+        <UserCard
+          name={this.state.name}
+          avatar={this.state.avatar}
+          location={this.state.location}
+        />
+                <FollowerCard />
+      </div>
+    );
+  }
 }
 
 export default App;
+
+
