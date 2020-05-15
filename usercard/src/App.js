@@ -42,13 +42,11 @@ class App extends React.Component {
 
     axios(`https://api.github.com/users/${this.state.followers}`)
     .then(res => {
-      console.log(res.data)
-      this.setState({...this.state, followers: res.data})
+      this.setState({...this.state, userCard: res.data})
     })
   }
   
   render() {
-  console.log(this.state)
   return (
     <div className="App">
       <section className="w3-card w3-purple w3-container">
@@ -71,14 +69,8 @@ class App extends React.Component {
         <article><p>GitHub Card: Followers</p>
         </article>
       {this.state.followers.map( follower => {  return <article className="w3-white w3-cell w3-padding">
-        <div className="w3-container w3-left"> <img src={this.state.follower.avatar_url} alt="follower" /></div>  
-  <div className="w3-container w3-right">
-    <p>Name: {this.state.follower}</p>
-    <p>Username: {this.state.follower.login}</p>
-    <p>Company: {this.state.follower.company}</p>
-    <p>Website: {this.state.follower.blog}</p>
-    <p>Location: {this.state.follower.location}</p></div>
-    <div className="w3-container"><p>{this.state.follower.bio}</p> </div>
+        <div className="w3-container w3-left">{}</div>
+  
         </article>
   })}
       </section>
