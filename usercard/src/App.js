@@ -6,13 +6,9 @@ class App extends React.Component {
   state = {
 
     userCard: [],
-    followers: ['tetondan',
-    'dustinmyers',
-    'justsml',
-    'luishrd',
-    'bigknell'],
+    followArr: [],
     error: ""
-    
+
 
   };
 
@@ -28,24 +24,16 @@ class App extends React.Component {
    })
    .catch(err => console.log("The data is insufficient", err))
 
-  }
+   axios("https://api.github.com/users/finalboss/followers")
+    .then(resf => {
+      console.log(resf.data)
+     this.setState({...this.state, followArr: resf.data})
 
-  handleFollowerChange = e => {
-      this.setState([{
-        ...this.state, followers: e.target.value
-      }]);
-
-  };
-
-  handleFollowerUpdate = e => {
-
-
-    axios(`https://api.github.com/users/${this.state.followers}`)
-    .then(res => {
-      this.setState({...this.state, userCard: res.data})
     })
+    .catch(err2 => console.log("The data is insufficient", err2))
+
   }
-  
+ 
   render() {
   return (
     <div className="App">
@@ -68,10 +56,16 @@ class App extends React.Component {
       <section className="w3-card w3-green w3-container">
         <article><p>GitHub Card: Followers</p>
         </article>
-      {this.state.followers.map( follower => {  return <article className="w3-white w3-cell w3-padding">
-        <div className="w3-container w3-left">{}</div>
-  
-        </article>
+      {this.state.followArr.map( follower => {  return <article className="w3-white w3-cell w3-padding">
+      <div className="w3-container w3-left"> <img src={this.state.follower.avatar_url} alt="Brian" /></div>  
+  <div className="w3-container w3-right">
+    <p>Name: {this.state.follower.name}</p>
+    <p>Username: {this.state.follower.login}</p>
+    <p>Company: {this.state.follower.company}</p>
+    <p>Website: {this.state.follower.blog}</p>
+    <p>Location: {this.state.follower.location}</p></div>
+    <div className="w3-container"><p>{this.state.follower.bio}</p> </div>
+            </article>
   })}
       </section>
       
