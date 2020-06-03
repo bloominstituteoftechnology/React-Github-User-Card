@@ -3,6 +3,9 @@ import UserItem from './UserItem';
 import Spinner from './Spinner';
 
 class Users extends Component {
+  state ={
+    loading: false,
+  }
   render() {
     if(this.state.loading) {
         return <Spinner />

@@ -14,8 +14,7 @@ class App extends Component {
   state = {
     users: [], //all users are and array of objects
     user: {},  //single user is empty object
-    repos: [], //change to followers
-    follows: [],
+    follower: [],
     loading: false ,
        
   }
@@ -37,25 +36,18 @@ class App extends Component {
     this.setState({ user: res.data, loading: false });
   }
 
-  //get users Repos ...later change to followers
-
-  getUserRepos = async (username) => {
-    this.setState({ loading: true });
-    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`);
-    this.setState({ repos: res.data, loading: false });
-  }
-
   //get user Followers
-  
 
   getUserFollower = async (username) => {
     this.setState({ loading: true });
     const res = await axios.get(`https://api.github.com/users/${username}/followers`);
+    console.log(res.data)
     this.setState({ follower: res.data, loading: false });
+    
   }
 
     render () {
-      const { user, users, loading, repos, follower } = this.state; //change repos to follow
+      const { user, users, loading, follower } = this.state; //change repos to follow
       return (
         <Router>
       <div className="App">
@@ -85,9 +77,7 @@ class App extends Component {
   <User 
     {...props} 
     getUser={this.getUser}
-    getUserRepos={this.getUserRepos} //change to followers
     getUserFollower={this.getUserFollower}
-    repos={repos} //change to followers
     follower={follower}
     user={user} 
     loading={loading}

@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 
 import Spinner from './Spinner';
 import Follower from './follows/Follower';
-import Repos from './repos/Repos';
 import { Link } from 'react-router-dom';
 
 
@@ -10,8 +9,8 @@ export class User extends Component {
   componentDidMount() {
     this.props.getUser(this.props.match.params.login);
     //passed through getUser and got from App.js params Route for User
-    this.props.getUserRepos(this.props.match.params.login);
     this.props.getUserFollower(this.props.match.params.login);
+   
   }
 
   render() {
@@ -28,7 +27,7 @@ export class User extends Component {
       public_gists,
     }= this.props.user;
 
-    const {  loading, repos, follower } = this.props;
+    const {  loading, follower } = this.props;
 
     if (loading) return <Spinner />;
 
@@ -75,11 +74,19 @@ export class User extends Component {
         <div className='badge badge-light'>Public Repos: {public_repos}</div>
         <div className='badge badge-dark'>Public Gists: {public_gists}</div>
       </div>
-      {/* <Follower follower={follower} /> */}
-      <Repos repos={repos} />
+      <div style={userStyle}>
+      <Follower follower={follower} />
+      </div>
+     
     </Fragment>
     )
   }
 }
 
+const userStyle = {
+  display: 'grid',
+  gridTemplateColumns: 'repeat(3, 1fr)',
+  gridGap: '1rem'
+
+}
 export default User
