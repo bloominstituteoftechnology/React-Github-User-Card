@@ -4,7 +4,7 @@ class Navbar extends Component {
   render() {
     return (
       <nav className='navbar bg-primary'>
-        <h1> Type a github userName to see the profile.</h1>
+        <h2> Search for a github userName to see the profile card and followers.</h2>
       </nav>
     )
   }

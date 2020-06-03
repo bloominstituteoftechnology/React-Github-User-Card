@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-
 import Spinner from './Spinner';
 import Follower from './follows/Follower';
 import { Link } from 'react-router-dom';

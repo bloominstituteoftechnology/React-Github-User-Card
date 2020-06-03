@@ -6,7 +6,7 @@ const FollowerItem = ({ follow }) => {
     <div className='card'>
       
       <h3> 
-        <a href={follow.url}> {follow.login} </a>  
+        <a href={follow.html_url}> {follow.login} </a>  
       </h3>
     </div>
   )

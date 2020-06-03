@@ -24,9 +24,8 @@ class Users extends Component {
 
 const userStyle = {
   display: 'grid',
-  gridTemplateColumns: 'repeat(2, 2fr)',
+  gridTemplateColumns: 'repeat(3, 2fr)',
   gridGap: '1rem'
-
 }
 
 export default Users

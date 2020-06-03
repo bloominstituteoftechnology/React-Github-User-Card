@@ -2,11 +2,11 @@
 
 /* Global Styles */
 :root {
-  --primary-color: #dc3545;
+  --primary-color: #3532a7;
   --dark-color: #333333;
-  --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --light-color: #eae7ed;
+  --danger-color: #3532a7;
+  --success-color: #646ecb;
 }
 
 * {
@@ -207,6 +207,7 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
+  border-radius: 5px;
 }
 
 .btn-link {
@@ -305,6 +306,7 @@ img {
 
 .round-img {
   border-radius: 50%;
+  border: 1px ridge var(--danger-color);
 }
 
 /* Forms */
@@ -328,22 +330,13 @@ textarea {
   width: 100%;
   padding: 0.4rem;
   font-size: 1.2rem;
-  border: 1px solid #ccc;
+  border: 1px solid #3532a7;
+  border-radius: 5px;
 }
 
 input[type='submit'],
 button {
   font: inherit;
-}
-
-table th,
-table td {
-  padding: 1rem;
-  text-align: left;
-}
-
-table th {
-  background: var(--light-color);
 }
 
 /* Navbar */

@@ -15,8 +15,7 @@ class App extends Component {
     users: [], //all users are and array of objects
     user: {},  //single user is empty object
     follower: [],
-    loading: false ,
-       
+    loading: false ,  
   }
    
   //Search Github Users
