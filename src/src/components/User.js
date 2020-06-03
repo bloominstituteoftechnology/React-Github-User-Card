@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import Spinner from './Spinner';
 import Follower from './follows/Follower';
 import { Link } from 'react-router-dom';
+import GitHubCalendar from 'react-github-calendar';
 
 
 export class User extends Component {
@@ -73,6 +74,11 @@ export class User extends Component {
         <div className='badge badge-light'>Public Repos: {public_repos}</div>
         <div className='badge badge-dark'>Public Gists: {public_gists}</div>
       </div>
+    <div>
+      <h3>Github Calendar</h3>
+   <GitHubCalendar username={login} />
+    </div>
+
       <div style={userStyle}>
       <Follower follower={follower} />
       </div>
