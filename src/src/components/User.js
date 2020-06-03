@@ -74,9 +74,9 @@ export class User extends Component {
         <div className='badge badge-light'>Public Repos: {public_repos}</div>
         <div className='badge badge-dark'>Public Gists: {public_gists}</div>
       </div>
-    <div className='all-center'>
+    <div className='card all-center'>
       
-   <GitHubCalendar username={login} />
+   <GitHubCalendar username={login} fullYear={false} theme= {purpleTheme} />
     </div>
 
       <div style={userStyle}>
@@ -95,4 +95,14 @@ const userStyle = {
   gridGap: '1rem'
 
 }
+
+const purpleTheme = {
+  background: 'transparent',
+  text: '#000',
+  grade4: '#400082',
+  grade3: '#7e0cf5',
+  grade2: '#cd4dcc',
+  grade1: '#b793e6',
+  grade0: '#eae7ed',
+};
 export default User
