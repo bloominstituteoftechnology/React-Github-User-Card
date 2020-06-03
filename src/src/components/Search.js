@@ -4,7 +4,7 @@ export class Search extends Component {
   //set component level state (only for this component)
   //initial state of search bar
   state = {
-    text: ''
+    text: 'charisearter'
   };
 
 onSubmit = (e) => {
