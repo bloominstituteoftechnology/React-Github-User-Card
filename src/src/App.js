@@ -64,12 +64,15 @@ class App extends Component {
         <Users loading={loading} users={users} />
        </Fragment>
     )} />
-    
+
      {/* //rendering single page component */}
      <Route exact path='/about' component={About} />
 
-
-    <User getUser={this.getUser} user={user} loading={loading} />
+<Route exact path='/user/:login' render={props => (
+  //add whatever props, use getUser method, send in the user state, set loading
+  <User {...props} getUser={this.getUser} user={user} loading={loading} />
+)}/>
+    
 
    
 
