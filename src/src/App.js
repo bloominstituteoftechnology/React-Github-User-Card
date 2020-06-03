@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import axios from 'axios';
-//import User from './components/User';
+import {  BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import User from './components/User';
 import Users from './components/Users';
 import Search from './components/Search';
+import About from './pages/About';
 import './App.css';
 
 class App extends Component {
@@ -24,47 +26,57 @@ class App extends Component {
   // }
 
   //Search Github Users
-
   searchUsers = async text => {
     this.setState({ loading: true });
     const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
-
     this.setState({ users: res.data.items, loading: false });
-   
   };
 
   //Clear Github Users from Search
-
   clearUsers = () => this.setState({ users: [], loading: false });
 
   //get single github User
-getUser = async (username) => {
-  this.setState({ loading: true });
-
-  const res = await axios.get(`https://api.github.com/users/${username}`);
-
-  this.setState({ user: res.data, loading: false });
-}
+  getUser = async (username) => {
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/users/${username}`);
+    this.setState({ user: res.data, loading: false });
+  }
 
     render () {
-      //const { user, loading } = this.state;
+      const { user, users, loading } = this.state;
       return (
+        <Router>
       <div className="App">
       <h1> Github User built with React</h1>
       {/* <User getUser={this.getUser} user={user} loading={loading} /> */}
      <div className='container'>
+    <Switch> 
+    <Route 
+      exact path='/' 
+      render={props => (
+      <Fragment>
+        <Search 
+          searchUsers={this.searchUsers} 
+          clearUsers={this.clearUsers} 
+          showClear={users.length > 0 ? true : false} 
+        />
+           {/* //pass in loading and users as props */}
+        <Users loading={loading} users={users} />
+       </Fragment>
+    )} />
+    
+     {/* //rendering single page component */}
+     <Route exact path='/about' component={About} />
 
-     <Search 
-      searchUsers={this.searchUsers} 
-      clearUsers={this.clearUsers} 
-      showClear={this.state.users.length > 0 ? true : false} 
-     />
 
-     {/* //pass in loading and users as props */}
-       <Users loading={this.state.loading} users={this.state.users} />
-     </div>
-      
+    <User getUser={this.getUser} user={user} loading={loading} />
+
+   
+
+       </Switch>
+       </div>
       </div>
+      </Router>
     );
   }
 };
