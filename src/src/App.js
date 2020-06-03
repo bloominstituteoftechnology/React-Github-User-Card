@@ -4,7 +4,9 @@ import {  BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import User from './components/User';
 import Users from './components/Users';
 import Search from './components/Search';
+import Navbar from './components/Navbar';
 import About from './pages/About';
+
 import './App.css';
 
 class App extends Component {
@@ -12,19 +14,12 @@ class App extends Component {
   state = {
     users: [], //all users are and array of objects
     user: {},  //single user is empty object
-    loading: false    
+    repos: [], //change to followers
+    follows: [],
+    loading: false ,
+       
   }
-  //start lifecycle method
-  //call to api using axios
-
-  // async componentDidMount() {
-  //   this.setState({ loading: true });
-
-  //   const res = await axios.get('https://api.github.com/users');
-
-  //   this.setState({ users: res.data, loading: false });
-  // }
-
+   
   //Search Github Users
   searchUsers = async text => {
     this.setState({ loading: true });
@@ -42,12 +37,29 @@ class App extends Component {
     this.setState({ user: res.data, loading: false });
   }
 
+  //get users Repos ...later change to followers
+
+  getUserRepos = async (username) => {
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc`);
+    this.setState({ repos: res.data, loading: false });
+  }
+
+  //get user Followers
+  
+
+  getUserFollower = async (username) => {
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/users/${username}/followers`);
+    this.setState({ follower: res.data, loading: false });
+  }
+
     render () {
-      const { user, users, loading } = this.state;
+      const { user, users, loading, repos, follower } = this.state; //change repos to follow
       return (
         <Router>
       <div className="App">
-      <h1> Github User built with React</h1>
+      <Navbar />
       {/* <User getUser={this.getUser} user={user} loading={loading} /> */}
      <div className='container'>
     <Switch> 
@@ -70,11 +82,17 @@ class App extends Component {
 
 <Route exact path='/user/:login' render={props => (
   //add whatever props, use getUser method, send in the user state, set loading
-  <User {...props} getUser={this.getUser} user={user} loading={loading} />
+  <User 
+    {...props} 
+    getUser={this.getUser}
+    getUserRepos={this.getUserRepos} //change to followers
+    getUserFollower={this.getUserFollower}
+    repos={repos} //change to followers
+    follower={follower}
+    user={user} 
+    loading={loading}
+  />
 )}/>
-    
-
-   
 
        </Switch>
        </div>

@@ -1,10 +1,10 @@
 //UserItem will be passed in as props
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 //if not using class, do not use 'this' keyword
 //everything will be passed in as props
 //or completely destructure user: {what you pull out from it}
-const UserItem = ({user: { login, avatar_url, html_url, name, location, followers, following, bio }}) => {
+const UserItem = ({user: { login, avatar_url }}) => {
   
     return (
       <div className='card text-center'>
@@ -14,18 +14,11 @@ const UserItem = ({user: { login, avatar_url, html_url, name, location, follower
           className='round-img' 
           style= {{ width: '60px', border: '1px solid black'}} 
           />
-          <div className='card-info'></div>
-            <h3> {name} </h3>
-            <p> {login} </p>
-            <p> Location:&nbsp; {location} </p>
-            <p> Profile: &nbsp;
-              <Link to={`/user/${login}`}> 
-                {html_url}
-              </Link> 
-            </p>
-            <p> Followers:&nbsp; {followers} </p>
-            <p> Following:&nbsp; {following} </p>
-            <p> Bio:&nbsp; {bio} </p>   
+            <h3> {login} </h3>
+              <a href={`/user/${login}`} className='btn btn-dark btn-sm my-1'> 
+                More...
+              </a> 
+             
       </div>
     )
   
