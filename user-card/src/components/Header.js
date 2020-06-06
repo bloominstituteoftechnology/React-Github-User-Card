@@ -10,7 +10,18 @@ class Header extends React.Component {
     render() {
         return (
             <div>
-                <header>Hellow world</header>
+                <header>
+                    <h3>GitHub User Cards</h3>
+                    <form>
+                        <input
+                            type="text"
+                            placeholder="user name"
+                        />
+                        <div>
+                            Search
+                            </div>
+                    </form>
+                </header>
             </div>
         );
     }
