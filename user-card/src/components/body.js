@@ -5,6 +5,10 @@ import axios from "axios";
 class Body extends React.Component {
     constructor() {
         super();
+        this.state = {
+            avitarUrl: "",
+
+        };
     }
 
 
@@ -12,25 +16,31 @@ class Body extends React.Component {
         return (
             <div className="main-content">
                 <div className="user">
+                    <div className="user-img">
+                        <img src={this.state.avitarUrl} alt="avitar"/>
+                    </div>
+                    <div className="user-info">
+                        <p>Hello</p>
+                    </div>
 
                 </div>
                 <div className="followers">
 
                 </div>
-                <p>Don't I have a great body?</p>
+                
             </div>
         );
     }
 
     componentDidMount() {
         console.log("componentDidMount running");
-        /*axios
+        axios
             .get("https://api.github.com/users/phmenard")
             .then(res => {
                 console.log(res);
-                this.setState({ doggos: res.data.message });
+                this.setState({ avitarUrl: res.data.avatar_url });
             })
-            .catch(err => console.log(err));*/
+            .catch(err => console.log(err));
 
     }
 
