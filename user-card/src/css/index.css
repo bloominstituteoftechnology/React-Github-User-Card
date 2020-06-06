@@ -188,6 +188,21 @@ form .search-btn {
   background-color: burlywood;
   padding: 2px;
   height: 14px;
+  cursor: pointer;
+}
+.main-content {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border: 1px solid green;
+}
+.main-content .user {
+  width: 40%;
+  border: 1px solid blue;
+}
+.main-content .followers {
+  width: 60%;
+  border: 1px solid red;
 }
 .footer-container {
   display: flex;
