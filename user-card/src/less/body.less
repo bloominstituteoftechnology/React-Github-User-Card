@@ -1,17 +1,40 @@
 .main-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     width: 100%;
     border: 1px solid green;
-
+    
+    
     .user {
+        display: flex;
         width: 40%;
         border: 1px solid blue;
+        padding: 5px;
+
+        .user-img {
+            
+            border: 1px solid pink;
+            
+            img {
+                width: 350px;
+                height: 350px;
+                border-radius: 2px;
+            }
+
+        }
+
+        .user-info {
+            width: auto;
+            border: 1px solid purple;
+            padding: 10px;
+            margin-left: 10px;
+        }
     }
     
     .followers {
         width: 60%;
         border: 1px solid red;
+        padding: 5px;
     
     }
 }
