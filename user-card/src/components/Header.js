@@ -1,4 +1,6 @@
 import React from "react";
+import "../css/index.css";
+
 
 
 class Header extends React.Component {
@@ -11,16 +13,20 @@ class Header extends React.Component {
         return (
             <div>
                 <header>
-                    <h3>GitHub User Cards</h3>
+                    <h1>GitHub User Cards</h1>
                     <form>
                         <input
                             type="text"
                             placeholder="user name"
                         />
-                        <div>
-                            Search
-                            </div>
+                        <div className="search-btn">
+                        Search
+                        </div>
+
                     </form>
+                    <div>
+                        maybe lambda logo??
+                    </div>
                 </header>
             </div>
         );
