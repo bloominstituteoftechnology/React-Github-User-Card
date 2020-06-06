@@ -3,44 +3,50 @@ import axios from "axios";
 
 
 class Body extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            avitarUrl: "",
-
-        };
+    constructor(props) {
+        super(props);
     }
-
 
     render() {
         return (
             <div className="main-content">
                 <div className="user">
                     <div className="user-img">
-                        <img src={this.state.avitarUrl} alt="avitar"/>
+                        <img src={this.props.user.avitarUrl} alt="avitar" />
                     </div>
                     <div className="user-info">
-                        <p>Hello</p>
+                        <p>{this.props.user.userName}</p>
+                        <p>{this.props.user.bio}</p>
                     </div>
 
                 </div>
                 <div className="followers">
 
                 </div>
-                
+
             </div>
         );
     }
 
     componentDidMount() {
         console.log("componentDidMount running");
-        axios
+        /*axios
             .get("https://api.github.com/users/phmenard")
             .then(res => {
                 console.log(res);
-                this.setState({ avitarUrl: res.data.avatar_url });
+                this.props.setUser({ avitarUrl: res.data.avatar_url, followers: res.data.followers_url });
             })
-            .catch(err => console.log(err));
+            .catch(err => console.log(err));*/
+
+            //console.log(this.state.followers);    
+
+        /*axios
+            .get(this.state.followers)
+            .then(res => {
+                console.log(res);
+                //this.setState({ avitarUrl: res.data.avatar_url });
+            })
+            .catch(err => console.log(err));*/
 
     }
 
