@@ -34,7 +34,8 @@ class App extends React.Component {
       bio: user.bio,
       blog: user.blog,
       avitarUrl: user.avitarUrl,
-      followersList: []
+      followersList: [],
+      loadingGrapf: true
     };
     //console.log(user);
 
