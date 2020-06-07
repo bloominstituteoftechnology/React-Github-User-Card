@@ -10,10 +10,11 @@ class App extends React.Component {
     super();
 
     this.state = {
-      userName: "Paul",
-      bio: "Hello",
-      avitarUrl: "https://avatars2.githubusercontent.com/u/53325792?v=4",
-      followers: ""
+      login: "",
+      userName: "",
+      bio: "",
+      avitarUrl: "",
+      followersList: []
 
     };
   }
@@ -21,27 +22,33 @@ class App extends React.Component {
   setUser = (user) => {
     //e.preventDefault();
     const newUser = {
+      login: user.login,
       userName: user.userName,
       bio: user.bio,
       avitarUrl: user.avitarUrl,
-      followers: user.followers
+      followersList: []
     };
-    console.log(user);
+    //console.log(user);
 
-    this.getFolowersList(user.followers);
-
-    this.setState(newUser);
+    this.getFolowersList(newUser);
 
   }
 
-  getFolowersList = (url) => {
+  getFolowersList = (user) => {
     axios
-      .get(`https://api.github.com/users/${this.state.userName}/followers`)
+      .get(`https://api.github.com/users/${user.login}/followers`)
       .then(res => {
-        console.log(res.data);
-        
+        //user.followersList = [...res.data];
+        res.data.map((follower, i)=>{
+          user.followersList.push(follower);
+        })
+
+        this.setState(user);
+
       })
       .catch(err => console.log(err));
+
+      
   }
 
   render() {
