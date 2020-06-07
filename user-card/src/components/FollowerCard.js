@@ -42,8 +42,8 @@ class FollowerCard extends React.Component {
         return (
             
                 <div className="follower-card">
-                    <img src={this.props.follower.avatar_url} alt="avitar"/>
-                    <p onClick={this.fetchUser}>{this.props.follower.login}</p>
+                    <img onClick={this.fetchUser} src={this.props.follower.avatar_url} alt="avitar"/>
+                    <p >{this.props.follower.login}</p>
                 </div>
             
         );

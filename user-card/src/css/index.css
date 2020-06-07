@@ -143,6 +143,7 @@ html {
   font-size: 1.5rem;
 }
 .welcome-container img {
+  margin-top: 3%;
   width: 250px;
 }
 .App-logo {
@@ -299,19 +300,21 @@ form .search-btn {
   width: 150px;
   height: 150px;
 }
+.follower-card :hover {
+  width: 155px;
+  height: 155px;
+}
 .follower-card p {
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
-}
-.follower-card p:hover {
-  text-decoration: underline;
 }
 .follower-card img {
   width: 125px;
   height: 125px;
   margin-bottom: 5px;
   border-radius: 3px;
+  cursor: pointer;
 }
 .footer-container {
   display: flex;

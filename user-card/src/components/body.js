@@ -32,7 +32,7 @@ class Body extends React.Component {
 
                         <h3>Blog</h3>
                         {/*<Link to={this.props.user.blog}>{this.props.user.blog}</Link>*/}
-                        <a href={this.props.user.blog}>this.props.user.blog</a>
+                        <a href={this.props.user.blog} target="new">{this.props.user.blog}</a>
 
 
 
