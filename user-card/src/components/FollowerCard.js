@@ -21,8 +21,10 @@ class FollowerCard extends React.Component {
                 //console.log(res);
                 this.props.setUser({
                     login: res.data.login,
-                    userName: res.data.name, 
+                    name: res.data.name,
+                    location: res.data.location, 
                     bio: res.data.bio,
+                    blog: res.data.blog,
                     avitarUrl: res.data.avatar_url,
                     followersList: []
                 })

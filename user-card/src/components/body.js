@@ -1,6 +1,7 @@
 import React from "react";
 import FollowerCard from './FollowerCard'
 import "../css/index.css";
+import { Link } from 'react-router-dom';
 
 
 class Body extends React.Component {
@@ -17,10 +18,19 @@ class Body extends React.Component {
                 <div className="user">
                     <div className="user-img">
                         <img src={this.props.user.avitarUrl} alt="avitar" />
+                        <img className="user-gragh" src={`https://ghchart.rshah.org/${this.props.user.login}`} alt="loading gragh ..." />
                     </div>
                     <div className="user-info">
-                        <p>{this.props.user.userName}</p>
+                        <h1>{this.props.user.name}</h1>
+                        <h2>{this.props.user.location}</h2>
                         <p>{this.props.user.bio}</p>
+
+                        <h3>Blog</h3>
+                        {/*<Link to={this.props.user.blog}>{this.props.user.blog}</Link>*/}
+                        <a href={this.props.user.blog}>this.props.user.blog</a>
+
+
+
                     </div>
 
                 </div>
@@ -31,7 +41,7 @@ class Body extends React.Component {
 
                             this.props.user.followersList.map((follower, i) => {
                                 //console.log(follower);
-                                return <FollowerCard key={i} follower={follower} setUser={this.props.setUser}/>;
+                                return <FollowerCard key={i} follower={follower} setUser={this.props.setUser} />;
                             })
                         }
                     </div>

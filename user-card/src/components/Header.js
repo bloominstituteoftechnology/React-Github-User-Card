@@ -9,25 +9,27 @@ class Header extends React.Component {
         super(props);
 
         this.state = {
-            userName: ""
+            login: ""
         }
     }
 
     handleChanges = e => {
         //console.log(e.target.name, e.target.value);
-        this.setState({ ...this.state, userName: e.target.value });
+        this.setState({ ...this.state, login: e.target.value });
     };
 
     fetchUser = e => {
         e.preventDefault();
         axios
-            .get(`https://api.github.com/users/${this.state.userName}`)
+            .get(`https://api.github.com/users/${this.state.login}`)
             .then(res => 
                 //console.log(res);
                 this.props.setUser({
                     login: res.data.login,
-                    userName: res.data.name, 
+                    name: res.data.name,
+                    location: res.data.location, 
                     bio: res.data.bio,
+                    blog: res.data.blog,
                     avitarUrl: res.data.avatar_url,
                     followersList: []
                 })
@@ -37,7 +39,7 @@ class Header extends React.Component {
             .catch(err => console.log(err));
 
             //reset the search box
-            this.setState({ ...this.state, userName: "" }) 
+            this.setState({ ...this.state, login: "" }) 
       };
 
 
@@ -50,8 +52,8 @@ class Header extends React.Component {
                         <input
                             type="text"
                             placeholder="user name"
-                            name="userName"
-                            value={this.state.userName}
+                            name="login"
+                            value={this.state.login}
                             onChange={this.handleChanges}
                         />
                         <div onClick={this.fetchUser} className="search-btn">
@@ -59,8 +61,8 @@ class Header extends React.Component {
                         </div>
 
                     </form>
-                    <div>
-                        maybe lambda logo??
+                    <div className="right-image">
+                        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fbzzsxz6liz-flywheel.netdna-ssl.com%2Fwp-content%2Fuploads%2F2019%2F05%2FLambda_Logo-1-200x56.png&f=1&nofb=1" alt="Lambda image"/>
                     </div>
                 </header>
             </div>
