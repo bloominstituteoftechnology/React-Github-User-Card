@@ -189,9 +189,9 @@ header {
   width: 100%;
 }
 header h1 {
-  color: #dce7f1;
+  color: #d9e2eb;
   font-size: 2rem;
-  text-shadow: 1px 1px 5px #0e0101;
+  text-shadow: 1px 1px 5px #072752;
 }
 header .right-image img {
   padding: 3px;
@@ -321,4 +321,8 @@ form .search-btn {
   background-color: #c2c2c7;
   margin-top: 1%;
   width: 98%;
+}
+.footer-container footer h3 {
+  font-size: 1.2rem;
+  text-decoration: underline;
 }
