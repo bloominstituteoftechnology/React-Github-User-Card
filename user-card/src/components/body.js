@@ -1,13 +1,16 @@
 import React from "react";
-import axios from "axios";
+import FollowerCard from './FollowerCard'
+import "../css/index.css";
 
 
 class Body extends React.Component {
     constructor(props) {
         super(props);
+        
     }
 
     render() {
+        
         return (
             <div className="main-content">
                 <div className="user">
@@ -21,33 +24,26 @@ class Body extends React.Component {
 
                 </div>
                 <div className="followers">
-
+                    {
+                        
+                    this.props.user.followersList.map((follower, i) => {
+                        //console.log(follower);
+                        return <FollowerCard key={i} follower={follower} />;
+                    })
+                    }
                 </div>
 
             </div>
         );
     }
 
+    componentDidUpdate(){
+        //console.log(this.props.user.followersList)
+
+    }
+
     componentDidMount() {
-        console.log("componentDidMount running");
-        /*axios
-            .get("https://api.github.com/users/phmenard")
-            .then(res => {
-                console.log(res);
-                this.props.setUser({ avitarUrl: res.data.avatar_url, followers: res.data.followers_url });
-            })
-            .catch(err => console.log(err));*/
-
-            //console.log(this.state.followers);    
-
-        /*axios
-            .get(this.state.followers)
-            .then(res => {
-                console.log(res);
-                //this.setState({ avitarUrl: res.data.avatar_url });
-            })
-            .catch(err => console.log(err));*/
-
+        
     }
 
     componentWillUnmount() {
