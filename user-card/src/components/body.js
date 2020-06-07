@@ -18,7 +18,12 @@ class Body extends React.Component {
                 <div className="user">
                     <div className="user-img">
                         <img src={this.props.user.avitarUrl} alt="avitar" />
-                        <img className="user-gragh" src={`https://ghchart.rshah.org/${this.props.user.login}`} alt="loading gragh ..." />
+                        {this.props.user.loadinGraph ?                    
+                            <img className="user-gragh" src={`https://ghchart.rshah.org/${this.props.user.login}`} alt="loading gragh ..." />
+                        :
+                        <p>Loading gragh ...</p>
+                        }
+                            
                     </div>
                     <div className="user-info">
                         <h1>{this.props.user.name}</h1>
