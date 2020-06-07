@@ -2,38 +2,79 @@
     display: flex;
     justify-content: space-evenly;
     width: 100%;
-    border: 1px solid green;
     margin-top: 3%;
     
     .user {
         display: flex;
         width: 40%;
-        border: 1px solid blue;
         padding: 5px;
 
         .user-img {
-            
-            border: 1px solid pink;
-            
+            display: flex;
+            flex-direction: column;
+                      
             img {
-                width: 350px;
-                height: 350px;
+                width: 450px;
+                height: 450px;
                 border-radius: 2px;
+            }
+
+            .user-gragh {
+                margin-top: 5px;
+                width: 450px;
+                height: 150px;
             }
 
         }
 
         .user-info {
-            width: auto;
-            border: 1px solid purple;
-            padding: 10px;
-            margin-left: 10px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: column;
+            //flex-wrap: wrap;
+            //width: 100%;
+            border: 1px solid rgb(155, 13, 56);
+            padding: 5px;
+            margin-left: 5px;
+
+            h1 {
+                display: flex;
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 5px;
+                border: 1px solid green;
+                height: px;
+            }
+
+            h2 {
+                display: flex;
+                margin-bottom: 10px;
+            }
+
+            h3 {
+                display: flex;
+                font-size: 1.5rem;
+                margin-top: 3%;
+            }
+
+            a {
+                display: flex;
+                margin-bottom: 10px;
+                font-size: 1.2rem;
+            }
+
+            p {
+                display: flex;
+                font-size: 1.5rem;
+                font-style: italic;
+                border: 1px solid green;
+            }
         }
     }
 
     .followers-container{
         display: flex;
-        justify-content: center;
+        //justify-content: center;
         flex-direction: column;
         width: 60%;
 
@@ -48,7 +89,6 @@
             justify-content: space-around; 
             align-items: center;
             flex-wrap: wrap;
-            border: 1px solid rgb(13, 218, 64);
             padding: 5px;
         
         }

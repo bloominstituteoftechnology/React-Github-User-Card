@@ -132,6 +132,19 @@ html {
 .App {
   text-align: center;
 }
+.welcome-container {
+  margin-top: 4%;
+}
+.welcome-container .no-user {
+  font-size: 3rem;
+  margin-top: 3%;
+}
+.welcome-container p {
+  font-size: 1.5rem;
+}
+.welcome-container img {
+  width: 250px;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -176,7 +189,13 @@ header {
   width: 100%;
 }
 header h1 {
+  color: #dce7f1;
   font-size: 2rem;
+}
+header .right-image img {
+  padding: 3px;
+  width: 150px;
+  height: 45px;
 }
 form {
   display: flex;
@@ -198,32 +217,65 @@ form .search-btn {
   display: flex;
   justify-content: space-evenly;
   width: 100%;
-  border: 1px solid green;
   margin-top: 3%;
 }
 .main-content .user {
   display: flex;
   width: 40%;
-  border: 1px solid blue;
   padding: 5px;
 }
 .main-content .user .user-img {
-  border: 1px solid pink;
+  display: flex;
+  flex-direction: column;
 }
 .main-content .user .user-img img {
-  width: 350px;
-  height: 350px;
+  width: 450px;
+  height: 450px;
   border-radius: 2px;
 }
+.main-content .user .user-img .user-gragh {
+  margin-top: 5px;
+  width: 450px;
+  height: 150px;
+}
 .main-content .user .user-info {
-  width: auto;
-  border: 1px solid purple;
-  padding: 10px;
-  margin-left: 10px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border: 1px solid #9b0d38;
+  padding: 5px;
+  margin-left: 5px;
+}
+.main-content .user .user-info h1 {
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  border: 1px solid green;
+  height: px;
+}
+.main-content .user .user-info h2 {
+  display: flex;
+  margin-bottom: 10px;
+}
+.main-content .user .user-info h3 {
+  display: flex;
+  font-size: 1.5rem;
+  margin-top: 3%;
+}
+.main-content .user .user-info a {
+  display: flex;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+.main-content .user .user-info p {
+  display: flex;
+  font-size: 1.5rem;
+  font-style: italic;
+  border: 1px solid green;
 }
 .main-content .followers-container {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   width: 60%;
 }
@@ -236,7 +288,6 @@ form .search-btn {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  border: 1px solid #0dda40;
   padding: 5px;
 }
 .follower-card {
