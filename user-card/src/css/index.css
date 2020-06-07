@@ -221,12 +221,21 @@ form .search-btn {
   padding: 10px;
   margin-left: 10px;
 }
-.main-content .followers {
+.main-content .followers-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 60%;
+}
+.main-content .followers-container h3 {
+  font-size: 2rem;
+}
+.main-content .followers-container .followers {
+  margin-top: 5px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  width: 60%;
   border: 1px solid #0dda40;
   padding: 5px;
 }
@@ -237,6 +246,9 @@ form .search-btn {
   margin: 5px;
   width: 150px;
   height: 150px;
+}
+.follower-card p {
+  cursor: pointer;
 }
 .follower-card img {
   width: 125px;
