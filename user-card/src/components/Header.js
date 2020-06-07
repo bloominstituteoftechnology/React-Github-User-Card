@@ -24,10 +24,13 @@ class Header extends React.Component {
             .get(`https://api.github.com/users/${this.state.userName}`)
             .then(res => 
                 //console.log(res);
-                this.props.setUser({userName: res.data.name, 
+                this.props.setUser({
+                    login: res.data.login,
+                    userName: res.data.name, 
                     bio: res.data.bio,
                     avitarUrl: res.data.avatar_url,
-                    followers: res.data.followers_url })
+                    followersList: []
+                })
 
                    
             )
