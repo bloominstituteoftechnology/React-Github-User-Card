@@ -169,7 +169,11 @@ header {
   flex-direction: row;
   height: 50px;
   background-color: #6f6f74;
-  margin-bottom: 1%;
+  position: fixed;
+  /* Set the navbar to fixed position */
+  top: 0;
+  /* Position the navbar at the top of the page */
+  width: 100%;
 }
 header h1 {
   font-size: 2rem;
@@ -195,6 +199,7 @@ form .search-btn {
   justify-content: space-evenly;
   width: 100%;
   border: 1px solid green;
+  margin-top: 3%;
 }
 .main-content .user {
   display: flex;
@@ -217,9 +222,27 @@ form .search-btn {
   margin-left: 10px;
 }
 .main-content .followers {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
   width: 60%;
-  border: 1px solid red;
+  border: 1px solid #0dda40;
   padding: 5px;
+}
+.follower-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 5px;
+  width: 150px;
+  height: 150px;
+}
+.follower-card img {
+  width: 125px;
+  height: 125px;
+  margin-bottom: 5px;
+  border-radius: 3px;
 }
 .footer-container {
   display: flex;
