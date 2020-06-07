@@ -10,9 +10,9 @@ header {
     width: 100%;
 
     h1 {
-        color: rgb(217, 226, 235);
+        color: @header-h1-color;
         font-size: 2rem;
-        text-shadow: 1px 1px 5px rgb(7, 39, 82);
+        text-shadow: 1px 1px 1px @headre-h1-shadow-color;
     }
 
     .right-image {
@@ -36,7 +36,7 @@ form {
         display: flex;
         align-items: center;
         border-radius: 2px;
-        background-color: burlywood;
+        background-color: @header-btn-color;
         padding: 2px;
         height: 14px;
         cursor: pointer;
