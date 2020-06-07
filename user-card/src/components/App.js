@@ -55,7 +55,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header setUser={this.setUser} />
-        <Body user={this.state} />
+        <Body user={this.state} setUser={this.setUser}/>
         <Footer />
 
       </div>
