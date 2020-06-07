@@ -191,6 +191,7 @@ header {
 header h1 {
   color: #dce7f1;
   font-size: 2rem;
+  text-shadow: 1px 1px 5px #0e0101;
 }
 header .right-image img {
   padding: 3px;

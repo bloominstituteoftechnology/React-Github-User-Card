@@ -23,7 +23,7 @@ class Body extends React.Component {
                     <div className="user-info">
                         <h1>{this.props.user.name}</h1>
                         <h2>{this.props.user.location}</h2>
-                        <p>{this.props.user.bio}</p>
+                        <p>"{this.props.user.bio}"</p>
 
                         <h3>Blog</h3>
                         {/*<Link to={this.props.user.blog}>{this.props.user.blog}</Link>*/}
