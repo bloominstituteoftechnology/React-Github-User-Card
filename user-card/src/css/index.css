@@ -232,7 +232,7 @@ form .search-btn {
 .main-content .user .user-img img {
   width: 450px;
   height: 450px;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 .main-content .user .user-img .user-gragh {
   margin-top: 5px;
@@ -300,7 +300,12 @@ form .search-btn {
   height: 150px;
 }
 .follower-card p {
+  font-size: 1.1rem;
+  font-weight: bold;
   cursor: pointer;
+}
+.follower-card p:hover {
+  text-decoration: underline;
 }
 .follower-card img {
   width: 125px;
