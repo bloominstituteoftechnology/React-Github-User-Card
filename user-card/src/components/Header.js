@@ -51,7 +51,7 @@ class Header extends React.Component {
                     <form>
                         <input
                             type="text"
-                            placeholder="Git user name"
+                            placeholder="...Git user name"
                             name="login"
                             value={this.state.login}
                             onChange={this.handleChanges}
