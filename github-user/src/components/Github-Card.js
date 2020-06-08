@@ -1,5 +1,4 @@
 import React from "react";
-import Users from "./Users";
 import axios from "axios";
 
 class UserCard extends React.Component {
@@ -25,7 +24,7 @@ class UserCard extends React.Component {
             <div className="card">
                <img src={this.props.userCard.avatar_url} />
                <h2>{this.props.userCard.name}</h2>
-               <Users followers={this.state.followers} />
+               {/* <Users followers={this.state.followers} /> */}
             </div>
         )
     }
