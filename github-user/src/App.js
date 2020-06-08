@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Card from "./components/Github-Card";
 import axios from "axios";
@@ -8,21 +7,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      userCard: [],
+      user: {},
       followers: []
     }
   }
 
   componentDidMount() {
-    axios.get("https://api.github.com/Kat2bk/")
+    axios.get(`https://api.github.com/users/${this.state.username}`)
     .then(response => {
-      this.setState({
-        userCard: [{
-          img: response.data.avatar_url
-        }]
-      })
+      console.log(response);
+      this.setState({ user: response.data })
+      .catch(error => console.log("sorry! Can't do that!", error));
     })
-    .catch(error => console.log("Sorry, something happened!", error));
+    axios.get(`https://api.github.com/users/${this.state.username}/followers`)
+    .then(response => this.setState({ followers: response.data}));
   }
 
 render() {
@@ -30,6 +28,7 @@ render() {
     <div className="App">
       <div className="container">
         <h1>Github Users!</h1>
+        <Card followers={this.state.followers} user={this.state.user} />
       </div>
     </div>
   );
