@@ -16,3 +16,16 @@
 .search-box {
   margin-bottom: 10px;
 }
+input {
+  margin: 10px;
+}
+
+.follower-cards {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.follower {
+  width: 325px;
+}

@@ -1,51 +1,63 @@
 import React from 'react';
+import axios from 'axios';
 import Usercard from './Components/Usercard';
 
 import './App.css';
 
 class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      githubUser: [],
-      githubFollowers: [],
-      searchField: 'riddlej9879'
-    };
-  }
+  state = {
+    githubUser: [],
+    githubFollowers: [],
+    contribution: '',
+    searchField: ''
+  };
 
   componentDidMount() {
-    // Use the tilde (``) when adding the {variable} for the search option
-    fetch(`https://api.github.com/users/${this.state.searchField}`)
+
+    // FETCH STEUP
+    fetch('https://api.github.com/users/riddlej9879')
       .then(response => response.json())
-      .then(data => this.setState({ githubUser: data }))
+      .then(res => this.setState({ githubUser: res }))
+      .then(res => this.setState({contribution: 'https://ghchart.rshah.org/riddlej9879'}))
       .catch(error => {
         console.log('Error: ', error);
       })
-    fetch(`https://api.github.com/users/${this.state.searchField}/followers`)
+    fetch('https://api.github.com/users/riddlej9879/followers')
       .then(response => response.json())
-      .then(data => this.setState({ githubFollowers: data }))
+      .then(res => this.setState({ githubFollowers: res }))
       .catch(error => {
         console.log('Error: ', error);
       })
   }
 
   componentDidUpdate(prevProps, prevState) {
-    // console.log('Component did update')
-
     if (prevState.githubUser !== prevProps.githubUser) {
-      console.log('State updated')
+      // console.log('State Updated')
     }
   }
 
-  submitSearch = event => {
-    event.preventDefault();
-    
-    this.setState({ [event.target.name]: event.target.value })
+  submitSearch = e => {
+    e.preventDefault()
+    console.log('Submit Search', this.state.searchField)
+
+    fetch(`https://api.github.com/users/${this.state.searchField}`)
+      .then(res => res.json())
+      .then(data => this.setState({ ...this.setState, githubUser: data }))
+      .then(res => this.setState({contribution: `https://ghchart.rshah.org/${this.state.searchField}`}))
+      .catch(error => {
+        console.log('Error: ', error);
+      })
+    fetch(`https://api.github.com/users/${this.state.searchField}/followers`)
+      .then(res => res.json())
+      .then(data => this.setState({ ...this.setState, githubFollowers: data }))
+      .catch(error => {
+        console.log('Error: ', error);
+      })
   };
 
-  handleChanges = event => {
-    // this.setState({ [event.target.name]: event.target.value });
-    console.log(event.target.name, event.target.value)
+  handleChange = e => {
+    this.setState({ ...this.setState, searchField: e.target.value });
+    // console.log('handleChange', e.target.name, e.target.value)
   };
 
   render() {
@@ -53,20 +65,18 @@ class App extends React.Component {
       <div className='App'>
         <h1 className='app-header' >Github User Card</h1>
         <div className='search-box'>
-          <form onSubmit={this.submitSearch}>
-            <input
-              className='search'
-              type='text'
-              name='searchField'
-              placeholder='Does not work yet'
-              onChange={this.handleChanges}
-            />
-            <button>Search</button>
+          <form>
+            <label name='searchField'>
+              Username:
+            </label>
+            <input type="text" name='searchField' onChange={this.handleChange} />
+            <button onClick={this.submitSearch}>Search</button>
           </form>
         </div>
         <Usercard
           githubUser={this.state.githubUser}
           githubFollowers={this.state.githubFollowers}
+          contribution={this.state.contribution}
         />
       </div>
     )

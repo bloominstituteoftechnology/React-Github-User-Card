@@ -2,6 +2,12 @@ import React from 'react';
 
 import './SearchBox.styles.css';
 
+// *********************************
+//
+//          Unneeded
+//
+// *********************************
+
 export const SearchBox = (props) => {
 
     // console.log(props.handlechange)
@@ -12,7 +18,7 @@ export const SearchBox = (props) => {
                     className='search'
                     type='text'
                     name='searchField'
-                    placeholder='Does not work yet'
+                    placeholder='Does work yet'
                 />
                 <button>Search</button>
             </form>
