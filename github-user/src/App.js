@@ -7,20 +7,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      user: {},
-      followers: []
+      users: []
     }
   }
 
   componentDidMount() {
-    axios.get(`https://api.github.com/users/${this.state.username}`)
+    axios.get(`https://api.github.com/users/Kat2bk/`)
     .then(response => {
       console.log(response);
-      this.setState({ user: response.data })
-      .catch(error => console.log("sorry! Can't do that!", error));
+      this.setState({ users: response.data })
     })
-    axios.get(`https://api.github.com/users/${this.state.username}/followers`)
-    .then(response => this.setState({ followers: response.data}));
+    .catch(error => console.log("sorry! Can't do that!", error));
   }
 
 render() {
@@ -28,7 +25,7 @@ render() {
     <div className="App">
       <div className="container">
         <h1>Github Users!</h1>
-        <Card followers={this.state.followers} user={this.state.user} />
+        <Card userCard={this.state.users} />
       </div>
     </div>
   );
