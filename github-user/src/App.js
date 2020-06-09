@@ -12,7 +12,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`https://api.github.com/users/Kat2bk/`)
+    axios.get(`https://api.github.com/users/Kat2bk`)
     .then(response => {
       console.log(response);
       this.setState({ users: response.data })
