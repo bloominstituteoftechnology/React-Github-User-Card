@@ -23,8 +23,10 @@ class UserCard extends React.Component {
     render() {
         return (
             <div className="card">
+                <div className="main-profile">
                <img src={this.props.userCard.avatar_url} alt="profile picture" />
                <h2>{this.props.userCard.name}</h2>
+               </div>
                <Users followers={this.state.followers} />
             </div>
         )
