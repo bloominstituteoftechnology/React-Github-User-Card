@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import Users from "./Users";
 
 class UserCard extends React.Component {
     constructor(props) {
@@ -22,9 +23,9 @@ class UserCard extends React.Component {
     render() {
         return (
             <div className="card">
-               <img src={this.props.userCard.avatar_url} />
+               <img src={this.props.userCard.avatar_url} alt="profile picture" />
                <h2>{this.props.userCard.name}</h2>
-               {/* <Users followers={this.state.followers} /> */}
+               <Users followers={this.state.followers} />
             </div>
         )
     }
