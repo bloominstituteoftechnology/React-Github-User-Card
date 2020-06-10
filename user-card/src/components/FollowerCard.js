@@ -26,6 +26,11 @@ class FollowerCard extends React.Component {
                     bio: res.data.bio,
                     blog: res.data.blog,
                     avitarUrl: res.data.avatar_url,
+                    company: res.data.company,
+                    publicRepos: res.data.public_repos,
+                    publicGists: res.data.public_gists,
+                    followers: res.data.followers,
+                    following: res.data.following,
                     followersList: []
                 })
 
@@ -54,7 +59,7 @@ class FollowerCard extends React.Component {
     }
 
     componentWillUnmount() {
-
+        window.removeEventListener("onClick", this.listenerF);
     }
 
 

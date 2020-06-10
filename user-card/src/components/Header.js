@@ -31,6 +31,11 @@ class Header extends React.Component {
                     bio: res.data.bio,
                     blog: res.data.blog,
                     avitarUrl: res.data.avatar_url,
+                    company: res.data.company,
+                    publicRops: res.data.public_repos,
+                    pubkicGists: res.data.public_gists,
+                    followers: res.data.followers,
+                    following: res.data.following,
                     followersList: []
                 })
 
@@ -74,7 +79,8 @@ class Header extends React.Component {
     }
 
     componentWillUnmount() {
-
+        window.removeEventListener("onClick", this.listenerF);
+        window.removeEventListener("onChange", this.listenerF);
     }
 
 

@@ -18,21 +18,28 @@ class Body extends React.Component {
                 <div className="user">
                     <div className="user-img">
                         <img src={this.props.user.avitarUrl} alt="avitar" />
-                        {this.props.user.loadinGraph ?                    
-                            <img className="user-gragh" src={`https://ghchart.rshah.org/${this.props.user.login}`} alt="loading gragh ..." />
-                        :
-                        <p>Loading gragh ...</p>
-                        }
-                            
+                        <img className="user-gragh" src={`https://ghchart.rshah.org/${this.props.user.login}`} alt="loading gragh ..." />
+
                     </div>
                     <div className="user-info">
                         <h1>{this.props.user.name}</h1>
                         <h2>{this.props.user.location}</h2>
-                        <p>"{this.props.user.bio}"</p>
+                        <p className="bio">"{this.props.user.bio}"</p>
+                        <p>Company: {this.props.user.company}</p>
+                        <p>Public Repos: {this.props.user.publicRepos}</p>
+                        <p>Public Gists: {this.props.user.publicGists}</p>
+                        <p>Followers: {this.props.user.followers}</p>
+                        <p>Following: {this.props.user.following}</p>
+
+                        <div className="follow-link">    
+                        <a href={`https://github.com/${this.props.user.login}`} target="new">Follow {this.props.user.name}</a>
+                        </div>
 
                         <h3>Blog</h3>
                         {/*<Link to={this.props.user.blog}>{this.props.user.blog}</Link>*/}
+                        <div className="blog-link">
                         <a href={this.props.user.blog} target="new">{this.props.user.blog}</a>
+                        </div>
 
 
 

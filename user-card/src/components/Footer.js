@@ -11,7 +11,7 @@ class Footer extends React.Component {
         return (
             <div className="footer-container">
                 <footer>
-                <p>&copy; 2020 Paul H. Menard Jr. </p>  
+                <p>&copy; 2020 <a href={`https://github.com/phmenard`} target="new">Paul H. Menard Jr.</a> </p>  
 
                 <h3>The React Lifecycle</h3>
                 </footer>

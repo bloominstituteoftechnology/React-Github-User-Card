@@ -16,6 +16,11 @@ class App extends React.Component {
       bio: "",
       blog: "",
       avitarUrl: "",
+      company: "",
+      publicRepos: "",
+      publicGists: "",
+      followers: "",
+      following: "",
       followersList: []
 
     };
@@ -34,8 +39,13 @@ class App extends React.Component {
       bio: user.bio,
       blog: user.blog,
       avitarUrl: user.avitarUrl,
+      company: user.company,
+      publicRepos: user.publicRepos,
+      publicGists: user.publicGists,
+      followers: user.followers,
+      following: user.following,
       followersList: [],
-      loadingGrapf: true
+      
     };
     //console.log(user);
 
@@ -68,7 +78,7 @@ class App extends React.Component {
          <div className="welcome-container">
            <p>Welcome to your Github search engine.</p>
            <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.molecularecologist.com%2Fwp-content%2Fuploads%2F2013%2F11%2Fgithub-logo.jpg&f=1&nofb=1" alt="GitHub logo"/>
-           <p className="no-user" >Please enter a GitHub user name in the search box.</p>
+           <p className="no-user" >Find and follow your TL's, SL's, and fellow Lambda students. </p>
          </div>
          
         }

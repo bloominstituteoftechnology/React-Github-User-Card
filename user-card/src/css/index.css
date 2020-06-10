@@ -244,7 +244,6 @@ form .search-btn {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
-  border: 1px solid #9b0d38;
   padding: 5px;
   margin-left: 5px;
 }
@@ -253,7 +252,6 @@ form .search-btn {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 5px;
-  border: 1px solid green;
   height: px;
 }
 .main-content .user .user-info h2 {
@@ -266,15 +264,29 @@ form .search-btn {
   margin-top: 3%;
 }
 .main-content .user .user-info a {
-  display: flex;
-  margin-bottom: 10px;
-  font-size: 1.2rem;
+  color: unset;
+}
+.main-content .user .user-info a:hover {
+  color: #7dbae6;
 }
 .main-content .user .user-info p {
   display: flex;
   font-size: 1.5rem;
+  margin-top: 10px;
+}
+.main-content .user .user-info .bio {
+  display: flex;
+  font-size: 1.5rem;
   font-style: italic;
-  border: 1px solid green;
+}
+.main-content .user .user-info .follow-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.main-content .user .user-info .blog-link {
+  display: flex;
+  justify-content: flex-start;
 }
 .main-content .followers-container {
   display: flex;
@@ -334,4 +346,10 @@ form .search-btn {
 .footer-container footer h3 {
   font-size: 1.2rem;
   text-decoration: underline;
+}
+.footer-container footer a {
+  color: unset;
+}
+.footer-container footer a:hover {
+  color: white;
 }

@@ -33,7 +33,7 @@
             flex-direction: column;
             //flex-wrap: wrap;
             //width: 100%;
-            border: 1px solid rgb(155, 13, 56);
+            
             padding: 5px;
             margin-left: 5px;
 
@@ -42,7 +42,7 @@
                 font-size: 2rem;
                 font-weight: bold;
                 margin-bottom: 5px;
-                border: 1px solid green;
+                
                 height: px;
             }
 
@@ -58,17 +58,42 @@
             }
 
             a {
-                display: flex;
-                margin-bottom: 10px;
-                font-size: 1.2rem;
+                color: unset;
+                //text-decoration: unset;
+                
+            }
+    
+            a:hover {
+                color: @footer-background;
             }
 
             p {
                 display: flex;
                 font-size: 1.5rem;
-                font-style: italic;
-                border: 1px solid green;
+                margin-top: 10px;
+                
             }
+
+            .bio {
+                display: flex;
+                font-size: 1.5rem;
+                font-style: italic;
+                
+            }
+
+            .follow-link {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            .blog-link {
+                display: flex;
+                justify-content: flex-start;
+            }
+
+
+            
         }
     }
 
@@ -90,7 +115,7 @@
             align-items: center;
             flex-wrap: wrap;
             padding: 5px;
-            
+
         
         }
     }
