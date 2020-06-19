@@ -1,0 +1,393 @@
+.App-light {
+  text-align: center;
+  background-color: #fff;
+  color: #111;
+  padding: 27px;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease-in;
+}
+
+.App-logo-light {
+  height: 35vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.Page-header-light {
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #111;
+}
+.home-form-dark {
+  display: flex;
+  flex-direction: column;
+}
+.home-form-light {
+  display: flex;
+  flex-direction: column;
+}
+.home-form-dark input {
+  background-color: #282c34;
+  color: #fafafa;
+  width: 35vw;
+  height: 5vh;
+  border-style: solid;
+  border-color: #551594;
+  border-radius: 7px;
+
+}
+.home-form-dark button {
+  width: 13vw;
+  border-style: solid;
+  border-color: #551594;
+  border-radius: 0px;
+  padding: 10px;
+  align-self: center;
+  margin-top: 13px;
+  background-color: #551594; 
+  color: #fff;
+  cursor: pointer;
+}
+.home-form-light input {
+  background-color: #fff;
+  width: 35vw;
+  height: 5vh;
+  border-style: solid;
+  border-color: #111;
+  border-radius: 7px;
+
+}
+.home-form-light button{
+  width: 13vw;
+  border-style: solid;
+  border-color: #111;
+  border-radius: 0px;
+  padding: 10px;
+  align-self: center;
+  margin-top: 13px;
+  background-color: #111; 
+  color: #fff;
+  cursor: pointer;
+}
+
+/*Navbar*/
+.App-header-dark {
+  background-color: #282c34;
+  /*background-color: purple;*/
+  position: fixed;
+  width: 99vw;
+  z-index: 900;
+  min-height: 6vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-header-light {
+    background-color: #fff;
+    position: fixed;
+    width: 99vw;
+    z-index: 900;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.18);
+    min-height: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+.Navbar-logo-light {
+  margin-left: 50%;
+  width: 30px;
+}  
+.Navbar-logo-inverted {
+  margin-left: 50%;
+  width: 30px;
+  filter: invert(100%);
+}  
+
+
+/* User Card */
+
+.user-card-light {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  color: #4b4c4d;
+  background-color: #ffffff;
+  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-shadow: 10px 10px 10px -16px rgba(0, 0, 0, 0.75);
+  /*border-radius: 5px;*/
+  border-style: solid;
+  border-width: 1px 1px;
+  border-color: #cfcaca;
+  height: 450px; 
+  max-width: 350px;
+  max-height: 700px;
+  margin-left: 35%;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-out;
+
+}
+
+.user-card-dark {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  color: #fff;
+  background-color: #282c34;
+  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-shadow: 10px 10px 10px -16px rgba(0, 0, 0, 0.75);
+  /*border-radius: 5px;*/
+  border-style: solid;
+  border-width: 1px 1px;
+  border-color: #cfcaca;
+  height: 59vh; 
+  max-width: 350px;
+  max-height: 700px;
+  margin-left: 35%;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-out;
+
+}
+
+.user-card-light p {
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.user-card-dark p {
+  margin-left: 10px;
+  margin-top: 0;
+  margin-bottom: 4px;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+.rff {
+  display: flex;
+  flex-direction: row;
+  margin-top: 30px;
+}
+
+.rff p {
+  font-size: 14.5px;
+  border-right: 10px #111;
+  margin-left: 11%;
+
+}
+
+.button-light {
+  display: block;
+  background-color: #111;
+  color: #fff;
+  border-color: #cfcaca;
+  border-radius: 0px;
+  padding: 8px 40px;
+  margin-top: 53px;
+  margin-left: 51%;
+  margin-bottom: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+.button-dark {
+  display: block;
+  background-color: #551594;
+  color: #fff;
+  border-color: #cfcaca;
+  border-radius: 0px;
+  padding: 8px 40px;
+  margin-top: 53px;
+  margin-left: 51%;
+  margin-bottom: 0px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease-out;
+}
+
+span {
+ color: #61dafb;
+}
+
+
+/*Error Page*/
+.error-page-light {
+    background-color: #fafafa;
+    text-align: center;
+    padding: 30px;
+  }
+.error-page-dark {
+  background-color: #282c34;
+  text-align: center;
+  color: #fff;
+  padding: 30px;
+}  
+.shinobi-light {
+  width: 250px; 
+  margin-left: 30%;
+}
+.shinobi-inverted {
+  filter: invert(100%);
+  width: 250px; 
+  margin-left: 30%;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.contact-card-light {
+  display: flex;
+  padding: 25px;
+  color: #4b4c4d;
+  background-color: red;
+  font-family: medium-content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  box-shadow: 10px 10px 10px -16px rgba(0, 0, 0, 0.75);
+  /*border-radius: 5px;*/
+  border-style: solid;
+  border-width: 1px 1px;
+  border-color: #cfcaca; 
+  max-width: 500px;
+  max-height: 125px;
+  margin-left: 1.9%;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease-out;
+
+}
+
+
+/*Dark Mode */
+
+.App-dark {
+  text-align: center;
+  background-color: #111;
+  color: #fafafa;
+  padding: 27px;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease-in;
+}
+
+.App-logo-inverted {
+  height: 35vmin;
+  pointer-events: none;
+  filter: invert(100%);
+}
+
+.Page-header-dark {
+  /*background-color: #282c34;*/
+  background-color: #111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* User Card */
+
+/* Follower List */
+
+
+/*Dark Mode Toggle*/
+nav {
+    width: 100%;
+    display: flex;
+    background-color: none;
+    padding: 10px;
+  }
+
+
+  .toggle {
+    position: relative;
+    padding: 0 4px;
+    display: flex;
+    align-items: center;
+  }
+
+input[type="checkbox"].checkbox {
+  width: 30px;
+  height: 10px;
+  background: #555;
+  position: relative;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  vertical-align: 2px;
+  outline: none;
+}
+
+input[type="checkbox"].checkbox:checked + label {
+  left: 30px;
+}
+
+input[type="checkbox"].checkbox:focus-visible {
+  outline: solid 2px white;
+}
+
+input[type="checkbox"].checkbox + label {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  position: absolute;
+  left: 2px;
+  background: #fff;
+  opacity: 0.9;
+  background-color: cyan;
+}
+
+.toggle-container {
+  display: flex;
+  margin: 0 auto;
+  margin-right: 10px;
+  margin-top: -10px;
+}
+
+.toggle-container > span {
+  font-size: 0.8em;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  margin-top: 4px;
+  margin-right: 2px;
+}
+
+.toggle-container > span:last-child {
+  margin-top: 5px;
+}
