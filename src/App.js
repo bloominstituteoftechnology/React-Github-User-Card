@@ -1,30 +1,107 @@
 import React from 'react';
-import githublogo from './githublogo.svg';
-import Navbar from './components/Navbar';
-import CardList from './components/CardList';
+//import logo from './logo.svg';
+import githublogo from './githublogo.svg'
+import UserCard from './components/userCard.js';
+import Followers from './components/follower.js';
+import ErrorPage from './components/errorPage.js';
+import Navbar from './components/navbar.js';
 import './App.css';
 
-const { useState } = React;
-const axios = require('axios');
+
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      userData: [],
+      user: {},
+      followers: [],
+      input: '',
+      submit: '',
+      userExists: null,
       darkMode: this.getInitialMode()
     }
-    this.addNewCard = this.addNewCard.bind(this);
+
+    this.fetchUsersandFollowers= this.fetchUsersandFollowers.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleExistence = this.handleExistence.bind(this);
     this.toggleDarkMode = this.toggleDarkMode.bind(this);
     this.getInitialMode = this.getInitialMode.bind(this);
     this.getPrefColorScheme = this.getPrefColorScheme.bind(this);
   }
 
-  addNewCard(userCardInfo) {
-    this.setState((state) => {
-      return {userData: state.userData.concat(userCardInfo)}
+  /*componentWillMount() {
+    fetch('https://api.github.com/users/{this.state.submit}')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({
+        user: data
+      });
+    }).catch(error => {console.log(error)});
+
+    fetch(`https://api.github.com/users/{this.state.submit}/followers`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if (data instanceof Array) {
+        this.setState({
+          followers: data
+        });
+      }
+      
+    }).catch(error => {console.log(error)});
+  }*/
+
+  fetchUsersandFollowers() {
+    fetch('https://api.github.com/users/{this.state.submit}')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      this.setState({
+        user: data
+      });
+    }).catch(error => {console.log(error)});
+
+    fetch(`https://api.github.com/users/{this.state.submit}/followers`)
+    .then(res => res.json())
+    .then(data => {
+      console.log(data);
+      if (data instanceof Array) {
+        this.setState({
+          followers: data
+        });
+      }
+      
+    }).catch(error => {console.log(error)});
+
+  }
+
+  handleChange(e) {
+    this.setState({
+      input: e.target.value
     });
+  }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    this.setState(state => ({
+      submit: state.input
+    }));
+  }
+
+  handleExistence() {
+    if (this.state.submit === this.state.user.login) {
+      this.setState({
+        userExists: true
+      });
+    }
+    else {
+      this.setState({
+        userExists: false
+      });
+    }
   }
 
   toggleDarkMode() {
@@ -34,6 +111,7 @@ class App extends React.Component {
   }
 
   componentDidUpdate() {
+    this.fetchUsersandFollowers()
     localStorage.setItem('dark', JSON.stringify(this.state.darkMode));
   }
 
@@ -68,48 +146,48 @@ class App extends React.Component {
   }
 
   render() {
-    return(
-      <div>
+
+    const renderFollowers = this.state.followers.map((follower) => <Followers 
+          avatar= {follower.avatar_url} 
+          username= {follower.login}
+          id= {follower.id}
+          githubLink= {follower.html_url}
+          darkMode= {this.state.darkMode}
+        />);
+
+    return (
+      <div> 
         <Navbar darkMode={this.state.darkMode} darkModeToggle={this.toggleDarkMode} /> 
         <div className= {this.state.darkMode ? 'App-dark' : 'App-light'}>
           <header className={this.state.darkMode ? 'Page-header-dark' : 'Page-header-light'}>
             <img src={githublogo} className={this.state.darkMode ? 'App-logo-inverted' : 'App-logo-light'} alt="logo" />
             <h1>Welcome to Github UserCard Generator</h1>
-            <Form onSubmit={this.addNewCard} darkMode={this.state.darkMode} />
+            <form onSubmit={this.handleSubmit} className={this.state.darkMode ? 'home-form-dark' : 'home-form-light'} >
+              <input type="text" value={this.state.input} onChange={this.handleChange} placeholder="Github Username" />
+              <button type="submit" onClick={this.handleExistence}>Generate User Card</button>
+            </form>
           </header>
-          <CardList cards={this.state.userData} darkMode={this.state.darkMode} />
         </div>
-      </div>
-    );
-  } 
-}
+        {this.state.userExists ? 
+          <div>
+            <UserCard
+              avatar={this.state.user.avatar_url}
+              name={this.state.user.name}
+              username={this.state.user.login}
+              location={this.state.user.location}
+              publicRepos={this.state.user.public_repos}
+              following={this.state.user.following}
+              followers={this.state.user.followers}
+              githubLink={this.state.user.html_url}
+              darkMode={this.state.darkMode} 
+            />
+            {renderFollowers} 
+          </div> : <ErrorPage darkMode={this.state.darkMode}/>}
+        </div>
+    
+  );
 
-const Form = props => {
-  const [username, setUsername] = useState('')
-
-  const handleSubmit = event => {
-    event.preventDefault()
-
-    axios
-      .get(`https://api.github.com/users/${username}`)
-      .then(resp => {
-        props.onSubmit(resp.data)
-        setUsername('')
-      })
   }
-  
-  return (
-    <form onSubmit={handleSubmit} className={props.darkMode ? 'home-form-dark' : 'home-form-light'}>
-      <input
-        type="text"
-        value={username}
-        onChange={event => setUsername(event.target.value)}
-        placeholder="GitHub username"
-        required
-      />
-      <button type="submit">Generate User card</button>
-    </form>
-  )
 }
 
 export default App;
