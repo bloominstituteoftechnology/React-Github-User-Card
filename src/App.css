@@ -27,6 +27,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: #111;
+  transition: background-color 0.3s ease-in;
 }
 .home-form-dark {
   display: flex;
@@ -47,11 +48,12 @@
 
 }
 .home-form-dark button {
-  width: 13vw;
+  width: 17vw;
+  font-size: 0.55em;
   border-style: solid;
   border-color: #551594;
   border-radius: 0px;
-  padding: 10px;
+  padding: 1.5vh 1.9vh;
   align-self: center;
   margin-top: 13px;
   background-color: #551594; 
@@ -68,11 +70,12 @@
 
 }
 .home-form-light button{
-  width: 13vw;
+  width: 17vw;
+  font-size: 0.55em;
   border-style: solid;
   border-color: #111;
   border-radius: 0px;
-  padding: 10px;
+  padding: 1.5vh 1.9vh;
   align-self: center;
   margin-top: 13px;
   background-color: #111; 
@@ -120,8 +123,8 @@
 }  
 
 
-/* User Card */
 
+/* User Card */
 .user-card-light {
   display: flex;
   flex-direction: column;
@@ -134,11 +137,12 @@
   border-style: solid;
   border-width: 1px 1px;
   border-color: #cfcaca;
-  height: 450px; 
+  /*height: 64vh;*/ 
   max-width: 350px;
   max-height: 700px;
   margin-left: 35%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 18px;
   transition: background-color 0.3s ease-out;
 
 }
@@ -155,11 +159,12 @@
   border-style: solid;
   border-width: 1px 1px;
   border-color: #cfcaca;
-  height: 59vh; 
+  /*height: 64vh;*/ 
   max-width: 350px;
   max-height: 700px;
   margin-left: 35%;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  margin-top: 18px;
   transition: background-color 0.3s ease-out;
 
 }
@@ -168,7 +173,7 @@
   margin-left: 10px;
   margin-top: 0;
   margin-bottom: 4px;
-  font-size: 15px;
+  font-size: 0.8em;
   text-align: center;
 }
 
@@ -176,7 +181,7 @@
   margin-left: 10px;
   margin-top: 0;
   margin-bottom: 4px;
-  font-size: 15px;
+  font-size: 0.8em;
   text-align: center;
 }
 
@@ -188,7 +193,7 @@
 }
 
 .rff p {
-  font-size: 14.5px;
+  font-size: 0.8em;
   border-right: 10px #111;
   margin-left: 11%;
 
@@ -200,7 +205,8 @@
   color: #fff;
   border-color: #cfcaca;
   border-radius: 0px;
-  padding: 8px 40px;
+  font-size: 0.8em;
+  padding: 1.5vh 1.9vh;
   margin-top: 53px;
   margin-left: 51%;
   margin-bottom: 0px;
@@ -215,7 +221,8 @@
   color: #fff;
   border-color: #cfcaca;
   border-radius: 0px;
-  padding: 8px 40px;
+  font-size: 0.8em;
+  padding: 1.5vh 1.9vh;
   margin-top: 53px;
   margin-left: 51%;
   margin-bottom: 0px;
@@ -312,11 +319,9 @@ span {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  transition: background-color 0.3s ease-in;
 }
 
-/* User Card */
-
-/* Follower List */
 
 
 /*Dark Mode Toggle*/
