@@ -8,7 +8,7 @@ function UserCard(props) {
     <div className={props.darkMode ? 'user-card-dark' : 'user-card-light'}>
       <img src={props.avatar_url} style={{borderRadius: '50%', width: 150, alignSelf: 'center'}} alt="avi"/>
       <div className="user-details">
-        <p style={{fontSize: 30}}><b>{props.name}</b></p>
+        <p style={{fontSize: '1.5em'}}><b>{props.name}</b></p>
         <p>{props.login}</p>
         <p><img src={mappin} style={{width: 13, filter: props.darkMode ? 'invert(90%)' : 'invert(30%)'}} alt='location' /> {props.location}</p>
         <div className="rff">
