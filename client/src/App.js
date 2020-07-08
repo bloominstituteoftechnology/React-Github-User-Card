@@ -12,31 +12,18 @@ import './App.css';
 class App extends Component {
 
   state = {
-    users: [], //all users are and array of objects
-    user: {},  //single user is empty object
+    user: {},  
+    users: [], 
     follower: [],
     loading: false ,  
   }
    
-  //Search Github Users
-  searchUsers = async text => {
-    this.setState({ loading: true });
-    const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
-    this.setState({ users: res.data.items, loading: false });
-  };
-
-  //Clear Github Users from Search
-  clearUsers = () => this.setState({ users: [], loading: false });
-
-  //get single github User
   getUser = async (username) => {
     this.setState({ loading: true });
     const res = await axios.get(`https://api.github.com/users/${username}`);
     this.setState({ user: res.data, loading: false });
   }
-
-  //get user Followers
-
+  
   getUserFollower = async (username) => {
     this.setState({ loading: true });
     const res = await axios.get(`https://api.github.com/users/${username}/followers`);
@@ -44,14 +31,27 @@ class App extends Component {
     this.setState({ follower: res.data, loading: false });
     
   }
+  searchUsers = async text => {
+    this.setState({ loading: true });
+    const res = await axios.get(`https://api.github.com/search/users?q=${text}`);
+    this.setState({ users: res.data.items, loading: false });
+  };
+
+  
+  clearUsers = () => this.setState({ users: [], loading: false });
+
+
+
+
+
 
     render () {
-      const { user, users, loading, follower } = this.state; //change repos to follow
+      const { user, users, loading, follower } = this.state; 
       return (
         <Router>
       <div className="App">
       <Navbar />
-      {/* <User getUser={this.getUser} user={user} loading={loading} /> */}
+    
      <div className='container'>
     <Switch> 
     <Route 
@@ -63,15 +63,12 @@ class App extends Component {
           clearUsers={this.clearUsers} 
           showClear={users.length > 0 ? true : false} 
         />
-           {/* //pass in loading and users as props */}
+          
         <Users loading={loading} users={users} />
        </Fragment>
     )} />
 
-     
-
 <Route exact path='/user/:login' render={props => (
-  //add whatever props, use getUser method, send in the user state, set loading
   <User 
     {...props} 
     getUser={this.getUser}
@@ -81,7 +78,6 @@ class App extends Component {
     loading={loading}
   />
 )}/>
-
        </Switch>
        </div>
       </div>

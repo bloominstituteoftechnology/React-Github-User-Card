@@ -1,6 +1,8 @@
+//UserItem will be passed in as props
 import React from 'react';
 
-const UserItem = ({user: { login, avatar_url }}) => {
+
+const UserCard = ({user: { login, avatar_url }}) => {
   
     return (
       <div className='card text-center'>
@@ -20,4 +22,4 @@ const UserItem = ({user: { login, avatar_url }}) => {
   
 }
 
-export default UserItem
+export default UserCard
