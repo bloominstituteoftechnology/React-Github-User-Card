@@ -7,13 +7,20 @@ class App extends React.Component {
     super();
 
   }
-  render() {
-    return (
-      <div className='App-header'>
-        <Header />
-      </div>
-    );
-  }
-};
+  componentDidMount() {
+    fetch("https://api.github.com/users/ + JenVest2020")
+      .then(res =>
+        console.log('from CDM', res))
+    //     .then(dogs => this.setState({ doggos: dogs.message }))
+    //     .catch(err => console.log("noooo"))
+    // };
+    render() {
+      return (
+        <div className='App-header'>
+          <Header />
+        </div>
+      );
+    }
+  };
 
-export default App;
+  export default App;
