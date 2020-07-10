@@ -18,7 +18,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-evenly;
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
@@ -39,7 +39,7 @@
 }
 
 .card {
-  width:50%;
+  /* width:50%; */
   margin: 0 auto;
   display:flex;
   flex-direction: row;
@@ -81,4 +81,10 @@
 .card-link {
   font-size: medium;
   font-weight: 500;
+}
+
+.fHeader {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
 }

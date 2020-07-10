@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './compnents/Header';
 import User from './compnents/User';
+import Followers from './compnents/Followers';
 
 class App extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ class App extends React.Component {
       <div className='App-header'>
         <Header />
         <User userInfo={this.state.githubUser} />
+        {/* <Followers /> */}
       </div>
     );
   }
