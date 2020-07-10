@@ -6,33 +6,37 @@ import {
 import lambdalogo from '../compnents/lambdalogo.png';
 
 const User = props => {
-
+    console.log('from User.js', props);
 
     return (
         <Card>
             <CardImg src={lambdalogo} alt='' />
             <CardBody>
                 <CardTitle>
-                    Jenni Vest
-                    </CardTitle>
+                    {props.userInfo.name}
+                </CardTitle>
                 <CardSubtitle>
-                    JenVest2020
-                    </CardSubtitle>
+                    {props.userInfo.login}
+                </CardSubtitle>
                 <CardText style={{ margin: '0' }}>
-                    Location: DeSoto, MO
-                    </CardText>
-                <CardLink>
-                    Profile: https://github.com/JenVest2020
-                    </CardLink>
+                    {props.userInfo.location}
+                </CardText>
+                <CardLink href='https://github.com/JenVest2020'>
+                    Profile: {props.userInfo.html_url}
+                </CardLink>
                 <CardText>
-                    Followers: 1
-                    </CardText>
+                    Followers: {props.userInfo.followers}
+                </CardText>
                 <CardText>
-                    Following: 0
-                    </CardText>
-                <CardText>
-                    Bio: Student @Lambda School
-                    </CardText>
+                    Following: {props.userInfo.following}
+                </CardText>
+                {props.userInfo.bio === null ? (
+                    <CardText>Bio: None</CardText>
+                ) : (
+                        <CardText>
+                            Bio: {props.userInfo.bio}
+                        </CardText>
+                    )}
             </CardBody>
         </Card>
     )

@@ -13,14 +13,18 @@ class App extends React.Component {
   componentDidMount() {
     fetch('https://api.github.com/users/JenVest2020')
       .then(response => response.json())
-      .then(data => console.log('from CDM', data))
-    // .then(user => this.setState({ githubUser: user.res }))
+      .then(user => {
+        this.setState({ githubUser: user })
+        console.log('from CDM', user)
+      })
+
+
   }
   render() {
     return (
       <div className='App-header'>
         <Header />
-        <User />
+        <User userInfo={this.state.githubUser} />
       </div>
     );
   }
