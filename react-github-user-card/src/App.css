@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+/*Customize*/
+
+.top-header {
+  background-color: #eee;
+}
+
+.follower-card {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  max-height: 600px;
+  /* width: 322px; */
+}
+
+.img-custom {
+  width: 320px;
+}
