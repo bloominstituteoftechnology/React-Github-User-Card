@@ -3,14 +3,13 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
-import lambdalogo from '../compnents/lambdalogo.png';
 
 const User = props => {
     console.log('from User.js', props);
 
     return (
         <Card>
-            <CardImg src={lambdalogo} alt='' />
+            <CardImg src={props.userInfo.avatar_url} alt='' />
             <CardBody>
                 <CardTitle>
                     {props.userInfo.name}

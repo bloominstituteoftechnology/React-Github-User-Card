@@ -26,7 +26,7 @@ class App extends React.Component {
       <div className='App-header'>
         <Header />
         <User userInfo={this.state.githubUser} />
-        {/* <Followers /> */}
+        <Followers />
       </div>
     );
   }

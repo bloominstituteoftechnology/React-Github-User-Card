@@ -3,7 +3,6 @@ import {
     Card, CardImg, CardText, CardBody, CardLink,
     CardTitle, CardSubtitle
 } from 'reactstrap';
-import lambdalogo from '../compnents/lambdalogo.png';
 
 class Followers extends React.Component {
     constructor() {
@@ -25,32 +24,32 @@ class Followers extends React.Component {
             <div className='fHeader'>
                 <h2 style={{ textAlign: 'center' }}>Followers</h2>
                 {this.state.githubUser.map(followers => (
-                    <Card>
-                        <CardImg src={lambdalogo} alt='' />
+                    <Card key={followers.id}>
+                        <CardImg src={followers.avatar_url} alt='' />
                         <CardBody>
                             <CardTitle>
-                                {this.state.githubUser.name}
+                                {followers.name}
                             </CardTitle>
                             <CardSubtitle>
-                                {this.state.githubUser.login}
+                                {followers.login}
                             </CardSubtitle>
                             <CardText style={{ margin: '0' }}>
-                                {this.state.githubUser.location}
+                                {followers.location}
                             </CardText>
-                            <CardLink href={this.state.githubUser.html_url}>
-                                Profile: {this.state.githubUser.html_url}
+                            <CardLink href={followers.html_url}>
+                                Profile: {followers.html_url}
                             </CardLink>
                             <CardText>
-                                Followers: {this.state.githubUser.followers}
+                                Followers: {followers.followers}
                             </CardText>
                             <CardText>
-                                Following: {this.state.githubUser.following}
+                                Following: {followers.following}
                             </CardText>
-                            {this.state.githubUser.bio === null ? (
+                            {followers.bio === undefined ? (
                                 <CardText>Bio: None</CardText>
                             ) : (
                                     <CardText>
-                                        Bio: {this.state.githubUser.bio}
+                                        Bio: {followers.bio}
                                     </CardText>
                                 )}
                         </CardBody>
