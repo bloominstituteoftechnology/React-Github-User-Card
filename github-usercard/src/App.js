@@ -16,8 +16,8 @@ export default class App extends Component {
 			profiles: [],
 		};
 	}
-	changeUser = (e) => {
-		this.setState({ user: e.target.value, users: [], profiles: [] });
+	changeUser = (newUser) => {
+		this.setState({ user: newUser, users: [], profiles: [] });
 	};
 
 	getUser = (user) => {
@@ -63,7 +63,7 @@ export default class App extends Component {
 
 	componentDidUpdate(prevProps, prevState) {
 		if (this.state.user !== prevState.user) {
-			console.log('new user');
+			console.log('new user', this.state.user);
 			this.getAllUsers();
 		}
 	}

@@ -17,7 +17,7 @@ export default class SearchBar extends Component {
 	};
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.changeUser(e);
+		this.props.changeUser(this.state.userName);
 	};
 
 	render() {
