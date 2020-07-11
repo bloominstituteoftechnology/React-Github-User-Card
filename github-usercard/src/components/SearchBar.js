@@ -5,18 +5,19 @@ export default class SearchBar extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: '',
+			userName: '',
 		};
 	}
 
 	handleChange = (e) => {
 		e.persist();
 		this.setState(() => {
-			return { user: e.target.value };
+			return { userName: e.target.value };
 		});
 	};
-	handleSubmit = () => {
-		this.props.setValue(this.state.user);
+	handleSubmit = (e) => {
+		e.preventDefault();
+		this.props.changeUser(e);
 	};
 
 	render() {
@@ -28,12 +29,12 @@ export default class SearchBar extends Component {
 					style={{ top: 'auto', bottom: 0 }}
 				>
 					<Toolbar>
-						<form onSubmit={this.handleSubmit}>
+						<form onSubmit={(e) => this.handleSubmit(e)}>
 							<TextField
 								id='user'
 								name='user'
 								label='username'
-								value={this.state.user}
+								value={this.state.userName}
 								onChange={(e) => this.handleChange(e)}
 							/>
 							<Button variant='text' type='submit' color='default'>

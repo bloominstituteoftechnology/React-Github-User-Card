@@ -11,13 +11,13 @@ export default class App extends Component {
 		super();
 
 		this.state = {
-			self: 'jduncan1980',
+			user: 'jduncan1980',
 			users: [],
 			profiles: [],
 		};
 	}
 	changeUser = (e) => {
-		this.setState({ self: e.target.value });
+		this.setState({ user: e.target.value, users: [], profiles: [] });
 	};
 
 	getUser = (user) => {
@@ -34,8 +34,8 @@ export default class App extends Component {
 
 	getAllUsers = () => {
 		Promise.all([
-			this.getUser(this.state.self),
-			this.getFollowers(this.state.self),
+			this.getUser(this.state.user),
+			this.getFollowers(this.state.user),
 		])
 			.then((values) => {
 				this.setState(() => {
@@ -61,9 +61,12 @@ export default class App extends Component {
 		this.getAllUsers();
 	}
 
-	// componentDidUpdate() {
-	// 	this.getAllUsers()
-	// }
+	componentDidUpdate(prevProps, prevState) {
+		if (this.state.user !== prevState.user) {
+			console.log('new user');
+			this.getAllUsers();
+		}
+	}
 
 	render() {
 		return (
@@ -85,7 +88,7 @@ export default class App extends Component {
 								);
 							})}
 					</Grid>
-					<SearchBar setValue={this.changeUser} />
+					<SearchBar changeUser={this.changeUser} />
 				</Container>
 			</ThemeProvider>
 		);
