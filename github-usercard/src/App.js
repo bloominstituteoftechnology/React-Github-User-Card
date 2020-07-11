@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Grid, ThemeProvider } from '@material-ui/core';
+import { Container, Grid, ThemeProvider, CssBaseline } from '@material-ui/core';
 import Card from './components/Card';
 import theme from './theme';
+import background from './image/githublogo.png';
 import SearchBar from './components/SearchBar';
 
 export default class App extends Component {
@@ -18,6 +19,7 @@ export default class App extends Component {
 	changeUser = (e) => {
 		this.setState({ self: e.target.value });
 	};
+
 	getUser = (user) => {
 		return axios.get(
 			`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${user}`
@@ -59,13 +61,15 @@ export default class App extends Component {
 		this.getAllUsers();
 	}
 
-	componentDidUpdate() {
-		this.getAllUsers();
-	}
+	// componentDidUpdate() {
+	// 	this.getAllUsers()
+	// }
 
 	render() {
 		return (
 			<ThemeProvider theme={theme}>
+				{/* <CssBaseline /> */}
+
 				<Container>
 					<Grid
 						container

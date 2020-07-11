@@ -10,6 +10,7 @@ export default class SearchBar extends Component {
 	}
 
 	handleChange = (e) => {
+		e.persist();
 		this.setState(() => {
 			return { user: e.target.value };
 		});
