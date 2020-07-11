@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, ThemeProvider } from '@material-ui/core';
 import Card from './components/Card';
+import theme from './theme';
+import SearchBar from './components/SearchBar';
 
 export default class App extends Component {
 	constructor() {
@@ -13,7 +15,9 @@ export default class App extends Component {
 			profiles: [],
 		};
 	}
-
+	changeUser = (e) => {
+		this.setState({ self: e.target.value });
+	};
 	getUser = (user) => {
 		return axios.get(
 			`https://cors-anywhere.herokuapp.com/https://api.github.com/users/${user}`
@@ -26,7 +30,7 @@ export default class App extends Component {
 		);
 	};
 
-	componentDidMount() {
+	getAllUsers = () => {
 		Promise.all([
 			this.getUser(this.state.self),
 			this.getFollowers(this.state.self),
@@ -39,7 +43,6 @@ export default class App extends Component {
 			.then(() => {
 				this.state.users.forEach((user) => {
 					this.getUser(user.login).then((res) => {
-						// console.log(res.data);
 						this.setState(
 							(state) => {
 								return { profiles: [...state.profiles, res.data] };
@@ -50,22 +53,37 @@ export default class App extends Component {
 				});
 			})
 			.catch((err) => console.log(err));
+	};
+
+	componentDidMount() {
+		this.getAllUsers();
+	}
+
+	componentDidUpdate() {
+		this.getAllUsers();
 	}
 
 	render() {
 		return (
-			<Container>
-				<Grid container spacing={3} direction='row'>
-					{this.state.profiles !== [] &&
-						this.state.profiles.map((profile) => {
-							return (
-								<Grid item key={profile.login}>
-									<Card user={profile} />
-								</Grid>
-							);
-						})}
-				</Grid>
-			</Container>
+			<ThemeProvider theme={theme}>
+				<Container>
+					<Grid
+						container
+						// spacing={3}
+						justify='space-evenly'
+					>
+						{this.state.profiles !== [] &&
+							this.state.profiles.map((profile) => {
+								return (
+									<Grid item key={profile.login} style={{ margin: '1.5rem' }}>
+										<Card user={profile} />
+									</Grid>
+								);
+							})}
+					</Grid>
+					<SearchBar setValue={this.changeUser} />
+				</Container>
+			</ThemeProvider>
 		);
 	}
 }
