@@ -1,12 +1,18 @@
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
-import React, { Component } from 'react';
+import { Component } from 'react';
 import axios from 'axios';
-import { Container, Grid, ThemeProvider, CssBaseline } from '@material-ui/core';
+import {
+	Container,
+	Grid,
+	Typography,
+	ThemeProvider,
+	CssBaseline,
+} from '@material-ui/core';
 import Card from './components/Card';
 import theme from './theme';
-import background from './image/githublogo.png';
 import SearchBar from './components/SearchBar';
+import { Spring, config } from 'react-spring/renderprops';
 
 export default class App extends Component {
 	constructor() {
@@ -74,36 +80,54 @@ export default class App extends Component {
 		return (
 			<ThemeProvider theme={theme}>
 				<CssBaseline />
-
-				<div
-					css={css`
-						min-height: 100vh;
-						background-image: ${background};
-					`}
+				<Spring
+					config={{
+						mass: 30,
+						tension: 200,
+						friction: 90,
+					}}
+					from={{ transform: 'translate3d(-100vh, -100vw, 0)', opacity: 0 }}
+					to={{ transform: 'translate3d(0, 0, 0)', opacity: 1 }}
 				>
-					<Container>
-						<Grid
-							container
-							// direction='column'
-							// justify='space-evenly'
-							css={css`
-								flex-direction: column;
-								justify-content: 'space-evenly';
-								margin-left: -16px;
-							`}
-						>
-							{this.state.profiles !== [] &&
-								this.state.profiles.map((profile) => {
-									return (
-										<Grid item key={profile.login} style={{ margin: '1.5rem' }}>
-											<Card user={profile} changeUser={this.changeUser} />
-										</Grid>
-									);
-								})}
-						</Grid>
-						<SearchBar changeUser={this.changeUser} />
-					</Container>
-				</div>
+					{(props) => (
+						<Container style={props}>
+							<Typography
+								variant='h2'
+								component='h1'
+								color='primary'
+								align='center'
+								css={css`
+									padding: 1rem 0;
+								`}
+							>
+								Github Follower Cards
+							</Typography>
+							<Grid
+								container
+								css={css`
+									flex-direction: column;
+									justify-content: 'space-evenly';
+								`}
+							>
+								{this.state.profiles !== [] &&
+									this.state.profiles.map((profile) => {
+										return (
+											<Grid
+												item
+												key={profile.login}
+												css={css`
+													margin-bottom: 2rem;
+												`}
+											>
+												<Card user={profile} changeUser={this.changeUser} />
+											</Grid>
+										);
+									})}
+							</Grid>
+						</Container>
+					)}
+				</Spring>
+				<SearchBar changeUser={this.changeUser} />
 			</ThemeProvider>
 		);
 	}

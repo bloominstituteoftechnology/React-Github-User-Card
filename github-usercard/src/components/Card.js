@@ -13,18 +13,6 @@ import {
 import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 
 class AppCard extends Component {
-	constructor(props) {
-		super(props);
-
-		this.state = {
-			chartOpen: false,
-		};
-	}
-
-	chartCollapse = () => {
-		this.setState({ chartOpen: !this.state.chartOpen });
-	};
-
 	render() {
 		return (
 			<Card
