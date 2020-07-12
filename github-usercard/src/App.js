@@ -12,7 +12,7 @@ import {
 import Card from './components/Card';
 import theme from './theme';
 import SearchBar from './components/SearchBar';
-import { Spring, config } from 'react-spring/renderprops';
+import { Spring } from 'react-spring/renderprops';
 
 export default class App extends Component {
 	constructor() {
@@ -82,9 +82,9 @@ export default class App extends Component {
 				<CssBaseline />
 				<Spring
 					config={{
-						mass: 30,
-						tension: 200,
-						friction: 90,
+						mass: 20,
+						tension: 150,
+						friction: 100,
 					}}
 					from={{ transform: 'translate3d(-100vh, -100vw, 0)', opacity: 0 }}
 					to={{ transform: 'translate3d(0, 0, 0)', opacity: 1 }}
