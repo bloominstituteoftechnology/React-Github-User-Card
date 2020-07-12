@@ -1,10 +1,10 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
-import { green, blue } from '@material-ui/core/colors';
+import { deepPurple, amber } from '@material-ui/core/colors';
 
 let theme = createMuiTheme({
 	palette: {
-		primary: green,
-		secondary: blue,
+		primary: amber,
+		secondary: deepPurple,
 	},
 });
 

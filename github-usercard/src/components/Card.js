@@ -1,5 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { Component } from 'react';
 import {
 	Card,
 	CardContent,
@@ -9,90 +10,109 @@ import {
 	Typography,
 	IconButton,
 } from '@material-ui/core';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import AssignmentIndIcon from '@material-ui/icons/AssignmentInd';
 
-const useStyles = makeStyles({
-	root: {
-		width: '18rem',
-		height: '100%',
-		display: 'flex',
-		justifyContent: 'space-between',
-		flexDirection: 'column',
-		// minHeight: '18rem',
-		// minWidth: '18rem',
-		padding: '1rem',
-	},
-	header: {
-		backgroundColor: '#414141',
-		color: '#f3eff7',
-	},
-	image: {
-		height: '5rem',
-		width: '5rem',
-	},
-	followText: {
-		margin: '.5rem',
-	},
-});
+class AppCard extends Component {
+	constructor(props) {
+		super(props);
 
-export default function AppCard(props) {
-	const classes = useStyles();
+		this.state = {
+			chartOpen: false,
+		};
+	}
 
-	return (
-		<Card className={classes.root}>
-			<CardHeader
-				className={classes.header}
-				avatar={
-					<Avatar
-						alt={`${props.user.login}-user-image`}
-						className={classes.image}
-						src={props.user.avatar_url}
-					/>
-				}
-				action={
-					<IconButton aria-label='settings'>
-						<ExpandMoreIcon />
-					</IconButton>
-				}
-				title={props.user.name}
-				subheader={props.user.login}
-			/>
-			<CardContent>
-				<Grid container justify='center'>
-					<Typography className={classes.followText}>
-						Followers: {props.user.followers}
-					</Typography>
-					<Typography className={classes.followText}>
-						Following: {props.user.following}
-					</Typography>
-				</Grid>
-				<Typography variant='body2' color='textSecondary' component='p'>
-					Bio: {props.user.bio ? props.user.bio : 'No Bio Available'}
-				</Typography>
-			</CardContent>
-			{/* <CardActionArea>
-				<Avatar
-					alt={`${props.user.login}-user-image`}
-					className={classes.image}
-					src={props.user.avatar_url}
+	chartCollapse = () => {
+		this.setState({ chartOpen: !this.state.chartOpen });
+	};
+
+	render() {
+		return (
+			<Card
+				css={css`
+					max-width: 100%;
+				`}
+			>
+				<CardHeader
+					css={css`
+						background-color: #c5c1c9;
+						display: flex;
+						align-items: center;
+					`}
+					avatar={
+						<Avatar
+							css={css`
+								width: 4rem;
+								height: 4rem;
+							`}
+							alt={`${this.props.user.login}-user-image`}
+							src={this.props.user.avatar_url}
+						/>
+					}
+					action={
+						<IconButton
+							aria-label='settings'
+							onClick={() => this.props.changeUser(this.props.user.login)}
+						>
+							<AssignmentIndIcon />
+						</IconButton>
+					}
+					title={<Typography variant='h4'>{this.props.user.name}</Typography>}
+					subheader={
+						<Typography variant='h5'>{this.props.user.login}</Typography>
+					}
 				/>
 				<CardContent>
-					<Typography gutterBottom variant='h5' component='h2'>
-						{props.user.name}
-					</Typography>
-					<Typography variant='body2' color='textSecondary' component='p'>
-						{props.user.bio}
+					<Grid
+						container
+						justify='space-evenly'
+						css={css`
+							margin-bottom: 1rem;
+						`}
+					>
+						<Typography variant='h6' component='span'>
+							Followers: {this.props.user.followers}
+						</Typography>
+						<Typography variant='h6' component='span'>
+							Following: {this.props.user.following}
+						</Typography>
+					</Grid>
+					<Typography
+						variant='body1'
+						color='textSecondary'
+						component='p'
+						css={css`
+							text-align: center;
+						`}
+					>
+						Bio:
+						{this.props.user.bio
+							? ` ${this.props.user.bio}`
+							: ' No Bio Available'}
 					</Typography>
 				</CardContent>
-			</CardActionArea> */}
-			{/* <CardActions>
-				<Button size='small' color='primary'>
-					Share
-				</Button>
-				<Button size='small' color='primary'>
-					Learn More
-				</Button>
-			</CardActions> */}
-		</Card>
-	);
+				<CardContent
+					css={css`
+						display: flex;
+						justify-content: center;
+					`}
+				>
+					<a href={this.props.user.html_url}>
+						<img
+							src={`http://ghchart.rshah.org/${this.props.user.login}`}
+							alt={`${this.props.user.login}'s Github Chart`}
+							css={css`
+								width: 100%;
+								transition: all 0.5s ease;
+								&:hover {
+									box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.75);
+								}
+							`}
+						/>
+					</a>
+				</CardContent>
+			</Card>
+		);
+	}
 }
+
+export default AppCard;

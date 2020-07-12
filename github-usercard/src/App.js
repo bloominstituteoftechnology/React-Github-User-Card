@@ -1,3 +1,5 @@
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Container, Grid, ThemeProvider, CssBaseline } from '@material-ui/core';
@@ -71,25 +73,37 @@ export default class App extends Component {
 	render() {
 		return (
 			<ThemeProvider theme={theme}>
-				{/* <CssBaseline /> */}
+				<CssBaseline />
 
-				<Container>
-					<Grid
-						container
-						// spacing={3}
-						justify='space-evenly'
-					>
-						{this.state.profiles !== [] &&
-							this.state.profiles.map((profile) => {
-								return (
-									<Grid item key={profile.login} style={{ margin: '1.5rem' }}>
-										<Card user={profile} />
-									</Grid>
-								);
-							})}
-					</Grid>
-					<SearchBar changeUser={this.changeUser} />
-				</Container>
+				<div
+					css={css`
+						min-height: 100vh;
+						background-image: ${background};
+					`}
+				>
+					<Container>
+						<Grid
+							container
+							// direction='column'
+							// justify='space-evenly'
+							css={css`
+								flex-direction: column;
+								justify-content: 'space-evenly';
+								margin-left: -16px;
+							`}
+						>
+							{this.state.profiles !== [] &&
+								this.state.profiles.map((profile) => {
+									return (
+										<Grid item key={profile.login} style={{ margin: '1.5rem' }}>
+											<Card user={profile} changeUser={this.changeUser} />
+										</Grid>
+									);
+								})}
+						</Grid>
+						<SearchBar changeUser={this.changeUser} />
+					</Container>
+				</div>
 			</ThemeProvider>
 		);
 	}
