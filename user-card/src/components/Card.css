@@ -1,0 +1,22 @@
+.body{
+    background: black;
+}
+.card{
+    box-shadow: 12px 12px 10px white;
+    width: 300px;
+    margin: 100px 400px auto 100px;
+    border-radius: 10px;
+    background: black;
+}
+.design{
+    background-color: tomato;
+    width: 300px;
+    border-radius: 0px 0px 9px 9px;
+}
+.username{
+    box-shadow: 1px 1px 1px white;
+    color: white;
+}
+.followers{
+    color: white;
+}
