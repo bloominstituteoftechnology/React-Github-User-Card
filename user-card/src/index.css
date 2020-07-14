@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Fondamento:ital@1&display=swap');
+
+body, html {
+  margin: 0;
+  font-family: 'Fondamento', cursive;
+  color: 	#696969;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+
+code {
+  font-family: 'Fondamento', cursive;
+}
+
