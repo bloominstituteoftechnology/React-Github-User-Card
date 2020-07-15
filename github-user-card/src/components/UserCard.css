@@ -1,0 +1,36 @@
+img {
+  width: 150px;
+  height: 150px;
+  margin-right: 10px;
+}
+
+.cards {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 400px;
+  margin: 0 auto;
+  margin-bottom: 15px;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid lightgray;
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  /* border: 2px solid black; */
+  width: 200px;
+  height: 100px;
+  align-content: flex-start;
+}
+
+.userInfo h2 {
+  margin-bottom: 0;
+}
+
+.additional-info {
+  justify-content: center;
+}
