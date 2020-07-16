@@ -1,8 +1,6 @@
 
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import axios from "axios";
+import axios from 'axios';
 import UserCard from "./Components/UserCard";
 import Followerscard from "./Components/FollowersCard";
 
