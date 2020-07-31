@@ -1,40 +1,26 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import logo from './logo.svg';
 import './App.css';
+import UserCard from './components/User-Card';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-
+      myData: []
     };
   }
   componentDidMount() {
 
-    axios.get('https://dog.ceo/api/breed/labrador/images')
-      .then(res => { this.setState({ dogs: res.data.message }); })
-      .catch(err => console.log(err));
+
     axios.get('https://api.github.com/users/chandlerben')
       .then(res => { this.setState({ myData: res.data }); console.log(this.state.myData) })
   }
   render() {
     return (
       <div className="App" >
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-        </a>
-        </header>
+
+        <UserCard userData={this.state.myData} />
       </div>
     );
   }
