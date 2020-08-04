@@ -36,13 +36,13 @@ class App extends React.Component {
   return (
     <div className="App">
       <header className="App-header">
-        <MyProfile myCard={this.state.myCard}/>
+        <MyProfile key={this.state.myCard.id} myCard={this.state.myCard}/>
       </header>
       <div>
         {/* {this.state.cards.map(friends => (
           <Cards key={friends.id} cards={this.state.cards} />
         ))} */}
-        <Cards cards={this.state.cards} />
+        <Cards key={this.state.cards.id} cards={this.state.cards} />
       </div>
     </div>
   );
