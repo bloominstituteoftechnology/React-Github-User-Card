@@ -4,9 +4,10 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 
+import Followers from "./Followers";
+
 export default function UserDisplay (props) {
   const {userData} = props;
-  console.log(userData);
 
   return (
     <Card>
@@ -22,6 +23,7 @@ export default function UserDisplay (props) {
           Username: {userData.username}<br/>
           Location: {userData.location}<br/>
           Hireable: {userData.hireable ? "Yes" : "No"}
+          <Followers followers={userData.followers}/>
         </Typography>
     </CardContent>
     </Card>
