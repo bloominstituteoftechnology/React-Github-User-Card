@@ -4,7 +4,7 @@ export default class User {
     this.followers_url = data.followers_url;
     this.hireable = data.hireable;
     this.location = data.location;
-    this.login = data.login;
+    this.username = data.login;
     this.name = data.name;
   }
 }
