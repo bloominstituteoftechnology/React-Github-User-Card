@@ -3,6 +3,7 @@ import "fontsource-roboto";
 import requester from "easier-requests";
 
 import User from "./User";
+import UserDisplay from "./components/UserDisplay";
 
 export default class App extends React.Component {
   constructor () {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
   render () {
     return (
       <div>
-
+        <UserDisplay userData={this.state.userData}/>
       </div>
     );}
 }
