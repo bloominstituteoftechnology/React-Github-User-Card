@@ -1,13 +1,13 @@
 export class User {
-  constructor(data = {}, followers = {}) {
-    if (data.avatar_url)
-      this.avatar_url = data.avatar_url;
+  constructor(userData = {}, followers = {}) {
+    if (userData.avatar_url)
+      this.avatar_url = userData.avatar_url;
     else
       this.avatar_url = "./unknown.svg";
-    this.hireable = data.hireable;
-    this.location = data.location;
-    this.username = data.login;
-    this.name = data.name;
+    this.hireable = userData.hireable;
+    this.location = userData.location;
+    this.username = userData.login;
+    this.name = userData.name;
     // followers is filled from a different API request and may be
     // empty if that request hasn't completed.
     this.followers = followers;
@@ -15,7 +15,9 @@ export class User {
 }
 
 export class Follower {
-  constructor(data = {}) {
-
+  constructor(followers = {}) {
+    this.id = followers.id;
+    this.username = followers.login;
+    this.name = followers.name;
   }
 }
