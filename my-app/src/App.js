@@ -39,9 +39,10 @@ class App extends React.Component {
         <MyProfile myCard={this.state.myCard}/>
       </header>
       <div>
-        {this.state.cards.map(friends => (
+        {/* {this.state.cards.map(friends => (
           <Cards key={friends.id} cards={this.state.cards} />
-        ))}
+        ))} */}
+        <Cards cards={this.state.cards} />
       </div>
     </div>
   );
