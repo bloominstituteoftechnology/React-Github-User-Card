@@ -23,9 +23,9 @@ export default function UserDisplay (props) {
           Username: {userData.username}<br/>
           Location: {userData.location}<br/>
           Hireable: {userData.hireable ? "Yes" : "No"}
-          <Followers followers={userData.followers}/>
         </Typography>
-    </CardContent>
+        <Followers followers={userData.followers}/>
+      </CardContent>
     </Card>
   );
 }
