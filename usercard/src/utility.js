@@ -1,5 +1,5 @@
 export class User {
-  constructor(userData = {}, followers = {}) {
+  constructor(userData = {}, followers = []) {
     if (userData.avatar_url)
       this.avatar_url = userData.avatar_url;
     else
