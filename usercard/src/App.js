@@ -31,8 +31,9 @@ export default class App extends React.Component {
       id = requester.createUniqueID();
       await requester.get(userData.followers_url, id);
       const followerData = requester.response(id).data;
-      console.log(followerData);
-      this.setState({userData: new User(userData, followerData)});
+      const followers = followerData.map(
+        (follower) => new Follower(follower));
+      this.setState({userData: new User(userData, followers)});
     }
     catch(error) {
       console.log(error);
