@@ -1,4 +1,4 @@
-export default class User {
+export class User {
   constructor(data = {}) {
     if (data.avatar_url)
       this.avatar_url = data.avatar_url;
@@ -9,5 +9,11 @@ export default class User {
     this.location = data.location;
     this.username = data.login;
     this.name = data.name;
+  }
+}
+
+export class Follower {
+  constructor(data = {}) {
+
   }
 }
