@@ -12,6 +12,7 @@ export default function UserDisplay (props) {
   return (
     <Card>
       <CardMedia
+        component="img"
         image={userData.avatar_url}
         style={{width: "25%",
                 height: "33.333vh"}}
