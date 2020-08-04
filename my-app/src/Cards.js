@@ -7,13 +7,11 @@ const Cards = (props) => {
     <div>
       
       <div>
-        {/* {props.cards[0].login}
-        {console.log(props.cards[0])} */}
         {props.cards.map(friends => (
           <div>
-            <img src={friends.avatar_url} />
-            <h1>{friends.login}</h1>,
-            <p>{friends.html_url}</p>
+            <img className="profile-img" src={friends.avatar_url} />
+            <h1>{friends.login}</h1>
+            <a href={friends.html_url}>My GitHub</a>
             
           </div>
         ))}

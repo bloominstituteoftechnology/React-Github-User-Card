@@ -4,8 +4,8 @@ const MyProfile = (props) => {
   return (
     <div>
       <div className="name">
+        <img className="profile-img" src={props.myCard.avatar_url} />
         <h1>{props.myCard.name}</h1>
-        <img src={props.myCard.avatar_url} />
       </div>
     </div>
   )
