@@ -18,6 +18,5 @@ export class Follower {
   constructor(followers = {}) {
     this.id = followers.id;
     this.username = followers.login;
-    this.name = followers.name;
   }
 }
