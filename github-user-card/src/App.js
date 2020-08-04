@@ -49,21 +49,19 @@ class App extends React.Component {
     return (
       <>
         <h1>User Card</h1>
-        {this.state.gitdata.map((user) => {
-          return (
-            <Card key={user.id}>
+        
+            <Card key={this.state.gitdata.id}>
               <CardBody>
-                <CardTitle>{user.name}</CardTitle>
-                <CardSubtitle>{user.login}</CardSubtitle>
+                <CardTitle>{this.state.gitdata.name}</CardTitle>
+                <CardSubtitle>{this.state.gitdata.login}</CardSubtitle>
               </CardBody>
-              <CardImg width="100%" src={user.avatar_url} alt={user.name} />
+              <CardImg width="100%" src={this.state.gitdata.avatar_url} alt={this.state.gitdata.name} />
               <CardBody>
-                <CardText>{user.bio}</CardText>
-                <CardLink href={user.html_url}>GitHub</CardLink>
+                <CardText>{this.state.gitdata.bio}</CardText>
+                <CardLink href={this.state.gitdata.html_url}>GitHub</CardLink>
               </CardBody>
             </Card>
-          );
-        })}
+
         {this.state.gitusers.map((user) => {
           return (
             <Card key={user.id}>
