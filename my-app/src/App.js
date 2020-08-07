@@ -16,13 +16,12 @@ class App extends React.Component {
   componentDidMount(){
     console.log("CDM running");
     axios
-    .get(`https://api.github.com/users/`)
+    .get(`https://api.github.com/users/AHangstefer`)
     .then((res)=> {
       this.setState({ person: res.data})
       console.log("got the data!", this.state);
     })
     .catch((err)=> console.log("shit", err));
-
   }
   
   
