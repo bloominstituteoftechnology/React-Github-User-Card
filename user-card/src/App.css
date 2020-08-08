@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+body {
+  background-color: #f6f8fa;
+}
+
+.userCard {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 8% 15%;
+  background-color: #fff;
+  padding: 8%;
+  border: 1px solid #e1e4e8;
+  border-radius: 10px;
+}
+
+.userImg {
+  max-width: 40%;
+  border-radius: 50%;
+}
+
+a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

@@ -54,16 +54,18 @@ class App extends React.Component {
   render () {
     return (
       <div>
+        <h1>Github User Search Engine</h1>
         <input
           type="text"
           value={this.state.login}
           onChange={this.handleChanges}
         />
         <button onClick={this.fetchUsers}>Search Users</button>
-        <div>
-          <img src={this.state.users.avatar_url} alt='profile '/>
+        <div className="userCard">
+          <img className="userImg" src={this.state.users.avatar_url} alt='profile'/>
           <div>
-            <p>Bio: {this.state.users.bio}</p>
+          <h2>{this.state.users.login}</h2>
+            <p>{this.state.users.bio}</p>
             <p>Followers: {this.state.users.followers}</p>
             <p>Following: {this.state.users.following}</p>
             <a href={this.state.users.html_url}>Visit Their Profile!</a>
