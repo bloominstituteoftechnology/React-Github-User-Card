@@ -41,6 +41,16 @@ body {
   background-color: #f6f8fa;
 }
 
+.searchBar {
+  display: flex;
+  background-color: #24292e;
+  color: white;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
+
+
 .userCard {
   display: flex;
   justify-content: space-evenly;
@@ -63,4 +73,24 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.inputBar {
+  display: flex;
+  max-width: 20px;
+  justify-content: space-around;
+  margin: 10px;
+  border: none;
+}
+
+button {
+  background-color: 
+  #e1e4e8;
+  max-height:20px;
+  margin-top: 3px;
+}
+
+Input {
+  background-color: #e1e4e8;
+  border: none;
 }

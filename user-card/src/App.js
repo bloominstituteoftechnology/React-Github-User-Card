@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
+import { Input } from 'semantic-ui-react'
 
 
 class App extends React.Component {
@@ -49,18 +50,16 @@ class App extends React.Component {
       ...this.state,
       login: e.target.value
     })
+
   }
 
   render () {
     return (
       <div>
+        <div className="searchBar">
         <h1>Github User Search Engine</h1>
-        <input
-          type="text"
-          value={this.state.login}
-          onChange={this.handleChanges}
-        />
-        <button onClick={this.fetchUsers}>Search Users</button>
+        </div>
+
         <div className="userCard">
           <img className="userImg" src={this.state.users.avatar_url} alt='profile'/>
           <div>
@@ -69,8 +68,19 @@ class App extends React.Component {
             <p>Followers: {this.state.users.followers}</p>
             <p>Following: {this.state.users.following}</p>
             <a href={this.state.users.html_url}>Visit Their Profile!</a>
+            <div className="inputBar">
+            <Input
+              type="text"
+              value={this.state.login}
+              onChange={this.handleChanges}
+              className="inputBtn"
+              placeholder="search users"
+            /> 
+            <button onClick={this.fetchUsers}>/</button>
+            </div>
           </div>
         </div>
+      
       </div>
       );
   }
