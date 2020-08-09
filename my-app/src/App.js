@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from "axios";
 import './App.css';
+import User from "./components/User";
 
 
 class App extends React.Component { 
@@ -35,7 +36,8 @@ class App extends React.Component {
   return (
     <div className="App">
       <header className="App-header"> 
-      <div> Hey </div>
+      <div> Hey App.js component</div>
+      <User person={this.state.person} />
         
        
       </header>
