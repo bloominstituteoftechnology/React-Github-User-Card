@@ -2,6 +2,7 @@ import React from 'react';
 import axios from "axios";
 import './App.css';
 import User from "./components/User";
+import Followers from "./components/Followers";
 
 
 class App extends React.Component { 
@@ -9,7 +10,7 @@ class App extends React.Component {
     console.log("Constructor");
     super();
     this.state = {
-      person: []
+      person: [],
 
     };
   }
@@ -26,9 +27,17 @@ class App extends React.Component {
   }
   
   
+  
  // componentDidUpdate(prevState, prevProps){
  //  console.log("CDU", this.state.person)
  // }
+
+
+ 
+
+ 
+
+ 
 
 
 
@@ -38,6 +47,8 @@ class App extends React.Component {
       <header className="App-header"> 
       <div> Hey App.js component</div>
       <User person={this.state.person} />
+      <Followers />
+      
         
        
       </header>
