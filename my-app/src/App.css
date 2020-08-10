@@ -1,38 +1,121 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
 .App {
-  text-align: center;
+  background-color: rgb(22, 34, 37);
+  
+  
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.User-Card {
+  display:flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  justify-self: center;
+  width: 90%;
+  background-color: rgb(8, 41, 49);
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.user-info{
   display: flex;
   flex-direction: column;
-  align-items: center;
+  font-size: 1.5rem;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 2%;
+  color: wheat;
+  
+  
 }
 
-.App-link {
-  color: #61dafb;
+.user-info p{
+  padding: 2%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+.image{
+ width: 50%;
+ 
+  
+ 
+}
+
+.Follower-Card{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  background-color: rgb(13, 62, 75);
+}
+
+.Follower-Card h2{
+  color: wheat;
+  font-size: 2rem;
+  padding-top: 2%;
+}
+
+.peeps-info{
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  justify-content: center;
+  align-self: center;
+  padding: 2%;
+  color: wheat;
+  margin: 8%;
+
+}
+
+.peeps-info p{
+  align-self: center;
+  padding: 2%;
+}
+
+.peeps-info a{
+  align-self: center;
+  padding: 2%;
 }

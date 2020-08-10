@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import App from "../App.css"
 
 
 class Followers extends React.Component {
@@ -25,9 +26,22 @@ class Followers extends React.Component {
      
     render(){
     return(
-        <div className="Followers-Card" >
+        <div className="Follower-Card" >
 
-            <p>Hey from Followers.js</p>
+            <h2>Followers</h2>
+            <div className = "peeps">
+                {this.state.followers.map((peep)=> (
+                  <div className = "peeps-info" key= {peep.id}> 
+                    <p>User Name: {peep.login} </p>
+                    <a href = {peep.html_url}> View My GitHub </a>
+                   <div className = "image"> 
+                    <img src = {peep.avatar_url} alt="person" />
+                   </div> 
+                  </div>
+                 ))};
+                
+            </div>
+
            
         </div>    
     );
