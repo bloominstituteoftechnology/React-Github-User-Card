@@ -68,6 +68,8 @@ class App extends React.Component {
 console.log("Search Username",this.search);
   }
 search=()=>{
+  this.state.user=[];
+  this.state.followers=[];
 
   axios(`https://api.github.com/users/${this.state.search}`)
   .then(res => {
@@ -81,20 +83,21 @@ search=()=>{
     console.log("search state", this.state);
   })
   .catch(err => {
-    console.log("There is a error");
+    console.log("There is a error ",err);
    
   })
 
   axios(`https://api.github.com/users/${this.state.search}/followers`)
   .then(res => {
+    this.setState.followers=[];
     console.log("here is the follower res", res.data);
     this.setState({
       ...this.state.followers, followers: res.data
     });
-    console.log("follower state", this.state.followers.length);
+    console.log("Search follower state", this.state.followers);
   })
   .catch(err => {
-    console.log("There is a error",err);
+    console.log("There is a error follower",err);
   })
 
 }
@@ -111,10 +114,11 @@ search=()=>{
 
         </input>
         <button onClick={this.search}>Search</button>
-        <h2>{this.state.user.id}</h2>
-        <h3>{this.state.user.name}</h3>
+        <h2>User Id:{this.state.user.id}</h2>
+        <h3>User Name:{this.state.user.name}</h3>
         <img src={this.state.user.avatar_url}></img>
-       
+        
+       <h3>Followers Details</h3>
         <div>
           {this.state.followers.map((item) => (
             <img width="150"  key={item.id} src={item.avatar_url} />
