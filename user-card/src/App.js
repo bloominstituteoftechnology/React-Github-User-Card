@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { Input } from 'semantic-ui-react'
+import Followers from './Followers'
 
 
 class App extends React.Component {
@@ -10,6 +11,7 @@ class App extends React.Component {
     super();
     this.state = {
       users: [] ,
+      followers: [],
       login: ""
     }
   }
@@ -42,6 +44,18 @@ class App extends React.Component {
       console.log( this.state )
     })
     .catch((err) => console.log(err))
+    axios.get(`https://api.github.com/users/${this.state.login}/followers`)
+    .then(value => {
+        console.log('follower get request working')
+        this.setState({
+            followers: value.data
+        })
+        console.log('this is value', value)
+        console.log('this is follower data', value.data)
+    })
+    .catch(error => {
+        console.log('error', error)
+    })
   }
 
   handleChanges = e => {
@@ -68,6 +82,7 @@ class App extends React.Component {
             <p>Followers: {this.state.users.followers}</p>
             <p>Following: {this.state.users.following}</p>
             <a href={this.state.users.html_url}>Visit Their Profile!</a>
+            
             <div className="inputBar">
             <Input
               type="text"
@@ -80,7 +95,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-      
+        <Followers  followers={this.state.followers}/>
       </div>
       );
   }
