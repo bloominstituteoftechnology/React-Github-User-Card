@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-color: teal;
+  height:1400px;
+  padding: 20px;
 }
 
 .App-logo {
@@ -35,4 +38,27 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title{
+  color:darkred
+}
+
+.card{
+  background-color: white;
+  width:75vw;
+  padding:10px;
+  display: flex;
+  flex-direction: row;
+  border: 5px solid darkred;
+  margin: 20px;
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0), rgba(0,0,0,0.25));
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.7);
+}
+
+.pic{
+  width: 15vw;
+  height: 25vh;
+  border: 5px ridge silver;
+  margin: 10px;
 }
