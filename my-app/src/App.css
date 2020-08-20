@@ -24,7 +24,8 @@
   margin: 5%;
   border: 1px solid white;
   border-radius: 10px;
-  box-shadow: 17px 16px 22px -16px rgba(85, 218, 85, 0.75);}
+  box-shadow: 17px 16px 22px -16px rgba(85, 218, 85, 0.75);
+}
 
 .profile-img {
   justify-content: center;
@@ -34,7 +35,8 @@
   padding: 2% 0;
 }
 
-.profile-text, .profile-link {
+.profile-text,
+.profile-link {
   align-self: center;
   padding: 1% 0;
 }
