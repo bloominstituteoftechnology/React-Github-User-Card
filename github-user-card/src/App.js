@@ -26,6 +26,7 @@ class App extends Component {
         axios.get('https://api.github.com/users/MatthewKolmorgen/followers')
         .then(res => {
             this.setState({foloowers: res.data})
+            console.log(this.state.followers)
         })
         .catch(error => {
             console.log('error')
@@ -36,6 +37,8 @@ class App extends Component {
         return (
             <div className='App'>
                 <h1>GitHub User Card</h1>
+                <UserCard user={this.state.user} />
+                <FollowersCard followers={this.state.followers} />
             </div>
         );
     }
