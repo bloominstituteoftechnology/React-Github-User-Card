@@ -7,7 +7,7 @@ import CardList from './Components/CardList'
 
 
 var users=["olem22"]
-const Instructors = ['tetondan', 'dustinmyers', 'justsml', 'luishrd', 'bigknell',`kempie1`, 'AnastasiiaaaaM', 'DmitriyNoa', 'olem22'];
+
 class App extends Component {
 
   constructor() {
@@ -19,15 +19,13 @@ class App extends Component {
 
 componentDidMount() {
   axios.get(`https://api.github.com/users/olem22/followers`)
-  .then(res=>
-    {
+  .then(res=>{
       res.data.map(u=>{
         users=[...users,u.login]
       })
       console.log(users)
       users.map(p=>{
-        axios
-      .get (`https://api.github.com/users/${p}`)
+        axios.get (`https://api.github.com/users/${p}`)
       .then(res => {
       
         var person={
@@ -61,7 +59,7 @@ componentDidMount() {
         <img src={githublogo} alt="GitHub Logo"/>
       </div>
       <div className="MyInfo">
-        <h1>Me and my Followers</h1>
+        <h1>Me and My Followers</h1>
       </div>
       <div class="cards"></div>
       <CardList people={this.state.people}/>
