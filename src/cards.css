@@ -1,0 +1,10 @@
+.card-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cards {
+    border: 5px solid red;
+    width: 25%;
+    
+}
