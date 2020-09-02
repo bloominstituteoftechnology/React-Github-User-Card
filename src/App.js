@@ -82,7 +82,7 @@ export default class App extends React.Component{
     return(
       <div className='App'>
         <h1>Github Google</h1>
-        <GithubCard githubData={this.state.githubData} githubFollowers={this.state.githubFollowers} />
+        <div className="search">
         <input
           label="github-username"
           type="text"
@@ -90,6 +90,10 @@ export default class App extends React.Component{
           onChange={this.handleChanges}
         />
         <button onClick={this.fetchGithubData}>Display Profile</button>
+        </div>
+
+        <GithubCard githubData={this.state.githubData} githubFollowers={this.state.githubFollowers} />
+        
       </div>
     )
   }
