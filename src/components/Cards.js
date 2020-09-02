@@ -13,6 +13,7 @@ const Cards = props => {
                 <p>{props.users.location}</p>
                 <p>{props.users.followers} Followers & {props.users.following} Following</p>
             </div>
+            
         </section>
     );
 }

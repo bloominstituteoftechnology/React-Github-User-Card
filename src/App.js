@@ -8,7 +8,8 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      users: []
+      users: [],
+      followers: []
     }
   }
 
@@ -26,11 +27,24 @@ class App extends React.Component {
       })
   }
 
+  componentDidUpdate() {
+    axios.get("https://api.github.com/users/ajg7/followers")
+      .then(response => {
+        const followerData = response.data
+        console.log(followerData)
+        this.setState({
+          followers: followerData
+        })
+      })
+  }
+
   render() {
     return (
       <div className="App">
         <h1>GitHub Cards</h1>
-        <Cards users={this.state.users}/>
+        <Cards 
+          users={this.state.users}
+          followers={this.state.followers}/>
       </div>
     );
   }
