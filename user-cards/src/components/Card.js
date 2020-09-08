@@ -6,9 +6,9 @@ function Card(props) {
   return (
     <div className="info">
       <img src={props.userCards.avatar_url} />
-      <div className="lines">{props.userCards.name}</div>
-      <div className="lines">{props.userCards.login}</div>
-      <div className="lines">{props.userCards.type}</div>
+      <div className="lines1">{props.userCards.name}</div>
+      <div className="lines2">{props.userCards.login}</div>
+      <div className="lines3">{props.userCards.type}</div>
     </div>
   );
 }

@@ -1,4 +1,4 @@
 .App {
-  height: 20rem;
-  border: 2px dotted black;
+  max-height: 50rem;
+  /* border: 2px dotted black; */
 }

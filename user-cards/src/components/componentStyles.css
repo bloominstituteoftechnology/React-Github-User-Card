@@ -1,17 +1,33 @@
 img {
+  display: flex;
+  flex-direction: row;
   height: 7rem;
   width: 7rem;
+  margin: 0.5rem;
+  border: 2px solid royalblue;
 }
+/* img.followPic {
+  padding-top: 3rem;
+} */
 .info {
   display: flex;
   justify-content: baseline;
-
+  align-items: center;
   flex-direction: column;
-  height: 7rem;
-  width: 7rem;
+  border: 2px solid rebeccapurple;
+  height: 13rem;
+  width: 10rem;
   padding: 1rem;
+  color: royalblue;
+  background-image: linear-gradient(90deg, lightyellow, cyan);
 }
 .lines {
   display: flex;
   justify-content: center;
+}
+.myCard {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  padding: 0.5rem;
 }
