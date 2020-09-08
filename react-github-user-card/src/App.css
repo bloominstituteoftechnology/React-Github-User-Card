@@ -1,5 +1,8 @@
 .App {
   text-align: center;
+  background-image:url('https://images.unsplash.com/photo-1477949331575-2763034b5fb5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');
+  background-repeat:no-repeat;
+  background-size:cover;
 }
 
 .App-logo {
@@ -26,6 +29,32 @@
 
 .App-link {
   color: #61dafb;
+}
+.container {
+  display:flex;
+  flex-direction:row;
+  align-content: center;
+  justify-content:space-evenly;
+  flex-wrap: wrap;
+}
+.myCard{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background: linear-gradient(grey,lightgrey,darkgrey);
+  text-align:center;
+  width:65%;
+}
+.myCard:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2);
+}
+.card{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background: linear-gradient(grey,lightgrey,darkgrey);
+  border-radius: 5px;
+  max-width:40%;
+  margin:20px;
+}
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
 @keyframes App-logo-spin {
