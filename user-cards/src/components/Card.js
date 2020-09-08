@@ -1,0 +1,15 @@
+import React from "react";
+import "./componentStyles.css";
+
+function Card(props) {
+  console.log("render called");
+  return (
+    <div className="info">
+      <img src={props.userCards.avatar_url} />
+      <div className="lines">{props.userCards.name}</div>
+      <div className="lines">{props.userCards.login}</div>
+      <div className="lines">{props.userCards.type}</div>
+    </div>
+  );
+}
+export default Card;

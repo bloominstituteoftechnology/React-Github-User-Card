@@ -1,0 +1,17 @@
+img {
+  height: 7rem;
+  width: 7rem;
+}
+.info {
+  display: flex;
+  justify-content: baseline;
+
+  flex-direction: column;
+  height: 7rem;
+  width: 7rem;
+  padding: 1rem;
+}
+.lines {
+  display: flex;
+  justify-content: center;
+}
