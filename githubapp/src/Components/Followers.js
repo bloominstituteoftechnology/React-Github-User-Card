@@ -8,7 +8,7 @@ function Followers(props){
                 <div key={followers.id} className="followers">
                     <img src={followers.avatar_url} alt={followers.login}/>
                     <div>
-                        <h3>{followers.login}</h3>
+                        <h3>{followers.login}</h3> 
                     </div>
                     </div>
             ))}

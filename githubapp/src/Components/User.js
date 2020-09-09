@@ -10,10 +10,9 @@ import React from "react";
              <img src={props.user.avatar_url} alt="github"/>
              <div>
                  <h1>{props.user.login}</h1>
+                 <a href={props.user.html_url}>Visit {props.user.login}'s profile</a>
                  <p>{props.user.location}</p>
-
-                 <button href={props.user.html_url}>Visit {props.user.login}'s profile</button>
-             </div>
+                              </div>
          </div>
          </div>
       )
