@@ -1,0 +1,78 @@
+.App {
+  text-align: center;
+  background-color: #e2e2e2;
+  max-height: 100vh;
+  max-width: 100vw;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title h1 {
+  padding-top: 2.5%;
+}
+.githubuser {
+  border-radius: 25px;
+  background: #73ad21;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.followerscard {
+  display: flex;
+  flex-direction: column;
+}
+.githubcardfollower {
+  border-radius: 25px;
+  background: #73ad21;
+  margin-right: 20%;
+  margin-left: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.image {
+  padding-top: 4%;
+}
+.image img {
+  width: 50%;
+}
+input {
+  width: 200px;
+  height: 25px;
+}
+button {
+  color: white;
+  background-color: #732002;
+  text-transform: uppercase;
+  height: 31px;
+  border-radius: 5px;
+  margin: 0.25rem 0;
+}
+
+button:hover {
+  background-color: #471401;
+  border: 1px solid rgba(#000, 0.05);
+  box-shadow: 1px 1px 2px rgba(#fff, 0.2);
+  color: lighten(red, 18%);
+  text-decoration: none;
+  text-shadow: -1px -1px 0 #471401;
+  transition: all 250ms linear;
+}
+
+@media only screen and (max-width: 868px) {
+  /* For mobile phones: */
+  .cont {
+    width: 70%;
+  }
+  .githubuser {
+    width: 70%;
+  }
+}
