@@ -1,0 +1,28 @@
+.root{
+    border:1px solid black;
+    width: 50vh;
+    margin-left: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-bottom: 1%;
+}
+
+.profile-pic {
+    
+    max-width: 10vw;
+    border-radius: 30%;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.background {
+    background-color:#FF7F50;
+}
+
+.follower-pic{
+    border-radius: 30%;
+    max-width: 10vw;
+}
