@@ -8,7 +8,7 @@ This project allows you to practice the concepts and techniques learned in this 
 
 ### Commits
 
-Commit your code regularly and meaningfully. This helps both you and your team lead in case you ever need to return to old code for any number of reasons.
+Commit your code regularly and meaningfully. This helps you and any collaborators in case you ever need to return to old code for any number of reasons.
 
 ## Instructions
 
@@ -79,4 +79,6 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission Format
 
-- [ ] Submit a Pull-Request to merge `<firstName-lastName>` Branch into `main` (student's  Repo). **Please don't merge your own pull request**
+- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into `main` (student's Repository). **Please don't merge your own pull request**
+- [ ] From the home page of your repo, make sure you have your branch selected
+- [ ] Copy the URL and paste it into Canvas to submit your project
