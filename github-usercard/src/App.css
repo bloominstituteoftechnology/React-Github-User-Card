@@ -1,0 +1,55 @@
+body{
+  background: #445a67;
+}
+.App{
+  text-align: center;
+}
+header{
+  font-size: 3rem;
+  color:white;
+  background: #57838d;
+  padding:1%;
+}
+p{
+  margin: auto;
+  width: 20%;
+  color: white;
+  border: 2px solid white;
+  font-size: 3rem;
+  font-family: 'Reenie Beanie', cursive;
+}
+button {
+  background:#57838d;
+  margin:20px auto;
+  display:inline-block;
+  font-family:'Muli', Arial, sans-serif;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-transform: uppercase;
+  border: 1px solid #57838d;
+  padding: 3px;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  -ms-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+button:hover{
+  background-color: #D3CFC8;
+  border: 1px solid #fff;
+  color:#57838d;
+}
+img{
+  margin: 1%;
+  width:20rem;
+}
+.followers-div{
+  margin: 2% auto;
+  background: #b4c9c7;
+  width:60%;
+  padding: 3%;
+}
+/* #D3CFC8 */
