@@ -1,0 +1,23 @@
+.user {
+   display: flex;
+   flex-flow: column;
+   align-items: center;
+   border: solid 1px lightgray;
+   border-radius: 18px;
+   margin-top: 4%;
+   width: 50%;
+}
+
+.user > img {
+   width: 82%;
+   border-radius: 5px;
+   margin-bottom: 4%;
+}
+
+.user > h3 {
+   margin: 3% 0;
+}
+
+.user p {
+   margin-bottom: 3%;
+}
