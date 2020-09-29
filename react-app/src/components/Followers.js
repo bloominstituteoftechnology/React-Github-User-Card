@@ -1,7 +1,7 @@
 import React from 'react'
 
 export default function Followers(props) {
-    const { followers, user } = props
+    const { followers } = props
     return (
         <div className='followers'>
             <h2>Followers</h2>
