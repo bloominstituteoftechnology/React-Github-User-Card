@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import axios from 'axios'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css'
+import UserCard from './components/UserCard'
+import Followers from './components/Followers'
+
+class App extends React.Component {
+  state = {
+    user: {},
+    followers: []
+  }
+
+  componentDidMount() {
+    axios.get('https://api.github.com/users/joshwhitwell')
+      .then(res => {
+        this.setState({ user: res.data })
+        return res.data.followers_url
+      })
+      .then(res => {
+        axios.get(res)
+          .then(res => {
+            this.setState({ followers: res.data })
+          })
+          .catch(err => {
+            console.log(err)
+          })
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
+  
+  render() {
+    return (
+      <div className="App">
+        <h1>Github User Cards</h1>
+        <UserCard user={this.state.user} />
+        <Followers followers={this.state.followers} user={this.state.user.name}/>
+      </div>
+    )
+  }
 }
 
 export default App;
