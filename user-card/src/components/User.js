@@ -1,63 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-function User(props) {
+class User extends Component {
 
-  console.log("User: Component is rendering.");
-  
-  return (
-    <>
-      {props.user.map(user => (
-        <div key={user.id} className="user">
-          <img src={user.img} alt={user.name} />
-          <div>
-            <h3>{user.name}</h3>
-            {user.next_evolution &&
-              user.next_evolution.map(e => <p key={e.num}>{e.name}</p>)}
-          </div>
-        </div>
-      ))}
-    </>
-  );
+    constructor(props) {
+        super(props)
+            this.state = {
+                isMapShowing: false
+            }
+    }
+
+    clickHandler = () => {
+        this.setState({
+            isMapShowing: !this.state.isMapShowing
+        })
+    }
+
+
+render() {
+    const user = this.props.user
+    const followers = this.props.followers
+    
+    return (
+        <li className="UserDetails" key={user.id} id={user.id}>
+          <h3>{user.login}</h3>
+          <p><strong>Name: </strong>{user.name}</p>
+          <p><strong>Bio: </strong>{user.bio}</p>
+          <p><strong>Twitter: </strong>{user.twitter_username}</p>
+        </li>
+
+        <li className="FollowerDetails" key={followers.id} id={followers.id}>
+        <h3>{followers.login}</h3>
+        <p><strong>Name: </strong>{followers.name}</p>
+        <p><strong>Bio: </strong>{followers.bio}</p>
+        <p><strong>Twitter: </strong>{followers.twitter_username}</p>
+        </li>
+    );
 }
 
-User.propTypes = {
-  user: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      img: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      type: PropTypes.arrayOf(
-        PropTypes.oneOf([
-          'Grass',
-          'Poison',
-          'Fire',
-          'Flying',
-          'Water',
-          'Bug',
-          'Normal',
-          'Electric',
-          'Psychic',
-          'Ground',
-          'Fighting',
-          'Rock',
-          'Ice',
-          'Ghost',
-          'Dragon'
-        ])
-      ),
-      next_evolution: PropTypes.arrayOf(
-        PropTypes.shape({
-          num: PropTypes.string,
-          name: PropTypes.string
-        })
-      )
-    })
-  )
-};
-
-User.defaultProps = {
-  user: []
-};
-
+}
 export default User;

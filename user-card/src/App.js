@@ -32,7 +32,7 @@ handleSearch = (e) => {
 };
 
 fetchUsers = (user) => {
-  fetch(`https://api.github.com/simonesquad`)
+  fetch(`https://api.github.com/users/simonesquad`)
   .then((res) => res.json())
   .then((data) => {
     this.setState({
@@ -54,8 +54,9 @@ fetchFollowers = (followers) => {
 };
 
 render() {
-  console.log("App: Component is Rendered");
+  
   return (
+
     <div className="User App">
       <User user={this.state.user} />
       <User followers={this.state.followers} />
@@ -63,7 +64,7 @@ render() {
     );
   }
 
-  
+}
 
 
 export default App;
