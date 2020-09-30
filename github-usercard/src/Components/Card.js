@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithubSquare } from 'react-icons/fa';
 
 const Card = props => {
     return (
@@ -10,7 +9,7 @@ const Card = props => {
             <div class="card-info">
     <h2>{props.item.name}</h2>
                 <p>{props.item.username}</p>
-                <p><a href={props.item.link}> <FaGithubSquare /></a>
+                <p><a href={props.item.link}>Profile</a>
 </p>
                 <p>Followers: {props.item.followers}</p>
                 <p>Following: {props.item.following}</p>
