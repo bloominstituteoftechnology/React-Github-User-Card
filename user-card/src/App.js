@@ -11,7 +11,8 @@ class App extends React.Component {
     this.state = {
       users: [],
       followers: [],
-      login: ""
+      login: "",
+     
     };
   }
 
@@ -121,7 +122,7 @@ class App extends React.Component {
 
         <input
           type="text"
-          value={this.state.userType}
+          value={this.state.login}
           onChange={this.handleChange}
         />
 
@@ -136,22 +137,23 @@ class App extends React.Component {
 
 
 
-          <img width="250" 
+          <img width="260" 
             src={this.state.users.avatar_url} alt="My usercard"/>
 
 
           <h2>{this.state.users.login}</h2>
+       
 
           </div>
 
           <div id="followers">
 
 
-          {this.state.followers.map((followers) => {
+          {this.state.followers.map((followers) => { 
 
             return (
 
-              <div>
+              <div id="users">
 
 
 
@@ -159,6 +161,9 @@ class App extends React.Component {
 
 
                 <h2>{followers.login}</h2>
+                <a href={followers.html_url}>Visit Their Profile!</a>
+
+                
 
               </div>
 
