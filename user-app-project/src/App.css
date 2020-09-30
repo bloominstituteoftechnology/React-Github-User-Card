@@ -1,0 +1,68 @@
+
+.App{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user{
+  background-color:aquamarine;
+  width:600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.userBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  padding-bottom: 30px;
+}
+
+.about{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+img{
+  border-radius:300px ;
+}
+
+p{
+  padding-top: 0%;
+  padding-bottom: 0%;
+  margin-left:20px;
+}
+
+form{
+  background-color: cadetblue;
+  width:600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
+.followers{
+  background-color: khaki;
+  width:600px;
+  display: flex;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  padding-top:40px;
+  padding-bottom:40px;
+  padding-left:20px;
+  padding-right:20px;
+}
