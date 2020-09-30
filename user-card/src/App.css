@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Permanent+Marker&family=Roboto&display=swap');
+
+
+.App {
+
+  background-image: url("https://cdn.pixabay.com/photo/2020/04/21/11/50/batman-5072795_960_720.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+  text-align: center;
+  color: black;
+  font-family: 'Permanent Marker', cursive;
+}
+
+h1{
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: 6px 2px #ff0000;
+  font-size: 7rem;
+}
+
+button {
+  font-family: 'Permanent Marker', cursive;
+  background-color: grey;
+  margin: 5px;
+  width: 8%;
+}
+
+input {
+  width: 15%;
+}
+
+#self{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+}
+
+#followers{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+img {
+  border-radius: 20%;
+  
+
+}
