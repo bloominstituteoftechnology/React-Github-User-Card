@@ -14,11 +14,11 @@ class App extends React.Component {
   componentDidMount() {
     console.log ('CDM invoked')
     axios
-      .get('')
+      .get("https://api.github.com/users/tbbcoach")
       .then((res) => {
-        console.log(res)
+        console.log(res);
       })
-      .catch((err) => console.log('error', err));
+      .catch((err) => console.log("error", err));
   }
 
   render() {
