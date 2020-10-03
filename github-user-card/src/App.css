@@ -36,3 +36,36 @@
     transform: rotate(360deg);
   }
 }
+
+.user-headline {
+  text-align: center;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: orange;
+  padding-bottom: 2%;
+}
+
+
+
+.follower-headline {
+  text-align: center;
+}
+
+.followers {
+  display: flex;
+  background-color: palegreen;
+  justify-content: space-evenly;
+}
+
+.name {
+  font-size: 3rem;
+}
+
+.pic {
+  height: 300px;
+  width: 300px;
+}

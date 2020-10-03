@@ -42,19 +42,19 @@ class App extends React.Component {
     console.log('render invoked')
     return (
       <div className="app">
-        <h1>GIT HUB USER</h1>
-        <div>
+        <h1 className='user-headline'>GIT HUB USER</h1>
+        <div className='user'>
           <h2>{this.state.user.name}</h2>
           <img className="pic" src={this.state.user.avatar_url} alt="user" />
           <h3>User name: {this.state.user.login}</h3>
           <h4>Location: {this.state.user.location}</h4>
-          <p>Bio: {this.state.user.bio}</p>
+          <p className='bio'>Bio: {this.state.user.bio}</p>
         </div>
-        <h1>GIT HUB FOLLOWERS</h1>
-        <div>
+        <h1 className='follower-headline'>GIT HUB FOLLOWERS</h1>
+        <div className='followers'>
           {this.state.followers.map((follower) => (
-            <p>Name - {follower.login}
-            <img src={follower.avatar_url} alt='follower' />
+            <p className='name'>Name - {follower.login}
+            <img className='pic' src={follower.avatar_url} alt='follower' />
             </p>  
     ))}
         </div>
