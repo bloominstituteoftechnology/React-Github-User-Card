@@ -7,22 +7,37 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-        user: []
+      user: [],
+      followers: []
     }
   }
 
   componentDidMount() {
-    console.log ('CDM invoked')
+    console.log('CDM invoked')
     axios
       .get("https://api.github.com/users/tbbcoach")
       .then((res) => {
         console.log(res);
-        this.setState({user: res.data})
+        this.setState({ user: res.data })
       })
       .catch((err) => console.log("error", err));
+  
+
+    axios
+      .get( "https://api.github.com/users/tbbcoach/followers" )
+  .then((res) => {
+        console.log(res);
+      })
+  }
+
+  componentDidUpdate(prevState, prevProps) {
+    if (prevState.user !== this.state.user) {
+      console.log('CDU invoked')
+    }
   }
 
   render() {
+    console.log('render invoked')
     return (
       <div className="app">
         <h1>GIT HUB USERS</h1>
