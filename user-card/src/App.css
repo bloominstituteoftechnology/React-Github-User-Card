@@ -1,38 +1,56 @@
+Body {
+background-color: #48cae4;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-flow: column;
 }
 
-.App-link {
-  color: #61dafb;
+.userInfo {
+  display: flex;
+  background-color: aliceblue;
+  width: 85%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  box-shadow: 2px 2px 8px black;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.userInfo img {
+  width: 35%;
+}
+.userProfile h1 {
+  margin-left: 3%;
+  font-size: 1.5rem;
+}
+.userProfile h2 {
+  margin-left: 3%;
+  font-size: 1.5rem;
+}
+.App p {
+  margin-left: 3%;
+  
+}
+.App a {
+  margin-left: 3%;
+  text-decoration: none;
+  color: black
+}
+.userLink {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-evenly;
+  margin-right: 30%;
+}
+.followersInfo {
+  display: flex;
+  background-color: aliceblue;
+  width: 85%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 5%;
+  box-shadow: 2px 2px 8px black;
+}
+.followersInfo h2 {
+  margin-left: 1%;
 }
