@@ -39,6 +39,9 @@
 
 .user-headline {
   text-align: center;
+  background-color: blue;
+  color: white;
+  margin: 1% 40%;
 }
 
 .user {
@@ -53,19 +56,29 @@
 
 .follower-headline {
   text-align: center;
+  background-color: paleturquoise;
+  margin: 1% 40%;
 }
 
 .followers {
   display: flex;
   background-color: palegreen;
-  justify-content: space-evenly;
+  justify-content: space-around;
+  margin: 0 5%;
+
 }
 
 .name {
   font-size: 3rem;
+  text-decoration: underline;
+  text-emphasis: bold;
+  text-align: center;
+  
 }
 
 .pic {
   height: 300px;
   width: 300px;
+  margin: 2% 12%;
+
 }
