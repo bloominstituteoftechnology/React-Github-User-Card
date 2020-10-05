@@ -5,7 +5,19 @@ background-color: #48cae4;
 .App {
   display: flex;
   flex-flow: column;
+  margin-bottom: 5%;
 }
+.githubImg img {
+  width: 15%;
+}
+.githubImg {
+  display: flex;
+  flex-flow: row;
+} 
+.githubImg h1 {
+  margin-top: 10%;
+}
+
 
 .userInfo {
   display: flex;
@@ -50,6 +62,7 @@ background-color: #48cae4;
   margin-right: 5%;
   margin-top: 5%;
   box-shadow: 2px 2px 8px black;
+  
 }
 .followersInfo h2 {
   margin-left: 1%;

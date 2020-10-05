@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import Heart from "./heart.png"
 import './App.css';
 
 class App extends React.Component {
@@ -8,7 +9,8 @@ class App extends React.Component {
     super();
     this.state = {
       users: [],
-      followers: []
+      followers: [],
+      findUsers: ""
     }
   }
   
@@ -29,10 +31,21 @@ class App extends React.Component {
           this.setState({ followers: res.data})
         })
   }
+
+  handleChanges = e => {
+    console.log(e.target.value);
+    this.setState({
+      findUsers: e.target.value
+    });
+  }
   render() {
     console.log("Render Invoked");
     return (
       <div className="App">
+      <div className="githubImg"> <img src={Heart} alt="" />
+      <h1>GitHub User List</h1>
+      </div>
+        
       <div className="userInfo">
         <img src={this.state.users.avatar_url}  alt="" />
       <div className="userProfile">
