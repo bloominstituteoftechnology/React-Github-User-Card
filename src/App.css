@@ -43,13 +43,19 @@
   font-size: 12px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   margin:25px;
   border:navy 10px ridge;
+  text-align: center;
+  width:250px;
+  padding: 5px;
 }
 
 .profilePic{
-  border-bottom: 2px rgb(29, 29, 95) solid;
-  width:300px;
-  length:250px;
+  /* border: 2px rgb(29, 29, 95) solid; */
+  width:250px;
+  height:250px;  
+  border-radius: 25%;
+
 }
 
