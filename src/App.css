@@ -39,7 +39,6 @@
 
 .card{
   background-color: rgb(69, 123, 117);
-  /* width:300px; */
   font-size: 12px;
   display: flex;
   flex-direction: column;
@@ -52,7 +51,7 @@
 }
 
 .profilePic{
-  /* border: 2px rgb(29, 29, 95) solid; */
+  border: 2px rgb(29, 29, 95) solid;
   width:250px;
   height:250px;  
   border-radius: 25%;
