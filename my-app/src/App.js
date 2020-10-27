@@ -19,8 +19,7 @@ componentDidMount() {
       res.data.map(u => {
         users=[...users,u.login]
       })
-      // console.log(users)
-      users.map(myProfile => {
+     users.map(myProfile => {
         axios
       .get (`https://api.github.com/users/${myProfile}`)
       .then(res => {
@@ -31,7 +30,6 @@ componentDidMount() {
           username:res.data.login,
           followers:res.data.followers,
           following:res.data.following,
-          id:res.data.id,
           link:res.data.html_url
         }
         this.setState({
@@ -50,7 +48,7 @@ componentDidMount() {
   </header>
   <body>
       <div className="MyInfo">
-        <h1>Me and my Followers 👨🏽‍💻👩🏼‍💻 </h1>
+          <h1>Me and a group of legends! 👨🏽‍💻👩🏼‍💻 </h1>
       </div>
       <div class="cards"></div>
       <CardList people={this.state.people}/>
