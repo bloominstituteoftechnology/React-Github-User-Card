@@ -7,7 +7,7 @@ class App extends React.Component {
     render() {
         return(
             <div className='App'>
-                {/* <Search /> */}
+                <h1>Github </h1>
                 <UserCard />
             </div>
         )
