@@ -1,0 +1,25 @@
+*{
+  font-size:20px;
+}
+
+body{
+  background-color: gray;
+}
+
+.UserCard {
+  background-color:white;
+  width:30%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin:auto 1%;
+}
+
+h3{
+  font-size:30px;
+  border-bottom: 2px black solid
+}
+
+img {
+  width: 80%;
+}
