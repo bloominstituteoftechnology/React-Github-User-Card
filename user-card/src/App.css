@@ -1,0 +1,57 @@
+*{
+  font-size:20px;
+}
+
+body{
+  background-color: gray;
+}
+
+h1{
+  text-align:center;
+  font-size: 35px;
+  color:white;
+  border-bottom: 2px solid white;
+}
+
+.ParentCardDiv{
+  display:flex;
+  flex-direction:row;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.UserCard {
+  background-color:white;
+  width:30%;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  margin:auto .5%;
+}
+
+h3{
+  font-size:30px;
+  border-bottom: 2px gray solid;
+  color: gray;
+}
+
+img {
+  width: 80%;
+  margin: 0% auto 10% auto;
+  border-radius:250px;
+}
+
+.cardLinks{
+  margin:0% auto 5% auto;
+  background-color: gray;
+}
+
+span{
+  color: white;
+  border: 2px white solid;
+}
+
+a{
+  text-decoration:none;
+  color: white;
+}
