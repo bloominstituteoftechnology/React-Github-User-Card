@@ -44,7 +44,7 @@ class UserCard extends React.Component {
                             <div className='cardLinks'>
                                 <span>{`Followers: ${item.followers} `}</span>
                                 <span>{`Following: ${item.following} `}</span>
-                                <span><a href={'https://github.com/seth-bradshaw?tab=repositories'}>{`Projects`}</a></span>
+                                <span><a href={`https://github.com/${item.login}?tab=repositories`}>{`Projects`}</a></span>
                             </div>
                         </div>
                     
