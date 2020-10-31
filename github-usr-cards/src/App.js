@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
-
-import Gitcard from "./Components/Gitcard"
-
+import { fetchAppD } from './services/Fetchthem'
+import Gitcard from "./Components/Gitcard";
+import Gitform from "./Components/Gitform";
 /*
   The github react cards assignment
 */
@@ -18,8 +18,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://api.github.com/users/extrude575757")
-      .then((res) => res.json())
+    // The default fetch for the example beginning search
+    fetchAppD()
       .then((json) => {
         if (json.status === "success") {
           this.setState({ userimg: json.avatar_url });
@@ -49,7 +49,7 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.newusr !== this.state.newusr) {
      
-console.log(`cdu: here prevProps${prevState}` );
+console.log(`cdu: here prevProps${this.state.newusr}` );
     }
 
   }
@@ -76,25 +76,11 @@ console.log(`cdu: here prevProps${prevState}` );
     return (
      
       <div className="container">
-         <Gitcard />
-          <h1>Checkout Someone's Github</h1>
-          <div className="card">
-            <h4 className="name">Username:{this.state.usersname}</h4>
-            <input
-              type="text"
-              value={this.state.newusr}
-              onChange={this.handleUserChange}
-            />
-            <button onClick={this.handleSetNewUser}>new user info</button>
-          </div>
-          <div><h1>Github User Stats</h1></div>
-              <div className="card">
-                    <p className="username">
-                    Login: {this.state.username}
-                    </p>
-                    <img className="card"  alt="Github User Avatar Image" 
-                    src={this.state.userimg} width="300px" />
-            </div>
+        <h1>Checkout Someone's Github</h1>
+         <Gitform handleSetNewUser={this.handleSetNewUser} />
+          
+         <Gitcard username={this.state.username} userimg={this.state.userimg}/>
+          
       </div>
     );
   }
