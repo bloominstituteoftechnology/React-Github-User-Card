@@ -10,7 +10,7 @@ class Gitform extends React.Component {
   constructor(){
     super();
     this.state = { 
-        newusr: ""
+        newusr: "extrude575757"
     };
   }
 

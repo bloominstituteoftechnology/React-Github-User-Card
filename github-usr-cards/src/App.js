@@ -10,6 +10,7 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
+        id: 0,
         usersname:"",
         username:"",
         userimg: "",  
@@ -22,14 +23,14 @@ class App extends React.Component {
     fetchAppD()
       .then((json) => {
         if (json.status === "success") {
-          this.setState({ userimg: json.avatar_url });
-          this.setState({ username: json.login });
-          this.setState({ usersname: json.name });
+          
+          this.setState({ usersname: json.name,username: json.login
+            ,userimg: json.avatar_url });
+          
         } else {
           console.error("App.js CompDidMount: jsonstatus false  error fetching githubbers though its forced into a set state anyway: ", json);
-          this.setState({ userimg: json.avatar_url });
-          this.setState({ username: json.login });
-          this.setState({ usersname: json.name });
+          this.setState({ usersname: json.name,username: json.login
+            ,userimg: json.avatar_url });
         }
       })
       .catch((err) => console.error("App.js CompDidMount: Major error from catch function ", err));
@@ -62,14 +63,13 @@ console.log(`cdu: here prevProps${this.state.newusr}` );
     fetchNewu(newu)
       .then((json) => {
         if (json.status === "success") {
-          this.setState({ userimg: json.avatar_url });
-          this.setState({ username: json.login });
-          this.setState({ usersname: json.name });
+          this.setState({ usersname: json.name,username: json.login
+          ,userimg: json.avatar_url });
+           
         } else {
-          console.error("error fetching githubbers: handleSetNewUser forcing it any way", json);
-          this.setState({ userimg: json.avatar_url });
-          this.setState({ username: json.login });
-          this.setState({ usersname: json.name });
+          console.error("App.js No success error fetching githubbers: handleSetNewUser forcing it any way", json);
+          this.setState({ usersname: json.name,username: json.login
+            ,userimg: json.avatar_url });
         }
       })
       .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));

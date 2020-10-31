@@ -19,7 +19,7 @@ class Gitcard extends React.Component {
         if(prevProp.username !== this.state.username){
             this.state.username = this.props.username;
         } 
-        if(prevProp.userimg != this.state.userimg){
+        if(prevProp.userimg !== this.state.userimg){
             this.state.userimg = this.props.userimg;
         }
     }
