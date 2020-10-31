@@ -6,6 +6,8 @@ import "./styles.css";
 */
 class App extends React.Component {
   state = {
+    usersname:"",
+    username:"",
     userimg: "",  
     newusr: ""
   };
@@ -16,9 +18,13 @@ class App extends React.Component {
       .then((json) => {
         if (json.status === "success") {
           this.setState({ userimg: json.avatar_url });
+          this.setState({ username: json.login });
+          this.setState({ usersname: json.name });
         } else {
           console.error("App.js CompDidMount: jsonstatus false  error fetching githubbers though its forced into a set state anyway: ", json);
           this.setState({ userimg: json.avatar_url });
+          this.setState({ username: json.login });
+          this.setState({ usersname: json.name });
         }
       })
       .catch((err) => console.error("App.js CompDidMount: Major error from catch function ", err));
@@ -49,9 +55,13 @@ console.log("cdu: here prevProps"+prevProps+" prevState"+prevState);
       .then((json) => {
         if (json.status === "success") {
           this.setState({ userimg: json.avatar_url });
+          this.setState({ username: json.login });
+          this.setState({ usersname: json.name });
         } else {
           console.error("error fetching githubbers: handleSetNewUser forcing it any way", json);
           this.setState({ userimg: json.avatar_url });
+          this.setState({ username: json.login });
+          this.setState({ usersname: json.name });
         }
       })
       .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
@@ -62,7 +72,7 @@ console.log("cdu: here prevProps"+prevProps+" prevState"+prevState);
       <div className="App">
         <h1>Checkout Someone's Github</h1>
         <div>
-          Username:{" "}
+          Username:{this.state.usersname}
           <input
             type="text"
             value={this.state.newusr}
@@ -71,8 +81,9 @@ console.log("cdu: here prevProps"+prevProps+" prevState"+prevState);
           <button onClick={this.handleSetNewUser}>newusers information</button>
         </div>
         <div>Users</div>
-       
-           <img  alt="Github User Avatar Image" src={this.state.userimg} width="300px" />
+    <div>Login: {this.state.username}</div>
+           <img  alt="Github User Avatar Image" 
+           src={this.state.userimg} width="300px" />
   
       </div>
     );
