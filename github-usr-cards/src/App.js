@@ -55,6 +55,10 @@ console.log(`cdu: here prevProps${this.state.newusr}` );
   }
 
   handleSetNewUser = (e) => { 
+
+    this.setState({
+      username: e
+    })
     fetch(`https://api.github.com/users/${this.state.newusr}`)
       .then((res) => res.json())
       .then((json) => {

@@ -53,7 +53,7 @@ class Gitform extends React.Component {
     //   .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
         e.preventDefault();
         
-        this.props.handleSetNewUser(e);
+        this.props.handleSetNewUser(this.state.newusr);
     };
 
   render() {
@@ -62,7 +62,7 @@ class Gitform extends React.Component {
        
           <div className="card"> 
             <form onSubmit={this.handleSetNewUser}>
-                <input type="text" onChange={this.handleUserChange} />
+                <input type="text" value={this.state.newusr} onChange={this.handleUserChange} />
             <input type="submit" />    
             </form>     
              
