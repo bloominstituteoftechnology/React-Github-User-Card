@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
-import { fetchAppD } from './services/Fetchthem'
+import { fetchAppD, fetchNewu } from './services/Fetchthem'
 import Gitcard from "./Components/Gitcard";
 import Gitform from "./Components/Gitform";
 /*
@@ -54,13 +54,12 @@ console.log(`cdu: here prevProps${this.state.newusr}` );
 
   }
 
-  handleSetNewUser = (e) => { 
+  handleSetNewUser = (newu) => { 
 
     this.setState({
-      username: e
+      username: newu
     })
-    fetch(`https://api.github.com/users/${this.state.newusr}`)
-      .then((res) => res.json())
+    fetchNewu(newu)
       .then((json) => {
         if (json.status === "success") {
           this.setState({ userimg: json.avatar_url });

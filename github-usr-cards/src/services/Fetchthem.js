@@ -8,12 +8,9 @@ export function fetchAppD() {
       .catch(err => console.log(err));
   }
   
-  export function searchQuakes(event) {
-    const magnitude = event.target.magnitude.value;
-    const minDate = event.target.min.value;
-    const maxDate = event.target.max.value;
-    return fetch(
-      `https://earthquake.usgs.gov/fdsnws/event/1/query?format=geojson&starttime=${minDate}&endtime=${maxDate}&minmagnitude=${magnitude}`
-    ).then(res => res.json());
+  export function fetchNewu(newu) {
+
+    return fetch(`https://api.github.com/users/${newu}`)
+    .then(res => res.json());
   }
   
