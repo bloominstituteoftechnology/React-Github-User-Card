@@ -1,0 +1,72 @@
+.App {
+  text-align: center;
+}
+
+header{
+  background-color: #FBDE44FF;
+  margin: 0 auto;
+  height: 8rem;
+  padding-top: 2rem;
+  text-shadow: whitesmoke 2px 1px; 
+}
+
+
+.userCard{
+  padding: 1% 1%;
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 70rem;
+  /* background-color: #28334AFF; */
+  background-color: RGBA(40,51,74,.8) ;
+  font-size: 1.3rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-end;
+  text-align: left;
+  color:white;
+  border-radius: 5px;
+  box-shadow: 4px 6px #FBDE44FF;
+}
+ 
+.avatar{
+  height:200px;
+  object-fit: contain;
+  border-radius: 50%;
+  box-shadow: 2px 4px #FBDE44FF;
+  padding: 0.2rem 0.2rem;
+  margin: 1rem 2rem;
+}
+
+.title{
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-style: italic;
+  padding-bottom: 1rem;
+}
+button {
+   /* background-color:rgb(243, 234, 187) ;  */
+  background: linear-gradient(rgb(247, 241, 211), rgb(248, 223, 97)); 
+  color:black;
+  padding: 0.5rem 0.5rem;
+  margin-left: 1rem;
+  
+}
+
+/* .calendar-graph{
+  width:500px;
+  height: 100px;
+  object-fit:cover;
+}
+
+.calendar {
+  flex: 0 0 100%;
+  border: none;
+  margin-top: 1rem;
+  min-height: unset; 
+  width: 950px;
+  text-align: center;
+  margin: 0 auto;
+ }  */
+ 
