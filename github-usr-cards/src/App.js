@@ -74,10 +74,10 @@ console.log(`cdu: here prevProps${prevState}` );
 
   render() {
     return (
-      <div className="App">
+      <div className="container">
         <h1>Checkout Someone's Github</h1>
-        <div>
-          Username:{this.state.usersname}
+        <div className="card">
+          <h4 className="name">Username:{this.state.usersname}</h4>
           <input
             type="text"
             value={this.state.newusr}
@@ -85,11 +85,14 @@ console.log(`cdu: here prevProps${prevState}` );
           />
           <button onClick={this.handleSetNewUser}>newusers information</button>
         </div>
-        <div>Users</div>
-    <div>Login: {this.state.username}</div>
-           <img  alt="Github User Avatar Image" 
+        <div><h1>Users</h1></div>
+    <div className="card">
+          <p className="username">
+          Login: {this.state.username}
+          </p>
+           <img className="card"  alt="Github User Avatar Image" 
            src={this.state.userimg} width="300px" />
-  
+  </div>
       </div>
     );
   }
