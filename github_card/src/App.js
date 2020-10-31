@@ -1,54 +1,63 @@
 import './App.css';
-import {useState, useEffect} from 'react';
 import axios from 'axios';
 import GitCard from './Components/GitCard';
 import SearchBar from './Components/SearchBar';
 import SearchButton from './Components/SearchButton'
+import React from 'react'
 
 
-function App() {
-  const [searching, setsearching] = useState('')
-  const [search, setsearch] = useState('Jacobugath');
-  const [gitData, setgitData] = useState({});
-  const [followers, setfollowers] = useState([]);
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {searching: '',search: 'Jacobugath', gitData: {}, followers: [] };
+  }
 
-  const getData = () =>{
-    axios.get('https://api.github.com/users/'+ search).then(response =>{
+  componentDidMount() {
+    this.getData();
+  }
+
+  componentDidUpdate(prevProps, prevState){
+    if (prevState.search !== this.state.search) {
+      this.getData();
+    }  
+  }
+
+  getData = () => {
+    axios.get('https://api.github.com/users/' + this.state.search).then(response => {
       console.log(response.data);
-      setgitData(response.data);
+      this.setState({gitData: response.data});
     })
-    axios.get('https://api.github.com/users/'+ search + '/followers').then(response =>{
+    axios.get('https://api.github.com/users/' + this.state.search + '/followers').then(response => {
       console.log(response.data);
-      setfollowers(response.data);
+      this.setState({followers: response.data})
     })
   }
 
-  const updateSearching = (event) =>{
+  updateSearching = (event) => {
     event.preventDefault();
-    setsearching(event.target.value);
+    this.setState({searching: event.target.value});
   }
 
-  const submitSearch = (event) =>{
+  submitSearch = (event) => {
     event.preventDefault();
-    setsearch(searching);
-    setsearching('');
+    this.setState({search: this.state.searching});
+    this.setState({searching: ''});
   }
 
-  useEffect(getData, []);
-  useEffect(getData, [search]);
+  render() {
 
+    return (
+      <div className="App">
+        <br></br>
+        Search:
+        <SearchBar updateSearching={this.updateSearching} searching={this.searching} />
+        <SearchButton submitSearch={this.submitSearch} />
 
-  return (
-    <div className="App">
-      <br></br>
-      Search:
-      <SearchBar updateSearching = {updateSearching} searching = {searching}/>
-      <SearchButton submitSearch = {submitSearch}/>
+        <GitCard gitData={this.state.gitData} followers={this.state.followers} />
 
-      <GitCard gitData = {gitData} followers = {followers}/>
-    
-    </div>
-  );
+      </div>
+    );
+  }
 }
 
 export default App;

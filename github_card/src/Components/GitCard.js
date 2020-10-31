@@ -11,7 +11,7 @@ function GitCard(props) {
       Followers: 
       <br></br>
       
-      {[...props.followers].map(a => a.login + ' ')}
+      {props.followers.map(a => a.login + ' ')}
       
       
       
