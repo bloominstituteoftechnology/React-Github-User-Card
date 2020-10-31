@@ -1,7 +1,7 @@
 import React from "react";
 
 
-class Gitcard extends React.Component {
+class Heading extends React.Component {
     constructor(){
         super();
         this.state={
@@ -19,8 +19,8 @@ class Gitcard extends React.Component {
 
     render(){
         return(
-            <div>
-                The card
+            <div className="header">
+                Heading with new images and icons go here
             </div>
         );
     }
@@ -28,4 +28,4 @@ class Gitcard extends React.Component {
 }
 
 
-export default Gitcard;
+export default Heading;

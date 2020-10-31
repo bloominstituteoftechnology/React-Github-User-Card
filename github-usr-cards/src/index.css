@@ -22,6 +22,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 background: linear-gradient(141deg, #9fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);
 }
+ 
 .container {
 max-width: 800px;
 margin: 50px auto;
@@ -66,7 +67,7 @@ margin-bottom: 30px;
 width: 150px;
 height: 150px;
 border-radius: 3px;
-margin-right: 20px;
+margin:10px;
 }
 
 .card .name {

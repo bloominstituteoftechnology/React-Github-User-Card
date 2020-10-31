@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router } from 'react-router-dom';
 
-
+import Gitcard from "./Components/Gitcard"
 
 /*
   The github react cards assignment
@@ -74,25 +74,27 @@ console.log(`cdu: here prevProps${prevState}` );
 
   render() {
     return (
+     
       <div className="container">
-        <h1>Checkout Someone's Github</h1>
-        <div className="card">
-          <h4 className="name">Username:{this.state.usersname}</h4>
-          <input
-            type="text"
-            value={this.state.newusr}
-            onChange={this.handleUserChange}
-          />
-          <button onClick={this.handleSetNewUser}>newusers information</button>
-        </div>
-        <div><h1>Users</h1></div>
-    <div className="card">
-          <p className="username">
-          Login: {this.state.username}
-          </p>
-           <img className="card"  alt="Github User Avatar Image" 
-           src={this.state.userimg} width="300px" />
-  </div>
+         <Gitcard />
+          <h1>Checkout Someone's Github</h1>
+          <div className="card">
+            <h4 className="name">Username:{this.state.usersname}</h4>
+            <input
+              type="text"
+              value={this.state.newusr}
+              onChange={this.handleUserChange}
+            />
+            <button onClick={this.handleSetNewUser}>new user info</button>
+          </div>
+          <div><h1>Github User Stats</h1></div>
+              <div className="card">
+                    <p className="username">
+                    Login: {this.state.username}
+                    </p>
+                    <img className="card"  alt="Github User Avatar Image" 
+                    src={this.state.userimg} width="300px" />
+            </div>
       </div>
     );
   }
