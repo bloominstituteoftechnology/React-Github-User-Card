@@ -1,16 +1,21 @@
 import React from "react";
-import "./styles.css";
+import { BrowserRouter as Router } from 'react-router-dom';
+
+
 
 /*
   The github react cards assignment
 */
 class App extends React.Component {
-  state = {
-    usersname:"",
-    username:"",
-    userimg: "",  
-    newusr: ""
-  };
+  constructor(){
+    super();
+    this.state = {
+        usersname:"",
+        username:"",
+        userimg: "",  
+        newusr: ""
+    };
+  }
 
   componentDidMount() {
     fetch("https://api.github.com/users/extrude575757")
@@ -44,7 +49,7 @@ class App extends React.Component {
   componentDidUpdate(prevProps, prevState) {
     if (prevState.newusr !== this.state.newusr) {
      
-console.log("cdu: here prevProps"+prevProps+" prevState"+prevState);
+console.log(`cdu: here prevProps${prevState}` );
     }
 
   }
