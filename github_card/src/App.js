@@ -10,7 +10,7 @@ function App() {
   const [searching, setsearching] = useState('')
   const [search, setsearch] = useState('Jacobugath');
   const [gitData, setgitData] = useState({});
-  const [followers, setfollowers] = useState({});
+  const [followers, setfollowers] = useState([]);
 
   const getData = () =>{
     axios.get('https://api.github.com/users/'+ search).then(response =>{
@@ -46,8 +46,7 @@ function App() {
       <SearchButton submitSearch = {submitSearch}/>
 
       <GitCard gitData = {gitData} followers = {followers}/>
-      <div class="calendar">
-</div>  
+    
     </div>
   );
 }

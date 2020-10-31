@@ -8,7 +8,13 @@ function GitCard(props) {
       <h2>{props.gitData.name}</h2>
       <div><img src ={props.gitData.avatar_url} alt='avatar'></img></div>
       <h3>Number of Public Repos: {props.gitData.public_repos}</h3>
-      Number of Followers: {props.followers.length} 
+      Followers: 
+      <br></br>
+      
+      {[...props.followers].map(a => a.login + ' ')}
+      
+      
+      
       <br></br>
       <a href = {props.gitData.html_url}>Go to Page</a>
        
