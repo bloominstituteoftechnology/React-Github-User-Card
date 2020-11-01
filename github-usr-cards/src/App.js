@@ -11,45 +11,67 @@ class App extends React.Component {
     super();
     this.state = {
         id: 0,
-        usersname:"",
-        username:"",
-        userimg: "",  
-        newusr: ""
+        usersname: null,
+        username: null,
+        userimg: null,  
+        newusr: null
     };
   }
 
   componentDidMount() {
+    console.log("appjs inside componentdidmount");
     // The default fetch for the example beginning search
-    fetchAppD()
-      .then((json) => {
-        if (json.status === "success") {
+  //   fetchAppD()
+  //     .then((json) => {
+  //       if (json.status === "success") {
           
-          this.setState({ usersname: json.name,username: json.login
-            ,userimg: json.avatar_url });
+  //         this.setState({ usersname: json.name,username: json.login
+  //           ,userimg: json.avatar_url });
           
-        } else {
-          console.error("App.js CompDidMount: jsonstatus false  error fetching githubbers though its forced into a set state anyway: ", json);
-          this.setState({ usersname: json.name,username: json.login
-            ,userimg: json.avatar_url });
-        }
-      })
-      .catch((err) => console.error("App.js CompDidMount: Major error from catch function ", err));
-  // Fetch followers here as well https://api.github.com/users/< Your github name >/followers
+  //       } else {
+  //         console.error("App.js CompDidMount: jsonstatus false  error fetching githubbers though its forced into a set state anyway: ", json);
+  //         this.setState({ usersname: json.name,username: json.login
+  //           ,userimg: json.avatar_url });
+  //       }
+  //     })
+  //     .catch((err) => console.error("App.js CompDidMount: Major error from catch function ", err));
+  // // Fetch followers here as well https://api.github.com/users/< Your github name >/followers
   
+      if(this.state.newusr !== null){
+        fetchNewu(this.state.newusr )
+        .then((json) => {
+          if (json.status === "success") {
+            this.setState({ usersname: json.name,username: json.login
+            ,userimg: json.avatar_url });
+             
+          } else {
+            console.error("App.js No success error fetching githubbers: handleSetNewUser forcing it any way", json);
+            this.setState({ usersname: json.name,username: json.login
+              ,userimg: json.avatar_url });
+          }
+        })
+        .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
+      
+      
+      }
+
+
     }
   /*Some names
    bigknell','tetondan',
 'dustinmyers', 'justsml', 'luishrd', 'snowcoding','james-coulter
         */
   handleUserChange = (e) => {
+    console.log("appjs within handleuserchange");
     this.setState({
       newusr: e.target.value
     });
   };
 
   componentDidUpdate(prevProps, prevState) {
+    console.log("appjs inside componentdidupdate");
     if (prevState.newusr !== this.state.newusr) {
-     
+     prevState.setState({newusr:this.state.newusr});
 console.log(`cdu: here prevProps${this.state.newusr}` );
     }
 
@@ -82,7 +104,7 @@ console.log(`cdu: here prevProps${this.state.newusr}` );
         <h1>Checkout Someone's Github</h1>
          <Gitform handleSetNewUser={this.handleSetNewUser} />
           
-         <Gitcard username={this.state.username} userimg={this.state.userimg}/>
+         {this.state.username && <Gitcard username={this.state.username} userimg={this.state.userimg}/>}
           
       </div>
     );

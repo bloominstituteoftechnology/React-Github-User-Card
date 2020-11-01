@@ -10,12 +10,14 @@ class Gitform extends React.Component {
   constructor(){
     super();
     this.state = { 
-        newusr: "extrude575757"
+        newusr: null
     };
   }
 
   componentDidMount() {
-    console.log("Gitform.js cdm")
+    console.log("Gitform.js cdms")
+    // this.props.newusr.setState({newusr});
+    
     }
   /*Some names
    bigknell','tetondan',
@@ -29,7 +31,7 @@ class Gitform extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
 //     if (prevProps.newusr !== this.state.newusr) {
-//      this.props.newusr = this.state.newusr;
+//      this.props.state.setState({ newusr: this.state.newusr});
 // console.log(`Gitform cdu: here prevProps${this.state.newusr}` );
 //     }
 
@@ -52,7 +54,7 @@ class Gitform extends React.Component {
     //   })
     //   .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
         e.preventDefault();
-        
+        // this.props.setState({newusr:this.state.newusr});
         this.props.handleSetNewUser(this.state.newusr);
     };
 
@@ -61,8 +63,8 @@ class Gitform extends React.Component {
      
        
           <div className="card"> 
-            <form onSubmit={this.handleSetNewUser}>
-                <input type="text" value={this.state.newusr} onChange={this.handleUserChange} />
+            <form onChange={this.handleUserChange} onSubmit={this.handleSetNewUser}>
+                <input type="text" onChange={this.handleUserChange}  value={this.state.newusr === null ? '' : this.state.newusr}  />
             <input type="submit" />    
             </form>     
              

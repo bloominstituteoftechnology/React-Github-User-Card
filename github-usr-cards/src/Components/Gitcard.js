@@ -12,6 +12,7 @@ class Gitcard extends React.Component {
     };
 
     componentDidMount(){
+        // TODO Set the component to copy state and array
         
     }
 
