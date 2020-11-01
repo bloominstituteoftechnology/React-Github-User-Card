@@ -56,7 +56,7 @@ export default class UserCard extends Component {
                     {`Public Repos: ${publicRepos}`} - {`Public Gists: ${publicGists}`}
                 </p>
                 <p className={`${BASE_URL}followers`} >{`Followers: ${followers} - Following: ${following}`}</p>
-                <p className={`${BASE_URL}url`} ><a href='https://github.com/MatthiasBakken' target='_blank' >https://github.com/MatthiasBakken</a></p>
+                <p className={`${BASE_URL}url`} ><a href='https://github.com/MatthiasBakken' target='_blank' rel='noopener noreferrer' >https://github.com/MatthiasBakken</a></p>
             </div>
         )
     }
