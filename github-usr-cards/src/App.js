@@ -70,9 +70,10 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
     console.log("appjs inside componentdidupdate");
-    if (prevState.newusr !== this.state.newusr) {
-     prevState.setState({newusr:this.state.newusr});
-console.log(`cdu: here prevProps${this.state.newusr}` );
+    if (prevState !== this.state.newusr) {
+    //  prevState.setState({newusr:this.state.newusr});
+    prevProps = this.state.newusr;
+console.log(`Appjs cdu: here ${this.state.newusr}` );
     }
 
   }
@@ -80,7 +81,7 @@ console.log(`cdu: here prevProps${this.state.newusr}` );
   handleSetNewUser = (newu) => { 
 
     this.setState({
-      username: newu
+      newusr: newu
     })
     fetchNewu(newu)
       .then((json) => {
@@ -102,7 +103,7 @@ console.log(`cdu: here prevProps${this.state.newusr}` );
      
       <div className="container">
         <h1>Checkout Someone's Github</h1>
-         <Gitform handleSetNewUser={this.handleSetNewUser} />
+         <Gitform newusr={this.state.newusr} handleSetNewUser={this.handleSetNewUser} />
           
          {this.state.username && <Gitcard username={this.state.username} userimg={this.state.userimg}/>}
           

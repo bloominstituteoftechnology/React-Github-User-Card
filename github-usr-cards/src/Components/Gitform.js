@@ -30,10 +30,13 @@ class Gitform extends React.Component {
   };
 
   componentDidUpdate(prevProps, prevState) {
-//     if (prevProps.newusr !== this.state.newusr) {
-//      this.props.state.setState({ newusr: this.state.newusr});
-// console.log(`Gitform cdu: here prevProps${this.state.newusr}` );
-//     }
+    if (prevProps.newusr !== this.state.newusr) {
+      if(this.props.newusr !== null){
+        this.prevProps = this.state.newusr;
+      }
+    //  this.props.state.setState({ newusr: this.state.newusr});
+console.log(`Gitform cdu: here prevProps${this.state.newusr}` );
+    }
 
   }
 
