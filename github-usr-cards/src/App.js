@@ -9,8 +9,8 @@ import Gitform from "./Components/Gitform";
 
 class App extends React.Component {
   
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
         
         id: 0,
@@ -42,25 +42,25 @@ class App extends React.Component {
   //     .catch((err) => console.error("App.js CompDidMount: Major error from catch function ", err));
   // // Fetch followers here as well https://api.github.com/users/< Your github name >/followers
   
-      if(this.state.newusr !== null){
-        console.log('appjs componentdidmount statenewusr was not null')
-        fetchNewu(this.state.newusr )
-        .then((json) => {
-          if (json.status === "success") {
-            this.setState({ usersname: json.name,username: json.login
-            ,userimg: json.avatar_url });
+      // if(this.state.newusr !== null){
+      //   console.log('appjs componentdidmount statenewusr was not null')
+      //   fetchNewu(this.state.newusr )
+      //   .then((json) => {
+      //     if (json.status === "success") {
+      //       this.setState({ usersname: json.name,username: json.login
+      //       ,userimg: json.avatar_url });
              
-          } else {
-            console.error("App.js No success error fetching githubbers: handleSetNewUser forcing it any way", json);
-            this.setState({ usersname: json.name,username: json.login
-              ,userimg: json.avatar_url });
-          }
-        })
-        .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
+      //     } else {
+      //       console.error("App.js No success error fetching githubbers: handleSetNewUser forcing it any way", json);
+      //       this.setState({ usersname: json.name,username: json.login
+      //         ,userimg: json.avatar_url });
+      //     }
+      //   })
+      //   .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
       
         
       
-      }
+      // }
       
       
 
@@ -78,9 +78,9 @@ class App extends React.Component {
 
   componentDidUpdate(prevProps, prevState) {
 
-    console.log("appjs inside componentdidupdate");
-    if (prevProps.newusr === this.state.newusr && this.state.newusr !== null) {
-      this.setState({newusr:null});
+    console.log("appjs inside componentdidupdate"+prevState.username);
+    if ( this.state.newusr !== this.state.username && this.state.username !== null) {
+      this.setState({username:null})
     //  if(this.state.submitting === null){
     //    this.setState({submitting:true})
     //  }
@@ -107,7 +107,7 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
         //   this.setState({ usersname: json.name,username: json.login
         //     ,userimg: json.avatar_url });
         // }
-        this.setState({username: json.login, userimg:json.avatar_url})
+        this.setState({username: json.login, usersname: json.name, userimg:json.avatar_url})
         console.log(json);
       })
       .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));

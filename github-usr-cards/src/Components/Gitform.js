@@ -7,10 +7,10 @@ import React from "react";
   The github react cards assignment
 */
 class Gitform extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = { 
-        newusr: null
+        newusr: this.props.newusr
     };
   }
 
