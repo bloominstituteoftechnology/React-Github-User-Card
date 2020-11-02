@@ -14,20 +14,24 @@ constructor(props){
 
 graphCard =()=>{
     const {login} = this.props.userInfo.login;
-    new GitHubCalendar(`.${login}.calendar`,login,{
-        responsive:true
-    })    
-}
+    new GitHubCalendar(`.${this.props.userInfo.login}.calendar`,`${this.props.userInfo.login}`)
 
-    //  maincontainer.style.maxWidth="1160";
-    //  graphContainer.classList.add('calendar');
-    // graphContainer.textContent =
-//    new GitHubCalendar(".calendar",`${this.props.userInfo.login}`)
+    // new GitHubCalendar(`.${login}.calendar`,login,{
+    //     responsive:true
+    // })    
+    // new GitHubCalendar(".calendar",`${this.props.userInfo.login}`)
+   
+        // const { login } = this.props.userInfo.login;
+        // new GitHubCalendar(`.${login} .calendar`, `${this.props.userInfo.login}`, {
+        //   responsive: true
+        // });
+}
+ 
 
 render(){
     return(
         <div>
-            <Card>
+            <Card key={this.props.userInfo.id}>
             <CardBody className="userCard">
             <div>
             <CardImg className="avatar" src={this.props.userInfo.avatar_url} alt="github avatar"/>
@@ -44,12 +48,12 @@ render(){
             <div>
             <CardSubtitle className="ml-4 mt-2 mb-2">Bio :{this.props.userInfo.bio}</CardSubtitle>
             </div> 
-            <div>
+            <div className={`calendar ${this.props.userInfo.login}`}>
             <Button outline color="primary" className="more ml-2 mt-2 "
-             onClick={this.graphCard}> More Info
+             onClick={this.graphCard}
+            > More Info
             </Button>
             </div>
-              
             </CardBody>
             </Card>
         </div>

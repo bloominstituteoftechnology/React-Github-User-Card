@@ -2,6 +2,7 @@ import React from 'react';
 import {
     Form, Label,Input,Button
   } from 'reactstrap';
+import '../App.css';
 
 class Search extends React.Component{
 constructor(props){
@@ -26,13 +27,16 @@ handleSubmit=(e)=>{
 
 render(){
     return(
-        <Form onSubmit={this.handleSubmit}>
+        <Form className="search" onSubmit={this.handleSubmit} >
           <Label htmlFor="user">Search Github User</Label> 
           <Input id="user"
           name="user"
           type="text"
           onChange={this.handleChange}
-          value={this.state.user}></Input>
+          value={this.state.user}
+          placeholder="Github Username..." >
+          </Input>
+          <Button >Search!</Button>
         </Form>
     )
 }

@@ -28,6 +28,8 @@ class App extends React.Component{
          console.log('res from axios get=',res.data)
          this.setState({
           userInfo: [...this.state.userInfo,res.data],
+          loadSuccess:true,
+          errorInfo:""
          })
          console.log('getUserInfo=',this.state);
        })
@@ -50,6 +52,8 @@ class App extends React.Component{
         console.log('followersInfo in axios',res.data)
        this.setState({
          followersInfo: res.data,
+         loadSuccess:true,
+         errorInfo:"",
          logins: res.data.map((item)=>item.login)
        })
       //  const logins= res.data.map((item)=>item.login)

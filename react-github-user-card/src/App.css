@@ -54,6 +54,18 @@ button {
   
 }
 
+.search{
+  padding-top: 1rem;
+}
+
+label{
+  padding-right: 1rem;
+}
+
+input{
+  padding : 4px 4px;
+  border-color: 2px yellow;
+}
 .error{
   display:flex;
   background-color:"snow";
@@ -68,7 +80,7 @@ button {
   padding-top:40px;
 }
 
-/* .calendar-graph{
+.calendar-graph{
   width:500px;
   height: 100px;
   object-fit:cover;
@@ -76,11 +88,12 @@ button {
 
 .calendar {
   flex: 0 0 100%;
+  background-color: azure;
   border: none;
   margin-top: 1rem;
   min-height: unset; 
   width: 950px;
   text-align: center;
   margin: 0 auto;
- }  */
+ } 
  
