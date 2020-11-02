@@ -20,8 +20,7 @@ class App extends React.Component {
         bio: null,
         created_at: null,  
         newusr: null,
-        location: null,
-        submitting:null
+        location: null
     };
   }
 
@@ -131,9 +130,7 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
     
     
     };
-  submits = (tr) =>{
-    this.setState({submitting:tr});
-  }
+
 
   render() {
     return (
@@ -141,7 +138,7 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
       <div className="container">
         <h1>Checkout Someone's Github</h1>
          <Router path="/">
-         <Gitform submits={this.submits}  submitting={this.state.submitting}  newusr={this.state.newusr} handleSetNewUser={this.handleSetNewUser} />
+         <Gitform newusr={this.state.newusr} handleSetNewUser={this.handleSetNewUser} />
           
           {this.state.username !== null ? <Gitcard username={this.state.username} name={this.state.usersname} userimg={this.state.userimg}
                                  bio={this.state.bio} created_at={this.state.created_at} location={this.state.location}   /> 

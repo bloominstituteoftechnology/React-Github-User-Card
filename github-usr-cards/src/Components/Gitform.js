@@ -1,4 +1,5 @@
 import React from "react";
+import fetchFollowers from "../services/Fetchthem"
 // import { BrowserRouter as Router } from 'react-router-dom';
 // import { fetchAppD } from './services/Fetchthem'
 // import Gitcard from "./Components/Gitcard"
@@ -17,7 +18,7 @@ class Gitform extends React.Component {
   componentDidMount() {
     console.log("Gitform.js cdm")
     // this.props.newusr.setState({newusr});
-    this.props.submits(true);
+
     }
   /*Some names
    bigknell','tetondan',
@@ -36,9 +37,7 @@ class Gitform extends React.Component {
       //   this.prevProps = this.state.newusr;
       //   this.prevState = this.state.newusr;
       // }
-      if(prevProps.submitting !== true){
-        this.props.submits(true);
-      }
+
     //  this.props.state.setState({ newusr: this.state.newusr});
 console.log(`Gitform cdu: here this.state.newusr${this.state.newusr}` );
     }
@@ -74,7 +73,7 @@ console.log(`Gitform cdu: here this.state.newusr${this.state.newusr}` );
      
        
           <div className="card"> 
-            <form onChange={this.handleSubmit} onSubmit={this.handleSetNewUser}>
+            <form  onSubmit={this.handleSetNewUser}>
                 <input type="text" onChange={this.handleUserChange}  value={this.state.newusr === null ? '' : this.state.newusr}  />
             <input type="submit" />    
             </form>     
