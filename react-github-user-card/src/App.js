@@ -18,9 +18,9 @@ class App extends Component {
 
   //
   componentDidMount() {
-    axios.get('https://api.github.com/users/robelv2020')
-      // // had to use someone who has followers
-      // axios.get('https://api.github.com/users/tippitytapp')
+    // axios.get('https://api.github.com/users/robelv2020')
+    // // had to use someone who has followers
+    axios.get('https://api.github.com/users/tippitytapp')
       .then(res => {
         this.setState({
           main: res.data
@@ -67,7 +67,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='App'>
         <UserCard main={this.state.main} />
         <SearchField search={this.state.search} handleChange={this.handleChange} handleForm={this.handleForm} />
         <div className='container'>

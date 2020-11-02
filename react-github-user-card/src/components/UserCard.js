@@ -15,7 +15,7 @@ class UserCard extends Component {
             {this.props.main.followers} Followers<br />
                         Following {this.props.main.following} people<br />
           </CardText>
-          <Button onClick={e => window.open(this.props.main.html_url)}>Go To User Page</Button>
+          <Button onClick={e => window.open(this.props.main.html_url)} className='btn-link'>Go To User Page</Button>
         </CardBody>
       </Card>
     )
