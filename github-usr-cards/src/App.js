@@ -98,7 +98,8 @@ console.log(`Appjs cdu: this.state ${this.state.newusr} prevProps ${prevProps.ne
   handleSetNewUser = (newu) => { 
 console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
     
-    fetchNewu(newu)
+    /*
+fetchNewu(newu)
       .then((json) => {
         // This is so the search does not have to be case sensitive for the user
         if(newu != json.login){
@@ -127,7 +128,25 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
       })
       .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
      
+
+    */
+
+      Promise.all([
+        fetch(`https://api.github.com/users/${newu}`)
+        .then(value => value.json()),
+        fetch(`https://api.github.com/users/${newu}/followers`).
+        then(value => value.json())
+        ])
+        .then((value) => {
+           console.log(value)
+          //json response
+        })
+        .catch((err) => {
+            console.log(err);
+        });
     
+
+
     
     };
 
