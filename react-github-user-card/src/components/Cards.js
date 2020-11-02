@@ -3,6 +3,8 @@ import {
     Card, CardImg,CardBody,
     CardTitle, CardSubtitle, Button
   } from 'reactstrap';
+import GitHubCalendar from "github-calendar";
+import "../../node_modules/github-calendar/dist/github-calendar-responsive.css";
 
 class Cards extends React.Component{
 constructor(props){
@@ -10,12 +12,18 @@ constructor(props){
     console.log('props in Cards=',props)
 }
 
-graphcard =()=>{
+graphCard =()=>{
+    const {login} = this.props.userInfo.login;
+    new GitHubCalendar(`.${login}.calendar`,login,{
+        responsive:true
+    })    
+}
+
     //  maincontainer.style.maxWidth="1160";
     //  graphContainer.classList.add('calendar');
     // graphContainer.textContent =
 //    new GitHubCalendar(".calendar",`${this.props.userInfo.login}`)
-}
+
 render(){
     return(
         <div>
@@ -36,10 +44,10 @@ render(){
             <div>
             <CardSubtitle className="ml-4 mt-2 mb-2">Bio :{this.props.userInfo.bio}</CardSubtitle>
             </div> 
-            <div >
-            <Button className="more ml-2 mt-2"
-            // onClick={this.graphcard}> More Info</Button>
-              > More Info</Button>
+            <div>
+            <Button outline color="primary" className="more ml-2 mt-2 "
+             onClick={this.graphCard}> More Info
+            </Button>
             </div>
               
             </CardBody>

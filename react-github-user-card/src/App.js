@@ -2,17 +2,22 @@ import React from 'react';
 import axios from 'axios';
 import Cards from './components/Cards';
 import Search from './components/Search';
+import Error from './components/Error';
 import './App.css';
 
 class App extends React.Component{
   constructor(){
     super();
-    this.state={
+    this.initialState= {
       userInfo:[],
       followersInfo:[],
       logins:[],
-      search:""
-    }
+      search:"",
+      loadSuccess:true,
+      errorInfo:""  
+    } 
+    this.state= this.initialState;
+       
   }
 
   
@@ -22,12 +27,18 @@ class App extends React.Component{
        .then(res=> {
          console.log('res from axios get=',res.data)
          this.setState({
-          userInfo: [...this.state.userInfo,res.data]
+          userInfo: [...this.state.userInfo,res.data],
          })
          console.log('getUserInfo=',this.state);
        })
        .catch(err=>{
+         this.setState({
+          loadSuccess:false,
+          errorInfo:err.message
+         })
+        
         console.log('error in axios get userinfo',err)
+        console.log('error info',this.state.errorInfo)
       })
   }
 
@@ -48,16 +59,21 @@ class App extends React.Component{
       
       .catch(err=>{
         console.log('error in axios get foll info',err)
+        this.setState({
+          loadSuccess:false,
+          errorInfo:err.data
+         })
+        
       })
   }
 
   searchUser=(user)=>{
-    console.log('searchUser in App',user)
     this.setState({
+      userInfo:[], //initialize userInfo array so it can store user on search
       search:user
-    })
-    
+    }) 
   }
+
 
   componentDidMount(){
     console.log('state in CDM=',this.state)
@@ -89,12 +105,12 @@ class App extends React.Component{
       <h1>Github User Card</h1>
       </header>
       <Search searchUser={this.searchUser}/>
-
-      {this.state.userInfo.map(item=>{
+      {this.state.loadSuccess ? 
+        this.state.userInfo.map(item=>{
           return(<Cards key={item.name} userInfo={item}/>)
-        })
+        }) :<Error errorInfo={this.state.errorInfo}/>
+
       }
-     
     </div>
   );
   }
