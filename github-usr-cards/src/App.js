@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, useHistory } from 'react-router-dom';
-import { fetchAppD, fetchNewu } from './services/Fetchthem'
+import { fetchFollowers, fetchNewu } from './services/Fetchthem'
 import Gitcard from "./Components/Gitcard";
 import Gitform from "./Components/Gitform";
 /*
@@ -80,7 +80,9 @@ class App extends React.Component {
 
     console.log("appjs inside componentdidupdate"+prevState.username);
     if ( this.state.newusr !== this.state.username && this.state.username !== null) {
-      this.setState({username:null})
+    // Setting username to null here will trigger the rerender we need to show the currently searched name
+    // this.setState({newusr:this.state.username});  
+    this.setState({username:null})
     //  if(this.state.submitting === null){
     //    this.setState({submitting:true})
     //  }
@@ -93,11 +95,17 @@ console.log(`Appjs cdu: this.state ${this.state.newusr} prevProps ${prevProps.ne
 
   handleSetNewUser = (newu) => { 
 console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
-    this.setState({
-      newusr: newu
-    })
+    
     fetchNewu(newu)
       .then((json) => {
+        // This is so the search does not have to be case sensitive for the user
+        if(newu != json.login){
+          this.setState({newusr:json.login})
+        }else{
+          this.setState({
+            newusr: newu
+          })
+        }
         // if (json.status === "success") {
         //   this.setState({ usersname: json.name,username: json.login
         //   ,userimg: json.avatar_url });
@@ -107,11 +115,18 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
         //   this.setState({ usersname: json.name,username: json.login
         //     ,userimg: json.avatar_url });
         // }
-        this.setState({username: json.login, usersname: json.name, userimg:json.avatar_url})
+        this.setState({username: json.login, usersname: json.name,
+           userimg:json.avatar_url})
+
         console.log(json);
+         
+      
       })
       .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
-  };
+     
+    
+    
+    };
   submits = (tr) =>{
     this.setState({submitting:tr});
   }

@@ -14,3 +14,12 @@ export function fetchAppD() {
     .then(res => res.json());
   }
   
+
+  export function fetchFollowers(newu) {
+   
+  
+    return fetch(
+      `https://api.github.com/users/${newu}/followers`
+    )
+      .then(res => res.json())
+  }
