@@ -12,4 +12,4 @@ class SearchField extends Component {
   }
 }
 
-export default SearchField
+export default SearchField;

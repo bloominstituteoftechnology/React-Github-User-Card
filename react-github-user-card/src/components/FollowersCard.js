@@ -19,4 +19,4 @@ class FollowersCard extends Component {
   }
 }
 
-export default FollowersCard
+export default FollowersCard;

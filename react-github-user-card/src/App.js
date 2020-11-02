@@ -16,13 +16,15 @@ class App extends Component {
 
   //
   componentDidMount() {
-    axios.get('https://api.github.com/users/robelv2020')
+    // axios.get('https://api.github.com/users/robelv2020')
+    axios.get('https://api.github.com/users/tippitytapp')
       .then(res => {
         this.setState({
           main: res.data
         })
         return res.data.followers_url
       })
+
       .then(res => {
         axios.get(res)
           .then(res => {
@@ -64,8 +66,8 @@ class App extends Component {
     return (
       <div>
         <UserCard main={this.state.main} />
-        <SearchField />
-        <div>
+        <SearchField search={this.state.search} handleChange={this.handleChange} handleForm={this.handleForm} />
+        <div className='container'>
           <FollowersCard followers={this.state.followers} />
         </div>
       </div>
