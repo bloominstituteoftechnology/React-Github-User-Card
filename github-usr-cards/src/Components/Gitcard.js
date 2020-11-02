@@ -50,10 +50,11 @@ class Gitcard extends React.Component {
                     <p>
                         Location: {this.state.location}
                     </p>
-                    <p>
+                    <p class="followers">
                         Followers: {this.state.followers.map( u =>{
-                            return u.login
-                        })}
+                            return u.login+' ' 
+                            
+                        })}<br />
                     </p>
                     
             </div>

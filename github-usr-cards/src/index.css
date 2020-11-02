@@ -72,7 +72,11 @@ box-shadow: 0 1px 6px -2px #000;
 background-color: #FFF;
 margin-bottom: 30px;
 }
-
+.followers{
+  background-color: whitesmoke;
+  width:20%;
+  height:100%;
+}
 .card img {
   /* display: flex;
   flex-wrap: wrap;
