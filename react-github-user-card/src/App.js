@@ -109,7 +109,11 @@ class App extends React.Component{
       <h1>Github User Card</h1>
       </header>
       <Search searchUser={this.searchUser}/>
-      {this.state.loadSuccess ? 
+      {(this.state.search === "") ?
+      <h2>Github User Kavya and Followers </h2>
+      : <h2>Github User {this.state.search} and Followers </h2>
+      }   
+      {this.state.loadSuccess ?   
         this.state.userInfo.map(item=>{
           return(<Cards key={item.name} userInfo={item}/>)
         }) :<Error errorInfo={this.state.errorInfo}/>

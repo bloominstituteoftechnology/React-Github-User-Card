@@ -28,7 +28,7 @@ handleSubmit=(e)=>{
 render(){
     return(
         <Form className="search" onSubmit={this.handleSubmit} >
-          <Label htmlFor="user">Search Github User</Label> 
+          <Label htmlFor="user"><b>Search Github User</b></Label> 
           <Input id="user"
           name="user"
           type="text"
