@@ -15,16 +15,6 @@ constructor(props){
 graphCard =()=>{
     const {login} = this.props.userInfo.login;
     new GitHubCalendar(`.${this.props.userInfo.login}.calendar`,`${this.props.userInfo.login}`)
-
-    // new GitHubCalendar(`.${login}.calendar`,login,{
-    //     responsive:true
-    // })    
-    // new GitHubCalendar(".calendar",`${this.props.userInfo.login}`)
-   
-        // const { login } = this.props.userInfo.login;
-        // new GitHubCalendar(`.${login} .calendar`, `${this.props.userInfo.login}`, {
-        //   responsive: true
-        // });
 }
  
 
