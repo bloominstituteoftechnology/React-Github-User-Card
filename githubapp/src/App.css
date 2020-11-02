@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-image: url("https://opengameart.org/sites/default/files/cyberpunk-street.png");
+  background-image: url("https://i.pinimg.com/736x/aa/74/d3/aa74d32e7b901e4713c7ccc3a62912a5.jpg");
   font-family: "Fjalla One";
 }
 
@@ -65,6 +65,6 @@ button{
 .header{
   color:white;
   font-size:3rem;
-  background-image: url("https://opengameart.org/sites/default/files/cyberpunk-street.png");
+  background-image: url("https://i.pinimg.com/736x/aa/74/d3/aa74d32e7b901e4713c7ccc3a62912a5.jpg");
 margin-top: -4rem;
 }
