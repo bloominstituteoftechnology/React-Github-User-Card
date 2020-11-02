@@ -98,15 +98,17 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
     })
     fetchNewu(newu)
       .then((json) => {
-        if (json.status === "success") {
-          this.setState({ usersname: json.name,username: json.login
-          ,userimg: json.avatar_url });
+        // if (json.status === "success") {
+        //   this.setState({ usersname: json.name,username: json.login
+        //   ,userimg: json.avatar_url });
            
-        } else {
-          console.error("App.js No success error fetching githubbers: handleSetNewUser forcing it any way", json);
-          this.setState({ usersname: json.name,username: json.login
-            ,userimg: json.avatar_url });
-        }
+        // } else {
+        //   console.error("App.js No success error fetching githubbers: handleSetNewUser forcing it any way", json);
+        //   this.setState({ usersname: json.name,username: json.login
+        //     ,userimg: json.avatar_url });
+        // }
+        this.setState({username: json.login, userimg:json.avatar_url})
+        console.log(json);
       })
       .catch((err) => console.error("App.js HandleSetNewUser You've got errors: ", err));
   };
@@ -122,7 +124,7 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
          <Router path="/">
          <Gitform submits={this.submits}  submitting={this.state.submitting}  newusr={this.state.newusr} handleSetNewUser={this.handleSetNewUser} />
           
-          {this.state.newusr !== null ? <Gitcard username={this.state.username} userimg={this.state.userimg} /> : null  }
+          {this.state.username !== null ? <Gitcard username={this.state.username} userimg={this.state.userimg} /> : null  }
            
          </Router>
       </div>

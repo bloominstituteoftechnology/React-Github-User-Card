@@ -2,11 +2,11 @@ import React from "react";
 
 
 class Gitcard extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state={
-            username:"",
-            userimg:"",
+            username:this.props.username,
+            userimg:this.props.userimg,
 
         }
     };
