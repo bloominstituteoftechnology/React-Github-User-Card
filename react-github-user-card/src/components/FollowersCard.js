@@ -6,11 +6,11 @@ class FollowersCard extends Component {
     return (
       this.props.followers.map(follower => {
         return (
-          <Card key={follower.id} className=''>
+          <Card key={follower.id} className='col-3'>
             <CardImg src={follower.avatar_url} alt='Follower' />
             <CardBody>
               <CardTitle>{follower.login}</CardTitle>
-              <Button onClick={e => window.open(follower.html_url)}>Go to User git?</Button>
+              <Button onClick={e => window.open(follower.html_url)}>Go To User Page</Button>
             </CardBody>
           </Card>
         )

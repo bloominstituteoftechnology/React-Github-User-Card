@@ -1,36 +1,12 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.container{
-  background-color: #282c34;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  color: black
-}
-
-.App-link {
-  color: #61dafb;
-}
-
 .col-2{
   margin: 1% auto;
   text-align: center;
 }
-.col-3{
-  margin: 1% auto;
+.container{
+  display: flex;
+  flex-wrap: wrap;
 }
 
+.follower-card-col{
+  margin: 1% auto;
+}

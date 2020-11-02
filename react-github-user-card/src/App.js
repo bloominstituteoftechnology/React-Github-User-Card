@@ -4,6 +4,8 @@ import './App.css';
 import UserCard from './components/UserCard'
 import FollowersCard from './components/FollowersCard'
 import SearchField from './components/SearchField'
+
+
 class App extends Component {
   constructor() {
     super()
@@ -16,8 +18,9 @@ class App extends Component {
 
   //
   componentDidMount() {
-    // axios.get('https://api.github.com/users/robelv2020')
-    axios.get('https://api.github.com/users/tippitytapp')
+    axios.get('https://api.github.com/users/robelv2020')
+      // // had to use someone who has followers
+      // axios.get('https://api.github.com/users/tippitytapp')
       .then(res => {
         this.setState({
           main: res.data
