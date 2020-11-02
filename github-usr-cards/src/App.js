@@ -20,7 +20,8 @@ class App extends React.Component {
         bio: null,
         created_at: null,  
         newusr: null,
-        location: null
+        location: null,
+        followers:[]
     };
   }
 
@@ -137,8 +138,23 @@ fetchNewu(newu)
         fetch(`https://api.github.com/users/${newu}/followers`).
         then(value => value.json())
         ])
-        .then((value) => {
-           console.log(value)
+        .then((json) => {
+           console.log(json)
+           if(newu != json[0].login){
+            this.setState({newusr:json[0].login})
+          }else{
+            this.setState({
+              newusr: newu
+            })
+          }
+
+          this.setState({username: json[0].login, 
+            usersname: json[0].name, userimg:json[0].avatar_url,
+          bio: json[0].bio, created_at: json[0].created_at, 
+          location: json[0].location,followers:json[1]
+        
+        })
+            console.log('in followers',this.state.followers);
           //json response
         })
         .catch((err) => {
@@ -160,7 +176,8 @@ fetchNewu(newu)
          <Gitform newusr={this.state.newusr} handleSetNewUser={this.handleSetNewUser} />
           
           {this.state.username !== null ? <Gitcard username={this.state.username} name={this.state.usersname} userimg={this.state.userimg}
-                                 bio={this.state.bio} created_at={this.state.created_at} location={this.state.location}   /> 
+                                 bio={this.state.bio} created_at={this.state.created_at} location={this.state.location}
+                                 followers={this.state.followers}   /> 
                                                : 
                                                null  }
            

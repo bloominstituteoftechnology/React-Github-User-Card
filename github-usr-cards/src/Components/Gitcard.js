@@ -10,7 +10,8 @@ class Gitcard extends React.Component {
             name:this.props.name,
             bio:this.props.bio,
             created_at:this.props.created_at,
-            location:this.props.location
+            location:this.props.location,
+            followers:this.props.followers
         }
     };
 
@@ -48,6 +49,11 @@ class Gitcard extends React.Component {
                     </p>
                     <p>
                         Location: {this.state.location}
+                    </p>
+                    <p>
+                        Followers: {this.state.followers.map( u =>{
+                            return u.login
+                        })}
                     </p>
                     
             </div>
