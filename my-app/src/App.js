@@ -1,29 +1,36 @@
 import React from "react"
 import Users from "./components/Users"
+import axios from 'axios'
 
 
 class App extends React.Component {
   constructor(){
   super()
   this.state = {
-    users: []
+    Users: {},
+    Followers: []
   }
 }
 
 
 
 componentDidMount() {
-  fetch("https://api.github.com/users/achaselittlefield")
-  .then((res) => res.json())
-  .then((json) =>{
-    if(json.status === "success"){
-      this.setState({users: json.message})
-    } else {
-      console.error("error getting users: ", json)
-    }
+axios.get("https://api.github.com/users/achaselittlefield")
+.then((res) => {
+  this.setState({
+    Users: res.data
+    
   })
+})
+axios.get("https://api.github.com/users/achaselittlefield/followers")
+.then((res) => {
+  this.setState({
+    Followers: res.data
+  })
+})
   .catch((err) => console.error("Unable to show users: ", err))
   console.log("https://api.github.com/users/achaselittlefield")
+  console.log("https://api.github.com/users/achaselittlefield/followers")
 }
 
 
@@ -31,7 +38,7 @@ render(){
   return(
     <div>
     <h1>Github User Cards</h1>
-    <Users users={this.state.users} />
+    <Users user={this.state.Users} follower={this.state.Followers} />
     </div>
     )
 }
