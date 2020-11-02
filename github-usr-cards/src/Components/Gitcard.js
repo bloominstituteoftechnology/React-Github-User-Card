@@ -7,7 +7,10 @@ class Gitcard extends React.Component {
         this.state={
             username:this.props.username,
             userimg:this.props.userimg,
-
+            name:this.props.name,
+            bio:this.props.bio,
+            created_at:this.props.created_at,
+            location:this.props.location
         }
     };
 
@@ -32,8 +35,21 @@ class Gitcard extends React.Component {
                     <p className="username">
                     Login: {this.state.username}
                     </p>
-                    <img className="card"  alt="Github User Avatar Image" 
+                    <img  alt="Github User Avatar Image" 
                     src={this.state.userimg} width="300px" />
+                    <p>
+                        Since: {this.state.created_at}
+                    </p>
+                    <p>
+                        Name: {this.state.name}
+                    </p>
+                    <p>
+                        Bio: {this.state.bio}
+                    </p>
+                    <p>
+                        Location: {this.state.location}
+                    </p>
+                    
             </div>
             </div>
         );

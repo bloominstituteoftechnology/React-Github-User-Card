@@ -16,8 +16,11 @@ class App extends React.Component {
         id: 0,
         usersname: null,
         username: null,
-        userimg: null,  
+        userimg: null,
+        bio: null,
+        created_at: null,  
         newusr: null,
+        location: null,
         submitting:null
     };
   }
@@ -115,8 +118,9 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
         //   this.setState({ usersname: json.name,username: json.login
         //     ,userimg: json.avatar_url });
         // }
-        this.setState({username: json.login, usersname: json.name,
-           userimg:json.avatar_url})
+        this.setState({username: json.login, 
+          usersname: json.name, userimg:json.avatar_url,
+        bio: json.bio, created_at: json.created_at, location: json.location })
 
         console.log(json);
          
@@ -139,7 +143,10 @@ console.log('Appjs through the handleSetNewUser to set newusr then fetch newu')
          <Router path="/">
          <Gitform submits={this.submits}  submitting={this.state.submitting}  newusr={this.state.newusr} handleSetNewUser={this.handleSetNewUser} />
           
-          {this.state.username !== null ? <Gitcard username={this.state.username} userimg={this.state.userimg} /> : null  }
+          {this.state.username !== null ? <Gitcard username={this.state.username} name={this.state.usersname} userimg={this.state.userimg}
+                                 bio={this.state.bio} created_at={this.state.created_at} location={this.state.location}   /> 
+                                               : 
+                                               null  }
            
          </Router>
       </div>
