@@ -1,0 +1,55 @@
+.App {
+  text-align: center;
+}
+
+h1{
+  text-shadow: 3px 3px grey;
+}
+
+
+
+
+
+.App-header {
+  background: rgb(7,1,44);
+background: linear-gradient(54deg, rgba(7,1,44,1) 12%, rgba(23,212,217,1) 49%, rgba(16,16,38,1) 90%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.card{
+  background-image: url('https://i.imgur.com/2tac1WQ.jpg');
+  background-size: cover;
+  font-size: 15px;
+  display: flex;
+  flex-direction: column;
+  margin:25px;
+  border:grey 10px ridge;
+
+}
+
+.profilePic{
+ border-radius: 50%;
+  width:300px;
+  
+}
+
+
