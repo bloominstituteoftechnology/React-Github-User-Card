@@ -1,6 +1,51 @@
 import React from 'react';
 import axios from 'axios';
+import styled from 'styled-components';
 import './App.css';
+
+const StyledProfile = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .profileCard{
+    border: black 3px solid;
+    border-radius: 10px;
+    margin: 2%;
+    padding: 1%;
+    width: 25rem;
+
+    img{
+      width: 100%;
+    }
+    .githubImg{
+      width: 2rem;
+    }
+  }
+
+`
+
+const StyledList = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`
+
+const StyledCards = styled.div`
+  border: black 3px solid;
+  border-radius: 10px;
+  margin: 2%;
+  padding: 1%;
+  width: 10rem;
+  img{
+    width: 100%;
+  }
+  .githubImg{
+    width: 2rem;
+  }
+`
 
 class App extends React.Component {
 
@@ -39,20 +84,28 @@ class App extends React.Component {
         <div>
           <h1>GitHub Followers</h1>
         </div>
-        <div>
-          <img src={this.state.user.avatar_url} alt={this.state.user.login}/>
-          <p>{this.state.user.name}</p>
-          <p>{this.state.user.login}</p>
-          <span>Profile: <a href={this.state.user.html_url}>{this.state.user.html_url}</a></span>
-          <p>Followers: {this.state.user.followers}</p>
-          <p>Following: {this.state.user.following}</p>
-        </div>
+        <StyledProfile>
+          <div className='profileCard'>
+            <img src={this.state.user.avatar_url} alt={this.state.user.login}/>
+            <p>{this.state.user.name}</p>
+            <p>{this.state.user.login}</p>
+            <a href={this.state.user.html_url}><img className='githubImg' src='https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg' alt='GitHub Profile'/></a>
+            <p>Followers: {this.state.user.followers}</p>
+            <p>Following: {this.state.user.following}</p>
+          </div>
+
+        </StyledProfile>
         
-        {this.state.followers.map(follower =>
-          <div className='card' key={follower.id}>
-            <p>{follower.login}</p>
-          </div> 
+        <StyledList>
+          {this.state.followers.map(follower =>
+            <StyledCards key={follower.id}>
+              <img src={follower.avatar_url} alt={follower.login} />
+              <p>{follower.login}</p>
+              <a href={follower.html_url}><img className='githubImg' src='https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/github.svg' alt='GitHub Profile'/></a>
+            </StyledCards> 
           )}
+        </StyledList>
+
 
       </div>
     );
