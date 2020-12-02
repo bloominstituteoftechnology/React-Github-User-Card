@@ -149,7 +149,8 @@ class App extends React.Component {
     fetchUsers(this.state.input)
       .then(res => {
         this.setState({
-          users: res
+          users: res,
+          input: ""
         })
       })
   }
