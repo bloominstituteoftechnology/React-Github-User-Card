@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import axios from 'axios';
 import styled from 'styled-components'
 //import components
 import fetchUsers from './components/fetchUsers'
+import fetchFollowers from './components/fetchFollowers'
 
 const Container = styled.div`
   background-color: #F1F8FF;
@@ -124,6 +124,7 @@ class App extends React.Component {
   }
 
   componentDidMount(){
+
     fetchUsers("katieolson84")
       .then((res) => {
         console.log(res)
@@ -131,12 +132,24 @@ class App extends React.Component {
           users:res
         });
       })
-    axios
-      .get(`https://api.github.com/users/katieolson84/followers`)
-      .then((res)=> this.setState({followers:res.data}))
-      .catch(err=> console.log(err));
+    fetchFollowers("katieolson84")
+      .then((res) => {
+        console.log(res)
+        this.setState({
+          followers: res
+        });
+      })
     }
-
+    // axios.get(`https://api.github.com/users/${this.state.users}`)
+    //   .then((res)=> this.setState({ users:res.data }, console.log(res)))
+    //   .catch(err=> console.log(err));
+  
+    // axios
+    //   .get(`https://api.github.com/users/${this.state.users}/${this.state.followers}`)
+    //   .then((res)=> this.setState({ followers:res.data }, console.log(res)))
+    //   .catch(err=> console.log(err));
+    // }
+  
   onChange = (e) => {
     this.setState({
       input:e.target.value
@@ -153,6 +166,13 @@ class App extends React.Component {
           input: ""
         })
       })
+    fetchFollowers(this.state.input)
+    .then(res => {
+      this.setState({
+        followers: res,
+        input: ""
+      })
+    })
   }
 
   render() {
@@ -192,8 +212,8 @@ class App extends React.Component {
           </div>
           <div className="followers-container">
             {this.state.followers.map(follower =>
-            <div className="follower-card">
-              <div className="follower-details" key={follower.id}>
+            <div className="follower-card" key={follower.id}>
+              <div className="follower-details" >
                 <img width="125" className='follower-photo' src={follower.avatar_url} alt={follower.avatar_url}/> 
                 <h3 className="follower-username">{follower.login}</h3>
               </div>
