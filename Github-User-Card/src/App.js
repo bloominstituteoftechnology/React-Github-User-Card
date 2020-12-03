@@ -7,7 +7,7 @@ import fetchFollowers from './components/fetchFollowers'
 
 const Container = styled.div`
   background-color: #F1F8FF;
-  height: 100vh;
+  height: 100%;
   font-family: Arial;
   color: #24282D; 
 
@@ -27,6 +27,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-content: center;
   }
   form{
     width: 75%;
@@ -47,6 +48,7 @@ const Container = styled.div`
     line-height: 2rem;
     width: 70%;  
     border: none;
+    padding-left: 1%;
   }
 
   button{
@@ -64,9 +66,15 @@ const Container = styled.div`
     border-radius: 5px;
     background-color: #FFFFFF;
     padding: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
   }
   .user-card img{
     border-radius: 50%;
+    justify-self: center;
+    align-self: center;
   }
   
   .user-details h2{
@@ -91,8 +99,8 @@ const Container = styled.div`
     align-content: center;
   }
   .follower-card{
-    /* justify-content: center;
-    align-items: center; */
+    justify-content: center;
+    align-items: center;
     margin: .5%;
     box-shadow: 0px 30px 60px -40px rgba(31, 38, 23, 0.5);
     border-radius: 5px;
@@ -140,15 +148,7 @@ class App extends React.Component {
         });
       })
     }
-    // axios.get(`https://api.github.com/users/${this.state.users}`)
-    //   .then((res)=> this.setState({ users:res.data }, console.log(res)))
-    //   .catch(err=> console.log(err));
-  
-    // axios
-    //   .get(`https://api.github.com/users/${this.state.users}/${this.state.followers}`)
-    //   .then((res)=> this.setState({ followers:res.data }, console.log(res)))
-    //   .catch(err=> console.log(err));
-    // }
+
   
   onChange = (e) => {
     this.setState({
