@@ -1,0 +1,87 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	font-family: 'Poppins', sans-serif;
+	background: linear-gradient(#515eed, #9198e5) no-repeat;
+}
+
+.App {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+}
+
+.App h1 {
+	margin: 2rem;
+	color: rgb(237, 237, 237);
+	border-bottom: 2px solid rgb(237, 237, 237);
+}
+
+/* Card */
+.card {
+	background: #fff;
+	width: 30%;
+	padding: 1rem;
+	border-radius: 10px;
+	display: flex;
+}
+
+.user__img {
+	padding: 0 1rem;
+	border-radius: 2px;
+}
+
+.user__info__top {
+	margin-bottom: 0.6rem;
+}
+
+.user__info__top h3 {
+	color: rgb(33, 33, 33);
+}
+
+.user__info__top p {
+	font-size: 0.7rem;
+	font-style: italic;
+	line-height: 1;
+}
+
+.user__info__bottom p {
+	font-size: 0.9rem;
+	line-height: 1.2;
+}
+
+.user__info__bottom .followers {
+	font-size: 0.8rem;
+	line-height: 2;
+}
+
+.user__info__bottom button {
+	margin-top: 0.3rem;
+	padding: 0.4rem 0.6rem;
+	float: right;
+	background: #515eed;
+	border: none;
+	color: #fff;
+	border-radius: 2px;
+}
+
+/* Followers */
+
+.follower__container {
+	margin: 2rem;
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+.follower {
+	width: 20%;
+}
