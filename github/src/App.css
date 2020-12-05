@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+}
+
+/* Header Styling */
+.app__header {
+  display: flex;
+  width: 60vw;
+  justify-content: space-between;
+  padding: 40px 0;
+  align-items: center;
+}
+
+.app__header h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 2px solid #ff5349;
+  margin-left: 20px;
+}
+
+.userSearch__container {
+  display: flex;
+}
+
+.form__input {
+  width: 300px; 
+  position: relative;
+  height: 50px;
+  padding-bottom: 4px;
+}
+
+.form__input input {
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+}
+
+.user__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-bottom: 2px solid black;
+  font-weight: bold;
+  font-size: 14px;
+  color: #ff5349;
+}
+
+button {
+  margin: 0 10px;
+  padding: 0 10px;
+  background: none;
+  border: 2px solid;
+  overflow: hidden; 
+  transition: 0.4s all ease-in-out;
+}
+
+button:hover {
+  box-shadow: inset #ff5349 700px 0;
+}
+
+/* User Card */
+
+.app__userCard {
+  width: 100vw; 
+  height: 60vh;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+
+.userCard {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  justify-content: flex-start;
+  border: 1px solid black;
+}
+
+.userCard__image {
+  height: 300px;
+  width: 300px;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
+.userCard__image img {
+  height: 100%;
+}
+
+.userCard__image__count {
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
+  font-weight: bold;
+}
+
+.userCard__image__count .count {
+  color: #ff5349;
+}
+
+.userCard__info {
+  height: 300px;
+  margin-top: 50px;
+  padding: 0 10px;
+  display: flex; flex-direction: column;
+  justify-content: space-around;
+}
+
+.userCard__info h2 {
+border-bottom: 1px solid black;
+font-size: clamp(1.5rem, 5vw, 2.5rem);
+margin: -30px 0 5px 0;
+}
+
+.userCard__info h3 {
+  margin: -40px 0 10px 0;
+}
+
+.userCard__info button {
+
+  padding-bottom: 0;
+}
+
+.userCard__info a {
+  width: 100%;
+  padding-right: 15px;
+  margin-bottom: -25px;
+}
+
+.userCard__visit {
+  width: 100%;
+}
+
