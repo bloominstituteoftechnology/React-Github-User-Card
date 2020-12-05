@@ -6,14 +6,14 @@ import "./App.css";
 
 const user =
   {
-    login: "amotor-AM",
-    html_url: "https://api.github.com/users/amotor-AM",
-    avatar_url: "https://avatars0.githubusercontent.com/u/66324211?v=4",
-    name: "Alex Motor",
+    login: "",
+    html_url: "",
+    avatar_url: "",
+    name: "",
     followers: 0,
     following: 0,
-    bio: "I am a full stack web development student who is passionate about coding.",
-    location: "Las Vegas",
+    bio: "",
+    location: "",
   };
 
 class App extends Component {
