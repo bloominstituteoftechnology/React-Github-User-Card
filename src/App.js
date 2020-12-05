@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
+import GitCard from './Components/GitCard';
 import './App.css';
 
-class App extends React.Component() {
+class App extends React.Component {
   constructor() {
     super();
 
@@ -58,7 +59,29 @@ class App extends React.Component() {
         console.log(err);
     })
 
-}
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    // runs when state or props have been updated
+    // always use an if statement to prevent infinite loops
+    if (prevState.user!== this.state.user) {
+      console.log('There has been a change!')
+    }
+
+    if (this.state.username !== `$(e.target.login)`) {
+      axios.get(`https://api.github.com/users/greysonhamilton`)
+      .then((res) => {
+          console.log();
+          this.setState({
+              ...this.state,
+              user: res.data.value
+          });
+      })
+      .catch((err) => {
+          console.log(err);
+      })
+    }
+  }
 
   render() {
 
@@ -80,9 +103,12 @@ class App extends React.Component() {
             Submit
           </button>
         </div>
+        <div>
+          <GitCard key = {login} />
+        </div>
       </div>
 
-    );
+    )
 
   }
 
