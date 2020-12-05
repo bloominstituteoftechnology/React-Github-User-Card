@@ -129,7 +129,17 @@ margin: -30px 0 5px 0;
 }
 
 .userCard__info button {
-  margin-bottom: -25px;
+
   padding-bottom: 0;
+}
+
+.userCard__info a {
+  width: 100%;
+  padding-right: 15px;
+  margin-bottom: -25px;
+}
+
+.userCard__visit {
+  width: 100%;
 }
 

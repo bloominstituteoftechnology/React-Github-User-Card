@@ -7,8 +7,8 @@ import "./App.css";
 const user =
   {
     login: "amotor-AM",
-    profile: "https://api.github.com/users/amotor-AM",
-    avatar: "https://avatars0.githubusercontent.com/u/66324211?v=4",
+    html_url: "https://api.github.com/users/amotor-AM",
+    avatar_url: "https://avatars0.githubusercontent.com/u/66324211?v=4",
     name: "Alex Motor",
     followers: 0,
     following: 0,
@@ -24,23 +24,10 @@ constructor() {
 
 searchForUser = (e, User) => {
   e.preventDefault();
-  console.log(User);
   axios.get(`https://api.github.com/users/${User}`)
-  .then((response) => {
-    const newUser = {
-      login: response.login,
-      profile: response.url,
-      avatar: response.avatar_url,
-      name: response.name,
-      followers: response.followers,
-      following: response.following,
-      bio: response.bio,
-      location: response.location,
-    }
-    this.setState({
-      ...this.state,
-      user: [newUser]
-    })
+  .then((res) => {
+    this.setState(res.data)
+    console.log("New State", this.state)
   })
   .catch((err) => {
     console.log(err);

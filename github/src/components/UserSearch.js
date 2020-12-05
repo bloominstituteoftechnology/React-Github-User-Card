@@ -19,6 +19,7 @@ submitForm = (e) => {
     e.preventDefault();
     this.props.searchForUser(e, this.state.User);
     this.setState({User: ""})
+    console.log(this.state.User);
 }
 
 render() {
