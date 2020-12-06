@@ -4,3 +4,52 @@ body {
 h1,h2,h3,h4,h5,h6{
   text-align: center;
 }
+.userImg{
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  width: 150px;
+  
+
+}
+.Main {
+  width: auto;
+  height: auto;
+  margin: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.followerDiv {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.follower {
+  margin: 50px;
+  width: 200px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+Form {
+  display: flex;
+}
+
+.formButton {
+  width: 100%;
+}
+
+h1 {
+  padding: 30px;
+}

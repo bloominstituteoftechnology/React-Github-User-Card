@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from "axios";
+import { Button, Form, Input } from 'reactstrap';
 import UserCard from './components/userCard';
 import FollowerCard from './components/followerCard';
 import './App.css';
@@ -84,16 +85,10 @@ this.setState({
       <div className="app">
 <div className ="header">
         <h1>Github User</h1>
-        <form>
-        <input
-        type="text"
-        className ="user-search"
-        onChange={this.handleChange}
-        value ={this.state.username}
-        placeholder="Github Username"
-        />
-        <button onClick={this.getUser}>Find User</button>
-</form>
+        <Form>
+            <Input type="text" className="user-search" onChange={this.handleChange} value={this.state.username} placeholder="Github Username" />
+            <Button className="formButton" color="info"  onClick={this.getUser} >Find User</Button>
+          </Form>
 </div>
         <div className="userContainer">
           <UserCard user={this.state.user} />
