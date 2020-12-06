@@ -50,8 +50,10 @@ class App extends React.Component {
             Show me the user!
           </button>
         </div>
-        <div>
-          <UserCard {...this.state.userInfo} />
+        <div className='card-wrapper'>
+          <div>
+            <UserCard {...this.state.userInfo} />
+          </div>
         </div>
       </div>
     )
