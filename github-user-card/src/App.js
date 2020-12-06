@@ -1,5 +1,7 @@
 import React from 'react';
 import axios from "axios";
+import UserCard from './components/userCard';
+import FollowerCard from './components/followerCard';
 import './App.css';
 
 const user = [];
@@ -9,7 +11,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      username:"",
+      username:"kendra4227",
       user:[],
       followers:[]
     };
@@ -25,19 +27,24 @@ this.setState({
   componentDidMount(){
     console.log("Component did mount");
     axios
-    .get(`https://api/github.com/users/kendra4227`)
+    .get(`https://api.github.com/users/kendra4227`)
     .then((res)=>{
+      console.log("Res",res.data)
       this.setState({
         ...this.state,
-        user:res.data.message
-      })
+        user:res.data
+      });
+      console.log("User",user,followers);
+      this.getFollowers()
+    })
+
     .catch((err)=> console.log("Error has occured",err));
-    });
+                             
   };
 
   componentDidUpdate(PrevState){
     if(PrevState !== this.state.user){
-      console.log("User has changed")
+      console.log("Component did Update");
     }
   };
 
@@ -48,18 +55,55 @@ this.setState({
     .then((res)=>{
       this.setState({
         ...this.state,
-        username:"",
-        user:res.data.message
+        user:res.data
       });
+      console.log(user);
+      this.getFollower();
     })
     .catch((err) => console.log("Error occured again",err))
   };
+  getFollowers = () => {
+    axios
+      .get(`https://api.github.com/users/${this.state.username}/followers`)
+      .then((res => {
+        console.log("followers", res.data);
+        this.setState({
+          ...this.state,
+          username: "",
+          followers: res.data
+        });
+      }))
+      .catch((err) => {
+        console.log("Error 3", err);
+      });
+  };
+
 
   render() {
     return(
-      <div className ="App">
+      <div className="app">
+<div className ="header">
         <h1>Github User</h1>
-      </div>
+        <form>
+        <input
+        type="text"
+        className ="user-search"
+        onChange={this.handleChange}
+        value ={this.state.username}
+        placeholder="Github Username"
+        />
+        <button onClick={this.getUser}>Find User</button>
+</form>
+</div>
+        <div className="userContainer">
+          <UserCard user={this.state.user} />
+        </div>
+
+        <div>
+          <FollowerCard followers={this.state.followers} />
+        </div>
+      </div>  
+
     );
   } 
 }
