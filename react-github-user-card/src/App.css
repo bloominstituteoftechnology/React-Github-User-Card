@@ -22,11 +22,20 @@
   box-sizing: border-box;
 }
 
+.hero {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  gap: 1rem;
+  min-height: 150px;
+}
+
 .card-wrapper {
   display: grid;
   grid-template-columns: minmax(auto, 345px);
   padding: 1rem;
   justify-content: center;
+  gap: 1rem;
 }
 
 .card {
