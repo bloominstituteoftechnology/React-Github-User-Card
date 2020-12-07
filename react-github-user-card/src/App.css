@@ -1,5 +1,17 @@
 .App {
   text-align: center;
+  background: #536976; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #292e49,
+    #536976
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #292e49,
+    #536976
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  min-height: 100vh;
 }
 
 .App-header {
@@ -28,6 +40,38 @@
   align-content: center;
   gap: 1rem;
   min-height: 150px;
+  color: #fff;
+}
+
+.search-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.25rem;
+}
+
+.search-box input {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  box-shadow: rgba(42, 51, 83, 0.12) 0px 15px 35px 0px,
+    rgba(0, 0, 0, 0.06) 0px 5px 15px;
+  border: none;
+}
+
+.search-box button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  background-color: #ede5a6;
+  border: none;
+  border-radius: 0.3rem;
+  font-weight: 600;
+  box-shadow: rgba(42, 51, 83, 0.12) 0px 15px 35px 0px,
+    rgba(0, 0, 0, 0.06) 0px 5px 15px;
+  border: none;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #e8dd8e;
 }
 
 .card-wrapper {
@@ -48,6 +92,7 @@
   border-radius: 0.3rem;
   box-shadow: rgba(42, 51, 83, 0.12) 0px 15px 35px 0px,
     rgba(0, 0, 0, 0.06) 0px 5px 15px;
+  background-color: #fff;
 }
 
 .user-image {
@@ -76,4 +121,8 @@
 .bio {
   grid-column: 1 / span 2;
   text-align: left;
+}
+
+.followers {
+  color: #fff;
 }

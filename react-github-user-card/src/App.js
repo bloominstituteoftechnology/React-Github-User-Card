@@ -9,7 +9,8 @@ class App extends React.Component {
     this.state = {
       userName: '',
       userInfo: {},
-      userFollowers: []
+      userFollowers: [],
+      updating: false
     }
   }
 
@@ -20,11 +21,11 @@ class App extends React.Component {
     })
   }
 
+
   fetchUser = () => {
     axios
       .get("https://api.github.com/users/" + this.state.userName)
       .then(({ data }) => {
-        console.log(data)
         this.setState({
           ...this.state,
           userInfo: {...data}
@@ -33,15 +34,19 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  componentDidMount() {
-}
+  handleClick = (e) => {
+    this.setState({
+      ...this.state,
+      userName: e.target.value,
+      updating: !this.state.updating
+    })
+  }
 
 componentDidUpdate(prevProps, prevState) {
   if(prevState.userInfo !== this.state.userInfo){
     axios
     .get("https://api.github.com/users/" + this.state.userName + '/followers')
     .then(({ data }) => {
-      console.log(data)
       this.setState({
         ...this.state,
         userFollowers: data
@@ -49,6 +54,18 @@ componentDidUpdate(prevProps, prevState) {
     })
     .catch((err) => console.log(err));
   }
+
+  if(prevState.updating !== this.state.updating){
+    this.fetchUser()
+  }
+
+  // if(this.state.updating === true) {
+  //   this.fetchUser()
+  //   this.setState({
+  //     ...this.state,
+  //     updating: false
+  //   })
+  // }
 }
 
 
@@ -58,7 +75,7 @@ componentDidUpdate(prevProps, prevState) {
         {/* HERO SECTION */}
         <div className='hero'>
           <h1>Get Github User</h1>
-          <div>
+          <div className='search-box'>
             <input
               placeholder='Enter github user name'
               value={this.state.userName}
@@ -78,10 +95,10 @@ componentDidUpdate(prevProps, prevState) {
           <div>
             <UserCard {...this.state.userInfo} />
           </div>
-          <h2 className='secondary'>Followers:</h2>
+          <h2 className='secondary followers'>{this.state.userFollowers.length} Followers:</h2>
           {this.state.userFollowers.map(user => {
             return (
-              <UserCard {...user} />
+              <UserCard key={this.state.userInfo.login} {...user} handleClick={this.handleClick} button='display' />
             )
           })}
         </div>
