@@ -9,81 +9,120 @@ class App extends React.Component {
 
     this.state = {
 
-      user: {},
-      username: ''
+      user: 'greysonhamilton',
+      userData: {},
+      userFollowers: [],
+      input: ''
 
-    }
+    };
 
   }
 
-  fetchUser = () => {
+  componentDidMount() {
 
-    alert(`Fetching ${this.state.username} user.`);
-
-    axios.get(`https://api.github.com/users/${this.state.username}`)
+    axios.get(`https://api.github.com/users/${this.state.user}`)
 
     .then((res) => {
+
+        console.log(res.data);
+
         this.setState({
-            ...this.state,
-            user: res.data.value
-        });
+
+          userData: res.data
+
+        })
+
     })
 
     .catch((err) => {
+
         console.log(err);
+
+    })
+
+    axios.get(`https://api.github.com/users/${this.state.user}/followers`)
+
+      .then((res) => {
+
+        this.setState({
+
+          userFollowers: res.data
+
+        })
+
+      })
+
+      .catch((err) => {
+
+        console.log(err);
+
+      })
+
+  }
+
+  fetchUser = (e) => {
+
+    e.preventDefault();
+
+    alert(`Fetching ${this.state.input} data.`);
+
+    axios.get(`https://api.github.com/users/${this.state.user}`)
+
+    .then((res) => {
+
+        this.setState({
+          
+          userData: res.data
+
+        });
+
+    })
+
+    .catch((err) => {
+
+        console.log(err);
+
+    })
+
+    axios.get(`https://api.github.com/users/${this.state.user}/followers`)
+
+    .then((res) => {
+
+      this.setState({
+
+        userFollowers: res.data
+
+      })
+
+    })
+
+    .catch((err) => {
+
+      console.log(err)
+
     })
 
   }
 
   handleChange = (e) => {
+
+    console.log(e.target.value);
     this.setState({
-      ...this.state, 
-      username: e.target.login
-    })
-  }
 
-  componentDidMount() {
-
-    axios.get('https://dog.ceo/api/breed/hound/images')
-
-    .then((res) => {
-        console.log(res);
-        this.setState({
-            ...this.state,
-            user: res.data.value
-        });
+      input: e.target.value,
+      user: e.target.value
 
     })
 
-    .catch((err) => {
-        console.log(err);
-    })
-
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    // runs when state or props have been updated
-    // always use an if statement to prevent infinite loops
-    if (prevState.user!== this.state.user) {
-      console.log('There has been a change!')
-    }
-
-    if (this.state.username !== `$(e.target.login)`) {
-      axios.get(`https://api.github.com/users/greysonhamilton`)
-      .then((res) => {
-          console.log();
-          this.setState({
-              ...this.state,
-              user: res.data.value
-          });
-      })
-      .catch((err) => {
-          console.log(err);
-      })
-    }
   }
 
   render() {
+
+    if(this.state.userData.length === 0) {
+
+      return (<p>Loading Cards...</p>)
+
+    } else {
 
     return (
 
@@ -93,25 +132,28 @@ class App extends React.Component {
           <h2>Please enter the name of the user you wish to view.</h2>
         </div>
         <div>
-          <input 
-            type='text' 
-            placeholder = 'Enter GitHub account name here.' 
-            value = {this.state.username}
-            onChange = {this.handleChange}
-           />
-          <button onClick = {this.fetchUser}>
-            Submit
-          </button>
+          <form onSubmit = {this.fetchUser}>
+            <input 
+              id = 'userInput' 
+              type = 'text' 
+              placeholder = 'Enter GitHub account name here.' 
+              value = {this.state.input}
+              onChange = {this.handleChange}
+             />
+            <button>
+              Submit
+            </button>
+          </form>
         </div>
         <div>
-          <GitCard key = {login} />
+          <GitCard info = {this.state.userData} followers = {this.state.userFollowers} />
         </div>
       </div>
 
-    )
+    )}
 
   }
 
 }
 
-export default App;
+export default App

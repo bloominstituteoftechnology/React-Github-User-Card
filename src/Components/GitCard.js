@@ -1,44 +1,33 @@
 import React from 'react';
 
 class GitCard extends React.Component {
-    
     constructor(props) {
         super();
-
-    }
-
-    followerLink (e) {
-
-        this.setState({
-
-            ...this.state, 
-            username: e.target.login
-            
-        })
-
     }
 
     render() {
 
-        {this.state.user.map((login) => { 
-
         return (
-
             <div>
-                <div>
-                    <h1>{this.props.login}</h1>
-                    <img src={this.props.login.avatar_url} alt='' />
+                
+                <div key = {this.state.login}>
+                    <h1>Name: {this.state.userData.name}</h1>
+                    <h2>Username: {this.state.login}</h2>
+                    <span>GitHub Site: <a href={this.state.html_url}>{this.state.html_url}</a></span>
+                    <img src={this.state.avatar_url} alt='' />
+                    <p>Location: {this.state.location}</p>
                 </div>
                 <div>
-                    <span><a href={this.props.login.html_url}>{this.props.login.html_url}</a></span>
-                    <span><a href={GitCard} onClick={followerLink}>{this.props.login.followers_url}</a></span>
-                </div>
+                    <p>Followers: </p>
+                    <ul>
+                        {this.props.followers.map((follower) => {
+                            return <li key = {follower.login}>{follower.login}</li>
+                        })}
+                    </ul>
+                </div>           
             </div>
-        )
-
-    }
-
-    }
+            
+        )}
 
 }
 
