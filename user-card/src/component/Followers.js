@@ -6,7 +6,7 @@ function Followers ({followers}){
     return(
         <div>
             {followers.map(follower =>(
-                <div className="card">
+                <div className="follower-card">
                 <img src={follower.avatar_url} alt='Profile'/>
                 <div className="card-info">
                     <p className="followername">{follower.login}</p>

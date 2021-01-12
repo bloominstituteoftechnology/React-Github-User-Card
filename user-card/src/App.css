@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  border: 2px solid black;
+  border: 3px solid black;
 }
 
 .App-logo {
@@ -37,3 +37,28 @@
     transform: rotate(360deg);
   }
 }
+
+a{
+    text-decoration: none;
+  }
+
+.card{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2vh auto;
+}
+
+.follower-card{
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2vh auto;
+}
+
+.card-info{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
