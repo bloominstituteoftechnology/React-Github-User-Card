@@ -7,20 +7,33 @@ class FollowersCard extends React.Component{
     }
 
     componentDidMount(){
-        axios.get("https://api.github.com/users/sebastian-espeset/followers")
+        axios.get(`https://api.github.com/users/${this.props.props.login}/followers`)
             .then((res)=>{
                 this.setState({
                     followers:res.data
                 })
-                console.log(this.state.followers)
+                // console.log(this.state.followers)
             })
             .catch((err)=>{
                 console.log(err)
             })
     }
+    componentDidUpdate(prevProps,prevState){
+        if(prevProps!==this.props.props){
+        axios.get(`https://api.github.com/users/${this.props.props.login}/followers`)
+            .then((res)=>{
+                this.setState({
+                    followers:res.data
+                })
+                // console.log(this.state.followers)
+            })
+            .catch((err)=>{
+                console.log(err)
+            })}
+    }
     
     render(){
-        console.log(this.props)
+        // console.log(this.props.props)
         return(
             <div>
                 <h3>Followers:</h3>
