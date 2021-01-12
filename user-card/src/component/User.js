@@ -1,27 +1,24 @@
 import React from 'react';
 
-function User({users}){
+function User({user}){
     // console.log("hello", props)
-
 
     return(
         <div>
-            
-                <div class="card">
-                    <img src={users.avatar_url} alt='Profile'/>
-                    <div class="card-info">
-                        <h3 class="name">{users.name}</h3>
-                        <p class="usersname">{users.login}</p>
-                        <p>Location: {users.location}</p>
-                        <p>Profile:
-                            <a href={users.html_url}>{users.html_url}</a>
-                        </p>
-                        <p>Followers: {users.followers}</p>
-                        <p>Following: {users.following}</p>
-                        <p>Bio: {users.bio}</p>
-                    </div>
-              </div>
-              )
+            <div className="card">
+                <img src={user.avatar_url} alt='Profile'/>
+                <div className="card-info">
+                    <h3 className="name">{user.name}</h3>
+                    <p className="username">{user.login}</p>
+                    <p>Location: {user.location}</p>
+                    <p>Profile:
+                        <a href={user.html_url}>{user.html_url}</a>
+                    </p>
+                    <p>Followers: {user.followers}</p>
+                    <p>Following: {user.following}</p>
+                    <p>Bio: {user.bio}</p>
+                </div>
+            </div>
         </div>
         );
 }

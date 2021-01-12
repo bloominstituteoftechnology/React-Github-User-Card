@@ -2,11 +2,14 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import User from './component/User';
+import Followers from './component/Followers';
+
 
 class App extends React.Component{
 
   state ={
-    users: []
+    myData: '',
+    followers: []
   }
   //My data
   componentDidMount(){
@@ -14,7 +17,7 @@ class App extends React.Component{
     .then((res) =>{
       console.log(res.data);
       this.setState({
-        users: res.data
+        myData: res.data
       })
     })
     .catch((err) =>{
@@ -29,9 +32,11 @@ class App extends React.Component{
     evt.preventDefault();
     axios.get('https://api.github.com/users/Diegormnv/followers')
     .then((res) =>{
+      console.log('follower', res.data)
       this.setState({
-        users: res.data
+        followers: res.data
       })
+      console.log(this.state.followers)
     })
   }
 
@@ -39,9 +44,10 @@ class App extends React.Component{
 
   render(){
     return(
-      <div>
-      <User users={this.state.users} />
+      <div className='App'>
+      <User user={this.state.myData} />
       <button onClick={this.handleClick} >Load Followers</button>
+      <Followers followers={this.state.followers}/>
       </div>
     )
   }
