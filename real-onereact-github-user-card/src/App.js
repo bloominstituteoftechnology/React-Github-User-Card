@@ -59,8 +59,8 @@ handleClick = e => {
       <div className="App">
         <h1>Welcome To GitHub User Search :)</h1>
        <form className ="form">
-        <input classname ='search' placeholder='Search Users' type="text" onchange={this.handleChange}></input>
-        <button className ='searchBtn' onClick={this.handleClick}>Search</button>
+        <input classname ='search' placeholder='search' type="text" onchange={this.handleChange}></input>
+        <button className ='searchBtn' onClick={this.handleClick}>Search Users!</button>
        </form>
        
        <div className ="userCard">
