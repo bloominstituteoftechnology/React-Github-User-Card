@@ -6,7 +6,7 @@ class App extends React.Component {
 
   state = {
     name:'',
-    userName :'',
+    username :'',
     avatarUrl : '',
     bio: '',
     followers:null,
@@ -20,7 +20,7 @@ componentDidMount (){
     console.log(res);
     this.setState({
     name: res.data.name,
-    userName : res.data.login,
+    username:res.data.login,
     avatarUrl : res.data.avatar_url,
     bio: res.data.bio,
     followers:res.data.followers,
