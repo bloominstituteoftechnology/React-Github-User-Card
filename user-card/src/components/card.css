@@ -1,0 +1,27 @@
+*{
+    /* border:1px black solid; */
+}
+.follower {
+    margin:20px auto;
+    width:300px;
+    /* background-color: aqua; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border:4px black solid;
+}
+.follower-img {
+    margin:auto;
+    margin-right:5px;
+    width:200px;
+    border-radius: 50%;
+    display: block;
+    border:4px white solid;
+}
+.followers-content{
+    background-color: white;
+    margin:auto;
+    margin-left: 5px;
+    
+    /* display: block; */
+}
