@@ -62,6 +62,7 @@ body {
 grid-area: header;
 padding: 50px;
 text-align: center;
+color: red;
 }
 .card-container {
   display: flex;
