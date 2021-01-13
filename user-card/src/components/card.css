@@ -1,27 +1,38 @@
 *{
     /* border:1px black solid; */
 }
+.followers {
+    padding:20px;
+    color:#FFF5EE;
+    background-color: #8FBC8F;
+}
 .follower {
-    margin:20px auto;
+    margin:30px auto;
     width:300px;
-    /* background-color: aqua; */
+    padding:10px 0px;
+    background-color: #8FBC8F;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    border:4px black solid;
+    border:10px black solid;
 }
 .follower-img {
+    background-color: #8FBC8F;
     margin:auto;
-    margin-right:5px;
+    margin-right:8px;
     width:200px;
     border-radius: 50%;
     display: block;
-    border:4px white solid;
+    /* border:4px #8FBC8F solid; */
 }
 .followers-content{
-    background-color: white;
+    /* color:black; */
+    background-color: black;
     margin:auto;
-    margin-left: 5px;
-    
+    padding:0 40px;
+    /* width:250px; */
+    /* margin-left: 40px; */
+    border-bottom: 7px #8FBC8F solid;
+    border-top: 7px  #8FBC8F solid;
     /* display: block; */
 }

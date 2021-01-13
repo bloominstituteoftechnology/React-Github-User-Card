@@ -1,9 +1,13 @@
 .App {
     margin:50px auto;
-    width:500px;
+    width:600px;
+    /* color:; */
 }
 .my-git {
-    border:2px teal solid;
+    border:10px #B0E0E6 solid;
+    background-color: #B0E0E6;
+    /* border-bottom: none; */
+    margin-bottom: 20px;
     padding:20px;
     /* background-color: teal; */
     display: flex;
@@ -11,14 +15,23 @@
 }
 
 .git-info{
-    padding-left: 20px;
+    color:#FFF5EE;
+    margin:auto;
+    /* border:1px teal solid; */
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.git-info p{
+    margin:0 auto;
 }
 
 .avatar{
     width:200px;
     border-radius: 50%;
+}
+.name{
+    color:black;
+    font-size: 40px;
 }
 

@@ -34,6 +34,7 @@ class App extends React.Component {
      <div className='my-git'>
        <img className='avatar' src={this.state.users.avatar_url} />
        <div className='git-info'>
+       <h1 className='name'>{this.state.users.name}</h1>
        <p>{this.state.users.login}</p>
        <p>{this.state.users.html_url}</p>
        </div>
