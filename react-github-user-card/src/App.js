@@ -81,7 +81,7 @@ class App extends React.Component{
 
   componentDidMount(){
     console.log('state in CDM=',this.state)
-    const myusername="Kvlearn" //My Username for initial axios get
+    const myusername="kavya3v" //My Username for initial axios get
     this.getUserInfo(myusername); // Get UserInfo and update userInfo state
     this.getFollInfo(myusername); // Get Followers info and update followersInfo and logins in state
   }
