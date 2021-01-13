@@ -1,24 +1,27 @@
 import React from "react"
 import axios from 'axios'
+import MainCard from "./card"
 
 
 class App extends React.Component {
   state = {
-    user:  []
-    
-
-
-
-  }
+    user:  "",
+     avatar:"",
+     bio:"",
+     blog:"",
+     name:"",
+     location:"",
+     html_url:""
+}
 
   componentDidMount() {
     axios.get("https://api.github.com/users/tetondan")
         .then((res)=>{
-            console.log(res)
-            // this.setState({
-            //   user: res.data
+             console.log(res.data)
+             this.setState({
+               user: res.data
             
-        // })
+         })
       
           })
 
@@ -30,29 +33,27 @@ class App extends React.Component {
 
  render(){
   return (
-    <div className="App">
-      <h1>GITHUB USERS</h1>
-      
-     <div className="usercard-container">
+    
+      <MainCard
+       avatar_url={this.state.user.avatar_url}
+       bio={this.state.user.bio}
+       login={this.state.user.login}
+       blog={this.state.user.blog}
+       name={this.state.user.name}
+       location={this.state.location}
+       html_url={this.state.html_url}
+       />
+  
          
       
            
-             <>
-            {/* <h2>UserName:{`${this.state.user.login}`}</h2>
-            <a>Followers:{`${this.state.user.followers_url}`}</a>
-            <a>Following:{`${this.state.user.following_url}`}</a>
-            <img src={ `${this.state.user.avatar_url}`}/>
-            <p>User Github:{`${this.state.user.url}`}</p>
-          */}
+       
 
-            </>
-
-            //  ))
-         }
+         
      
-   </div>
+   
     
-    </div>
+    
   );
 }
 }
