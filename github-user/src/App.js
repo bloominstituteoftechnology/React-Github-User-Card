@@ -7,15 +7,18 @@ class App extends React.Component {
 
 state = {
   user : [],
+  followers: []
 }
 
 
 componentDidMount(){
-axios.get("https://api.github.com/users/duointherain")
-.then(res => {
-  console.log(res.data)
+Promise.all([axios.get("https://api.github.com/users/duointherain"), axios.get("https://api.github.com/users/duointherain/followers")])
+.then(([res1, res2]) => {
+  console.log("res1", res1.data)
+  console.log("res2", res2.data)
   this.setState({
-    user: res.data
+    user: res1.data,
+    followers: res2.data
   })
 })
 .catch(err => {
@@ -26,7 +29,7 @@ axios.get("https://api.github.com/users/duointherain")
   render() {
     return (
       <div className="App">
-        {(this.state.user.length === 0)?<h3>Gitting Users...</h3>:<UserCard user={this.state.user}/>}
+        {(this.state.user.length === 0)?<h3>Gitting Users...</h3>:<UserCard user={this.state.user} followers={this.state.followers}/>}
       </div>
     );
   }
