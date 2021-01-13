@@ -1,6 +1,7 @@
 import React from "react"
 import axios from 'axios'
 import MainCard from "./card"
+import FollowersCard from "./FollowersCard";
 
 
 class App extends React.Component {
@@ -17,9 +18,10 @@ class App extends React.Component {
   componentDidMount() {
     axios.get("https://api.github.com/users/tetondan")
         .then((res)=>{
-             console.log(res.data)
+            //  console.log(res.data)
              this.setState({
                user: res.data
+          
             
          })
       
@@ -29,24 +31,25 @@ class App extends React.Component {
             console.log(err);
         });
 }
+ 
+  
+
+    
+    
+
 
 
  render(){
   return (
-    
+    <>
       <MainCard
-       avatar_url={this.state.user.avatar_url}
-       bio={this.state.user.bio}
-       login={this.state.user.login}
-       blog={this.state.user.blog}
-       name={this.state.user.name}
-       location={this.state.location}
-       html_url={this.state.html_url}
-       />
+        user={this.state.user}/>
+       
+        <FollowersCard/>
   
          
       
-           
+      </>     
        
 
          

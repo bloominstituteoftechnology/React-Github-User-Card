@@ -11,7 +11,7 @@ transition:0.5s;
 margin-left:auto;
 margin-right:auto;
 animation: ease-in;
-margin-top:3%;
+margin-top:5%;
 background-color:grey;
 }
 .card-container:hover{
@@ -97,4 +97,20 @@ text-align: center;
 color:white;
 font-weight:bold;
 font-size:1.2rem;
+}
+
+h1{
+
+font-weight:bold;
+text-align:center;
+margin-top:2%;
+}
+
+h2{
+font-weight:bold;
+font-size:2rem;
+margin-top:3%;
+text-align:center;
+
+
 }
