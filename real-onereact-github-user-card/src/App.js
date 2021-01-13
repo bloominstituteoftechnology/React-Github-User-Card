@@ -45,7 +45,7 @@ handleClick = e => {
   .then (res => {
     this.setState({
       name: res.data.name,
-      userName : res.data.login,
+      username:res.data.login,
       avatarUrl : res.data.avatar_url,
       bio: res.data.bio,
       followers:res.data.followers,
@@ -59,14 +59,14 @@ handleClick = e => {
       <div className="App">
         <h1>Welcome To GitHub User Search :)</h1>
        <form className ="form">
-        <input classname ='search' placeholder='search' type="text" onchange={this.handleChange}></input>
+        <input classname ='search' placeholder='search' type="text" onChange={this.handleChange}></input>
         <button className ='searchBtn' onClick={this.handleClick}>Search Users!</button>
        </form>
        
        <div className ="userCard">
         <h2>{this.state.name}</h2>
         <img src ={this.state.avatarUrl} alt ='avatar pictures'/>
-        <p>Username:{this.state.userName}</p>
+        <p>Username:{this.state.username}</p>
         <p>Bio: {this.state.bio}</p>
         <p>Followers: {this.state.followers}</p>
         <p>Following:{this.state.following}</p>
