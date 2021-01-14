@@ -1,25 +1,70 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
+import UserCard from './UserCard.js'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React from 'react'
+import axios from 'axios'
+
+export default class App extends React.Component {
+  state = {
+    userInfo: {},
+    inputValue: '',
+    currentUser: 'andrewsohrabi'
+  }
+
+  componentDidMount() {
+    axios.get(`https://api.github.com/users/${this.state.currentUser}`)
+      .then(res => {
+        this.setState({
+          userInfo: res.data
+        })
+      })
+      .catch(err => console.log(err))
+  }
+  componentDidUpdate(prevProps, prevState) {
+    if(prevState.currentUser !== this.state.currentUser) {
+      axios.get(`https://api.github.com/users/${this.state.currentUser}`)
+      .then(res => {
+        this.setState({
+          userInfo: res.data
+        })
+      })
+      .catch(err => console.log(err))
+    }
+  }
+
+  handleSubmit = e => {
+    e.preventDefault();
+    this.setState({
+      currentUser: this.state.inputValue,
+      inputValue: '',
+    })
+  }
+  handleChange= e => {
+    this.setState({
+      inputValue: e.target.value
+    })
+  }
+
+  setNewMain = username => {
+    this.setState({
+      currentUser: username
+    })
+  }
+
+  render() {
+    return (
+      <div className='App'>
+        <h1>Github User Info</h1>
+        <div className='changeUser'>
+          <p>Try another user?</p>
+          <form onSubmit={this.handleSubmit}>
+            <input type='text' placeholder='github username' value={this.state.inputValue} onChange={this.handleChange}/>
+            <button>send</button>
+          </form>
+        </div>
+        <UserCard userInfo={this.state.userInfo} currentUser={this.state.currentUser} setNewMain={this.setNewMain}/>
+        <div className='buffer'></div>
+      </div>
+    )
+  }
 }
-
-export default App;
