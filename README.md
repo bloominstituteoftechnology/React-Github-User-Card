@@ -39,7 +39,7 @@ This is an important step for any project you will be working on. You will want 
 
 Also, since you have used the Github API before, you know some of the gotchas. Make sure to plan and watch for those.
 
-When you have those completed, you're ready to start coding!
+When you have those completed, you're ready to start coding!!
 
 #### Fetch the User Data
 
