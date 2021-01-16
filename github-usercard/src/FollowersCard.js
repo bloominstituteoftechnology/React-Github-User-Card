@@ -29,18 +29,21 @@ componentDidMount(){
 
     render(){
 
-        return this.state.user.map((user) => (
+        return (
+         <section className="cards-container">
+       { this.state.user.map((user) => (
           <div className="card-container">
             <div className="image-container">
               <img src={user.avatar_url} />
-              <div className="card-title">
-                <h3>{user.login}</h3>
-              </div>
+            </div>
+              <div className="cards-title">
+                <h3>Login:    {user.login}</h3>
+              
             </div>
           </div>
-        ));
-
-  
+        ))};
+        </section>
+        )
 }
 
 }

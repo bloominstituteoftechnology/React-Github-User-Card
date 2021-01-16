@@ -1,6 +1,19 @@
+*{
+max-width:100%;
+box-sizing:border-box;
+padding:0;
+margin:0;
+}
+
+
+
 body{
 
-    background:rgb(223, 209, 209);
+    background:rgb(223, 209, 209,.5);
+}
+hr {
+color:grey;
+margin-top:2%;
 }
 .card-container{
 display:flex column;
@@ -114,3 +127,30 @@ text-align:center;
 
 
 }
+    
+  
+
+    .cards-title{
+    width:100%;
+        
+        
+    
+        
+
+        
+        }
+    .cards-title h3{
+        text-align:center;
+        height:5vh;
+        margin-top:1rem;
+        
+    }
+section{
+display:flex;
+width:100%;
+flex-wrap:wrap;
+justify-content:space-between;
+
+}
+
+     

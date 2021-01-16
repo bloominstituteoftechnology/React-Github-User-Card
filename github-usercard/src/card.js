@@ -35,7 +35,9 @@ export default function MainCard(props) {
         </div>
 
         <div>
+            <hr></hr>
             <h2>Followers of Dan</h2>
+                
         </div>
         </>
     )

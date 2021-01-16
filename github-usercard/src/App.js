@@ -3,7 +3,6 @@ import axios from 'axios'
 import MainCard from "./card"
 import FollowersCard from "./FollowersCard";
 
-
 class App extends React.Component {
   state = {
     user:  "",
