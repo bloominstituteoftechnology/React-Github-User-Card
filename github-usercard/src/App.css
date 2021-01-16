@@ -100,9 +100,10 @@ a{
 
 p{
 font-weight:bold;
-font-size:1rem;
+font-size:1.3rem;
 color:white;
 text-align: center;
+font-family: monospace;
 }
 
 h3{
@@ -110,20 +111,24 @@ text-align: center;
 color:white;
 font-weight:bold;
 font-size:1.2rem;
+font-family: 'Courier New', Courier, monospace;
 }
 
 h1{
 
 font-weight:bold;
 text-align:center;
-margin-top:2%;
+margin-top:4%;
+font-size:2.3rem;
+font-family:cursive;
 }
 
 h2{
 font-weight:bold;
-font-size:2rem;
+font-size:2.3em;
 margin-top:3%;
 text-align:center;
+font-family:cursive
 
 
 }
@@ -139,12 +144,13 @@ text-align:center;
 
         
         }
-    .cards-title h3{
-        text-align:center;
-        height:5vh;
-        margin-top:1rem;
+.cards-title h3{
+ text-align:center;
+ height:5vh;
+ margin-top:1rem;
         
     }
+
 section{
 display:flex;
 width:100%;
