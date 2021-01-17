@@ -1,0 +1,103 @@
+ @import url(https://fonts.googleapis.com/css?family=Vidaloka|Oswald:400,300);
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(152, 228, 181);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  height: 100vh;
+  width: 100%;
+  overflow: auto;
+  background: lighten(rgb(57, 114, 4), 10);
+  display: flex;
+}
+
+.card {
+  position: relative;
+  height: 500px;
+  width: 300px;
+  background: rgb(136, 58, 58);
+  margin: 100px auto 0;
+  overflow: hidden;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 2px solid white;
+}
+
+.card2 {
+  position: relative;
+  height: 190px;
+  width: 130px;
+  background:  rgb(136, 58, 58);
+  margin: 100px auto 0;
+  overflow: hidden;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.3);
+  color: white;
+  border: 2px solid white;
+}
+
+hr {
+  margin: 0 30px;
+}
+
+.avatar {
+  height: 199px;
+  width: 180px;
+  border-radius: 50%;
+  border: 1px solid rgb(126, 124, 124);
+  overflow: hidden;
+  margin: 50px auto 30px;
+  text-decoration: none
+}
+
+img {
+  width: 200px;
+  margin-left: -10px;
+}
+
+.stats {
+  font-family: 'Oswald', sans-serif;
+  padding: 0;
+  height: 250px;
+  width: 300px;
+  text-align: center
+}
+
+h2 {
+  text-align: center;
+  font-family: 'Vidaloka', cursive;
+  font-size: 2.2em;
+  margin: 5px 0 10px;
+}
+
+p {
+  margin: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  padding-top: 20px;
+}
+
+.bio {
+  padding-top: 10px;
+}
+
+.follow {
+  display: flex;
+}
