@@ -1,0 +1,25 @@
+.container {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #bbbbbb;
+    border: 2px solid black;
+}
+
+.top {
+    border-bottom: 2px solid black;
+}
+
+img {
+    width: 200px;
+    border-radius: 50%;
+}
+
+
+.bottom {
+    background-color: #c9c9c9;
+}
+
+h3 {
+    border-bottom: 2px solid black;
+    margin-top: 0px;
+}
