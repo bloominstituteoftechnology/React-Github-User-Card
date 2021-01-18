@@ -1,0 +1,70 @@
+.App {
+  text-align: center;
+  background-image: url("https://s.abcnews.com/images/US/mlk-7-gty-aa-200116_hpMain_16x9_1600.jpg");
+  font-family: "Fjalla One";
+}
+
+div.user > img{
+  height: 90px;
+  width: 90px;}
+
+h3{
+  font-size: 20px;
+}
+.user{
+  display: flex;
+  justify-content: center;
+}
+h2{
+  font-size: 2rem;
+  color:white;
+}
+.usercard .user{
+  display: flex;
+  justify-content: center;
+  flex-flow: column nowrap;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(rgb(37, 12, 2), #e64023);
+  color: beige;
+  border-radius: 4px;
+  height: 250px;
+  margin: 8px;
+  padding: 16px;
+  width: 250px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+ 
+}
+.followers{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+button{
+  box-shadow: 0px 1px 0px 0px #fff6af;
+	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
+	background-color:#ffec64;
+	border-radius:6px;
+	border:1px solid #ffaa22;
+	display:inline-block;
+	cursor:pointer;
+	color:#333333;
+	font-family:Arial;
+	font-size:15px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffee66;
+}
+/* h1{
+  font-size: 2.5rem;
+} */
+
+.header{
+  color:white;
+  font-size:3rem;
+  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/black-pride-print-gift-black-is-beautiful-african-design-dc-designs-suamaceir.jpg");
+margin-top: -4rem;
+}
