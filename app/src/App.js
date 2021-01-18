@@ -2,8 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 
-import UserCard from './Components/UserCard';
-import FollowerCard from './Components/FollowerCard';
+import UserCard from './components/UserCard';
+import FollowerCard from './components/FollowerCard';
 import { Button, Form, Input } from 'reactstrap';
 
 const followers = [];
