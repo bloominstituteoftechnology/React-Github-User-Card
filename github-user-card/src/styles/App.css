@@ -1,0 +1,162 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* CSS RESET ABOVE HERE */
+.App {
+	height: 100%;
+	min-height: 100vh;
+	min-width: 100vw;
+	background-color: rgb(220, 220, 220);
+	font-family: Arial, Helvetica, sans-serif;
+	color: rgb(65, 65, 65);
+}
+h1 {
+	font-size: 36px;
+	text-align: center;
+	padding: 30px;
+	color: RGB(127, 6, 126);
+	font-weight: 600;
+}
+.Usercard {
+	width: 500px;
+	max-width: 90%;
+	margin: 0 auto;
+	background-color: white;
+	text-align: center;
+	padding: 20px;
+	box-shadow: 3px 3px 3px gray;
+}
+h2 {
+	font-size: 24px;
+	text-align: center;
+}
+h4 {
+	font-size: 18px;
+	font-style: italic;
+	text-align: center;
+	color: rgba(127, 6, 126, .5);
+}
+.mainUserImg {
+	max-height: 35vh;
+	max-width: 90%;
+	margin: 20px auto;
+	border-radius: 50%;
+	border: 3px solid RGB(127, 6, 126);
+}
+.mainUserImg:hover {
+	opacity: .9;
+	box-shadow: 0 0 3px 2px RGB(127, 6, 126,.7);
+}
+.followDetails {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 30px auto 0 auto;
+	flex-wrap: wrap;
+	max-width: 90%;
+	background-color: rgba(127, 6, 126, .5);
+	padding: 10px;
+}
+.subUser {
+	margin: 5px;
+	width: 50px;
+	max-width: 50%;
+	transition-duration: 1s;
+}
+.subUser:hover {
+	transform: scale(1.5);
+	transition-duration: 1s;
+	cursor: pointer;
+}
+.subUser img {
+	width: 100%;
+	border-radius: 50%;
+}
+ul.info-bottom li {
+	margin-top: 5px;
+}
+.follow {
+	margin-top: 20px;
+}
+button.follow {
+	border-radius: 0;
+	padding: 5px;
+	background-color: rgba(127, 6, 126, .5);
+	color: white;
+	box-shadow: none;
+	border: 1px solid white;
+}
+button.selected {
+	background-color: RGB(127, 6, 126);
+	border-color: RGB(127, 6, 126);
+	font-weight: 600;
+}
+button:focus, input:focus {
+	outline: none;
+}
+.changeUser {
+	padding-bottom: 30px;
+	width: 500px;
+	max-width: 90%;
+	margin: 0 auto;
+	text-align: center;
+}
+.changeUser input {
+	border: 0;
+	color: RGB(127, 6, 126);
+	border-bottom: 2px solid RGB(127, 6, 126);
+	height: 1.5rem;
+	width: 200px;
+	max-width: 90%;
+	margin-top: 5px;
+}
+.changeUser button {
+	height: 1.6rem;
+	border: 0;
+	background-color: RGB(127, 6, 126);
+	color: white;
+	padding: 0 5px;
+}
+.buffer {
+	height: 30px;
+}
