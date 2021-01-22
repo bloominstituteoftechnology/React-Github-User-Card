@@ -8,7 +8,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      user: {},
+      user: [],
       followers: [],
       input: ''
     }
