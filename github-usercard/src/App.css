@@ -1,0 +1,162 @@
+*{
+max-width:100%;
+box-sizing:border-box;
+padding:0;
+margin:0;
+}
+
+
+
+body{
+
+    background:rgb(223, 209, 209,.5);
+}
+hr {
+color:grey;
+margin-top:2%;
+}
+.card-container{
+display:flex column;
+width:350px;
+overflow:hidden;
+box-shadow:0px 0px 15px -5px;
+transition:0.5s;
+margin-left:auto;
+margin-right:auto;
+animation: ease-in;
+margin-top:5%;
+background-color:grey;
+}
+.card-container:hover{
+    transform:scale(1.1);
+    box-shadow:0px 0px 15px 0px;
+}
+
+.image-container{
+overflow: hidden;
+height:350px;
+
+
+
+}
+
+.card-content{
+    margin:1rem;
+    margin-top:0.5rem;
+
+
+
+
+}
+
+h3,p{
+margin:0;
+padding:0;
+
+}
+
+.card-title{
+margin-bottom:0.5rem;
+}
+
+.btn{
+display:flex;
+justify-content: center;
+
+
+
+}
+
+.btn button{
+    padding:0.5rem;
+    background-color:white;
+    border:none;
+    transition:0.2s;
+    margin-bottom:0.5rem;
+    border-radius:3px;
+    transform:scale(1.1);
+
+
+
+}
+
+.btn button:hover{
+    background:rgba(27, 156, 252, 0.1);
+
+
+
+}
+a{
+    text-transform: uppercase;
+    color:#1B9CFC;
+    text-decoration: none;
+    font-weight:bold;
+
+
+
+
+
+}
+
+p{
+font-weight:bold;
+font-size:1.3rem;
+color:white;
+text-align: center;
+font-family: monospace;
+}
+
+h3{
+text-align: center;
+color:white;
+font-weight:bold;
+font-size:1.2rem;
+font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+
+font-weight:bold;
+text-align:center;
+margin-top:4%;
+font-size:2.3rem;
+font-family:cursive;
+}
+
+h2{
+font-weight:bold;
+font-size:2.3em;
+margin-top:3%;
+text-align:center;
+font-family:cursive
+
+
+}
+    
+  
+
+    .cards-title{
+    width:100%;
+        
+        
+    
+        
+
+        
+        }
+.cards-title h3{
+ text-align:center;
+ height:5vh;
+ margin-top:1rem;
+        
+    }
+
+section{
+display:flex;
+width:100%;
+flex-wrap:wrap;
+justify-content:space-between;
+
+}
+
+     
