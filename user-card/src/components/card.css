@@ -1,0 +1,38 @@
+*{
+    /* border:1px black solid; */
+}
+.followers {
+    padding:20px;
+    color:#FFF5EE;
+    background-color: #8FBC8F;
+}
+.follower {
+    margin:30px auto;
+    width:300px;
+    padding:10px 0px;
+    background-color: #8FBC8F;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border:10px black solid;
+}
+.follower-img {
+    background-color: #8FBC8F;
+    margin:auto;
+    margin-right:8px;
+    width:200px;
+    border-radius: 50%;
+    display: block;
+    /* border:4px #8FBC8F solid; */
+}
+.followers-content{
+    /* color:black; */
+    background-color: black;
+    margin:auto;
+    padding:0 40px;
+    /* width:250px; */
+    /* margin-left: 40px; */
+    border-bottom: 7px #8FBC8F solid;
+    border-top: 7px  #8FBC8F solid;
+    /* display: block; */
+}
