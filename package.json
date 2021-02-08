@@ -1,0 +1,20 @@
+{
+  "name": "React-Github-User-Card",
+  "version": "1.0.0",
+  "description": "This project allows you to practice the concepts and techniques learned in this module and apply them in a concrete project. This module explored lifecycle methods in class components. In your project you will demonstrate proficiency of these concepts by recreating the Github User Card project, but as a React application this time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lindsay-deaton/React-Github-User-Card.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lindsay-deaton/React-Github-User-Card/issues"
+  },
+  "homepage": "https://github.com/lindsay-deaton/React-Github-User-Card#readme"
+}
