@@ -5,6 +5,11 @@ class Card extends React.Component {
     followersName: "",
   };
 
+
+
+
+
+
   render() {
     console.log(this.props.user, "this one");
     console.log(this.props.followers, "here?");
@@ -22,6 +27,7 @@ class Card extends React.Component {
                 <p>Login: {item.login}</p>
                 <p>type: {item.type}</p>
                 <p>id: {item.id}</p>
+                
               </div>
             );
             //  return (

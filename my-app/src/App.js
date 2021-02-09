@@ -4,15 +4,7 @@ import axios from "axios";
 import Card from "./components/Card";
 ///end of imports///
 
-class App extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      user: {},
-      followers: [],
-      userName: "",
-    };
-  }
+
 
   fetchUser = () => {
     axios
@@ -36,6 +28,7 @@ class App extends React.Component {
       });
   };
   ///Fixing infinite console log////
+  //it worked!!!///
 
   componentDidMount() {
     this.fetchUser();
