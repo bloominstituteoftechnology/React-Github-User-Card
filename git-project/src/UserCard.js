@@ -13,7 +13,7 @@ export default function UserCard (props) {
                 <p><b>Location:</b> {props.userData.location}</p>
                 <p><b>Bio:</b> {props.userData.bio}</p>
                 <p><b>Link to GitHub:</b> {props.userData.html_url}</p>
-                <p><b>Link to GitHub:</b> {props.userData.repos_url}</p>
+                <p><b>Link to Repos:</b> {props.userData.repos_url}</p>
                 {
                     props.userFollowers.length === 0 ? <b><p>{props.userData.name} user has no followers :(</p></b> : <p>{props.userFollowers}</p>
                 }
@@ -29,7 +29,9 @@ const StyledUserCardContainer = styled.div`
     padding: 4%;
     // border-radius: 10px;
     margin-top: 4%;
+    margin-bottom: 4%;
     box-shadow: 0px 0px 10px gray;
+    background-color: white;
 `;
 
 const StyledImageDiv = styled.div`

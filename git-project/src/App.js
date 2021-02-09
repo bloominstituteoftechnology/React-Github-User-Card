@@ -3,6 +3,7 @@ import axios from 'axios';
 import styled from 'styled-components';
 import UserCard from './UserCard';
 import InputForm from './InputForm';
+import Footer from './Footer';
 
 class App extends React.Component {
   state = {
@@ -46,6 +47,7 @@ class App extends React.Component {
 
   onSubmit = (evt) => {
     evt.preventDefault();
+
     axios
     .get(`https://api.github.com/users/${this.state.inputValue}`)
     .then((res) => {
@@ -56,6 +58,10 @@ class App extends React.Component {
     .catch((err) => {
       console.log(err);
     })
+
+    this.setState({
+      inputValue: ''
+    });
   };
 
   render() {
@@ -71,8 +77,9 @@ class App extends React.Component {
   return (
     <StyledAppContainer>
       <center>
-        <InputForm inputChange={this.inputChange} submit={this.onSubmit} />
+        <InputForm inputChange={this.inputChange} submit={this.onSubmit} inputValue={this.state.inputValue} />
         <UserCard userData={this.state.userData} userFollowers={this.state.userFollowers} />
+        <Footer />
       </center>
     </StyledAppContainer>
   )};
