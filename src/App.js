@@ -7,6 +7,7 @@ class App extends React.Component {
     super();
     this.state = {
       userData: [],
+      followers: [],
     }
   }
 
@@ -14,8 +15,6 @@ class App extends React.Component {
     axios
       .get("https://api.github.com/users/leon-nasswetter")
       .then(res => {
-        console.log(res);
-        console.log(res.data)
         this.setState({
           userData: res.data
           
@@ -24,13 +23,27 @@ class App extends React.Component {
       .catch(err => {
         console.log(err);
       })
+
+
+      axios
+        .get("https://api.github.com/users/leon-nasswetter/followers")
+        .then(res => {
+          this.setState({
+            followers: res.data
+            
+          })
+          
+        })
+        .catch(err => {
+          console.log(err);
+        })
   }
 
   
 
   render(){
     return(
-      <div className="app">
+      <div className="App">
         <h1>User Card App</h1>
         <div className="userCard">
           <img src={this.state.userData.avatar_url} />
