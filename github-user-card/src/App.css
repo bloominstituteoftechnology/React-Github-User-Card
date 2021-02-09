@@ -1,38 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  background: #314e52;
+  height: 100vh;
+  width: 100vw;
+  color: #f7f6e7;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 span {
+  color: #f2a154;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search {
+  border-radius: 5px;
+  margin-bottom: 10px;
+  line-height: 20px;
+  padding-left: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search_btn {
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #f2a154;
+  color: #314e52;
+}
+
+.search_btn:hover {
+  color: white;
+  background-color: gray;
+}
+
+.container {
+  display: flex;
+}
+
+.card {
+  border-radius: 1rem;
+  width: 50%;
+  background-color: dodgerblue;
+  margin: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.card h2,
+p {
+  margin: 5px auto;
+}
+
+.cardImg {
+  width: 20rem;
+  border-radius: 50%;
+}
+
+.followersContainer {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 50%;
+  border-radius: 1rem;
+  background-color: salmon;
 }
 
-.App-link {
-  color: #61dafb;
+.follower {
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.followerImg {
+  width: 12rem;
+  border-radius: 50%;
+  margin: 2rem;
 }
