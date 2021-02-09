@@ -5,18 +5,25 @@ class FriendCards extends React.Component{
     constructor(props){
         super(props);
         this.state={
-            friends: this.props.friends
+            friends: []
         }
     }
 
-     
+     componentDidMount(){
+         this.setState({friends: this.props.friends})
+     }
 
     render(){
+        if(!this.props.friends){
+            return <h1>Loading...</h1>
+        }
         
         return(
-           <div>
-            
-            </div>
+           <>
+                {this.props.friends.map((friend) => {
+                    return <FriendCard key={friend.id} link={friend.url} />
+                })}
+            </>
         )
     }
 }
