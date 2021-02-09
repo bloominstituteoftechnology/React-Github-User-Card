@@ -3,3 +3,120 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body{
+  background-image: linear-gradient(120deg, #f8dde2, #f19aa5);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+
+p{
+  font-size: 4rem;
+}
+
+p, form{
+  color: white;
+  text-align: center;
+  min-height: 11vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form input, form button{
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+  
+}
+form input{
+  color:rgb(73, 73, 73);
+}
+form input::placeholder{
+  color:#b1adad;
+}
+form button{
+  color: white;
+  background: #f19aa5;;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form button:hover {
+  background: #f8dde2;
+  color: #f19aa5;
+}
+
+.App{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.github-user{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  text-align: center;
+  background-color: #f8dde2;
+  padding: 1rem;
+  box-shadow: 5px 5px 10px rgb(192, 84, 108);
+  margin-bottom: 1rem;
+}
+.card-container{
+  border: blue 1px solid;
+  margin: 0;
+  background-color: white;
+  width: 40vw;
+}
+.card-header{
+  background-color:white;
+  
+}
+.user-img img{
+  border-radius: 50%;
+}
+.user-details{
+  color: rgb(73, 73, 73);
+}
+
+.user-details h2{
+  font-size: 2.8rem;
+  padding: 1rem;
+}
+
+.user-details h3{
+  font-size: 1.4rem;
+  color: rgb(124, 122, 122);
+}
+.user-details h4{
+  font-size: 1.4rem;
+  color:rgb(124, 122, 122);
+}
+
+.fa-angle-double-down{
+  color:rgb(192, 84, 108);
+  font-size: 2rem;;
+}
+
+.followers-container{
+  display: flex;
+  flex-direction: column;
+}
+
+.follower-details{
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+.follower-photo{
+  border-radius: 50%;
+}
+.follower-username{
+  font-size: 1.2rem;
+  padding: 1rem;
+  text-align: left;
+}
