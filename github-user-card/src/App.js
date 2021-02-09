@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Usercard from "./Usercard";
 
 export default class App extends Component {
   constructor(props) {
@@ -13,7 +14,9 @@ export default class App extends Component {
     axios
       .get("https://api.github.com/users/ooladuwa")
       .then((res) => {
-        console.log(res.data);
+        this.setState({
+          github: res.data,
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -24,6 +27,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>Github UserCard</h1>
+        <Usercard />
       </div>
     );
   }
