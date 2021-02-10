@@ -86,7 +86,7 @@ header img {
 
 .container {
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: column wrap;
     align-items: center;
 }
 
@@ -101,7 +101,7 @@ header img {
 }
 
 .follower{
-    width: 40%;
+    width: 60%;
 }
 
 .card-info {

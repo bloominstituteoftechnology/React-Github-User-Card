@@ -33,6 +33,7 @@ class App extends React.Component {
         this.setState({
           followers: res.data,
         })
+        console.log('Did mount', this.state)
       })
       .catch((err) => {
         console.error(err)
@@ -43,10 +44,11 @@ class App extends React.Component {
   onInputChange = (e) => {
     this.setState({ searchText: e.target.value })
   }
+
   onSubmit = (e) => {
     e.preventDefault()
     axios
-      .get(`https://api.github.com/users/${this.searchText}`)
+      .get(`https://api.github.com/users/${this.state.searchText}`)
       .then((res) => {
         this.setState({
           users: res.data,
@@ -57,7 +59,7 @@ class App extends React.Component {
         debugger
       })
     axios
-      .get(`https://api.github.com/users/${this.searchText}/followers`)
+      .get(`https://api.github.com/users/${this.state.searchText}/followers`)
       .then((res) => {
         this.setState({
           followers: res.data,
@@ -67,6 +69,7 @@ class App extends React.Component {
         console.error(err)
         debugger
       })
+      console.log('After Submit', this.state)
   }
 
   render() {

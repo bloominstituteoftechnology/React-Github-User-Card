@@ -12,7 +12,7 @@ const SearchBar = (props) => {
         name="searchBar"
         onChange={onInputChange}
       />
-      <button>Fetch</button>
+      <button>Fetch User</button>
     </form>
   )
 }

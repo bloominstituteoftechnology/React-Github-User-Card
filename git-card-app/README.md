@@ -56,7 +56,7 @@ When you have those completed, you're ready to start coding!
 #### Fetch the User's Followers
 
 - When your component mounts, you will also fetch the user's followers using this endpoint:
-  https://api.github.com/users/[your-username]/followers
+  a
 - Set that data to state as well, and display the data in your app
 
 #### Style the User Card
