@@ -13,7 +13,10 @@ class User extends Component {
     render() {
 
         return(
-            <h1>Hi</h1>
+            <React.Fragment>
+                <p>Name: {this.props.data.name}</p>
+                <p>Activity: {this.props.data.updated_at}</p>
+            </React.Fragment>
         )
     }
 }
