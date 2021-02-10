@@ -5,12 +5,20 @@ import styled from 'styled-components';
 class App extends React.Component {
   state = {
     user: [],
+    followers: [],
   }
 
   componentDidMount() {
     axios.get('https://api.github.com/users/alex-wallander')
     .then((res) => {
-      console.log(res)
+      axios.get('https://api.github.com/users/alex-wallander/followers')
+      .then((res2) => {
+        this.setState({
+          followers: res2.data
+        });
+        console.log(res2.data)
+      })
+      console.log(res.data)
       this.setState({
         user: res.data
       }); 
@@ -19,12 +27,26 @@ class App extends React.Component {
       console.log(err);
     });
   }
+  
+
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.user !== prevState.user) {
+      console.log('user state has been updated')
+    }
+
+    if (this.state.followers !== prevState.followers) {
+      console.log('follower state has been updated')
+    }
+  }
 
   handleChanges = (e) => {
     this.setState({
       user: e.target.value,
     });
   }
+
+
+
 
   render() {
     return (
@@ -42,7 +64,25 @@ class App extends React.Component {
         </div>
       </StyledCard>
       <div>
-        {this.state.user.followers.map(e => <p key={e.this.state.user.id}>{e.this.state.user.name}</p>)}
+        {this.state.followers.map((follower) => {
+        return (
+          <StyledContain>
+          <StyledCard>
+          <img src= {follower.avatar_url} key= {follower.avatar_url} alt={follower.name} />
+          <div>
+            <h2>{follower.name}</h2>
+            <h3>{follower.login}</h3>
+            <p>Location: {follower.location}</p>
+            <p>Url: 
+              <a href={follower.url}>{follower.url}</a>
+            </p>
+            <p>Followers: {follower.followers}</p>
+            <p>Following: {follower.following}</p>
+            </div>
+            </StyledCard>
+            </StyledContain>
+        )
+    })}
       </div>
       </StyledContain>
       );
