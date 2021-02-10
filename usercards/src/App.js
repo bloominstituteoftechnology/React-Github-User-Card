@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import axios from "axios";
 
+import User from "./components/User";
+
 export class App extends Component {
   state = {
     github: {},
@@ -29,6 +31,7 @@ export class App extends Component {
         {this.state.github === {} ? (
           <p>Loading info...</p>
         ) : <p> Yay! State is loaded! </p>}
+        <User data={this.state.github}/>
       </React.Fragment>
     )
   }
