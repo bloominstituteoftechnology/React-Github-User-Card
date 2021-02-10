@@ -5,6 +5,7 @@ import axios from "axios";
 class App extends React.Component{
   state = {
     user: [],
+    followers: []
   }
 
   componentDidMount() {
@@ -12,13 +13,24 @@ class App extends React.Component{
     .then((res) => {
       console.log(res);
       this.setState({
-        user: res.data.login
+        user: res.data
       });
     })
     .catch(err => {
       console.log(err);
     });
-  }
+
+    axios.get("https://api.github.com/users/Beau-Jennings/followers")
+    .then((res) => {
+      console.log(res);
+      this.setState({
+        followers: res.data
+      });
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  };
 
   handleChanges = (e) => {
     this.setState({
@@ -26,29 +38,21 @@ class App extends React.Component{
     });
   };
 
-  handleClick = (e) => {
-    e.preventDefault();
-    axios.get("https://api.github.com/users/Beau-Jennings")
-    .then((res) => {
-      console.log(res);
-      this.setState({
-        user: res.data.login
-      })
-    })
-    .catch(err => {
-      console.log(err);
-    });
-  }
+
   
   render(){
     return (
       <div className="App">
         <header className="App-header">
-          <h1>{this.state.user}</h1>
+          <h1>{this.state.user.login}</h1>
 
         </header>
-        <div className = "cardcontainer">
-          <img src= "https://avatars.githubusercontent.com/u/73541042?v=4" key= {this.state.avatar_url} alt={this.state.user.avatar_url} />
+        <div className = "cardContainer">
+          <img src= {this.state.user.avatar_url} key= {this.state.user.avatar_url} alt={this.state.user.avatar_url} />
+        </div>
+
+        <div className = "followerContainer">
+          <h2></h2>
         </div>
       </div>
     );
