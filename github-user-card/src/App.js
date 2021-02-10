@@ -17,6 +17,7 @@ export default class App extends Component {
         this.setState({
           github: res.data,
         });
+        console.log(res.data);
       })
       .catch((err) => {
         console.log(err);
@@ -27,7 +28,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>Github UserCard</h1>
-        <Usercard />
+        <Usercard name={this.state.name} username={this.state.username} />
       </div>
     );
   }
