@@ -8,53 +8,54 @@ class App extends React.Component {
   constructor(){
     super();
     this.state ={
-      userData: []
+      userData: [],
+      followers: []
     }
   }
 
   componentDidMount = () => {
-    console.log('cdm running')
     axios.get(`https://api.github.com/users/kwnie`)
       .then(res => {
-        console.log('res', res)
         this.setState({
           ...this.state,
           userData: [res.data]
         })
       })
       .catch(err => console.log('err',err))
-    // this.searchUser(this.state.currentUser)
+
+    axios.get('https://api.github.com/users/kwnie/followers')
+      .then(res => {
+        this.setState({
+          ...this.state,
+          followers: res.data
+        })
+      })
+      .catch(err => console.log(err))
+    
   }
 
   componentDidUpdate = (prevProps, prevState) => {
-    console.log('cdu running')
     if(prevState.userData !== this.state.userData){
       console.log('userdata has changed')
     }
   }
-
-  // searchUser = username => {
-  //   axios.get(`https://api.github.com/users/${username}`)
-  //     .then(res => {
-  //       this.setState({
-  //         ...this.state,
-  //         currentUser: username,
-  //         userData: res.data
-  //       })
-  //     })
-  //     .catch(err => console.log(err))
-  // }
   
   render(){
     return (
       <div>
+
         <h1>Github User</h1>
+
         <Search />
-        {console.log('can I map this?', this.state.userData)}
+
         {this.state.userData && this.state.userData.map((user, index) => {
-          return <User key={index} currentUser={user}/>
+          return <User key={index} user={user}/>
         })}
-        <Followers />
+
+        {this.state.followers && this.state.followers.map((follower, index) => {
+          return <Followers key={index} follower={follower} />
+        })}
+
       </div>
     );
   }

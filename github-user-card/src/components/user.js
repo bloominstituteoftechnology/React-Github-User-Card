@@ -3,21 +3,20 @@ import React from 'react';
 class User extends React.Component {
   render(){
 
-    const { currentUser } = this.props;
+    const { user } = this.props;
 
     return (
       <div className='user-card'>
-          {console.log('props', this.props)}
-          <img src={currentUser.avatar_url} alt='avatar' />
-          <p>Name: {currentUser.name}</p>
-          <p>Username: {currentUser.login}</p>
-          <p>Bio: {currentUser.bio}</p>
-          <p>Location: {currentUser.location}</p>
-          <p>Company: {currentUser.company}</p>
-          <p>Blog: {currentUser.blog}</p>
-          <p>Email: {currentUser.email}</p>
-          <p>Followers: {currentUser.followers}</p>
-          <p>Following: {currentUser.following}</p>
+          <img src={user.avatar_url} alt='avatar' />
+          <p>Name: {user.name}</p>
+          <p>Username: {user.login}</p>
+          <p>Bio: {user.bio}</p>
+          <p>Location: {user.location}</p>
+          <p>Company: {user.company}</p>
+          <p>Blog: {user.blog}</p>
+          <p>Email: {user.email}</p>
+          <p>Followers: {user.followers}</p>
+          <p>Following: {user.following}</p>
       </div>
     );
   }
