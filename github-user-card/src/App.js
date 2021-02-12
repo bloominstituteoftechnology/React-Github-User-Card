@@ -5,21 +5,31 @@ class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      user: 'kwnie',
+      currentUser: 'kwnie',
       userData: []
     }
   }
 
   componentDidMount = () => {
-    axios.get('https://api.github.com/users/kwnie')
-      .then(res => {
-        console.log(res)
-      })
-      .catch(err => console.log(err))
+    this.searchUser(this.state.currentUser)
   }
 
-  componentDidUpdate = () => {
+  componentDidUpdate = (prevProps, prevState) => {
+    if(prevState.userData !== this.state.userData){
+      console.log('userdata has changed')
+    }
+  }
 
+  searchUser = username => {
+    axios.get(`https://api.github.com/users/${username}`)
+      .then(res => {
+        this.setState({
+          ...this.state,
+          currentUser: username,
+          userData: res.data
+        })
+      })
+      .catch(err => console.log(err))
   }
 
   render(){
