@@ -31,8 +31,8 @@ Follow these steps for completing your project.
 ### Task 2: Minimum Viable Product
 
 - [x] Fetch data from the Github API for a Github user
-- [ ] Display the user data on the DOM
-- [ ] Use class components when you need to hold any state or use any lifecycle methods
+- [x] Display the user data on the DOM
+- [x] Use class components when you need to hold any state or use any lifecycle methods
 
 #### Planning your App
 
@@ -44,21 +44,21 @@ When you have those completed, you're ready to start coding!
 
 #### Fetch the User Data
 
-- When your component mounts, send a GET request to the following URL (replacing the palceholder with your Github name):
+[x] When your component mounts, send a GET request to the following URL (replacing the palceholder with your Github name):
   - https://api.github.com/users/[your-username]
-- After you fetch your data, set it to state
+[x] After you fetch your data, set it to state
 
 #### Display the User Data
 
-- Pass the data to the component that will be displaying it
-- Build out a user card using the data that the Github API returns to you
+[x] Pass the data to the component that will be displaying it
+[x] Build out a user card using the data that the Github API returns to you
   - You may reference your old project for this, or you may wish to build this from scratch yourself
 
 #### Fetch the User's Followers
 
-- When your component mounts, you will also fetch the user's followers using this endpoint:
+[x] When your component mounts, you will also fetch the user's followers using this endpoint:
   https://api.github.com/users/[your-username]/followers
-- Set that data to state as well, and display the data in your app
+[x] Set that data to state as well, and display the data in your app
 
 #### Style the User Card
 

@@ -19,7 +19,7 @@ class App extends React.Component {
           ...this.state,
           user: res.data // object
         })
-        console.log("this user: ", this.user)
+        // console.log("this user: ", this.user)
       })
       .catch(err => console.log(err))
   }
