@@ -12,9 +12,10 @@ class User extends React.Component {
   }
 
   componentDidMount() {
-    axios.get("https://api.github.com/users/Qirhi/followers")
+    console.log("User Component did mount.")
+    axios.get(`https://api.github.com/users/${this.props.user.login}/followers`)
       .then(res => { 
-        // console.log("res.data from followers: ", res.data) // 200
+        console.log("res.data from followers: ", res.data) // 200
         this.setState({
           ...this.state,
           userFollowers: res.data // object
@@ -24,12 +25,30 @@ class User extends React.Component {
       .catch(err => console.log(err))
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    console.log("User componentDidUpdate is running");
+    // console.log("prevState.user: ", prevProps.user);
+    // console.log("this.state.user: ", this.props.user);
+    if (prevProps.user !== this.props.user) {
+      console.log("user has changed!");
 
+      axios.get(`https://api.github.com/users/${this.props.user.login}/followers`)
+      .then(res => { 
+        console.log("res.data from followers: ", res.data) // 200
+        this.setState({
+          ...this.state,
+          userFollowers: res.data // object
+        })
+        // console.log("userFollowers: ", this.userFollowers)
+      })
+      .catch(err => console.log(err))
+
+    }
+  }
 
 
   render() {
-    // const { imageUrl } = this.props;
-    // // ^ equivalent to const imageUrl = this.props.imageUrl
+
     const { user } = this.props;
 
     return (
