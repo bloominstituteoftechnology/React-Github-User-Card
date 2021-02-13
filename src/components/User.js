@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import UserFollowers from './UserFollowers';
+import GitHubCalendar from 'github-calendar';
 
 import {
   Card, CardImg, CardText, CardBody,
@@ -56,6 +57,19 @@ class User extends React.Component {
 
     const { user } = this.props;
 
+    GitHubCalendar(".calendar", "Qirhi");
+  
+    // or enable responsive functionality:
+    GitHubCalendar(".calendar", "Qirhi", { responsive: true });
+  
+      // Use a proxy
+      // GitHubCalendar(".calendar", "Qirhi", {
+      //     proxy (username) {
+      //       return fetch(`https://your-proxy.com/github?user=${username}`)
+      //     }
+      // }).then(r => r.text())
+
+
     return (
       <>
         {/* <CardBody>
@@ -89,6 +103,13 @@ class User extends React.Component {
                         </CardBody>
                       </Card>
                     </UncontrolledCollapse>
+                    
+                    <div class="calendar">
+                      Loading the data just for you.
+                   
+
+
+                    </div>
                   </div>
 
                 </CardBody>

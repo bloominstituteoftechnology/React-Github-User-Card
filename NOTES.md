@@ -12,3 +12,8 @@
   npm install --save bootstrap
   npm install --save reactstrap react react-dom
 
+[] Install Github Calendar
+  npm install --save github-calendar
+
+  
+
