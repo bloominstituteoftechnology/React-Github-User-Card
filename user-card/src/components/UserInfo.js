@@ -3,8 +3,12 @@ import React from 'react';
 const UserInfo = () => {
     return ( 
         <div>
-            <img src='' alt='User Avatar' />
-            <h3>User Name</h3>
+            <p>Name</p>
+            <p>Email</p>
+            <p>Company</p>
+            <p>Location</p>
+            <p>Hirable</p>
+            <p>Bio</p>
         </div>
     );
 }

@@ -1,5 +1,20 @@
+
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userCard{
+  border: solid 1px black;
+  width: 50%;
+}
+
+.userInfo{
+  border: solid 1px blue;
+  margin: 5px;
 }
 
 
