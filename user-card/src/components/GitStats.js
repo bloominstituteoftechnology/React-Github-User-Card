@@ -1,9 +1,9 @@
 import React from 'react';
 
-const GitStats = () => {
+const GitStats = props => {
     return ( 
         <div>
-            <p>Repos</p>
+            <p>Repos: {props.repos}</p>
             <p>Orgs</p>
             <p>gists</p>
             <p>Contribution Graph</p>
