@@ -1,6 +1,7 @@
 import React from 'react';
 import UserInfo from './components/UserInfo'
 import GitStats from './components/GitStats'
+import GitSocial from './components/GitSocial'
 import './App.css';
 
 class App extends React.Component {
@@ -27,6 +28,10 @@ class App extends React.Component {
 
           <div className="gitStats">
             <GitStats />
+          </div>
+
+          <div className="gitSocial" >
+            <GitSocial />
           </div>
         </div>
       </div> );
