@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Input } from 'reactstrap';
 
 class Search extends React.Component { 
   constructor() {
@@ -17,7 +18,7 @@ class Search extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log("submitting form", this.state.searchTerm);
+    // console.log("submitting form", this.state.searchTerm);
     this.props.searchUser(this.state.searchTerm);
     this.setState({
       ...this.state,
@@ -27,11 +28,12 @@ class Search extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="search">
         <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} value={this.state.searchTerm} type="text" />
-          <button>Search here</button>
+          <Input onChange={this.handleChange} value={this.state.searchTerm} type="text" placeholder="search for user" />
+          <Button color="info" size="lg" block>Search </Button>
         </form>
+
       </div>
     )
   }

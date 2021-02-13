@@ -13,12 +13,9 @@ class UserFollowers extends React.Component {
     return (
       <>
 
-        UserFollowers:
-
-
         {
           userFollowers.map(follower => {
-            console.log("follower: ", follower.login)
+            // console.log("follower: ", follower.login)
             return (
               // <button>hi</button>
               <p>{follower.login}</p>

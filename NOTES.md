@@ -6,7 +6,9 @@
   npm start
 
 [] Install axios
-   npm install axios
+  npm install axios
 
-   
+[] Install reactstrap
+  npm install --save bootstrap
+  npm install --save reactstrap react react-dom
 

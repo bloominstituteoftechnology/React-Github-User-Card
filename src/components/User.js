@@ -2,6 +2,11 @@ import React from 'react';
 import axios from 'axios';
 import UserFollowers from './UserFollowers';
 
+import {
+  Card, CardImg, CardText, CardBody,
+  CardTitle, CardSubtitle, Button, CardLink, UncontrolledCollapse
+} from 'reactstrap';
+
 
 class User extends React.Component {
   constructor() {
@@ -53,9 +58,46 @@ class User extends React.Component {
 
     return (
       <>
+        {/* <CardBody>
         { user ? `User name: ${user.name}` : "We don't have a user"}
+        </CardBody>
         <br/>
-        <UserFollowers userFollowers={this.state.userFollowers}/>
+        <UserFollowers userFollowers={this.state.userFollowers}/> */}
+
+
+              <Card>
+                <CardBody>
+                <h1>Github UserCard</h1>
+                  <CardTitle tag="h5">{ user ? `${user.login}` : "We don't have a user"}</CardTitle>
+                  <CardSubtitle tag="h6" className="mb-2 text-muted">{user.name}</CardSubtitle>
+                </CardBody>
+                <img className="user-image" width="25%" src={`${user.avatar_url}`} alt="Card image cap" />
+                <CardBody>
+                  <CardText>{ user.bio === null ? "no bio yet" : `${user.bio}`}</CardText>
+                  <CardLink href={`${user.html_url}`}>{`${user.login}'s Github`}</CardLink>
+                  <br/>
+                
+
+                  <div>
+                    <Button color="info" id="toggler" style={{ marginBottom: '1rem' }}>
+                      Followers
+                    </Button>
+                    <UncontrolledCollapse toggler="#toggler">
+                      <Card>
+                        <CardBody>
+                        <UserFollowers userFollowers={this.state.userFollowers}/>
+                        </CardBody>
+                      </Card>
+                    </UncontrolledCollapse>
+                  </div>
+
+                </CardBody>
+              </Card>
+
+
+
+
+
       
       </>
     )
@@ -63,3 +105,4 @@ class User extends React.Component {
 }
 
 export default User;
+
