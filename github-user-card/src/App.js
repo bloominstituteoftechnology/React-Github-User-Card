@@ -3,8 +3,7 @@ import axios from 'axios';
 import User from './components/user';
 import Followers from './components/followers';
 import Search from './components/search';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Container from '@material-ui/core/Container';
+import { CssBaseline, Container } from '@material-ui/core';
 
 class App extends React.Component {
   constructor(){
@@ -46,10 +45,11 @@ class App extends React.Component {
     return (
       <Container>
         <CssBaseline />
+
+        <h1>Github User Cards</h1>
         
         <Search />
 
-        <h2>Github User</h2>
         {this.state.userData && this.state.userData.map((user, index) => {
           return <User key={index} user={user}/>
         })}
