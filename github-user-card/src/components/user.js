@@ -1,4 +1,6 @@
 import React from 'react';
+import { Card, CardContent, Avatar, Typography } from '@material-ui/core';
+
 
 class User extends React.Component {
   render(){
@@ -6,18 +8,23 @@ class User extends React.Component {
     const { user } = this.props;
 
     return (
-      <div className='user-card'>
-          <img src={user.avatar_url} alt='avatar' />
-          <p>Name: {user.name}</p>
-          <p>Username: {user.login}</p>
-          <p>Bio: {user.bio}</p>
-          <p>Location: {user.location}</p>
-          <p>Company: {user.company}</p>
-          <p>Blog: {user.blog}</p>
-          <p>Email: {user.email}</p>
-          <p>Followers: {user.followers}</p>
-          <p>Following: {user.following}</p>
-      </div>
+      <Card>
+        <CardContent>
+
+          <Avatar src={user.avatar_url} alt='avatar' />
+
+          <Typography>{user.name}</Typography>
+          <Typography>{user.login}</Typography>
+          <Typography>{user.bio}</Typography>
+          <Typography>{user.location}</Typography>
+          <Typography>{user.company}</Typography>
+          <Typography>{user.blog}</Typography>
+          <Typography>{user.email}</Typography>
+          <Typography>Followers: {user.followers}</Typography>
+          <Typography>Following: {user.following}</Typography>
+
+        </CardContent>
+      </Card>
     );
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import { Card, CardContent, Avatar, Typography } from '@material-ui/core';
 
 class Followers extends React.Component {
   render(){
@@ -7,11 +7,16 @@ class Followers extends React.Component {
     const { follower } = this.props;
 
     return (
-        <div className='follower-card'>
-            <img src={follower.avatar_url} alt='avatar' />
-            <p>Username: {follower.login}</p>
-    </div>
-    );
+      <Card>
+        <CardContent>
+
+          <Avatar src={follower.avatar_url} alt='avatar' />
+
+          <Typography>{follower.login}</Typography>
+
+        </CardContent>
+      </Card>
+    )
   }
 }
 

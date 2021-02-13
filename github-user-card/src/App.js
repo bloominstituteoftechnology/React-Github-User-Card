@@ -3,6 +3,8 @@ import axios from 'axios';
 import User from './components/user';
 import Followers from './components/followers';
 import Search from './components/search';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
 
 class App extends React.Component {
   constructor(){
@@ -42,21 +44,22 @@ class App extends React.Component {
   
   render(){
     return (
-      <div>
-
-        <h1>Github User</h1>
-
+      <Container>
+        <CssBaseline />
+        
         <Search />
 
+        <h2>Github User</h2>
         {this.state.userData && this.state.userData.map((user, index) => {
           return <User key={index} user={user}/>
         })}
 
+        <h2>Followers</h2>
         {this.state.followers && this.state.followers.map((follower, index) => {
           return <Followers key={index} follower={follower} />
         })}
 
-      </div>
+      </Container>
     );
   }
 }
