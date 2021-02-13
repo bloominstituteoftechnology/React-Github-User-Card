@@ -16,6 +16,17 @@
   border: solid 1px black;
   border-radius: 100px;
 }
+
+.cardHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:flex-end;
+  padding: 50px;
+  font-size: 1.8rem;
+
+}
+
 .userInfo{
   border: solid 1px blue;
   margin: 5px;

@@ -21,11 +21,11 @@ class App extends React.Component {
         {console.log(res);
           this.setState({
             ...this.state,
-            user: res.data,
+            name: res.data.name,
             userImage: res.data.avatar_url,
             login: res.data.login,
             email: res.data.email,
-            company: res.data.email,
+            company: res.data.company,
             location: res.data.location,
             hireable: res.data.hireable,
             bio: res.data.bio,
@@ -46,40 +46,42 @@ class App extends React.Component {
 
 
   render() { 
+    const user= this.state;
     return ( 
       <div className='App'>
         <h1>Github User</h1>
 
         <div className="userCard">
-          <div className="CardHeader">
-            <img src={this.state.userImage} alt="User Avatar" />
-            <h3>{this.state.user.name}</h3>
+          <div className="cardHeader">
+            <img src={user.userImage} width="150" alt="User Avatar" />
+            <h3>{user.name}</h3>
+            <p>{user.login}</p>
           </div>
 
           <div className='userInfo'>
           <UserInfo 
-            login ={this.state.login}
-            email ={this.state.email}
-            company ={this.state.user.company}
-            location ={this.state.location}
-            hireable = {this.state.hireable}
-            bio = {this.state.bio}
+            login ={user.login}
+            email ={user.email}
+            company ={user.company}
+            location ={user.location}
+            hireable = {user.hireable}
+            bio = {user.bio}
           />
           </div>
 
           <div className="gitStats">
             <GitStats 
-              repos= {this.state.repos}
+              repos= {user.repos}
             />
           </div>
 
           <div className="gitSocial" >
             <GitSocial 
-              followers ={this.state.followers}
-              following ={this.state.following}
-              stars={this.state.stars}
-              twitter ={this.state.twitter}
-              site ={this.state.blog}
+              followers ={user.followers}
+              following ={user.following}
+              stars={user.stars}
+              twitter ={user.twitter}
+              site ={user.blog}
             />
           </div>
         </div>
