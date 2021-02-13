@@ -1,6 +1,12 @@
 import React from 'react';
 import { Card, CardContent, Avatar, Typography } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
 
+const StyledCard = styled(Card)({
+  width: '35%',
+  padding: '2%',
+  margin: '2%',
+});
 
 class User extends React.Component {
   render(){
@@ -8,7 +14,7 @@ class User extends React.Component {
     const { user } = this.props;
 
     return (
-      <Card>
+      <StyledCard>
         <CardContent>
 
           <Avatar src={user.avatar_url} alt='avatar' />
@@ -24,7 +30,7 @@ class User extends React.Component {
           <Typography>Following: {user.following}</Typography>
 
         </CardContent>
-      </Card>
+      </StyledCard>
     );
   }
 }

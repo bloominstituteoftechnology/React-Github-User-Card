@@ -4,6 +4,21 @@ import User from './components/user';
 import Followers from './components/followers';
 import Search from './components/search';
 import { CssBaseline, Container } from '@material-ui/core';
+import { styled } from '@material-ui/core/styles';
+
+const StyledContainer = styled(Container) ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+
+});
+
+const FollowersContainer = styled(Container) ({
+  display: 'flex',
+  flexDirection: 'row',
+  flexWrap: 'wrap',
+  justifyContent: 'center',
+});
 
 class App extends React.Component {
   constructor(){
@@ -43,7 +58,7 @@ class App extends React.Component {
   
   render(){
     return (
-      <Container>
+      <StyledContainer>
         <CssBaseline />
 
         <h1>Github User Cards</h1>
@@ -55,11 +70,14 @@ class App extends React.Component {
         })}
 
         <h2>Followers</h2>
-        {this.state.followers && this.state.followers.map((follower, index) => {
-          return <Followers key={index} follower={follower} />
-        })}
 
-      </Container>
+        <FollowersContainer>
+          {this.state.followers && this.state.followers.map((follower, index) => {
+            return <Followers key={index} follower={follower} />
+          })}
+        </FollowersContainer>
+
+      </StyledContainer>
     );
   }
 }
