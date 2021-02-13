@@ -1,0 +1,35 @@
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url("https://cdn.pixabay.com/photo/2019/04/11/22/29/airport-4120835_1280.jpg");
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.github-usercard {
+  margin: 1rem;
+  margin-top: 3rem;
+}
+
+.search {
+  opacity: .9;
+}
+
+.user-image {
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 180px;
+}
