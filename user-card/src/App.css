@@ -1,0 +1,44 @@
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.userCard{
+  border: solid 1px black;
+  width: 50%;
+}
+
+.userCard img{
+  border: solid 1px black;
+  border-radius: 100px;
+}
+
+.cardHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:flex-end;
+  padding: 50px;
+  font-size: 1.8rem;
+
+}
+
+.userInfo{
+  border: solid 1px blue;
+  margin: 5px;
+}
+
+.gitStats{
+  border: solid 1px green;
+  margin: 5px;
+}
+
+.gitSocial{
+  border: solid 1px orange;
+  margin: 5px;
+}
+
