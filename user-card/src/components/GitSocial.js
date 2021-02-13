@@ -1,13 +1,13 @@
 import React from 'react';
 
-const GitSocial = () => {
+const GitSocial = props => {
     return ( 
         <div>
-            <p>followers</p>
-            <p>following</p>
-            <p>stars</p>
-            <p>twitter</p>
-            <p>Site</p>
+            <p>followers: {props.followers}</p>
+            <p>following: {props.following}</p>
+            <p>stars: {props.stars} </p>
+            <p>twitter: {props.twitter}</p>
+            <p>website: {props.site} </p>
         </div>
     );
 }

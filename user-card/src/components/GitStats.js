@@ -1,14 +1,15 @@
 import React from 'react';
 
-const GitStats = props => {
-    return ( 
-        <div>
-            <p>Repos: {props.repos}</p>
-            <p>Orgs</p>
-            <p>gists</p>
-            <p>Contribution Graph</p>
-        </div>
-     );
+class GitStats extends React.Component {
+    render() { 
+        const user = this.props
+        return ( 
+            <div>
+                <p>Repos: {user.repos}</p>
+                <p>Contribution Graph</p>
+            </div>
+        );
+    }
 }
- 
-export default GitStats
+
+export default GitStats;

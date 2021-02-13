@@ -10,15 +10,14 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = { 
-      user: [
-
-      ]
+      user: []
     }
   }
 
   componentDidMount(){
     axios.get('https://api.github.com/users/Rex-1031')
       .then(res =>
+        
         {console.log(res);
           this.setState({
             ...this.state,
@@ -30,7 +29,12 @@ class App extends React.Component {
             location: res.data.location,
             hireable: res.data.hireable,
             bio: res.data.bio,
-            repos: res.data.public_repos
+            repos: res.data.public_repos,
+            followers: res.data.followers,
+            following: res.data.following,
+            stars: res.data.stars,
+            twitter: res.data.twitter_username,
+            site: res.data.blog
 
             
           }) 
@@ -56,7 +60,7 @@ class App extends React.Component {
           <UserInfo 
             login ={this.state.login}
             email ={this.state.email}
-            company ={this.state.company}
+            company ={this.state.user.company}
             location ={this.state.location}
             hireable = {this.state.hireable}
             bio = {this.state.bio}
@@ -65,12 +69,18 @@ class App extends React.Component {
 
           <div className="gitStats">
             <GitStats 
-              Repos= {this.state.repos}
+              repos= {this.state.repos}
             />
           </div>
 
           <div className="gitSocial" >
-            <GitSocial />
+            <GitSocial 
+              followers ={this.state.followers}
+              following ={this.state.following}
+              stars={this.state.stars}
+              twitter ={this.state.twitter}
+              site ={this.state.blog}
+            />
           </div>
         </div>
       </div> );
