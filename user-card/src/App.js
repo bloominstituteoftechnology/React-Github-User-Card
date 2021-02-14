@@ -45,7 +45,6 @@ function App() {
       });
   }, []);
 
- 
 
 console.log(followers, "followers")
 console.log(profile, 'profile')
