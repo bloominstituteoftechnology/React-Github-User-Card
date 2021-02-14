@@ -44,7 +44,7 @@ When you have those completed, you're ready to start coding!
 #### Fetch the User Data
 
 - When your component mounts, send a GET request to the following URL (replacing the palceholder with your Github name):
-  - https://api.github.com/users/<your name>
+  - https://api.github.com/users/[your-username]
 - After you fetch your data, set it to state
 
 #### Display the User Data
@@ -56,7 +56,7 @@ When you have those completed, you're ready to start coding!
 #### Fetch the User's Followers
 
 - When your component mounts, you will also fetch the user's followers using this endpoint:
-  https://api.github.com/users/< Your github name >/followers
+  https://api.github.com/users/[your-username]/followers
 - Set that data to state as well, and display the data in your app
 
 #### Style the User Card
