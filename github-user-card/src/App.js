@@ -3,14 +3,21 @@ import axios from 'axios';
 import User from './components/user';
 import Followers from './components/followers';
 import Search from './components/search';
-import { CssBaseline, Container } from '@material-ui/core';
+import { CssBaseline, Container, Typography } from '@material-ui/core';
 import { styled } from '@material-ui/core/styles';
+
+/////// styles /////////
 
 const StyledContainer = styled(Container) ({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-
+  background: "url('https://cdn.pixabay.com/photo/2020/06/12/09/30/code-5289831_1280.jpg') no-repeat center center fixed", 
+  '-webkit-background-size': 'cover',
+  '-moz-background-size': 'cover',
+  '-o-background-size': 'cover',
+  backgroundSize: 'cover',
+  padding: 0,
 });
 
 const FollowersContainer = styled(Container) ({
@@ -19,6 +26,17 @@ const FollowersContainer = styled(Container) ({
   flexWrap: 'wrap',
   justifyContent: 'center',
 });
+
+const Heading = styled(Typography) ({
+  backgroundColor: 'white',
+  width: '100%',
+  padding: '2%',
+  fontSize: '30px',
+  display: 'flex',
+  justifyContent: 'center',
+});
+
+/////// component ///////
 
 class App extends React.Component {
   constructor(){
@@ -61,7 +79,7 @@ class App extends React.Component {
       <StyledContainer>
         <CssBaseline />
 
-        <h1>Github User Cards</h1>
+        <Heading>Github User Cards</Heading>
         
         <Search />
 
@@ -69,7 +87,7 @@ class App extends React.Component {
           return <User key={index} user={user}/>
         })}
 
-        <h2>Followers</h2>
+        <Heading>Followers</Heading>
 
         <FollowersContainer>
           {this.state.followers && this.state.followers.map((follower, index) => {
