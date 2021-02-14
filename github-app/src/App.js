@@ -4,6 +4,7 @@ import axios from 'axios'
 
 import Followers from './components/Followers'
 
+
 class App extends React.Component {
   constructor(){
     super();
@@ -47,7 +48,7 @@ class App extends React.Component {
                 <div className="user-info">{this.state.user.name}</div>
                 <div className="user-info">{this.state.user.login}</div>
                 <div className="user-info">{this.state.user.location}</div>
-                <Followers className="user-info"  />
+                <Followers follower={this.state.user} className="user-info"  />
             </div>
       
          

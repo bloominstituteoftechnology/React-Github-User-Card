@@ -29,16 +29,17 @@ class Followers extends React.Component {
 
 
     render() {
-    
+        
        return(
             <>
                 {this.state.followers && this.state.followers.map((follower) => {
-                return <div> Followers: {follower.length} </div>
+                return <div key={follower}> Followers: {this.state.followers.length} </div>
                 })}
 
             </>
         );
-    };   
+    };
 };
+
 
 export default Followers
