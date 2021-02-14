@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyledCard, StyledCardContent, UserAvatar, StyledTypography, TypographyContainer } from './styles';
+import { StyledCard, StyledCardContent, UserAvatar, StyledTypography } from './styles';
+import { Container } from '@material-ui/core';
 
 class User extends React.Component {
   render(){
@@ -12,14 +13,14 @@ class User extends React.Component {
 
           <UserAvatar src={user.avatar_url} alt='avatar' />
 
-          <TypographyContainer>
+          <Container>
             <StyledTypography>{user.name}</StyledTypography>
             <StyledTypography>{user.login}</StyledTypography>
             <StyledTypography>{user.bio}</StyledTypography>
             <StyledTypography>{user.location}</StyledTypography>
             <StyledTypography>Followers: {user.followers}</StyledTypography>
             <StyledTypography>Following: {user.following}</StyledTypography>
-          </TypographyContainer>
+          </Container>
           
 
         </StyledCardContent>

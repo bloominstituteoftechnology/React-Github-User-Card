@@ -9,38 +9,39 @@ import { StyledContainer, Heading, FollowersContainer } from './components/style
 class App extends React.Component {
   constructor(){
     super();
-    this.state ={
+    this.state = {
+      username: 'kwnie',
       userData: [],
       followers: []
     }
-  }
+  };
 
   componentDidMount = () => {
-    axios.get(`https://api.github.com/users/kwnie`)
-      .then(res => {
-        this.setState({
-          ...this.state,
-          userData: [res.data]
-        })
-      })
-      .catch(err => console.log('err',err))
-
-    axios.get('https://api.github.com/users/kwnie/followers')
-      .then(res => {
-        this.setState({
-          ...this.state,
-          followers: res.data
-        })
-      })
-      .catch(err => console.log(err))
-    
-  }
+    this.search(this.state.username)
+  };
 
   componentDidUpdate = (prevProps, prevState) => {
     if(prevState.userData !== this.state.userData){
       console.log('userdata has changed')
     }
-  }
+  };
+
+  search = username => {
+
+    axios.get(`https://api.github.com/users/${username}`)
+    .then(res => this.setState({
+      ...this.state,
+      userData: [res.data]
+    }))
+
+    axios.get(`https://api.github.com/users/${username}/followers`)
+      .then(res => this.setState({
+          ...this.state,
+          followers: res.data
+        })
+      )
+      .catch(err => console.log(err))
+  };
   
   render(){
     return (
@@ -48,9 +49,9 @@ class App extends React.Component {
         <CssBaseline />
 
         <Heading>Github User Cards</Heading>
-        
-        <Search />
 
+        <Search search={this.search} />
+        
         {this.state.userData && this.state.userData.map((user, index) => {
           return <User key={index} user={user}/>
         })}

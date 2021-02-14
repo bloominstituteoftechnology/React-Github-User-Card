@@ -1,5 +1,5 @@
 import { styled } from '@material-ui/core/styles';
-import { Container, Typography, Card, Avatar } from '@material-ui/core';
+import { Container, Typography, Card, Avatar, FormControl } from '@material-ui/core';
 
 export const StyledContainer = styled(Container) ({
     display: 'flex',
@@ -57,6 +57,14 @@ export const StyledTypography = styled(Typography) ({
     padding: '5%',
 })
 
-export const TypographyContainer = styled(Container) ({
-
+export const SearchContainer = styled(FormControl) ({
+    backgroundColor: 'white',
+    width: '40%',
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: '1%',
+    margin: '3%',
+    outline: '1px solid'
 })
+
