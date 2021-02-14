@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import Followers from './Followers'
 import '../Github-Card.css'
 import Avatar from '@material-ui/core/Avatar';
 import Card from '@material-ui/core/Card';
 import axios from 'axios'
+
 
 
 export class GithubCard extends Component {
@@ -20,16 +22,16 @@ export class GithubCard extends Component {
       user: res.data
     })})
   }
-
   render() {
     return (
-
+    <>
+    <h1>User Information</h1>
       <div className="github__card">
-          <Card>
+          <Card styles={`background-color: black`}>
           <div className="avatar">
         <Avatar img src={this.state.user.avatar_url} />
         </div>
-        <h1> {this.state.user.login} </h1>
+        <h3> {this.state.user.login} </h3>
         <p><strong>Full Name: </strong>{this.state.user.name}</p>
         <p><strong>Bio: </strong>{this.state.user.bio}</p>
         <p><strong>Location: </strong>{this.state.user.location} </p>
@@ -37,7 +39,12 @@ export class GithubCard extends Component {
         <p><strong>Following: </strong> {this.state.user.following}</p>
         <p><strong>Followers: </strong>{this.state.user.followers}</p>
         </Card>
+        <h2>The Followers Username(s):</h2>
+        <Card>
+            <Followers />
+        </Card>
       </div>
+      </>
     )
   }
 }

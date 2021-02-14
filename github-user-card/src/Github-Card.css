@@ -1,6 +1,7 @@
 .github__card {
     text-align: center;
     align-items: center;
+    background-color: lightblue;
 }
 
 .avatar {
@@ -8,4 +9,17 @@
     display: flex;
     justify-content: center;
     margin-top: 2rem;
+}
+
+body {
+    background-color: lightblue;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    display: inline-flex;
 }
