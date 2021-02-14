@@ -3,40 +3,8 @@ import axios from 'axios';
 import User from './components/user';
 import Followers from './components/followers';
 import Search from './components/search';
-import { CssBaseline, Container, Typography } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
-
-/////// styles /////////
-
-const StyledContainer = styled(Container) ({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-  background: "url('https://cdn.pixabay.com/photo/2020/06/12/09/30/code-5289831_1280.jpg') no-repeat center center fixed", 
-  '-webkit-background-size': 'cover',
-  '-moz-background-size': 'cover',
-  '-o-background-size': 'cover',
-  backgroundSize: 'cover',
-  padding: 0,
-});
-
-const FollowersContainer = styled(Container) ({
-  display: 'flex',
-  flexDirection: 'row',
-  flexWrap: 'wrap',
-  justifyContent: 'center',
-});
-
-const Heading = styled(Typography) ({
-  backgroundColor: 'white',
-  width: '100%',
-  padding: '2%',
-  fontSize: '30px',
-  display: 'flex',
-  justifyContent: 'center',
-});
-
-/////// component ///////
+import { CssBaseline } from '@material-ui/core';
+import { StyledContainer, Heading, FollowersContainer } from './components/styles';
 
 class App extends React.Component {
   constructor(){

@@ -1,12 +1,5 @@
 import React from 'react';
-import { Card, CardContent, Avatar, Typography } from '@material-ui/core';
-import { styled } from '@material-ui/core/styles';
-
-const StyledCard = styled(Card)({
-  width: '35%',
-  padding: '2%',
-  margin: '2%',
-});
+import { StyledCard, StyledCardContent, UserAvatar, StyledTypography, TypographyContainer } from './styles';
 
 class User extends React.Component {
   render(){
@@ -15,21 +8,21 @@ class User extends React.Component {
 
     return (
       <StyledCard>
-        <CardContent>
+        <StyledCardContent>
 
-          <Avatar src={user.avatar_url} alt='avatar' />
+          <UserAvatar src={user.avatar_url} alt='avatar' />
 
-          <Typography>{user.name}</Typography>
-          <Typography>{user.login}</Typography>
-          <Typography>{user.bio}</Typography>
-          <Typography>{user.location}</Typography>
-          <Typography>{user.company}</Typography>
-          <Typography>{user.blog}</Typography>
-          <Typography>{user.email}</Typography>
-          <Typography>Followers: {user.followers}</Typography>
-          <Typography>Following: {user.following}</Typography>
+          <TypographyContainer>
+            <StyledTypography>{user.name}</StyledTypography>
+            <StyledTypography>{user.login}</StyledTypography>
+            <StyledTypography>{user.bio}</StyledTypography>
+            <StyledTypography>{user.location}</StyledTypography>
+            <StyledTypography>Followers: {user.followers}</StyledTypography>
+            <StyledTypography>Following: {user.following}</StyledTypography>
+          </TypographyContainer>
+          
 
-        </CardContent>
+        </StyledCardContent>
       </StyledCard>
     );
   }
