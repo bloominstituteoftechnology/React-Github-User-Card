@@ -1,0 +1,11 @@
+.github__card {
+    text-align: center;
+    align-items: center;
+}
+
+.avatar {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
