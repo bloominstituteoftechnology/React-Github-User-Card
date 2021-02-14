@@ -8,7 +8,6 @@ const Card = props => {
     return (
       <div className="card">
         <img src={props.user.avatar_url} alt='user avatar'/>
-      
         <h3>{props.user.name}</h3>
         <p>{props.user.login}</p>
         <a href={props.user.url}/>
