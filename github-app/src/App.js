@@ -48,7 +48,7 @@ class App extends React.Component {
                 <div className="user-info">{this.state.user.name}</div>
                 <div className="user-info">{this.state.user.login}</div>
                 <div className="user-info">{this.state.user.location}</div>
-                <Followers follower={this.state.user} className="user-info"  />
+                <Followers follow={this.state.user} className="user-info"  />
             </div>
       
          

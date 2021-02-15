@@ -16,6 +16,7 @@ class Followers extends React.Component {
         //api Call
         axios.get('https://api.github.com/users/dujules23/followers')
         .then(res => {
+            
             console.log(res.data)
             this.setState({
                 ...this.state,
@@ -31,9 +32,10 @@ class Followers extends React.Component {
     render() {
         
        return(
-            <>
-                {this.state.followers && this.state.followers.map((follower) => {
-                return <div key={follower}> Followers: {this.state.followers.length} </div>
+            <>  
+                <div>Followers: </div>
+                {this.state.followers && this.state.followers.map((follower, i) => {
+                return <div key={follower.id}> {this.state.followers.length} </div>
                 })}
 
             </>
