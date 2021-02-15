@@ -7,9 +7,9 @@ const User = (props) => {
         <div className="user">
             <img height="250" src={props.user.avatar_url} alt="user face"/>
             <div className="bio-u">
-                <p>{props.user.name}</p>
+                <h3>{props.user.name}</h3>
                 <p>{props.user.login}</p>
-                <p>{props.user.html_url}</p>
+                <a href={props.user.html_url}>{props.user.html_url}</a>
                 <p>{props.user.followers}</p>
                 <p>{props.user.location}</p>
                 <p>{props.user.bio}</p>

@@ -9,7 +9,7 @@ const Followers = (props) => {
             <img height="100" src={props.follower.avatar_url} alt="user face"/>
             <div className="bio-f">
                 <p>{props.follower.login}</p>
-                <p>{props.follower.html_url}</p>
+                <a href={props.follower.html_url}>{props.follower.html_url}</a>
             </div>
         </div>
     )

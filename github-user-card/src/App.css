@@ -1,5 +1,10 @@
+body {
+background-color: black;
+}
+
 .App {
   text-align: center;
+  color: palevioletred;
 }
 
 .App-logo {
@@ -53,4 +58,12 @@
 
 .bio-f{
   margin: 0 0 0 5%;
+}
+
+.user img{
+  border-radius: 50%;
+}
+
+.follower img{
+  border-radius: 50%;
 }
