@@ -12,7 +12,8 @@ class User extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    if (this.props.user !== prevProps.user) { //ALWAYS DO
+    if (this.props.user !== prevProps.user) {
+      //ALWAYS DO ABOVE TO STOP INFINITE LOOPS
       console.log(">>>>>", this.props.user.followers_url);
       axios
         .get(this.props.user.followers_url)
@@ -32,17 +33,27 @@ class User extends React.Component {
     const { user } = this.props;
 
     return (
-      <div>
+      <div className="d-flex flex-row justify-content-between">
         <div className="card">
-          <img src={user.avatar_url} alt={user.login}></img>
+          <a href={user.html_url}>
+            <img src={user.avatar_url} alt={user.login}></img>
+          </a>
 
           <h1 className="name">{user.name}</h1>
           <h3>Location: {user.location}</h3>
           <h4>User Name: {user.login}</h4>
           <h4>About Me: {user.bio}</h4>
-          <p></p>
+          <p>Who do I work for: {user.company}</p>
+          <p>What do I do: I make fantastic web experiences</p>
+          <a href="https://twitter.com/tmillhawaii">
+            Hit me on twitter! @{user.twitter_username}
+          </a>
+          <a href={user.blog}>Check out my portfolio created using Gatsbyjs</a>
         </div>
-        <Followers followers={this.state.followers} />
+        <div className="card d-flex flex-column ">
+          <h3>My Followers</h3>
+          <Followers followers={this.state.followers} />
+        </div>
       </div>
     );
   }
