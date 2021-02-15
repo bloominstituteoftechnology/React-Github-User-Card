@@ -1,0 +1,51 @@
+.App {
+  text-align: center;
+}
+
+.card {
+  text-align: center;
+  background-color: #444;
+  color: black;
+  border: .1rem solid black;
+  border-radius: 15px;
+  box-shadow: 0 0 1.5rem black;
+  opacity: 0.9;
+  max-width: 50%;
+  padding: 1.5rem;
+  margin: 3rem 0;
+  max-width: 48%
+}
+
+.card2 {
+  text-align: center;
+  background-color: #AAA;
+  color: black;
+  border: .1rem solid black;
+  border-radius: 15px;
+  box-shadow: 0 0 1.5rem black;
+  max-width: 50%;
+  padding: 2rem;
+  margin: 3rem 3rem;
+  min-width: 100%;
+  align-self: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 1rem;
+}
+
+footer {
+  margin-top: 5rem;
+}
+
+.name{
+  border-radius: 15px;
+  box-shadow: 0 0 1rem black;
+  margin: 3rem 0;
+}
+
+a {
+  color: white;
+  padding: .5rem;
+
+}
