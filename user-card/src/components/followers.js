@@ -11,9 +11,9 @@ class Followers extends React.Component {
       console.log('this is the followers data from followers component', this.props)
     return (
       <>
-       {followers.map(follower => {
+       {followers.map( (follower, idx) => {
                 return (
-                    <p>{follower.login}</p>
+                    <p key={idx}>{followers[idx].login}</p>
                 )
             })}
       </>

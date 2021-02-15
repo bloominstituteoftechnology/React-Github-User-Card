@@ -59,7 +59,7 @@ return (
           <h4>About Me: {user.bio}</h4>
           <p></p>
         </div>
-    <Followers followers={user.followers} /> 
+    <Followers followers={this.props} /> 
 </div>
 )
 
