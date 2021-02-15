@@ -8,7 +8,7 @@ class Followers extends React.Component {
 
   render() { 
       const {followers} = this.props;
-      console.log('this is the followers data from followers component', this.props)
+      console.log('this is the followers data from followers component', followers)
     return (
       <>
        {followers.map( (follower, idx) => {

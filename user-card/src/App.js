@@ -11,7 +11,9 @@ class App extends React.Component {
     this.state = {
      user: {
        login: "artofmayhem"
-     }
+     },
+     userInfo: {},
+     followers: [],
     };
   }
 
@@ -20,7 +22,20 @@ class App extends React.Component {
       .get(`https://api.github.com/users/${this.state.user.login}`)
       .then((res) => {
         console.log("Initial Data Fetch From User Account API Call", res.data);
-        this.setState({...this.state, user: res.data });
+        // this.setState({...this.state, user: res.data }); DON'T DO THIS
+        this.setState((prevState) => ({ ...prevState, userInfo: res.data }));
+
+        // axios
+        // .get(res.data.followers_url)
+        // .then((res) => {
+        //     console.log("Initial Data Fetch From Followers API Call", res.data);
+        //     this.setState((prevState) => ({
+        //         ...prevState, 
+        //         followers: res.data 
+        //     }));
+        //     console.log('profile followers', this.followers)
+        // })
+        // .catch((error) => console.log(error)); 
       })
       .catch((error) => console.log(error));
   }
@@ -30,10 +45,10 @@ class App extends React.Component {
 
 
   render() {
-    console.log("App render method");
     return (
       <div className="App d-flex container justify-content-center flex-column ">
-       <User  user={this.state.user}/> 
+        <User user={this.state.userInfo} /> 
+       
         <footer>
           <p>
             Find me on Twitter{" "}
