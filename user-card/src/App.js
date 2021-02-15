@@ -17,7 +17,7 @@ class App extends React.Component {
     };
   }
 
-  
+
   componentDidMount() {
     axios
       .get(`https://api.github.com/users/${this.state.user.login}`)
@@ -32,7 +32,8 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App d-flex container justify-content-center flex-column ">
+      <div className="App d-flex jumbotron bg-secondary justify-content-center flex-column">
+        <h1 className='display-4 text-light'>Lambda School React Class Lifecycle Project</h1>
         <User user={this.state.userInfo} /> 
       </div>
     );
