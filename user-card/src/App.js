@@ -1,72 +1,55 @@
-import ReactDOM from "react-dom";
-import React, {useState, useEffect } from 'react';
-import axios from 'axios'
+import React from "react";
+import axios from "axios";
+import User from "./components/user.js";
+import "./App.css";
+import "bootstrap/dist/css/bootstrap.css";
 
-import logo from './logo.svg';
-import './App.css';
+class App extends React.Component {
+  constructor() {
+    super();
+    console.log("App constructor");
+    this.state = {
+     user: {
+       login: "artofmayhem"
+     }
+    };
+  }
 
-function App() {
+  componentDidMount() {
+    axios
+      .get(`https://api.github.com/users/${this.state.user.login}`)
+      .then((res) => {
+        console.log("Initial Data Fetch From User Account API Call", res.data);
+        this.setState({...this.state, user: res.data });
+      })
+      .catch((error) => console.log(error));
+  }
 
-  const [profile, setProfile] = useState()
-  const [followers, setFollowers] =useState()
   
-  useEffect(() => {
-    axios
-      .get(
-        'https://api.github.com/users/artofmayhem/followers'
-      )
-      .then((res) => {
-        setFollowers(res.data);
-        // console.log(
-        //   "Incoming Github Followers data... received.",
-        //   res.data
-        // );
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
 
-  useEffect(() => {
-    axios
-      .get(
-        'https://api.github.com/users/artofmayhem'
-      )
-      .then((res) => {
-        setProfile(res.data);
-        // console.log(
-        //   "Incoming Github data... received.",
-        //   res.data
-        // );
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, []);
 
-
-console.log(followers, "followers")
-console.log(profile, 'profile')
-
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  render() {
+    console.log("App render method");
+    return (
+      <div className="App d-flex container justify-content-center flex-column ">
+       <User  user={this.state.user}/> 
+        <footer>
+          <p>
+            Find me on Twitter{" "}
+            <a href="https://twitter.com/tmillhawaii">
+              tmillhawaii
+            </a>
+          </p>
+          <h5>Or</h5>
+          <p>
+            Find me on Github{" "}
+            <a href='http://www.yahoo.com'>Github</a>
+          </p>
+        </footer>
+      </div>
+    );
+  }
 }
 
 export default App;
