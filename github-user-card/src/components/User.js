@@ -10,7 +10,7 @@ const User = (props) => {
                 <h3>{props.user.name}</h3>
                 <p>{props.user.login}</p>
                 <a href={props.user.html_url}>{props.user.html_url}</a>
-                <p>{props.user.followers}</p>
+                <p>Followers: {props.user.followers}</p>
                 <p>{props.user.location}</p>
                 <p>{props.user.bio}</p>
             </div>

@@ -36,7 +36,9 @@ class App extends React.Component {
   render(){
     return(
       <div className='App'>
+        <h1>Github User Card</h1>
         <User user={this.state.user} />
+        <h2>Followers' User Card</h2>
         {
           this.state.followers.map(follower => {
             return <Followers follower={follower} />

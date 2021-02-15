@@ -67,3 +67,11 @@ background-color: black;
 .follower img{
   border-radius: 50%;
 }
+
+.App h1{
+  color: teal;;
+}
+
+.App h2{
+  color: white;
+}
