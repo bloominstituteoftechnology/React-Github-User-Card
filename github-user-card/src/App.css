@@ -36,3 +36,21 @@
     transform: rotate(360deg);
   }
 }
+
+.user{
+  display: flex;
+  margin: 0 25% 0 25%;
+}
+
+.follower{
+  display: flex;
+  margin: 5% 25% 5% 40%;
+}
+
+.bio-u{
+  margin: 0 0 0 5%;
+}
+
+.bio-f{
+  margin: 0 0 0 5%;
+}
