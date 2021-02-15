@@ -7,9 +7,9 @@ class FollowerCard extends React.Component {
     const { follower } = this.props
 
     return (
-      <div className="followers-card">
+      <div className="card">
         <img src={follower.avatar_url} alt='follower avatar'/>
-        <p>{follower.login}</p>
+        <p className='username'>{follower.login}</p>
       </div>
 
     )
