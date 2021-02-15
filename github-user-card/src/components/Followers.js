@@ -20,7 +20,9 @@ export class Followers extends Component {
     render() {
         return (
             <div>
-                <ul>{this.state.followers.map(followers => <li>{followers.login}</li>)} </ul>
+                     <div>
+                <ul className="italic">{this.state.followers.map(followers => <li>{followers.login}</li>)} </ul>
+                    </div>
             </div>
         )
     }
