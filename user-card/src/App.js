@@ -11,42 +11,30 @@ class App extends React.Component {
     this.state = {
      user: {
        login: "artofmayhem"
-     }
+     },
+     userInfo: {},
+     followers: [],
     };
   }
+
 
   componentDidMount() {
     axios
       .get(`https://api.github.com/users/${this.state.user.login}`)
       .then((res) => {
         console.log("Initial Data Fetch From User Account API Call", res.data);
-        this.setState({...this.state, user: res.data });
+        // this.setState({...this.state, user: res.data }); DON'T DO THIS
+        this.setState((prevState) => ({ ...prevState, userInfo: res.data })); //ALWAYS DO THIS
       })
       .catch((error) => console.log(error));
   }
 
-  
-
-
 
   render() {
-    console.log("App render method");
     return (
-      <div className="App d-flex container justify-content-center flex-column ">
-       <User  user={this.state.user}/> 
-        <footer>
-          <p>
-            Find me on Twitter{" "}
-            <a href="https://twitter.com/tmillhawaii">
-              tmillhawaii
-            </a>
-          </p>
-          <h5>Or</h5>
-          <p>
-            Find me on Github{" "}
-            <a href='http://www.yahoo.com'>Github</a>
-          </p>
-        </footer>
+      <div className="App d-flex jumbotron bg-secondary justify-content-center flex-column">
+        <h1 className='display-4 text-light'>Lambda School React Class Lifecycle Project</h1>
+        <User user={this.state.userInfo} /> 
       </div>
     );
   }
