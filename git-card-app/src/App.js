@@ -69,7 +69,10 @@ class App extends React.Component {
         console.error(err)
         debugger
       })
-      console.log('After Submit', this.state)
+    console.log('After Submit', this.state)
+    this.setState({
+      searchText: '',
+    })
   }
 
   render() {
