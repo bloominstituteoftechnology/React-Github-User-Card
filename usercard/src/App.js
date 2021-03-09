@@ -1,56 +1,37 @@
 import React from 'react';
 import axios from 'axios';
-import UserCards from './UserCards';
-import UserList from './UserList';
+import Followers from './Followers';
+import User from './User';
 import lambdalogo from './assets/lambdalogo.png'
 import githublogo from './assets/githublogo.png'
 import './App.css';
 
 class App extends React.Component {
   state = {
-    dogImages: [],
-    
-}
+    user: [],
+    followers: []    
+  }
 
 componentDidMount() {
-    axios.get("https://dog.ceo/api/breed/affenpinscher/images")
-        .then(res => {
-            this.setState({
-                dogImages: res.data.message
-            });
+  axios.get(`https://api.github.com/users/mzteepowell`)
+    .then(res => {
+      this.setState({
+          user: res.data
         })
-        .catch(err => {
-            console.log(err);
-        });
-}
-componentDidUpdate(prevProps, prevState) {
-  console.log('PrevProps: ', prevProps)
-  console.log('PrevState: ', prevState)
-  console.log('NewProps: ', this.props)
-  console.log('NewState: ', this.state)
-  if (prevState.dogImages !== this.state.dogImages) {
-    console.log("update to dog image update")
-    
-  if (this.state.breed === "chihuahua") {
-    axios.get("https://dog.ceo/api/breed/husky/images")
-        .then(res => {
-            this.setState({
-                dogImages: res.data.message,
-                breed: 'husky'
-            });
+      })
+      .catch(err => {
+          console.log(err);
+      })
+      axios.get(`https://api.github.com/users/mzteepowell/followers`)
+    .then(res => {
+      this.setState({
+          followers: res.data
         })
-        .catch(err => {
-            console.log(err);
-        });
-}
+      })
+      .catch(err => {
+          console.log(err);
+      })
   }
-}
-handleChange = (e) => {
-    this.setState({
-        breed: e.target.value
-    })
-}
-
 
 
 render() {
@@ -61,15 +42,11 @@ render() {
       <p>❤️'s</p>
       <img src={githublogo} alt="GitHub Logo"></img>
       </div>
-        <UserCards />
-        <UserList />
+        <User key={this.state.user.id} user={this.state.user} />
+        <Followers key={this.state.followers.id}followers={this.state.followers}/>
     </div>
-  ) 
-      
-}
-
-
-
+    )    
+  }
 }
 
 export default App;

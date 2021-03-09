@@ -4,7 +4,7 @@ import './App.css';
 const User = (props) => {
   return (
     <div className='card'>
-      <img src={props.user} alt='Github profile'>
+      <img src={props.user.avatar_url} alt='Github profile'>
       </img>
       <div className='card-info'>
         <h3 className='name'>{props.user.name}</h3>
