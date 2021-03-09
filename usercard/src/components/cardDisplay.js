@@ -33,7 +33,7 @@ export default class CardDisplay extends Component {
             <a
               href={`${this.state.myUsers.html_url}`}
               target="_blank"
-              rel="noreffer"
+              rel="noreferrer"
             >
               <button>Visit Profile</button>
             </a>
