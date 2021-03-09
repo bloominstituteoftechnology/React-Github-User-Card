@@ -14,18 +14,18 @@ Commit your code regularly and meaningfully. This helps you and any collaborator
 
 ### Task 1: Project Set Up
 
-- [ ] Create a forked copy of this project.
-- [ ] Clone your OWN version of the repository in your terminal
-- [ ] Use CRA to create a new React app in this repository
-- [ ] Create a new branch: git checkout -b `<firstName-lastName>`.
-- [ ] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
-- [ ] Push commits: git push origin `<firstName-lastName>`.
+- [X] Create a forked copy of this project.
+- [X] Clone your OWN version of the repository in your terminal
+- [X] Use CRA to create a new React app in this repository
+- [X] Create a new branch: git checkout -b `<firstName-lastName>`.
+- [X] Implement the project on your newly created `<firstName-lastName>` branch, committing changes regularly.
+- [X] Push commits: git push origin `<firstName-lastName>`.
 
 Follow these steps for completing your project.
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into main (student's Repository). **Please don't merge your own pull request**
-- [ ] From the home page of your repo, make sure you have your branch selected
-- [ ] Copy the URL and paste it into Canvas
+- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into main (student's Repository). **Please don't merge your own pull request**
+- [X] From the home page of your repo, make sure you have your branch selected
+- [X] Copy the URL and paste it into Canvas
 
 ### Task 2: Minimum Viable Product
 
@@ -56,7 +56,7 @@ When you have those completed, you're ready to start coding!
 #### Fetch the User's Followers
 
 - When your component mounts, you will also fetch the user's followers using this endpoint:
-  https://api.github.com/users/[your-username]/followers
+  a
 - Set that data to state as well, and display the data in your app
 
 #### Style the User Card
@@ -79,6 +79,6 @@ After finishing your required elements, you can push your work further. These go
 
 ## Submission Format
 
-- [ ] Submit a Pull-Request to merge <firstName-lastName> Branch into `main` (student's Repository). **Please don't merge your own pull request**
-- [ ] From the home page of your repo, make sure you have your branch selected
-- [ ] Copy the URL and paste it into Canvas to submit your project
+- [X] Submit a Pull-Request to merge <firstName-lastName> Branch into `main` (student's Repository). **Please don't merge your own pull request**
+- [X] From the home page of your repo, make sure you have your branch selected
+- [X] Copy the URL and paste it into Canvas to submit your project
