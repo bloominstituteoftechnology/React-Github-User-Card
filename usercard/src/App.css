@@ -1,0 +1,58 @@
+.image-style {
+  width: 150px;
+  height: auto;
+  padding-top: 10px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: lime;
+}
+
+.column {
+  width: 25%;
+  float: left;
+  padding: 0px 10px;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  background-color: white;
+  text-align: center;
+  border-radius: 40px;
+  padding-bottom: 15px;
+}
+.title {
+  color: gray;
+  font-size: 10px;
+}
+
+button {
+  border: none;
+  padding: 8px;
+  display: inline-block;
+  color: white;
+  background-color: black;
+  cursor: pointer;
+  width: 70%;
+  border-radius: 20px;
+  font-size: 18px;
+  text-align: center;
+}
