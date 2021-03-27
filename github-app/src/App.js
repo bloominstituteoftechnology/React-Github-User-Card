@@ -1,12 +1,10 @@
 import React from "react";
-
 import "./App.css";
-
 import axios from "axios";
-
 import User from "./components//User";
-
 import Followers from "./components/Followers";
+import Navbar from './components/layout/Navbar'
+import UserItem from './components/user/UserItem'
 
 class App extends React.Component {
   constructor() {
@@ -83,6 +81,8 @@ class App extends React.Component {
 
     return (
       <div className="App">
+        <Navbar/>
+        <UserItem/>
         <h1> MY GitHubUserCard</h1>
          <User user={this.state.User} />
 
