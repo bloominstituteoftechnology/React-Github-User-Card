@@ -1,119 +1,38 @@
-import React from "react";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Navbar from './components/layout/Navbar';
+import User from './components/user/User';
+import Alert from './components/layout/Alert';
+import Home from './components/pages/Home';
+import About from './components/pages/About';
+import NotFound from './components/pages/NotFound';
 
-import "./App.css";
+import GithubState from './context/github/GithubState';
+import AlertState from './context/alert/AlertState';
 
-import axios from "axios";
+import './App.css';
 
-import User from "./components//User";
-
-import Followers from "./components/Followers";
-
-class App extends React.Component {
-  constructor() {
-    super();
-
-    this.state = {
-      User: {},
-
-      Followers: [],
-
-      Searchfollowers: ""
-    };
-  }
-
-  componentDidMount() {
-    axios
-
-      .get("https://api.github.com/users/MosharrafMusa")
-
-      .then(res => {
-        console.log("userdata", res.data);
-
-        this.setState({
-          ...this.state,
-
-          User: res.data
-        });
-      })
-
-      .catch(err => console.log("ErrorUSers", err));
-
-    axios
-
-      .get("https://api.github.com/users/MosharrafMusa/followers")
-
-      .then(response => {
-        console.log(response);
-
-        this.setState({
-          Followers: response.data
-        });
-      })
-
-      .catch(err => console.log("errorfollowers", err));
-  }
-
-  handleSearchFollowers = e => {
-    this.setState({ ...this.state, Searchfollowers: e.target.value });
-
-    // .catch(err=> console.log("searchFollowererror", err))
-  };
-
-  getFollowers = e => {
-    e.preventDefault();
-
-    axios
-
-      .get(
-        `https://api.github.com/users/MosharrafMusa/followers/${
-          this.state.Searchfollowers
-        }`
-      )
-
-      .then(followerData => {
-        if (followerData.status !== "error") {
-          this.setState({ ...this.state, Searchfollowers: followerData.login });
-        }
-      });
-  };
-
-  render() {
-    console.log(this.state);
-
-
-    return (
-      <div className="App">
-        <h1> MY GitHubUserCard</h1>
-         <User user={this.state.User} />
-
-        <input
-          type="text "
-          value={this.state.Searchfollowers}
-          onChange={this.handleSearchFollowers}
-          placeholder="Search my followers"
-        />
-
-        <div>
-          <button className="button" onClick={this.getFollowers}>
-            {" "}
-            Search Followers
-          </button>
-        </div>
-
-       
-
-        {this.state.Followers.filter(follower =>
-          follower.login.includes(this.state.Searchfollowers)
-        ).map(follower => (
-          <Followers
-            name={follower.login}
-            image={follower.avatar_url}
-            html_url={follower.html_url}
-          />
-        ))}
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <GithubState>
+      <AlertState>
+        <Router>
+          <div className='App'>
+            <Navbar />
+            <div className='container'>
+              <Alert />
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route exact path='/about' component={About} />
+                <Route exact path='/user/:login' component={User} />
+                <Route component={NotFound} />
+              </Switch>
+            </div>
+          </div>
+        </Router>
+      </AlertState>
+    </GithubState>
+  );
+};
 
 export default App;
