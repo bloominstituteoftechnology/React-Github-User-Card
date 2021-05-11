@@ -37,6 +37,7 @@
 
 import * as CSS from 'csstype';
 import * as PropTypes from 'prop-types';
+import { Interaction as SchedulerInteraction } from 'scheduler/tracing';
 
 type NativeAnimationEvent = AnimationEvent;
 type NativeClipboardEvent = ClipboardEvent;
@@ -51,15 +52,6 @@ type NativeTransitionEvent = TransitionEvent;
 type NativeUIEvent = UIEvent;
 type NativeWheelEvent = WheelEvent;
 type Booleanish = boolean | 'true' | 'false';
-
-/**
- * defined in scheduler/tracing
- */
-interface SchedulerInteraction {
-    id: number;
-    name: string;
-    timestamp: number;
-}
 
 declare const UNDEFINED_VOID_ONLY: unique symbol;
 // Destructors are only allowed to return void.
@@ -407,7 +399,7 @@ declare namespace React {
     const version: string;
 
     /**
-     * {@link https://github.com/bvaughn/rfcs/blob/profiler/text/0000-profiler.md#detailed-design | API}
+     * {@link https://reactjs.org/docs/profiler.html#onrender-callback Profiler API}
      */
     type ProfilerOnRenderCallback = (
         id: string,

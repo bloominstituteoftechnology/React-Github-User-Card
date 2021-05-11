@@ -1,7 +1,7 @@
 import React from 'react';
-import { SearchContainer } from './styles';
-import { Input } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/Search';
+// import { SearchContainer } from './styles';
+// import { Input } from '@material-ui/core';
+// import SearchIcon from '@material-ui/icons/Search';
 
 class Search extends React.Component {
 
@@ -31,7 +31,7 @@ class Search extends React.Component {
   render(){
     return (
       <form onSubmit={this.handleSubmit}>
-        <SearchIcon />
+        {/* <SearchIcon /> */}
         <input 
           placeholder="Search…" 
           onChange={this.handleChange} 
