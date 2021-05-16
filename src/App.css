@@ -1,18 +1,16 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Saira+Semi+Condensed&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
-
-
 html,
 body,
 #root {
-	width: 100%;
-	height: auto;
-	max-height: 1500px;
-	margin: 0 auto;
-	padding: 0;
-	background-color: #000000;
-	/* display: flex; */
+  width: 100%;
+  height: auto;
+  max-height: 1500px;
+  margin: 0 auto;
+  padding: 0;
+  background-color: #000000;
+  /* display: flex; */
 }
 
 h2,
@@ -23,8 +21,8 @@ h6,
 div,
 p,
 span {
-	color: #000000;
-	font-family: "Roboto", sans-serif;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
 }
 
 .App {
@@ -36,9 +34,11 @@ span {
   align-content: center;
   justify-content: center;
 }
+
 .App h2 {
   color: #c3c6d2;
 }
+
 .App h3 {
   color: #4e4c9e;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
@@ -50,22 +50,16 @@ span {
 .App h6,
 .App p {
   color: #ffffff;
-=======
-
-.App h4,
-h5,
-h6,
-p {
-	color: #ffffff;
-	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+}
 
 #user-card h4,
 h5,
 h6,
 p {
-
-	color: #ffffff;
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
 }
+
 #user-card {
   flex-flow: column wrap;
   justify-content: flex-start;
@@ -75,25 +69,31 @@ p {
   top: 0;
   background-color: rgba(75, 69, 69, 0.584);
 }
+
 #user-card h1 {
   color: #000;
 }
+
 #user-card a {
   text-align: center;
   text-decoration: none;
 }
+
 #user-card p {
   margin-left: 15px;
   font-weight: normal;
   margin-bottom: 2rem;
 }
+
 #user-card h4 {
   font-size: 16pt;
   margin-top: 1.5rem;
 }
+
 #user-card .counters {
   text-align: center;
 }
+
 #user-card .counters p {
   font-size: 13pt;
   border: 1px solid white;
@@ -101,11 +101,13 @@ p {
   border-radius: 100%;
   margin-left: 200px;
 }
+
 #user-card .counters h3 {
   margin-right: 2.5rem;
   text-decoration: underline;
   text-decoration-color: #000000;
 }
+
 #user-card .user-image {
   margin: 4rem 8rem;
   transform: scale(0.8);
@@ -145,6 +147,7 @@ p {
   margin-top: 2.5rem;
   margin-bottom: 0;
 }
+
 .followers-header h4 {
   font-size: 30pt;
   border: 2px solid white;
@@ -152,6 +155,7 @@ p {
   padding: 5px;
   margin: 10px 10px;
 }
+
 .followers-header h1 {
   line-height: 100px;
   margin-left: 50px;
@@ -181,19 +185,19 @@ p {
   font-size: 50pt;
   font-family: 'Open Sans', sans-serif;
 }
+
 .content-block-1 h4 {
   font-size: 26pt;
   text-align: center;
   margin-left: 21rem;
   width: 200px;
-  }
-  
-.content-block-1 h5 {
-	font-size: 26pt;
-	text-align: center;
+}
 
-	margin-left: 16rem;
-	width: 400px;
+.content-block-1 h5 {
+  font-size: 26pt;
+  text-align: center;
+  margin-left: 16rem;
+  width: 400px;
 }
 
 .profile {
@@ -205,4 +209,3 @@ p {
   margin-bottom: 8rem;
   background-color: #00000060;
 }
-
