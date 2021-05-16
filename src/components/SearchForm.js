@@ -1,34 +1,37 @@
 import React, { useState } from 'react'
 
 const SearchForm = props => {
-	const [ query, setQuery ] = useState(props.query)
-	const [ queryParameter, setQueryParameter ] = useState('')
+  const [search, setSearch] = useState('')
 
-	const handleChange = e => {
-		console.log(`queryParameter in SearchForm handleChange: ${queryParameter}`)
-		setQueryParameter({
-			...queryParameter,
-			[e.target.name]: e.target.value,
-		})
-	}
+  const handleChange = e => {
+    e.persist()
+    const event = e.target.value
+    console.log(`search in SearchForm handleChange: ${event}`)
+    setSearch({
+      ...search,
+      search: event
+    })
+  }
 
-	const handleSubmit = e => {
-		e.preventDefault()
-		setQuery({ queryParameter })
-	}
+  const handleSubmit = e => {
+    e.stopPropagation()
+    props.setQuery(search)
+  }
 
-	return (
-		<form className='search-form' onSubmit={handleSubmit}>
-			<input
-				type='text'
-				name='login'
-				value={query.login}
-				placeholder='search by username'
-				onChange={handleChange}
-			/>
-			<input type='submit' />
-		</form>
-	)
+  return (
+    <>
+      <form className='search-form' onSubmit={e => handleSubmit(e)}>
+        <input
+          type='text'
+          placeholder='search by username'
+          onChange={e => {
+            handleChange(e)
+          }}
+        />
+        <input type='submit' />
+      </form>
+    </>
+  )
 }
 
 export default SearchForm

@@ -1,101 +1,48 @@
-import React from 'react'
-
-import { Container, Row, Col } from 'react-bootstrap'
+import React, { useState, useEffect } from 'react'
+import { Container, Col } from 'react-bootstrap'
 import axios from 'axios'
+
 import FollowersList from './components/FollowersList'
 import UserCard from './components/UserCard'
-// import SearchForm from './components/SearchForm'
 
-class App extends React.Component {
-  constructor () {
-    super()
-    this.state = {
-      user: {},
-      followers: [],
-      query: 'hutchcrowley'
-    }
-  }
+const App = () => {
+	const [ user, setUser ] = useState({})
+	const [ followers, setFollowers ] = useState([])
+	const [ query, setQuery ] = useState('hutchcrowley')
 
-  componentDidMount () {
-    axios
-      .get('https://api.github.com/users')
-      .then(res => {
-        console.log('Result of search API call in CDU: ', res.data)
-        // let userSearch = res.data.filter(
-        //   userSearch => userSearch.login ===
-        // )
-        // console.log('this is userSearch: ', userSearch)
-        // this.setState({
-        //   query: userSearch,
-        //   user: res.data
-        // })
-      })
-      .catch(err => console.log('Error: ', err))
+	useEffect(
+		() => {
+			axios
+				.get(`https://api.github.com/users/${query}`)
+				.then(res => {
+					console.log('Result of search API call in CDU: ', res.data)
+					setUser(res.data)
+				})
+				.catch(err => console.log('Error: ', err))
+		},
+		[ query ],
+	)
 
-    //   Fetch initial data from API, then set state to the new data
-    axios
-      .get(`https://api.github.com/users/${this.state.query}`)
-      .then(res => {
-        console.log(res.data)
-        this.setState({
-          user: res.data
-        })
-      })
-      .catch(err => console.log('Error: data not returned from server.', err))
+	useEffect(() => {
+		axios
+			.get('https://api.github.com/users/hutchcrowley/followers')
+			.then(res => {
+				console.log(res.data)
+				setFollowers(res.data)
+			})
+			.catch(err => console.log('Error: '.err))
+	}, [])
 
-    axios
-      .get('https://api.github.com/users/hutchcrowley/followers')
-      .then(res => {
-        console.log(res.data)
-        this.setState({
-          followers: res.data
-        })
-      })
-      .catch(err => console.log('Error: '.err))
-    console.log('State on App.js during componentDidMount: ', this.state)
-  }
-
-  // Started working on search functionality.
-
-  // componentDidUpdate (prevState) {
-  //   if (prevState.query !== this.state.query) {
-  //     axios
-  //       .get('https://api.github.com/users')
-  //       .then(res => {
-  //         console.log('Result of search API call in CDU: ', res)
-  //         let userSearch = res.data.filter(
-  //           userSearch => userSearch.login === prevProps.query
-  //         )
-  //         console.log('this is userSearch: ', userSearch)
-  //         this.setState({
-  //           query: userSearch,
-  //           user: res.data
-  //         })
-  //       })
-  //       .catch(err => console.log('Error: ', err))
-  //   }
-  // }
-
-  render () {
-    console.log('State on App.js during the render function: ', this.state)
-    //   Render JSX to the DOM
-    return (
-      <Container fluid={true} className='App'>
-        <Col xs={5} className='user-column'>
-          <Row>
-            <UserCard user={this.state.user} />
-          </Row>
-        </Col>
-        <Col xs={3} className='follower-column'>
-          {/* <SearchForm query={this.state.user} /> */}
-          <FollowersList
-            followers={this.state.followers}
-            userFollowers={this.state.user.followers}
-          />
-        </Col>
-      </Container>
-    )
-  }
+	return (
+		<Container fluid={true} className='App'>
+			<Col className='user-column'>
+				<UserCard user={user} />
+			</Col>
+			<Col xs={3} className='follower-column'>
+				<FollowersList followers={followers} setQuery={setQuery} />
+			</Col>
+		</Container>
+	)
 }
 
 export default App
