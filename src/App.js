@@ -38,7 +38,7 @@ class App extends React.Component {
       .catch(err => console.log('Error: '.err))
     console.log('State on App.js during componentDidMount: ', this.state)
   }
-
+            },
 
   componentDidUpdate (search) {
     const queryParameter = search.filter(
