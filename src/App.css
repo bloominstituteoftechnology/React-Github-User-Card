@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Saira+Semi+Condensed&display=swap&subset=latin-ext');
-html, body, #root {
+
+
+html,
+body,
+#root {
 	width: 100%;
 	height: auto;
 	max-height: 1500px;
@@ -10,7 +14,14 @@ html, body, #root {
 	/* display: flex; */
 }
 
-h2, h3, h4, h5, h6, div, p, span {
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
 	color: #000000;
 	font-family: "Roboto", sans-serif;
 }
@@ -44,12 +55,18 @@ h2, h3, h4, h5, h6, div, p, span {
 	font-size: 32pt;
 }
 
-.App h4, h5, h6, p {
+.App h4,
+h5,
+h6,
+p {
 	color: #ffffff;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
-}
 
-#user-card h4, h5, h6, p {
+#user-card h4,
+h5,
+h6,
+p {
+
 	color: #ffffff;
 }
 
@@ -168,8 +185,10 @@ h2, h3, h4, h5, h6, div, p, span {
 .content-block-1 h5 {
 	font-size: 26pt;
 	text-align: center;
-	margin-left: 21rem;
-	width: 200px;
+
+	margin-left: 16rem;
+	width: 400px;
+
 }
 
 .profile {
@@ -180,4 +199,4 @@ h2, h3, h4, h5, h6, div, p, span {
 .handle {
 	margin-bottom: 8rem;
 	background-color: #00000060;
-}
+  }

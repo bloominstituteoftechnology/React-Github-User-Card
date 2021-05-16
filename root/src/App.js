@@ -11,14 +11,14 @@ class App extends React.Component {
     this.state = {
       user: {},
       followers: [],
+      query: ''
     }
   }
 
   componentDidMount () {
+    //   Fetch initial data from API, then set state to the new data
     axios
-      .get('https://api.github.com/users')
-      .then(res => {
-        console.log('Result of search API call in CDU: ', res.data)
+      .get('https://api.github.com/users/hutchcrowley')
       .then(res => {
         console.log(res.data)
         this.setState({
@@ -39,8 +39,7 @@ class App extends React.Component {
     console.log('State on App.js during componentDidMount: ', this.state)
   }
 
-
-  componentDidUpdate (search) {
+  componentDidUpdate () {
     const queryParameter = search.filter(
       user => user.toLowerCase === search.toLowerCase()
     )
@@ -60,7 +59,6 @@ class App extends React.Component {
           </Row>
         </Col>
         <Col xs={3} className='follower-column'>
-
           <FollowersList
             followers={this.state.followers}
             userFollowers={this.state.user.followers}
