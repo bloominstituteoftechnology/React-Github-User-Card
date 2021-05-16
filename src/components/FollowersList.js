@@ -16,7 +16,8 @@ const FollowersList = props => {
       </div>
       <div className='followers-list'>
         {props.followers.map(follower => (
-          <div key={follower.id}>
+
+          <div id={follower.id}>
             <Follower
               picture={follower.avatar_url}
               handle={follower.login}
