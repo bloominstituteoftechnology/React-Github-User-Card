@@ -25,7 +25,7 @@ class App extends React.Component {
           user: res.data
         })
       })
-      .catch(err => console.log('Error: data not returned from server.', err))
+      .catch(err => console.log('Error: data not returned from server.', err)),
 
     axios
       .get('https://api.github.com/users/hutchcrowley/followers')
@@ -38,7 +38,7 @@ class App extends React.Component {
       .catch(err => console.log('Error: '.err))
     console.log('State on App.js during componentDidMount: ', this.state)
   }
-            },
+,
 
   componentDidUpdate (search) {
     const queryParameter = search.filter(
