@@ -2,6 +2,31 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Saira+Semi+Condensed&display=swap&subset=latin-ext');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+
+html,
+body,
+#root {
+	width: 100%;
+	height: auto;
+	max-height: 1500px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #000000;
+	/* display: flex; */
+}
+
+h2,
+h3,
+h4,
+h5,
+h6,
+div,
+p,
+span {
+	color: #000000;
+	font-family: "Roboto", sans-serif;
+}
+
 .App {
   display: flex;
   height: auto;
@@ -19,11 +44,27 @@
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
   font-size: 32pt;
 }
+
 .App h4,
 .App h5,
 .App h6,
 .App p {
   color: #ffffff;
+=======
+
+.App h4,
+h5,
+h6,
+p {
+	color: #ffffff;
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
+
+#user-card h4,
+h5,
+h6,
+p {
+
+	color: #ffffff;
 }
 
 #user-card {
@@ -146,6 +187,14 @@
   text-align: center;
   margin-left: 21rem;
   width: 200px;
+  }
+  
+.content-block-1 h5 {
+	font-size: 26pt;
+	text-align: center;
+
+	margin-left: 16rem;
+	width: 400px;
 }
 
 .profile {
@@ -158,4 +207,3 @@
   background-color: #00000060;
 }
 
-/*# sourceMappingURL=App.css.map */

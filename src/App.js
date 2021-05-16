@@ -10,6 +10,7 @@ const App = () => {
   const [followers, setFollowers] = useState([])
   const [query, setQuery] = useState('hutchcrowley')
 
+  
   useEffect(() => {
     axios
       .get(`https://api.github.com/users/${query}`)
@@ -22,14 +23,15 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get('https://api.github.com/users/hutchcrowley/followers')
+    .get(`https://api.github.com/users/hutchcrowley/folowers`)
       .then(res => {
         console.log(res.data)
-        setFollowers(res.data)
-      })
-      .catch(err => console.log('Error: ', err))
-  }, [])
-
+      setFollowers(res.data)
+    })
+      .catch(err => console.log('Error: data not returned from server.', err))
+    
+  },[])
+  
   return (
     <Container className='App'>
       <Col className='user-column'>
