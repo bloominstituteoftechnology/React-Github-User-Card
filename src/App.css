@@ -25,7 +25,6 @@
 .App p {
   color: #ffffff;
 }
-
 #user-card {
   flex-flow: column wrap;
   justify-content: flex-start;
