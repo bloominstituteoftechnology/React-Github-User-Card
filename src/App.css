@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Roboto");
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600|Saira+Semi+Condensed&display=swap&subset=latin-ext');
 
+
 html,
 body,
 #root {
@@ -60,12 +61,12 @@ h6,
 p {
 	color: #ffffff;
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', sans-serif;
-}
 
 #user-card h4,
 h5,
 h6,
 p {
+
 	color: #ffffff;
 }
 
@@ -184,8 +185,10 @@ p {
 .content-block-1 h5 {
 	font-size: 26pt;
 	text-align: center;
+
 	margin-left: 16rem;
 	width: 400px;
+
 }
 
 .profile {
@@ -196,4 +199,4 @@ p {
 .handle {
 	margin-bottom: 8rem;
 	background-color: #00000060;
-}
+  }

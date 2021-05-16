@@ -13,6 +13,7 @@ const FollowersList = props => {
       </div>
       <div className='followers-list'>
         {props.followers.map(follower => (
+
           <div id={follower.id}>
             <Follower
               picture={follower.avatar_url}
