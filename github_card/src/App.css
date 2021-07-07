@@ -1,0 +1,17 @@
+img{
+  width: 100px;
+}
+
+.GitCard{
+  margin-top: 50px;
+  border: 1px solid green;
+  background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.App{
+  margin: 5%;
+}
