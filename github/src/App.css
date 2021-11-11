@@ -1,70 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle&display=swap');
 .App {
   text-align: center;
-  background-image: url("https://s.abcnews.com/images/US/mlk-7-gty-aa-200116_hpMain_16x9_1600.jpg");
-  font-family: "Fjalla One";
+  font-family: "Dongle";
 }
-
+html, body {
+  width: 100%;
+  height:100%;
+}
+body{
+  background-color: #111111;
+  margin: 0;
+  overflow-x: hidden;
+  
+}
 div.user > img{
   height: 90px;
-  width: 90px;}
+  width: 90px;
+  padding: 5%;
+  border-radius: 50%
+
+}
 
 h3{
-  font-size: 20px;
+  font-size: 1.5rem;
+  overflow-wrap: break-word;
+  width: 100%;
+  min-width: 200px;
 }
 .user{
   display: flex;
-  justify-content: center;
+  justify-content: center; 
+  margin-left: 10%;
+
+
 }
-h2{
-  font-size: 2rem;
-  color:white;
+
+.user-card{
+  display: flex;
+  justify-content: center;
+  margin-left: 2%;
+}
+.usercard{
+  display: flex;
+  align-content: center;
+  justify-content: space-evenly; 
+  flex-flow: column nowrap;
+  width:15%;
+  color: white;
+  opacity: .9;
 }
 .usercard .user{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly; 
   flex-flow: column nowrap;
   align-items: center;
   position: relative;
-  background-image: linear-gradient(rgb(37, 12, 2), #e64023);
-  color: beige;
-  border-radius: 4px;
-  height: 250px;
-  margin: 8px;
-  padding: 16px;
-  width: 250px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
- 
+  width: 100%;
+  height: 100%;
+  padding: 20%;
+  margin: 2%;
+  max-width: 190px;
+  max-height:200px;
+  background: #242625;
+  border-radius: 10px;
+  box-shadow: 25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f;
+}
+.user:hover{
+  color: #ffee10;
+  box-shadow: 0 0 5px #ffee10;
+  text-shadow: 0 0 5px #ffee10;
+
 }
 .followers{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-}
+  font-size:15px;
+  margin-left: 2%;
 
-button{
-  box-shadow: 0px 1px 0px 0px #fff6af;
-	background:linear-gradient(to bottom, #ffec64 5%, #ffab23 100%);
-	background-color:#ffec64;
-	border-radius:6px;
-	border:1px solid #ffaa22;
-	display:inline-block;
-	cursor:pointer;
-	color:#333333;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:6px 24px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #ffee66;
 }
-/* h1{
-  font-size: 2.5rem;
-} */
-
+.followers .usercard{
+  display: flex;
+  justify-content: center;
+}
+img{
+  max-width: 100px;
+  min-width: 100px;
+  width:100%;
+  height: 100%;
+}
+.btTxt-submit{
+  width:100%;
+  max-width: 60px;
+}
 .header{
   color:white;
   font-size:3rem;
-  background-image: url("https://images.fineartamerica.com/images/artworkimages/mediumlarge/2/black-pride-print-gift-black-is-beautiful-african-design-dc-designs-suamaceir.jpg");
-margin-top: -4rem;
+
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Dongle";
+}
+.container {
+  position:absolute;
+  width:100%;
+  height:100vh;
+  background: #2c302d;
+}
+ h1{
+  color:white;
+}
+
+.bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200vh;
+  background: transparent url('https://images.unsplash.com/photo-1602475063211-3d98d60e3b1f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3114&q=80') repeat 0 0;
+  background-repeat: repeat;
+  animation: bg-animation .12s infinite;
+  opacity: .15;
+  visibility: visible;
+}
+
+@keyframes bg-animation {
+    0% { transform: translate(0,0) }
+    10% { transform: translate(-5%,-5%) }
+    20% { transform: translate(-10%,5%) }
+    30% { transform: translate(5%,-10%) }
+    40% { transform: translate(-5%,15%) }
+    50% { transform: translate(-10%,5%) }
+    60% { transform: translate(15%,0) }
+    70% { transform: translate(0,10%) }
+    80% { transform: translate(-15%,0) }
+    90% { transform: translate(10%,5%) }
+    100% { transform: translate(5%,0) }
+}
+@media(max-width:800px){
+  .user-card{
+    display: flex;
+    justify-content: center;
+
+  margin-right: 13%;
+  }
+ .usercard .user{
+   width: 190px;
+   
+ }
+
+ .followers .usercard{
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: wrap; 
+  margin-left: 36%;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  border-radius: 10px;
+  box-shadow: 15px 15px 30px #1b1c1b, ;
+ 
+ }
+ .followers{
+  float: left;
+  display: flex;
+  flex-direction: row;  
+  flex-wrap: wrap; 
+ }
+ .caption{
+   display:block;
+ 
+ }
+}
+
+@media(max-width:500px){
+  .user-card{
+    display: flex;
+    justify-content: center;
+    margin-right: 45%;
+  }
+
+ .followers .usercard{
+  width: 600%;
+  margin-left: 22%;
+
+ }
+
 }

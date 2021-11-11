@@ -6,12 +6,16 @@ import React from "react";
       return(
           
           <div className="usercard">
-         <div className="user">
+         <div className="user" >
              <img src={props.user.avatar_url} alt="github"/>
              <div>
-                 <h1>{props.user.login}</h1>
-                 <a href={props.user.html_url}>Visit {props.user.login}'s profile</a>
-                 <p>{props.user.location}</p>
+                 <h3>{props.user.login}</h3>
+                <div classname= "github-btn">
+                <a href={props.user.html_url}>
+                <img src="https://www.cloudsavvyit.com/p/uploads/2020/10/d6528811.png?width=1198&trim=1,1&bg-color=000&pad=1,1"   width="100" height="100"/>
+                </a>
+                </div>
+                
                               </div>
          </div>
          </div>

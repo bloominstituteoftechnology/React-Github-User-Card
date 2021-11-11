@@ -35,14 +35,17 @@ class App extends React.Component{
 render(){
  return(
   <div className="App">
+  <div className="bg" />
     <div className="header">
       <h1>Github Cards</h1>
     </div>
-    <div className="user">
+    <div className="user-card">
       
      <User user={this.state.user}/>
     </div>
-    <h2>Followers</h2>
+    <div className="header">
+    <h2> Followers</h2>
+     </div>
    <div className="followers">
     {this.state.followers.map((follower) =>{ //setting up the array for zzeroyzz followers 
        return<User key={follower.id} user={follower}/>
