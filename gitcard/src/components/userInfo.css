@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+}
+
+.card{
+    margin-right: 15rem;
+    margin-left: 15rem;
+     
+}
+.userInfoContainer{
+
+     display: flex;
+     align-items: center;
+     justify-content: space-evenly;
+     box-shadow: 0 4px 8px 0;   
+
+}
+
+img {
+    width: 7rem;
+    height: 7rem;
+}
+
+.followersContainer{
+    display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        box-shadow: 0 4px 8px 0;
+}
+
+.fcard{
+    margin-right: 15rem;
+        margin-left: 15rem;
+}
+
+@media (max-width: 860px) {
+    .card {
+            margin-right: 10rem;
+            margin-left: 10rem;
+    
+        }
+   .fcard {
+            margin-right: 10rem;
+            margin-left: 10rem;
+       }
+
+}
+@media (max-width: 710px) {
+    .card {
+            margin-right: 5rem;
+            margin-left: 5rem;
+    
+        }
+   .fcard {
+            margin-right: 5rem;
+            margin-left: 5rem;
+       }
+
+}
+@media (max-width: 550px) {
+    .card {
+            margin-right: 2rem;
+            margin-left: 2rem;
+    
+        }
+   .fcard {
+            margin-right: 2rem;
+            margin-left: 2rem;
+       }
+
+}
+@media (max-width: 450px) {
+    .card {
+            margin-right: 1rem;
+            margin-left: 1rem;
+    
+        }
+               
+   .fcard {
+            margin-right: 1rem;
+            margin-left: 1rem;
+       }
+
+}
