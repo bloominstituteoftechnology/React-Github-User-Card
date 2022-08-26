@@ -20,7 +20,8 @@ h3 {
      display: flex;
      align-items: center;
      justify-content: space-evenly;
-     box-shadow: 0 4px 8px 0;   
+     box-shadow: 0 4px 8px 0;
+     border-radius: 1rem;   
 
 }
 
@@ -34,6 +35,8 @@ img {
         align-items: center;
         justify-content: space-evenly;
         box-shadow: 0 4px 8px 0;
+        border-radius: 1rem;
+        
 }
 
 .fcard{
